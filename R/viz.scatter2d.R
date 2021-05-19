@@ -28,6 +28,14 @@
 #' @param colour [\code{character(1)}]\cr
 #'   Name of column which shall be used to define colour of points.
 #'   Default is \code{NULL}, i.e., coloring is deactivated.
+#' @param size [\code{character(1)}]\cr
+#'   Name of column which shall be used to define the size of points.
+#'   Default is \code{NULL}, i.e., sizing is deactivated.
+#'   Useful to visualize a third objective (bubble-chart; see argument \code{bubble}).
+#' @param bubble [\code{logical(1)}]\cr
+#'   Plot bubble-chart? I.e. is \code{colour} used to highlight another
+#'   objective?
+#'   Default is \code{FALSE}.
 #' @param title [\code{character(1)}]\cr
 #'   Plot title.
 #' @param subtitle [\code{character(1)}]\cr
@@ -66,6 +74,8 @@ plot_scatter2d = function(
   obj.cols = c("y1", "y2"),
   shape = "algorithm",
   colour = NULL,
+  size = NULL,
+  bubble = FALSE,
   highlight.algos = NULL,
   offset.highlighted = 0,
   title = NULL, subtitle = NULL,
@@ -73,6 +83,7 @@ plot_scatter2d = function(
   facet.args = list()) {
   assertDataFrame(df, min.rows = 2L, min.cols = 2L)
   assertCharacter(obj.cols, min.len = 2L)
+  assertFlag(bubble)
   assertNumber(offset.highlighted, lower = 0, finite = TRUE)
   assertChoice(facet.type, choices = c("wrap", "grid"))
   assertList(facet.args)
@@ -123,7 +134,7 @@ plot_scatter2d = function(
   }
   g = g + ggplot2::geom_point(
     data = data,
-    mapping = ggplot2::aes_string(shape = shape, colour = colour),
+    mapping = ggplot2::aes_string(shape = shape, colour = colour, size = size),
     alpha = 0.5)
   g = g + scale_shape_manual(values = 1:nlevels(as.factor(data[[shape]])))
   if (n.probs > 1L) {
@@ -140,15 +151,25 @@ plot_scatter2d = function(
     title = title,
     subtitle = subtitle,
     shape = "Algorithm",
-    colour = "Algorithm"
+    colour = "Algorithm",
+    size = "Algorithm"
   )
   g = g + ggplot2::theme(
     legend.position = "bottom",
     axis.text.x = ggplot2::element_text(angle = 45, hjust = 1)
   )
   if (!is.null(colour)) {
-    g = g + scale_color_brewer(palette = "Dark2")
+    if (!bubble) {
+      g = g + scale_color_brewer(palette = "Dark2")
+    } else {
+      g = g + scale_color_viridis()
+      g = g + labs(colour = sprintf("Obj. %s", colour))
+    }
   }
 
+  if (!is.null(size) & bubble)
+    g = g + labs(size = sprintf("Obj. %s", size))
+
+  g = g + theme_minimal()
   return(g)
 }

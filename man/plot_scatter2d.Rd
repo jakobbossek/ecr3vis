@@ -9,6 +9,8 @@ plot_scatter2d(
   obj.cols = c("y1", "y2"),
   shape = "algorithm",
   colour = NULL,
+  size = NULL,
+  bubble = FALSE,
   highlight.algos = NULL,
   offset.highlighted = 0,
   title = NULL,
@@ -32,6 +34,16 @@ Default is \dQuote{algorithm}.}
 \item{colour}{[\code{character(1)}]\cr
 Name of column which shall be used to define colour of points.
 Default is \code{NULL}, i.e., coloring is deactivated.}
+
+\item{size}{[\code{character(1)}]\cr
+Name of column which shall be used to define the size of points.
+Default is \code{NULL}, i.e., sizing is deactivated.
+Useful to visualize a third objective (bubble-chart; see argument \code{bubble}).}
+
+\item{bubble}{[\code{logical(1)}]\cr
+Plot bubble-chart? I.e. is \code{colour} used to highlight another
+objective?
+Default is \code{FALSE}.}
 
 \item{highlight.algos}{[\code{character(1)}]\cr
 Name of algorithm to highlight exclusively. Useful to highlight, e.g., the
