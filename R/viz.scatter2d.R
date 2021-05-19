@@ -81,17 +81,17 @@ plot_scatter2d = function(
   title = NULL, subtitle = NULL,
   facet.type = "wrap",
   facet.args = list()) {
-  assertDataFrame(df, min.rows = 2L, min.cols = 2L)
-  assertCharacter(obj.cols, min.len = 2L)
-  assertFlag(bubble)
-  assertNumber(offset.highlighted, lower = 0, finite = TRUE)
-  assertChoice(facet.type, choices = c("wrap", "grid"))
-  assertList(facet.args)
+  checkmate::assert_data_frame(df, min.rows = 2L, min.cols = 2L)
+  checkmate::assert_character(obj.cols, min.len = 2L)
+  checkmate::assert_flag(bubble)
+  checkmate::assert_number(offset.highlighted, lower = 0, finite = TRUE)
+  checkmate::assert_choice(facet.type, choices = c("wrap", "grid"))
+  checkmate::assert_list(facet.args)
 
   df = prepare_pf_for_visualization(df, obj.cols, n.obj = 2L)
 
-  assertChoice(shape, choices = setdiff(colnames(df), obj.cols))
-  assertChoice(colour, choices = setdiff(colnames(df), obj.cols), null.ok = TRUE)
+  checkmate::assert_choice(shape, choices = setdiff(colnames(df), obj.cols))
+  checkmate::assert_choice(colour, choices = setdiff(colnames(df), obj.cols), null.ok = TRUE)
 
   # get algorithm names
   algos = unique(df$algorithm)
@@ -102,10 +102,10 @@ plot_scatter2d = function(
   n.probs = length(probs)
 
   if (!is.null(highlight.algos))
-    assertChoice(highlight.algos, choices = algos)
+    checkmate::assert_choice(highlight.algos, choices = algos)
 
-  assertString(title, null.ok = TRUE)
-  assertString(subtitle, null.ok = TRUE)
+  checkmate::assert_string(title, null.ok = TRUE)
+  checkmate::assert_string(subtitle, null.ok = TRUE)
 
   g = ggplot2::ggplot(mapping = ggplot2::aes_string(x = obj.cols[1L], y = obj.cols[2L]))
 
@@ -136,7 +136,7 @@ plot_scatter2d = function(
     data = data,
     mapping = ggplot2::aes_string(shape = shape, colour = colour, size = size),
     alpha = 0.5)
-  g = g + scale_shape_manual(values = 1:nlevels(as.factor(data[[shape]])))
+  g = g + ggplot2::scale_shape_manual(values = 1:nlevels(as.factor(data[[shape]])))
   if (n.probs > 1L) {
     # how to group stuff
     group.by = if (facet.type == "wrap") formula( ~ prob) else formula(. ~ prob)
@@ -160,16 +160,16 @@ plot_scatter2d = function(
   )
   if (!is.null(colour)) {
     if (!bubble) {
-      g = g + scale_color_brewer(palette = "Dark2")
+      g = g + ggplot2::scale_color_brewer(palette = "Dark2")
     } else {
-      g = g + scale_color_viridis()
-      g = g + labs(colour = sprintf("Obj. %s", colour))
+      g = g + viridis::scale_color_viridis()
+      g = g + ggplot2::labs(colour = sprintf("Obj. %s", colour))
     }
   }
 
   if (!is.null(size) & bubble)
-    g = g + labs(size = sprintf("Obj. %s", size))
+    g = g + ggplot2::labs(size = sprintf("Obj. %s", size))
 
-  g = g + theme_minimal()
+  g = g + ggplot2::theme_minimal()
   return(g)
 }

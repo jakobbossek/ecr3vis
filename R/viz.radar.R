@@ -41,18 +41,18 @@ plot_radar = function(
   df1 = df[df$objective == obj.cols[1], ]
   df = rbind(df, df1)
 
-  g = ggplot(data = df, mapping = aes_string(x  = "objective", y = "value"))
-  g = g + geom_polygon(aes_string(group = "nr", fill = "nr"), alpha = 0.3)
+  g = ggplot2::ggplot(data = df, mapping = ggplot2::aes_string(x  = "objective", y = "value"))
+  g = g + ggplot2::geom_polygon(ggplot2::aes_string(group = "nr", fill = "nr"), alpha = 0.3)
 
   # artificial axis
   #g = g + geom_vline(xintercept = 100, color = "gray")
-  g = g + geom_path(aes_string(group = "nr", color = "nr", linetype = "nr"), alpha = 0.3)
-  g = g + geom_point(aes_string(group = "nr", color = "nr"))
-  g = g + labs(x = "", y = "", fill = "Solution", color = "Solution", linetype = "Solution")
-  g = g + ylim(c(0, max(df$value)))
+  g = g + ggplot2::geom_path(ggplot2::aes_string(group = "nr", color = "nr", linetype = "nr"), alpha = 0.3)
+  g = g + ggplot2::geom_point(ggplot2::aes_string(group = "nr", color = "nr"))
+  g = g + ggplot2::labs(x = "", y = "", fill = "Solution", color = "Solution", linetype = "Solution")
+  g = g + ggplot2::ylim(c(0, max(df$value)))
   g = g + coord_radar()
-  g = g + scale_color_brewer(palette = "Dark2")
-  g = g + scale_fill_brewer(palette = "Dark2")
-  g = g + theme_minimal()
+  g = g + ggplot2::scale_color_brewer(palette = "Dark2")
+  g = g + ggplot2::scale_fill_brewer(palette = "Dark2")
+  g = g + ggplot2::theme_minimal()
   return(g)
 }

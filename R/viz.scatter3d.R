@@ -27,10 +27,10 @@ plot_scatter3d = function(
   max.in.row = 4L,
   package = "scatterplot3d",
   ...) {
-  assertDataFrame(df, min.rows = 2L, min.cols = 3L)
-  assertCharacter(obj.cols, min.len = 2L)
-  assertChoice(package, c("scatterplot3d", "plot3D", "plot3Drgl", "plotly"))
-  max.in.row = asInt(max.in.row, lower = 1L, upper = 10L)
+  checkmate::assert_data_frame(df, min.rows = 2L, min.cols = 3L)
+  checkmate::assert_character(obj.cols, min.len = 2L)
+  checkmate::assert_choice(package, c("scatterplot3d", "plot3D", "plot3Drgl", "plotly"))
+  max.in.row = checkmate::asInt(max.in.row, lower = 1L, upper = 10L)
 
   df = prepare_pf_for_visualization(df, obj.cols, n.obj = 3L)
 

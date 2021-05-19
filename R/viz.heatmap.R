@@ -20,16 +20,16 @@ plot_heatmap = function(
   df,
   obj.cols = c("y1", "y2")) {
 
-  assertDataFrame(df, min.rows = 2L, min.cols = 2L)
-  assertCharacter(obj.cols, min.len = 2L)
+  checkmate::assert_data_frame(df, min.rows = 2L, min.cols = 2L)
+  checkmate::assert_character(obj.cols, min.len = 2L)
 
  # df = prepare_pf_for_visualization(df, obj.cols)
   df = to_long_with_objective_column(df, obj.cols, solution.as.factor = TRUE)
 
-  g = ggplot(df, mapping = aes_string(x = "objective", y = "nr", fill = "value"))
-  g = g + geom_tile()
-  g = g + scale_fill_viridis(discrete=FALSE)
-  g = g + labs(x = "Objective", y = "Solution")
-  g = g + theme_minimal()
+  g = ggplot2::ggplot(df, mapping = ggplot2::aes_string(x = "objective", y = "nr", fill = "value"))
+  g = g + ggplot2::geom_tile()
+  g = g + viridis::scale_fill_viridis(discrete = FALSE)
+  g = g + ggplot2::labs(x = "Objective", y = "Solution")
+  g = g + ggplot2::theme_minimal()
   return(g)
 }
