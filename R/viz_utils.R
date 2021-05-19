@@ -1,3 +1,13 @@
+# Sanity checks and preprocessing for PF-visualization
+#
+# @param df [\code{data.frame()}]\cr
+#  Data frame, i.e., Pareto-front approximation.
+# @param obj.cols [\code{character}]\cr
+#  Names of objective columns.
+# @param n.obj [\code{integer(1) | NULL}]\cr
+#  Number of objectives required.
+#  Defaults to NULL.
+# @return [\code{data.frame}] Modified data frame.
 prepare_pf_for_visualization = function(df, obj.cols, n.obj = NULL) {
   # check if obj column exist
   if (!all(obj.cols %in% colnames(df)))
