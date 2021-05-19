@@ -41,3 +41,10 @@ Given a data frame with the results of (multiple) runs of (multiple)
 different three-objective optimization algorithms on (multiple) problem instances
 the function generates 3D scatterplots of the obtained Pareto-front approximations.
 }
+\seealso{
+Other visualization: 
+\code{\link{plot_heatmap}()},
+\code{\link{plot_pcp}()},
+\code{\link{plot_radar}()}
+}
+\concept{visualization}

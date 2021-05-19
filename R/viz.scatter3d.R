@@ -19,8 +19,10 @@
 #' @param ... [any]\cr
 #'   Further arguments passed down to scatterplot function.
 #' @return Nothing
+#' @family visualization
 #' @export
-plot_scatter3d = function(df,
+plot_scatter3d = function(
+  df,
   obj.cols = c("y1", "y2", "y3"),
   max.in.row = 4L,
   package = "scatterplot3d",
@@ -30,17 +32,7 @@ plot_scatter3d = function(df,
   assertChoice(package, c("scatterplot3d", "plot3D", "plot3Drgl", "plotly"))
   max.in.row = asInt(max.in.row, lower = 1L, upper = 10L)
 
-  if (!all(obj.cols %in% colnames(df)))
-    stopf("obj.cols needs to contain valid column names.")
-
-  if (is.null(df$algorithm))
-    df$algorithm = "Algorithm"
-  if (is.null(df$prob))
-    df$prob = "Problem"
-  if (is.null(df$repl))
-    df$repl = as.factor(1L)
-
-  df$repl = as.factor(df$repl)
+  df = prepare_pf_for_visualization(df, obj.cols, n.obj = 3L)
 
   # get algorithm and problem names
   algos = factor(unique(df$algorithm))

@@ -23,4 +23,16 @@ Here, on the x-axis the objectives are given in the order provided by
 \code{obj.cols}. Tthe y-axis shows the different solutions. The color of the
 cells indicates the objective value of the respective (objective, solution)
 pair. Works with any kind of objectives.
+
+[1] T. Tušar and B. Filipič, "Visualization of Pareto Front Approximations in
+Evolutionary Multiobjective Optimization: A Critical Review and the Prosection
+Method," in IEEE Transactions on Evolutionary Computation, vol. 19, no. 2,
+pp. 225-245, April 2015, doi: 10.1109/TEVC.2014.2313407
 }
+\seealso{
+Other visualization: 
+\code{\link{plot_pcp}()},
+\code{\link{plot_radar}()},
+\code{\link{plot_scatter3d}()}
+}
+\concept{visualization}

@@ -12,9 +12,15 @@
 #' The drawback of this method that it is difficult to compare many solutions
 #' or - even worse - many solutions from different algorithms to get the big picture.
 #'
+#' [1] T. Tušar and B. Filipič, "Visualization of Pareto Front Approximations in
+#' Evolutionary Multiobjective Optimization: A Critical Review and the Prosection
+#' Method," in IEEE Transactions on Evolutionary Computation, vol. 19, no. 2,
+#' pp. 225-245, April 2015, doi: 10.1109/TEVC.2014.2313407
+#'
 #' @template arg_df
 #' @template arg_obj_cols
 #' @return [\code{\link[ggplot2]{ggplot}}] ggplot object.
+#' @family visualization
 #' @export
 plot_radar = function(
   df,

@@ -4,7 +4,7 @@
 \alias{plot_radar}
 \title{Plot radar plot}
 \usage{
-plot_radar(df, obj.cols = c("y1", "y2"))
+plot_radar(df, obj.cols = c("y1", "y2", "y3"))
 }
 \arguments{
 \item{df}{[\code{data.frame}]\cr
@@ -29,4 +29,16 @@ individual strength and weaknesses of players become obvious.
 
 The drawback of this method that it is difficult to compare many solutions
 or - even worse - many solutions from different algorithms to get the big picture.
+
+[1] T. Tušar and B. Filipič, "Visualization of Pareto Front Approximations in
+Evolutionary Multiobjective Optimization: A Critical Review and the Prosection
+Method," in IEEE Transactions on Evolutionary Computation, vol. 19, no. 2,
+pp. 225-245, April 2015, doi: 10.1109/TEVC.2014.2313407
 }
+\seealso{
+Other visualization: 
+\code{\link{plot_heatmap}()},
+\code{\link{plot_pcp}()},
+\code{\link{plot_scatter3d}()}
+}
+\concept{visualization}

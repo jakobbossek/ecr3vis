@@ -2,10 +2,13 @@
 #'
 #' @description Given a data frame with the results of (multiple) runs of (multiple)
 #' different multi-objective optimization algorithms on (multiple) problem instances
-#' the function generates \code{\link[ggplot2]{ggplot}} plots of the obtained
+#' the function generates \code{\link[ggplot2]{ggplot}} scatter-plots of the obtained
 #' Pareto-front approximations.
 #'
-#' @note At the moment only approximations of bi-objective functions are supported.
+#' [1] T. Tušar and B. Filipič, "Visualization of Pareto Front Approximations in
+#' Evolutionary Multiobjective Optimization: A Critical Review and the Prosection
+#' Method," in IEEE Transactions on Evolutionary Computation, vol. 19, no. 2,
+#' pp. 225-245, April 2015, doi: 10.1109/TEVC.2014.2313407
 #'
 #' @template arg_df
 #' @template arg_obj_cols
@@ -58,7 +61,8 @@
 #'   subtitle = "based on different mcMST algorithms.", facet.args = list(nrow = 2))
 #' }
 #' @export
-plot_scatter2d = function(df,
+plot_scatter2d = function(
+  df,
   obj.cols = c("y1", "y2"),
   shape = "algorithm",
   colour = NULL,
@@ -73,25 +77,7 @@ plot_scatter2d = function(df,
   assertChoice(facet.type, choices = c("wrap", "grid"))
   assertList(facet.args)
 
-  # sanity check columns containing objective values
-  if (!all(obj.cols %in% colnames(df)))
-    stopf("obj.cols needs to contain valid column names.")
-
-  df.obj = df[, obj.cols, drop = FALSE]
-  obj.cols.numeric = sapply(df.obj, is.numeric)
-  if (!all(obj.cols.numeric))
-    stopf("Only numeric values allowed in obj.cols, but column(s) '%s' %s not numeric!",
-      collapse(obj.cols[which(!obj.cols.numeric)], ifelse(sum(!obj.cols.numeric) > 1L, "are", "is")))
-
-  # insert dummy values if missing
-  if (is.null(df$algorithm))
-    df$algorithm = "Algorithm"
-  if (is.null(df$prob))
-    df$prob = "Problem"
-  if (is.null(df$repl))
-    df$repl = as.factor(1L)
-
-  df$repl = as.factor(df$repl)
+  df = prepare_pf_for_visualization(df, obj.cols, n.obj = 2L)
 
   assertChoice(shape, choices = setdiff(colnames(df), obj.cols))
   assertChoice(colour, choices = setdiff(colnames(df), obj.cols), null.ok = TRUE)
@@ -104,9 +90,8 @@ plot_scatter2d = function(df,
   n.algos = length(algos)
   n.probs = length(probs)
 
-  if (!is.null(highlight.algos)) {
+  if (!is.null(highlight.algos))
     assertChoice(highlight.algos, choices = algos)
-  }
 
   assertString(title, null.ok = TRUE)
   assertString(subtitle, null.ok = TRUE)
