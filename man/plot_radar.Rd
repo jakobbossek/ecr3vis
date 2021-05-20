@@ -2,7 +2,7 @@
 % Please edit documentation in R/vis.radar.R
 \name{plot_radar}
 \alias{plot_radar}
-\title{Plot radar plot}
+\title{Radar plot}
 \usage{
 plot_radar(df, obj.cols = c("y1", "y2", "y3"))
 }
@@ -37,6 +37,7 @@ pp. 225-245, April 2015, doi: 10.1109/TEVC.2014.2313407
 }
 \seealso{
 Other visualization: 
+\code{\link{plot_eaf}()},
 \code{\link{plot_heatmap}()},
 \code{\link{plot_pcp}()},
 \code{\link{plot_scatter3d}()}

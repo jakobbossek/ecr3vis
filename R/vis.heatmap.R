@@ -1,4 +1,4 @@
-#' @title Heatmap visualization
+#' @title Heatmap
 #'
 #' @description Visualize a Pareto-front approximation by means of a heatmap.
 #' Here, on the x-axis the objectives are given in the order provided by

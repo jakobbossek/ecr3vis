@@ -6,6 +6,7 @@
 #' @import plot3Drgl
 #' @import plotly
 #' @import viridis
+#' @importFrom eaf eafs
 #' @importFrom reshape2 melt
 #' @importFrom stats formula
 NULL

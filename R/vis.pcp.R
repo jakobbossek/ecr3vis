@@ -1,4 +1,4 @@
-#' @title Parallel coordinate plot
+#' @title Parallel coordinate plot (PCP)
 #'
 #' @description Visualizes a Pareto-front approximation with parallel coordinate
 #' plots. The x-axis shows the objectives as an ordered factor where the order

@@ -2,7 +2,7 @@
 % Please edit documentation in R/vis.scatter2d.R
 \name{plot_scatter2d}
 \alias{plot_scatter2d}
-\title{Visualize bi-objective Pareto-front approximations.}
+\title{2D scatter plot}
 \usage{
 plot_scatter2d(
   df,

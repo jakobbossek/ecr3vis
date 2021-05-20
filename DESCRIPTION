@@ -21,7 +21,8 @@ Imports:
     plotly,
     scatterplot3d,
     reshape2,
-    viridis
+    viridis,
+    eaf
 Suggests:
     testthat (>= 0.9.1),
     knitr

@@ -2,7 +2,7 @@
 % Please edit documentation in R/vis.scatter3d.R
 \name{plot_scatter3d}
 \alias{plot_scatter3d}
-\title{Visualize three-objective Pareto-front approximations.}
+\title{3D scatter plot}
 \usage{
 plot_scatter3d(
   df,
@@ -43,6 +43,7 @@ the function generates 3D scatterplots of the obtained Pareto-front approximatio
 }
 \seealso{
 Other visualization: 
+\code{\link{plot_eaf}()},
 \code{\link{plot_heatmap}()},
 \code{\link{plot_pcp}()},
 \code{\link{plot_radar}()}

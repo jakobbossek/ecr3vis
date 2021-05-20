@@ -2,7 +2,7 @@
 % Please edit documentation in R/vis.heatmap.R
 \name{plot_heatmap}
 \alias{plot_heatmap}
-\title{Heatmap visualization}
+\title{Heatmap}
 \usage{
 plot_heatmap(df, obj.cols = c("y1", "y2"))
 }
@@ -31,6 +31,7 @@ pp. 225-245, April 2015, doi: 10.1109/TEVC.2014.2313407
 }
 \seealso{
 Other visualization: 
+\code{\link{plot_eaf}()},
 \code{\link{plot_pcp}()},
 \code{\link{plot_radar}()},
 \code{\link{plot_scatter3d}()}
