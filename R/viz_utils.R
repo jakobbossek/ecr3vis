@@ -1,3 +1,6 @@
+# DATA TRANSFORMATION / PREPROCESSING
+# ===
+
 # Sanity checks and preprocessing for PF-visualization
 #
 # @param df [\code{data.frame()}]\cr
@@ -33,5 +36,31 @@ prepare_pf_for_visualization = function(df, obj.cols, n.obj = NULL) {
     df$repl = as.factor(1L)
 
   df$repl = as.factor(df$repl)
+  return(df)
+}
+
+# @title Convert a pf approximation into ggplot-friendly format
+#
+# @param df [\code{data.frame}]\cr
+#  Pareto-front approximation with columns \code{obj.cols} and optionl further
+#  columns.
+# @param obj.cols [\code{character}]\cr
+#  Names of objective columns.
+# @param solutions.as.factor [\code{logical(1)}]\cr
+#  If \code{TRUE}, solutions are numbered consecutively as they appear in
+#  \code{df}.
+#  Default is \code{FALSE}.
+# @return [\code{data.frame}] \code{df} in long format with factor column
+#  \dQuote{objective} and numeric column \dQuote{value}.
+to_long_with_objective_column = function(df, obj.cols, solution.as.factor = FALSE) {
+  df$nr = 1:nrow(df) # needed for grouping
+  if (solution.as.factor)
+    df$nr = factor(df$nr, ordered = TRUE)
+  df = reshape2::melt(
+    data = df,
+    id.vars = setdiff(colnames(df), obj.cols),
+    value.name = "value",
+    variable.name = "objective")
+  df$objective = factor(df$objective, levels = obj.cols, ordered = TRUE)
   return(df)
 }
