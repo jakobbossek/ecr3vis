@@ -15,6 +15,7 @@ Depends:
     re (>= 1.0)
 Imports:
     checkmate (>= 1.1),
+    Rcpp (>= 0.12.16),
     ggplot2 (>= 1.0.0),
     plot3D,
     plot3Drgl,
@@ -27,6 +28,7 @@ Suggests:
     testthat (>= 0.9.1),
     knitr
 ByteCompile: yes
+LinkingTo: Rcpp
 LazyData: yes
 RoxygenNote: 7.1.1
 VignetteBuilder: knitr

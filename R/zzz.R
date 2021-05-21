@@ -9,4 +9,6 @@
 #' @importFrom eaf eafs
 #' @importFrom reshape2 melt
 #' @importFrom stats formula
+#' @importFrom Rcpp sourceCpp
+#' @useDynLib ecr3vis, .registration = TRUE
 NULL
