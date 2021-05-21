@@ -43,6 +43,7 @@ Algorithm: NSGA-II. IEEE Transactions on Evolutionary Computation, 6 (8) (2002),
 Other mootools: 
 \code{\link{dominated}()},
 \code{\link{dominates}()},
+\code{\link{gd}()},
 \code{\link{get_nadir}()},
 \code{\link{set_dominates}()},
 \code{\link{which_dominated}()}

@@ -28,6 +28,7 @@ points, e.g., multiple approximation sets.
 Other mootools: 
 \code{\link{dominated}()},
 \code{\link{dominates}()},
+\code{\link{gd}()},
 \code{\link{nds}()},
 \code{\link{set_dominates}()},
 \code{\link{which_dominated}()}
