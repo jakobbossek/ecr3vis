@@ -10,7 +10,7 @@
 #'   atomic values or \dQuote{list} for any other complex R objects, e.g., matrices,
 #'   lists etc.
 #'   Note that internally \code{c("iter" = "numeric")} is attached automatically
-#'   and \code{iter} must be passed to \code{|link{update_logger}} in subsequent
+#'   and \code{iter} must be passed to \code{|link{log_update}} in subsequent
 #'   calls.
 #' @param init.size [\code{integer(1)}]\cr
 #'   Initial size of the log.
@@ -20,27 +20,27 @@
 #'   is not.
 #' @param to [\code{character(1)}]\cr
 #'   File path to log-directory.
-#'   If not \code{NULL}, each call to \code{update_logger} stores the serialized
+#'   If not \code{NULL}, each call to \code{log_update} stores the serialized
 #'   state in file \dQuote{<to>/<iteration>.rds}.
 #' @return [\code{enviroment}] Logger environment.
 #' @examples
-#' log = init_logger(c("P" = "list", "f" = "list", "C" = "character"), init.size = 5L, at = c(1, 3))
+#' log = log_init(c("P" = "list", "f" = "list", "C" = "character"), init.size = 5L, at = c(1, 3))
 #'
-#' # note that div is not subject to logging since it was not specified in init_logger
-#' update_logger(log, P = matrix(runif(10), ncol = 2L), C = "a", f = runif(10), iter = 1, div = letters[1:3])
-#' update_logger(log, P = matrix(runif(10), ncol = 2L), C = "b", f = runif(10), iter = 2, div = letters[1:3])
-#' update_logger(log, P = matrix(runif(10), ncol = 2L), C = "a", f = runif(10), iter = 3, div = letters[1:3])
+#' # note that div is not subject to logging since it was not specified in log_init
+#' log_update(log, P = matrix(runif(10), ncol = 2L), C = "a", f = runif(10), iter = 1, div = letters[1:3])
+#' log_update(log, P = matrix(runif(10), ncol = 2L), C = "b", f = runif(10), iter = 2, div = letters[1:3])
+#' log_update(log, P = matrix(runif(10), ncol = 2L), C = "a", f = runif(10), iter = 3, div = letters[1:3])
 #' print(log$df)
-#' @seealso update_logger
+#' @seealso log_update
 #' @export
-init_logger = function(what, init.size, at = NULL, to = NULL) {
+log_init = function(what, init.size, at = NULL, to = NULL) {
   checkmate::assert_character(names(what), min.len = 1L, min.chars = 1L, any.missing = FALSE, all.missing = FALSE)
   checkmate::assert_subset(what, choices = c("integer", "numeric", "character", "list"))
   checkmate::assert_integerish(at, lower = 0L, any.missing = FALSE, all.missing = FALSE, null.ok = TRUE)
   !(is.null(to)) && checkmate::test_path_for_output(to, overwrite = TRUE)
 
   if ("iter" %in% names(what))
-    re::stopf("[evoprob::init_logger] Name 'iter' must not be used as a name in list 'what' since it is appended automatically.")
+    re::stopf("[evoprob::log_init] Name 'iter' must not be used as a name in list 'what' since it is appended automatically.")
 
   log = new.env()
   # NOTE: iteration must be logged in any case (mention in description)
@@ -71,10 +71,10 @@ init_logger = function(what, init.size, at = NULL, to = NULL) {
 #' @description Store stuff in logger object.
 #'
 #' @param log [\code{enviroment}]\cr
-#'   Logger initialized with \code{\link{init_logger}}.
+#'   Logger initialized with \code{\link{log_init}}.
 #' @param log.stuff [\code{list}]\cr
 #'   Named list of objects.
-#'   The subset specified by argument names of parameter \code{what} of \code{\link{init_logger}}
+#'   The subset specified by argument names of parameter \code{what} of \code{\link{log_init}}
 #'   will be stored.
 #' @param ... [any]\cr
 #'   Variable argument list as another possibility to pass objects.
@@ -82,15 +82,15 @@ init_logger = function(what, init.size, at = NULL, to = NULL) {
 #'   have precdence, i.e., objects in \code{log.stuff} are owerwritten by objects
 #'   named equally in the dot-args list.
 #' @return Nothing. The function modifies \code{log} in-place.
-#' @seealso init_logger
+#' @seealso log_init
 #' @export
-update_logger = function(log, log.stuff = list(), ...) {
+log_update = function(log, log.stuff = list(), ...) {
   log.stuff = re::insert(log.stuff, list(...))
   log.names = names(log.stuff)
 
   # sanity checks
   if (!re::is.subset(log$what.names, log.names))
-    re::stopf("[evoprob::update_logger] Logger is ought to log fields '%s', but no matching arguments were passed to update_logger.",
+    re::stopf("[evoprob::log_update] Logger is ought to log fields '%s', but no matching arguments were passed to log_update.",
       re::collapse(setdiff(log$what.names, log.names), sep = ", "))
 
   should_log = function(iter) {
@@ -100,7 +100,7 @@ update_logger = function(log, log.stuff = list(), ...) {
   iter = log.stuff$iter
 
   if (log$curline == log$size)
-    re::stopf("[evoprob::update_logger] Logger overflow! Resizing not yet implemented.")
+    re::stopf("[evoprob::log_update] Logger overflow! Resizing not yet implemented.")
 
   # reduce to wanted stuff
   log.stuff = log.stuff[log$what.names]
