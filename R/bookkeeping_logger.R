@@ -10,7 +10,7 @@
 #'   atomic values or \dQuote{list} for any other complex R objects, e.g., matrices,
 #'   lists etc.
 #'   Note that internally \code{c("iter" = "numeric")} is attached automatically
-#'   and \code{iter} must be passed to \code{|link{log_update}} in subsequent
+#'   and \code{iter} must be passed to \code{\link{log_update}} in subsequent
 #'   calls.
 #' @param init.size [\code{integer(1)}]\cr
 #'   Initial size of the log.

@@ -24,8 +24,8 @@ Percentiles of the EAF that will be plotted as attainment surfaces.}
 ...
 }
 \references{
-[1] V. Grunert da Fonseca and C. M. Fonseca, “The attainment-function approach
-to stochastic multiobjective optimizer assessment and comparison,” in
+[1] V. Grunert da Fonseca and C. M. Fonseca, "The attainment-function approach
+to stochastic multiobjective optimizer assessment and comparison," in
 Experimental Methods for the Analysis of Optimization Algorithms
 (T. Bartz-Beielstein, M. Chiarandini, L. Paquete, and M. Preuss, eds.),
 ch. 5, pp. 103-130, Springer Berlin Heidelberg, 2010.

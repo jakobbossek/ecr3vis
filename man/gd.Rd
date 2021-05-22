@@ -3,12 +3,15 @@
 \name{gd}
 \alias{gd}
 \alias{igd}
+\alias{gdp}
 \alias{igdp}
 \title{(Modified) (Inverted) Generational distance.}
 \usage{
 gd(x, ref.points, p = 2)
 
 igd(x, ref.points, p = 2)
+
+gdp(x, ref.points, p = 2)
 
 igdp(x, ref.points, p = 2)
 }
@@ -27,23 +30,23 @@ Parameter \eqn{p} (see description).}
 }
 \description{
 The generational distance (GD) measure the distance of a point set
-\eqn{X} = \{r_1, \ldots, r_{|R|}\}, e.g., a Pareto-front approximation, to
+\eqn{X = \{r_1, \ldots, r_{|X|}\}}, e.g., a Pareto-front approximation, to
 a reference set \eqn{R = \{r_1, \ldots, r_{|R|}\}}. Then GD is defined as
-\eqn{
+\deqn{
  GD_p(A, R) = \frac{1}{|X|} \left(\sum_{i=1}^{|X|} d_i^p\right)^{1/p}
 }
 where \eqn{d_i} is the Euclidean distance of point \eqn{x_i \in X} to
 its nearest neigbor point in \eqn{R}. The inverted generational distance works
 the other way around, i.e.
-\eqn{
+\deqn{
  IGD_p(A, R) = \frac{1}{|R|} \left(\sum_{i=1}^{|R|} \hat{d}_i^p\right)^{1/p}
 }
 where \eqn{\hat{d}_i} is the respective nearest neighbor distance of \eqn{r_i}
 to any point in \eqn{X}. Put differently, \eqn{IGD_p(A, R) = GD_p(R, A)}.
 Functions \code{gd} and \code{igd} calcute these versions.
 
-Stützle et al. [2] proposed a slight modification:
-\eqn{
+Schütze et al. [2] proposed a slight modification:
+\deqn{
  GD_p(A, R) = \left(\frac{1}{|X|} \sum_{i=1}^{|X|} d_i^p\right)^{1/p}
 }
 where the average is taken before the power operation. \eqn{IGD} is apdated
@@ -53,18 +56,18 @@ analogeously. This versions are calclated by \code{gd} and \code{igd} if argumen
 Ishibushi et al. [3] proposed another modification which works on the
 formulation by Schütze et al. (see above). They modified the distance
 calculation:
-\eqn{
+\deqn{
  GD_p^{+}(A, R) = \left(\frac{1}{|X|} \sum_{i=1}^{|X|} d^{+^p}_i\right)^{1/p}
 }
 where \eqn{d_i^{+} = \max\{x_i, z_i\}}. This version can be calculated
-with function \code{igdp} (the trailing p stands for \dQuote{plus}).
+with function \code{gdp} (the trailing p stands for \dQuote{plus}).
 }
 \references{
 [1] David A. Van Veldhuizen and David A. Van Veldhuizen. Multiobjective
 evolutionary algorithms: classifications, analyses, and new innovations.
 Technical Report, Evolutionary Computation, 1999.
 
-[2] Schütze, O., Esquivel, X.,Lara,A. ,Coello, C.A.C.: Using the averaged
+[2] Schütze, O., Esquivel, X.,Lara,A. ,Coello, C.A.C.: Using the averaged
 Hausdorff distance as a performance measure in evolutionary multiobjective
 optimization. IEEE Transactions on Evolutionary Computation 16, 504–522 (2012).
 

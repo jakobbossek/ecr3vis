@@ -41,6 +41,12 @@ Given a data frame with the results of (multiple) runs of (multiple)
 different three-objective optimization algorithms on (multiple) problem instances
 the function generates 3D scatterplots of the obtained Pareto-front approximations.
 }
+\references{
+[1] T. Tušar and B. Filipič, "Visualization of Pareto Front Approximations in
+Evolutionary Multiobjective Optimization: A Critical Review and the Prosection
+Method," in IEEE Transactions on Evolutionary Computation, vol. 19, no. 2,
+pp. 225-245, April 2015, doi: 10.1109/TEVC.2014.2313407
+}
 \seealso{
 Other visualization: 
 \code{\link{plot_eaf}()},

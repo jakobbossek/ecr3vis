@@ -15,7 +15,7 @@ values are stored as. Possible values are \dQuote{integer}, \dQuote{numeric},
 atomic values or \dQuote{list} for any other complex R objects, e.g., matrices,
 lists etc.
 Note that internally \code{c("iter" = "numeric")} is attached automatically
-and \code{iter} must be passed to \code{|link{log_update}} in subsequent
+and \code{iter} must be passed to \code{\link{log_update}} in subsequent
 calls.}
 
 \item{init.size}{[\code{integer(1)}]\cr

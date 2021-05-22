@@ -30,8 +30,7 @@ SEXP gd_c(SEXP rA, SEXP rB, SEXP rp) {
     for (unsigned int j = 0; j < n_B; ++j) {
       double d = 0.0;
       for (unsigned int k = 0; k < d_A; ++k) {
-        double m = (A[k, i] - B[k, j]);
-        d += m * m;
+        d += (A[k, i] - B[k, j]) * (A[k, i] - B[k, j]);
       }
       d = sqrt(d);
       if (d < d_min) {
@@ -70,17 +69,20 @@ SEXP gdp_c(SEXP rA, SEXP rB, SEXP rp) {
       double d = 0.0;
       for (unsigned int k = 0; k < d_A; ++k) {
         // here, the modified distance calculation takes place
-        double m = (A[k, i] - B[k, j]) ? (A[k, i] - B[k, j]) : (0);
-        d += m * m;
+        double m = 0;
+        if ((A[k, i] - B[k, j]) > 0) {
+          m = A[k, i] - B[k, j];
+        } else {
+          m = 0;
+        }
       }
       d = sqrt(d);
-      if (d < d) {
+      if (d < dplus_min) {
         dplus_min = d;
       }
     }
     gd[0] += pow(dplus_min, p);
   }
-  //FIXME: there is also a version with pow(gd / n, 1.0 / p)
   gd[0] = pow(gd[0] / n_A, 1.0 / p);
 
   // free memory and return

@@ -6,6 +6,7 @@
 #' cells indicates the objective value of the respective (objective, solution)
 #' pair. Works with any kind of objectives.
 #'
+#' @references
 #' [1] T. Tušar and B. Filipič, "Visualization of Pareto Front Approximations in
 #' Evolutionary Multiobjective Optimization: A Critical Review and the Prosection
 #' Method," in IEEE Transactions on Evolutionary Computation, vol. 19, no. 2,

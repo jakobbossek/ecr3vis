@@ -5,6 +5,7 @@
 #' is determined by the \code{obj.cols} argument. On the y-axis objective values are
 #' shown colored by solution as lines. Suitable for any number of objectives.
 #'
+#' @references
 #' [1] T. Tušar and B. Filipič, "Visualization of Pareto Front Approximations in
 #' Evolutionary Multiobjective Optimization: A Critical Review and the Prosection
 #' Method," in IEEE Transactions on Evolutionary Computation, vol. 19, no. 2,
