@@ -22,7 +22,7 @@
 #' \deqn{
 #'  GD_p(A, R) = \left(\frac{1}{|X|} \sum_{i=1}^{|X|} d_i^p\right)^{1/p}
 #' }
-#' where the average is taken before the power operation. \eqn{IGD} is apdated
+#' where the average is taken before the power operation. \eqn{IGD_p} is apdated
 #' analogeously. This versions are calclated by \code{gd} and \code{igd} if argument
 #' \code{modified} is set \code{TRUE}.
 #'
@@ -34,6 +34,12 @@
 #' }
 #' where \eqn{d_i^{+} = \max\{x_i, z_i\}}. This version can be calculated
 #' with function \code{gdp} (the trailing p stands for \dQuote{plus}).
+#'
+#' Eventuelly, function \code{ahd} calculates the Average Hausdorff distance [2]
+#' which combines GD and IGD and is defined as
+#' \deqn{
+#'  \delta_p(A, R) = \max\{GD_p(A, R), IGD_p(A, R)\}.
+#' }
 #'
 #' @references
 #' [1] David A. Van Veldhuizen and David A. Van Veldhuizen. Multiobjective
@@ -53,49 +59,60 @@
 #'
 #' @param x [\code{matrix}]\cr
 #'   Point set in column major format.
-#' @param ref.points [\code{ref.points}]\cr
+#' @param y [\code{matrix}]\cr
 #'   Reference point set in column major format.
 #' @param p [\code{numeric(1)}]\cr
 #'   Parameter \eqn{p} (see description).
+#' @param modified [\code{logical(1)}]\cr
+#'   Should the modified GD/IGD calculation by Schuetze et al. [2] be used?
+#'   Default is \code{TRUE}.
 #' @return [\code{numeric(1)}] Scalar indicator value.
 #'
 #' @keywords optimize
 #' @family mootools
 #' @rdname gd
 #' @export
-gd = function(x, ref.points, p = 2) {
+gd = function(x, y, p = 2, modified = TRUE) {
   checkmate::assert_matrix(x, mode = "numeric", min.rows = 2L, min.cols = 1L, any.missing = FALSE, all.missing = FALSE)
-  checkmate::assert_matrix(ref.points, mode = "numeric", min.rows = 2L, min.cols = 1L, any.missing = FALSE, all.missing = FALSE)
+  checkmate::assert_matrix(y, mode = "numeric", min.rows = 2L, min.cols = 1L, any.missing = FALSE, all.missing = FALSE)
   checkmate::assert_number(p, lower = 1, na.ok = FALSE)
+  checkmate::assert_flag(modified)
 
-  if (nrow(x) != nrow(ref.points))
+  if (nrow(x) != nrow(y))
     re::stopf("[gd] Both point sets must have the same dimension.")
 
-  .Call("gd_c", x, ref.points, p)
+  .Call("_ecr3vis_gd_c", x, y, p, modified)
 }
 
 #' @rdname gd
 #' @export
-igd = function(x, ref.points, p = 2) {
-  gd(ref.points, x, p)
+igd = function(x, y, p = 2, modified = TRUE) {
+  gd(y, x, p, modified)
 }
 
 #' @rdname gd
 #' @export
-gdp = function(x, ref.points, p = 2) {
+gdp = function(x, y, p = 2, modified = TRUE) {
   checkmate::assert_matrix(x, mode = "numeric", min.rows = 2L, min.cols = 1L, any.missing = FALSE, all.missing = FALSE)
-  checkmate::assert_matrix(ref.points, mode = "numeric", min.rows = 2L, min.cols = 1L, any.missing = FALSE, all.missing = FALSE)
+  checkmate::assert_matrix(y, mode = "numeric", min.rows = 2L, min.cols = 1L, any.missing = FALSE, all.missing = FALSE)
   checkmate::assert_number(p, lower = 1, na.ok = FALSE)
 
-  if (nrow(x) != nrow(ref.points))
+  if (nrow(x) != nrow(y))
     re::stopf("[gdp] Both point sets must have the same dimension.")
 
-  .Call("gdp_c", x, ref.points, p)
+  .Call("_ecr3vis_gdp_c", x, y, p, modified)
 }
 
 #' @rdname gd
 #' @export
-igdp = function(x, ref.points, p = 2) {
-  gdp(ref.points, x, p)
+igdp = function(x, y, p = 2) {
+  gdp(y, x, p)
 }
 
+#' @rdname gd
+#' @export
+ahd = function(x, y, p = 2, modified = TRUE) {
+  gd = gd(x, y, p, modified)
+  igd = igd(y, x, p, modified)
+  max(gd, igd)
+}

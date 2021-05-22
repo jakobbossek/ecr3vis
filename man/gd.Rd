@@ -5,25 +5,32 @@
 \alias{igd}
 \alias{gdp}
 \alias{igdp}
+\alias{ahd}
 \title{(Modified) (Inverted) Generational distance.}
 \usage{
-gd(x, ref.points, p = 2)
+gd(x, y, p = 2, modified = TRUE)
 
-igd(x, ref.points, p = 2)
+igd(x, y, p = 2, modified = TRUE)
 
-gdp(x, ref.points, p = 2)
+gdp(x, y, p = 2, modified = TRUE)
 
-igdp(x, ref.points, p = 2)
+igdp(x, y, p = 2)
+
+ahd(x, y, p = 2, modified = TRUE)
 }
 \arguments{
 \item{x}{[\code{matrix}]\cr
 Point set in column major format.}
 
-\item{ref.points}{[\code{ref.points}]\cr
+\item{y}{[\code{matrix}]\cr
 Reference point set in column major format.}
 
 \item{p}{[\code{numeric(1)}]\cr
 Parameter \eqn{p} (see description).}
+
+\item{modified}{[\code{logical(1)}]\cr
+Should the modified GD/IGD calculation by Schuetze et al. [2] be used?
+Default is \code{TRUE}.}
 }
 \value{
 [\code{numeric(1)}] Scalar indicator value.
@@ -49,7 +56,7 @@ Schütze et al. [2] proposed a slight modification:
 \deqn{
  GD_p(A, R) = \left(\frac{1}{|X|} \sum_{i=1}^{|X|} d_i^p\right)^{1/p}
 }
-where the average is taken before the power operation. \eqn{IGD} is apdated
+where the average is taken before the power operation. \eqn{IGD_p} is apdated
 analogeously. This versions are calclated by \code{gd} and \code{igd} if argument
 \code{modified} is set \code{TRUE}.
 
@@ -61,6 +68,12 @@ calculation:
 }
 where \eqn{d_i^{+} = \max\{x_i, z_i\}}. This version can be calculated
 with function \code{gdp} (the trailing p stands for \dQuote{plus}).
+
+Eventuelly, function \code{ahd} calculates the Average Hausdorff distance [2]
+which combines GD and IGD and is defined as
+\deqn{
+ \delta_p(A, R) = \max\{GD_p(A, R), IGD_p(A, R)\}.
+}
 }
 \references{
 [1] David A. Van Veldhuizen and David A. Van Veldhuizen. Multiobjective
