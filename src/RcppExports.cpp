@@ -35,6 +35,7 @@ END_RCPP
 }
 
 RcppExport SEXP dominated_c(SEXP);
+RcppExport SEXP eps_c(SEXP, SEXP);
 RcppExport SEXP hv_c(SEXP, SEXP);
 RcppExport SEXP hv_contr_c(SEXP, SEXP);
 RcppExport SEXP nds_c(SEXP);
@@ -43,6 +44,7 @@ static const R_CallMethodDef CallEntries[] = {
     {"_ecr3vis_gd_c", (DL_FUNC) &_ecr3vis_gd_c, 4},
     {"_ecr3vis_gdp_c", (DL_FUNC) &_ecr3vis_gdp_c, 4},
     {"dominated_c",    (DL_FUNC) &dominated_c,    1},
+    {"eps_c",          (DL_FUNC) &eps_c,          2},
     {"hv_c",           (DL_FUNC) &hv_c,           2},
     {"hv_contr_c",     (DL_FUNC) &hv_contr_c,     2},
     {"nds_c",          (DL_FUNC) &nds_c,          1},

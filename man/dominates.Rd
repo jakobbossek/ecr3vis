@@ -41,7 +41,7 @@ Other pareto-dominance:
 
 Other mootools: 
 \code{\link{dominated}()},
-\code{\link{gd}()},
+\code{\link{eps}()},
 \code{\link{get_nadir}()},
 \code{\link{nds}()},
 \code{\link{set_dominates}()},

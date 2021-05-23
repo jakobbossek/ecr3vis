@@ -29,7 +29,7 @@ Other pareto-dominance:
 Other mootools: 
 \code{\link{dominated}()},
 \code{\link{dominates}()},
-\code{\link{gd}()},
+\code{\link{eps}()},
 \code{\link{get_nadir}()},
 \code{\link{nds}()},
 \code{\link{which_dominated}()}

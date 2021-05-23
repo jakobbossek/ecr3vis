@@ -54,8 +54,7 @@
  *   Value in {0 = "additive", 1 = "multiplicative"}
  * @return double
  */
-//JB: FIXME: rename the poorly named vars
-static double emoaIndEps(
+static double eps(
   double *a, const size_t n_a,
   double *b, const size_t n_b,
   const size_t dim, unsigned int method) {
@@ -106,12 +105,12 @@ static double emoaIndEps(
  *   R matrix (each column contains one point of the reference set).
  * @return [numeric(1)] Unary epsilon-indicator value.
  */
-SEXP emoaIndEpsC(SEXP points, SEXP ref_points) {
+SEXP eps_c(SEXP points, SEXP ref_points) {
   // get that stuff from R
   EXTRACT_NUMERIC_MATRIX(points, c_points, n_objectives, n_points);
   EXTRACT_NUMERIC_MATRIX(ref_points, c_ref_points, n_ref_objectives, n_ref_points);
 
-  double eps_ind = emoaIndEps(
+  double eps_ind = eps(
     c_ref_points, n_ref_points,
     c_points, n_points,
     n_objectives,

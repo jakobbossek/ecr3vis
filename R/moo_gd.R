@@ -105,8 +105,8 @@ gdp = function(x, y, p = 2, modified = TRUE) {
 
 #' @rdname gd
 #' @export
-igdp = function(x, y, p = 2) {
-  gdp(y, x, p)
+igdp = function(x, y, p = 2, modified = TRUE) {
+  gdp(y, x, p, modified)
 }
 
 #' @rdname gd
