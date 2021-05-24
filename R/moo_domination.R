@@ -23,6 +23,7 @@ dominates = function(x, y) {
 }
 
 #' @rdname dominates
+#' @export
 does_dominate = function(x, y) {
   dominates(x, y)
 }

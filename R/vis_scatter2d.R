@@ -51,24 +51,8 @@
 #'   E.g., \code{nrow} to change layout.
 #'   Default is the empty list. In this case data is grouped by problem.
 #' @return [\code{\link[ggplot2]{ggplot}}] A ggplot object.
-#' @family EMOA performance assessment tools
-#' @examples
-#' \dontrun{
-#' # load examplary data
-#' data(mcMST)
-#' print(head(mcMST))
-#'
-#' # no customization; use the defaults
-#' g = plotFronts(mcMST)
-#'
-#' # algo PRIM is obtained by weighted sum scalarization
-#' # Since the front is (mainly) convex we highlight these solutions
-#' g = plotFronts(mcMST, highlight.algos = "PRIM")
-#'
-#' # customize layout
-#' g = plotFronts(mcMST, title = "Pareto-approximations",
-#'   subtitle = "based on different mcMST algorithms.", facet.args = list(nrow = 2))
-#' }
+#' @family mootools
+#' @family visualization
 #' @export
 plot_scatter2d = function(
   df,

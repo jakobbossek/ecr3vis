@@ -44,3 +44,25 @@ that the reference point dominates all of the points in the reference set.
 In case at least one objective is to be maximized the matrix \code{x} needs
 to be transformed accordingly in advance.
 }
+\seealso{
+Other mootools: 
+\code{\link{dominated}()},
+\code{\link{dominates}()},
+\code{\link{eps}()},
+\code{\link{gd}()},
+\code{\link{get_nadir}()},
+\code{\link{nds}()},
+\code{\link{plot_eaf}()},
+\code{\link{plot_heatmap}()},
+\code{\link{plot_pcp}()},
+\code{\link{plot_radar}()},
+\code{\link{plot_scatter2d}()},
+\code{\link{plot_scatter3d}()},
+\code{\link{set_dominates}()},
+\code{\link{which_dominated}()}
+
+Other multi-objective performance indicators: 
+\code{\link{eps}()}
+}
+\concept{mootools}
+\concept{multi-objective performance indicators}

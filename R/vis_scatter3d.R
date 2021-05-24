@@ -25,6 +25,7 @@
 #' @param ... [any]\cr
 #'   Further arguments passed down to scatterplot function.
 #' @return Nothing
+#' @family mootools
 #' @family visualization
 #' @export
 plot_scatter3d = function(

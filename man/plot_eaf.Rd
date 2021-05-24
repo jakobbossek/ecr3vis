@@ -37,10 +37,28 @@ Experimental Methods for the Analysis of Optimization Algorithms,
 pages 209–222. Springer, Berlin, Germany, 2010. doi: 10.1007/978-3-642-02538-9_9
 }
 \seealso{
+Other mootools: 
+\code{\link{dominated}()},
+\code{\link{dominates}()},
+\code{\link{eps}()},
+\code{\link{gd}()},
+\code{\link{get_nadir}()},
+\code{\link{hv}()},
+\code{\link{nds}()},
+\code{\link{plot_heatmap}()},
+\code{\link{plot_pcp}()},
+\code{\link{plot_radar}()},
+\code{\link{plot_scatter2d}()},
+\code{\link{plot_scatter3d}()},
+\code{\link{set_dominates}()},
+\code{\link{which_dominated}()}
+
 Other visualization: 
 \code{\link{plot_heatmap}()},
 \code{\link{plot_pcp}()},
 \code{\link{plot_radar}()},
+\code{\link{plot_scatter2d}()},
 \code{\link{plot_scatter3d}()}
 }
+\concept{mootools}
 \concept{visualization}

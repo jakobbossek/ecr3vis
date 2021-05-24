@@ -32,8 +32,16 @@ Other pareto-dominance:
 Other mootools: 
 \code{\link{dominates}()},
 \code{\link{eps}()},
+\code{\link{gd}()},
 \code{\link{get_nadir}()},
+\code{\link{hv}()},
 \code{\link{nds}()},
+\code{\link{plot_eaf}()},
+\code{\link{plot_heatmap}()},
+\code{\link{plot_pcp}()},
+\code{\link{plot_radar}()},
+\code{\link{plot_scatter2d}()},
+\code{\link{plot_scatter3d}()},
 \code{\link{set_dominates}()},
 \code{\link{which_dominated}()}
 }

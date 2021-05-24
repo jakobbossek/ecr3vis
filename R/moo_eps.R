@@ -10,14 +10,14 @@
 #'
 #' @keywords optimize
 #' @family mootools
-#' @rdname gd
+#' @family multi-objective performance indicators
 #' @export
 eps = function(x, y) {
-    # sanity checks
-    checkmate::assert_matrix(x, mode = "numeric", min.rows = 2L, min.cols = 2L, any.missing = FALSE, all.missing = FALSE)
-    checkmate::assert_matrix(y, mode = "numeric", min.rows = 2L, min.cols = 2L, any.missing = FALSE, all.missing = FALSE)
-    if (nrow(x) != nrow(y))
-      re::stopf("[eps] Point sets x and y must have the same number of rows.")
+  # sanity checks
+  checkmate::assert_matrix(x, mode = "numeric", min.rows = 2L, min.cols = 2L, any.missing = FALSE, all.missing = FALSE)
+  checkmate::assert_matrix(y, mode = "numeric", min.rows = 2L, min.cols = 2L, any.missing = FALSE, all.missing = FALSE)
+  if (nrow(x) != nrow(y))
+    re::stopf("[eps] Point sets x and y must have the same number of rows.")
 
-    return(.Call("eps_c", x, y))
-  }
+  return(.Call("eps_c", x, y))
+}

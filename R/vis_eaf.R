@@ -20,6 +20,7 @@
 #' @param percentiles [\code{numeric}]\cr
 #'   Percentiles of the EAF that will be plotted as attainment surfaces.
 #' @return [\code{\link[ggplot2]{ggplot}}] ggplot object.
+#' @family mootools
 #' @family visualization
 #' @export
 plot_eaf = function(

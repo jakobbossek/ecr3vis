@@ -3,6 +3,7 @@
 export("%dominates%")
 export("%is_dominated%")
 export(ahd)
+export(does_dominate)
 export(dominated)
 export(dominates)
 export(eps)

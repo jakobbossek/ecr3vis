@@ -29,6 +29,8 @@
 #'  \code{hv} and the dominated hypervolume contributions
 #'  for each point in the case of \code{hv_contr}.
 #' @rdname hypervolume
+#' @family mootools
+#' @family multi-objective performance indicators
 #' @export
 #FIXME: add offset as in hv_contr?
 hv = function(x, ref.point = NULL, ...) {

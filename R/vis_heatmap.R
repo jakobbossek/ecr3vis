@@ -15,6 +15,7 @@
 #' @template arg_df
 #' @template arg_obj_cols
 #' @return [\code{\link[ggplot2]{ggplot}}] ggplot object.
+#' @family mootools
 #' @family visualization
 #' @export
 plot_heatmap = function(
