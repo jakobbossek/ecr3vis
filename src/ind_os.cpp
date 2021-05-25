@@ -4,7 +4,7 @@
 
 using namespace Rcpp;
 
-/* Generational distance (GD)
+/* Overall (Pareto) spread (OS)
  *
  * @param A [matrix]
  *   Matrix of points (column-wise).
@@ -12,7 +12,7 @@ using namespace Rcpp;
  *   Nadir point (or approximation).
  * @param ip [numeric}]
  *   Ideal point (or approximation).
- * @return [numeric(1)] Overall Pareto spred.
+ * @return [numeric(1)] Overall (Pareto) spred.
 **/
 
 // [[Rcpp::export]]

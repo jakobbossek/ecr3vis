@@ -42,6 +42,7 @@ Other pareto-dominance:
 \code{\link{set_dominates}()}
 
 Other mootools: 
+\code{\link{cov}()},
 \code{\link{dominated}()},
 \code{\link{dominates}()},
 \code{\link{eps}()},

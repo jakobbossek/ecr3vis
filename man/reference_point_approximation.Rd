@@ -26,6 +26,7 @@ points, e.g., multiple approximation sets.
 }
 \seealso{
 Other mootools: 
+\code{\link{cov}()},
 \code{\link{dominated}()},
 \code{\link{dominates}()},
 \code{\link{eps}()},

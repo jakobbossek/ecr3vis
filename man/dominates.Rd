@@ -40,6 +40,7 @@ Other pareto-dominance:
 \code{\link{which_dominated}()}
 
 Other mootools: 
+\code{\link{cov}()},
 \code{\link{dominated}()},
 \code{\link{eps}()},
 \code{\link{gd}()},

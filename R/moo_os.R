@@ -34,7 +34,7 @@ os = function(x, np = NULL, ip = NULL) {
   if (is.null(ip))
     ip = get_ideal(x)
 
-  if ((nrow(x) != length(np)) | (nrow(x) != length(y)))
+  if ((nrow(x) != length(np)) | (nrow(x) != length(ip)))
     re::stopf("[os] length of nadir and ideal points must match number of rows of x.")
 
   .Call("_ecr3vis_os_c", x, np, ip)

@@ -32,6 +32,7 @@ pp. 225-245, April 2015, doi: 10.1109/TEVC.2014.2313407
 }
 \seealso{
 Other mootools: 
+\code{\link{cov}()},
 \code{\link{dominated}()},
 \code{\link{dominates}()},
 \code{\link{eps}()},

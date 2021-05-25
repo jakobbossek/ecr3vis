@@ -38,6 +38,7 @@ pages 209–222. Springer, Berlin, Germany, 2010. doi: 10.1007/978-3-642-02538-9
 }
 \seealso{
 Other mootools: 
+\code{\link{cov}()},
 \code{\link{dominated}()},
 \code{\link{dominates}()},
 \code{\link{eps}()},

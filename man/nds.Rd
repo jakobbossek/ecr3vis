@@ -41,6 +41,7 @@ Algorithm: NSGA-II. IEEE Transactions on Evolutionary Computation, 6 (8) (2002),
 }
 \seealso{
 Other mootools: 
+\code{\link{cov}()},
 \code{\link{dominated}()},
 \code{\link{dominates}()},
 \code{\link{eps}()},

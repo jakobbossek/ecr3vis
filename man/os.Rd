@@ -35,6 +35,7 @@ optimization solution set, Journal of Mechanical Design 123 (1) (2001) 18–25.
 }
 \seealso{
 Other mootools: 
+\code{\link{cov}()},
 \code{\link{dominated}()},
 \code{\link{dominates}()},
 \code{\link{eps}()},
@@ -52,6 +53,7 @@ Other mootools:
 \code{\link{which_dominated}()}
 
 Other multi-objective performance indicators: 
+\code{\link{cov}()},
 \code{\link{eps}()},
 \code{\link{gd}()},
 \code{\link{hv}()}

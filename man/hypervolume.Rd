@@ -46,6 +46,7 @@ to be transformed accordingly in advance.
 }
 \seealso{
 Other mootools: 
+\code{\link{cov}()},
 \code{\link{dominated}()},
 \code{\link{dominates}()},
 \code{\link{eps}()},
@@ -63,6 +64,7 @@ Other mootools:
 \code{\link{which_dominated}()}
 
 Other multi-objective performance indicators: 
+\code{\link{cov}()},
 \code{\link{eps}()},
 \code{\link{gd}()},
 \code{\link{os}()}

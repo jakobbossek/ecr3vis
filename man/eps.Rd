@@ -21,6 +21,7 @@ Reference point set in column major format.}
 }
 \seealso{
 Other mootools: 
+\code{\link{cov}()},
 \code{\link{dominated}()},
 \code{\link{dominates}()},
 \code{\link{gd}()},
@@ -38,6 +39,7 @@ Other mootools:
 \code{\link{which_dominated}()}
 
 Other multi-objective performance indicators: 
+\code{\link{cov}()},
 \code{\link{gd}()},
 \code{\link{hv}()},
 \code{\link{os}()}

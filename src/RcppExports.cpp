@@ -5,6 +5,18 @@
 
 using namespace Rcpp;
 
+// cov_c
+double cov_c(NumericMatrix A, NumericMatrix B);
+RcppExport SEXP _ecr3vis_cov_c(SEXP ASEXP, SEXP BSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< NumericMatrix >::type A(ASEXP);
+    Rcpp::traits::input_parameter< NumericMatrix >::type B(BSEXP);
+    rcpp_result_gen = Rcpp::wrap(cov_c(A, B));
+    return rcpp_result_gen;
+END_RCPP
+}
 // os_c
 double os_c(NumericMatrix A, NumericVector np, NumericVector ip);
 RcppExport SEXP _ecr3vis_os_c(SEXP ASEXP, SEXP npSEXP, SEXP ipSEXP) {
@@ -54,6 +66,7 @@ RcppExport SEXP hv_contr_c(SEXP, SEXP);
 RcppExport SEXP nds_c(SEXP);
 
 static const R_CallMethodDef CallEntries[] = {
+    {"_ecr3vis_cov_c", (DL_FUNC) &_ecr3vis_cov_c, 2},
     {"_ecr3vis_os_c", (DL_FUNC) &_ecr3vis_os_c, 3},
     {"_ecr3vis_gd_c", (DL_FUNC) &_ecr3vis_gd_c, 4},
     {"_ecr3vis_gdp_c", (DL_FUNC) &_ecr3vis_gdp_c, 4},
