@@ -98,6 +98,7 @@ Other mootools:
 \code{\link{get_nadir}()},
 \code{\link{hv}()},
 \code{\link{nds}()},
+\code{\link{os}()},
 \code{\link{plot_eaf}()},
 \code{\link{plot_heatmap}()},
 \code{\link{plot_pcp}()},
@@ -106,6 +107,12 @@ Other mootools:
 \code{\link{plot_scatter3d}()},
 \code{\link{set_dominates}()},
 \code{\link{which_dominated}()}
+
+Other multi-objective performance indicators: 
+\code{\link{eps}()},
+\code{\link{hv}()},
+\code{\link{os}()}
 }
 \concept{mootools}
+\concept{multi-objective performance indicators}
 \keyword{optimize}

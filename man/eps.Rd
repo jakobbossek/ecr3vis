@@ -27,6 +27,7 @@ Other mootools:
 \code{\link{get_nadir}()},
 \code{\link{hv}()},
 \code{\link{nds}()},
+\code{\link{os}()},
 \code{\link{plot_eaf}()},
 \code{\link{plot_heatmap}()},
 \code{\link{plot_pcp}()},
@@ -37,7 +38,9 @@ Other mootools:
 \code{\link{which_dominated}()}
 
 Other multi-objective performance indicators: 
-\code{\link{hv}()}
+\code{\link{gd}()},
+\code{\link{hv}()},
+\code{\link{os}()}
 }
 \concept{mootools}
 \concept{multi-objective performance indicators}

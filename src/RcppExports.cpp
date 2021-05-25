@@ -5,6 +5,19 @@
 
 using namespace Rcpp;
 
+// os_c
+double os_c(NumericMatrix A, NumericVector np, NumericVector ip);
+RcppExport SEXP _ecr3vis_os_c(SEXP ASEXP, SEXP npSEXP, SEXP ipSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< NumericMatrix >::type A(ASEXP);
+    Rcpp::traits::input_parameter< NumericVector >::type np(npSEXP);
+    Rcpp::traits::input_parameter< NumericVector >::type ip(ipSEXP);
+    rcpp_result_gen = Rcpp::wrap(os_c(A, np, ip));
+    return rcpp_result_gen;
+END_RCPP
+}
 // gd_c
 double gd_c(NumericMatrix A, NumericMatrix B, double p, bool modified);
 RcppExport SEXP _ecr3vis_gd_c(SEXP ASEXP, SEXP BSEXP, SEXP pSEXP, SEXP modifiedSEXP) {
@@ -41,6 +54,7 @@ RcppExport SEXP hv_contr_c(SEXP, SEXP);
 RcppExport SEXP nds_c(SEXP);
 
 static const R_CallMethodDef CallEntries[] = {
+    {"_ecr3vis_os_c", (DL_FUNC) &_ecr3vis_os_c, 3},
     {"_ecr3vis_gd_c", (DL_FUNC) &_ecr3vis_gd_c, 4},
     {"_ecr3vis_gdp_c", (DL_FUNC) &_ecr3vis_gdp_c, 4},
     {"dominated_c",    (DL_FUNC) &dominated_c,    1},

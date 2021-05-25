@@ -70,6 +70,7 @@
 #'
 #' @keywords optimize
 #' @family mootools
+#' @family multi-objective performance indicators
 #' @rdname gd
 #' @export
 gd = function(x, y, p = 2, modified = TRUE) {

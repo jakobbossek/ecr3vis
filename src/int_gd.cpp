@@ -24,7 +24,7 @@ double gd_c(NumericMatrix A, NumericMatrix B, double p, bool modified) {
   double gd = 0;
 
   for (unsigned int i = 0; i < n; ++i) {
-    double d_min = std::numeric_limits<double>::max();;
+    double d_min = std::numeric_limits<double>::max();
     for (unsigned int j = 0; j < B.ncol(); ++j) {
       double d = 0.0;
       for (unsigned int k = 0; k < A.nrow(); ++k) {

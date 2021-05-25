@@ -39,6 +39,7 @@ Other mootools:
 \code{\link{get_nadir}()},
 \code{\link{hv}()},
 \code{\link{nds}()},
+\code{\link{os}()},
 \code{\link{plot_eaf}()},
 \code{\link{plot_pcp}()},
 \code{\link{plot_radar}()},
