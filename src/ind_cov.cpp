@@ -45,7 +45,6 @@ double cov_c(NumericMatrix A, NumericMatrix B) {
     }
     if (isdom) {
       cov += 1;
-      break;
     }
   }
 
