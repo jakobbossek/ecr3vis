@@ -1,6 +1,8 @@
-#' @title \eqn{\varepsilon}-indicator
+#' @title
+#' \eqn{\varepsilon}-indicator
 #'
-#' @description ...
+#' @description
+#' ...
 #'
 #' @param x [\code{matrix}]\cr
 #'   Point set in column major format.

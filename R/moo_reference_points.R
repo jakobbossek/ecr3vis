@@ -1,9 +1,10 @@
 #' @title
-#' Reference point approximations.
+#' Reference point approximation.
 #'
 #' @description
-#' Helper functions to compute nadir or ideal point from sets of
-#' points, e.g., multiple approximation sets.
+#' Helper functions to compute nadir or ideal point from multiple sets of
+#' points, e.g., multiple approximation sets produced by some multi-objective
+#' evolutionary algorithm.
 #'
 #' @param ... [\code{matrix}]\cr
 #'   Arbirary number of matrizes.

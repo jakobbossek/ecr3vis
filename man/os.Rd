@@ -2,7 +2,7 @@
 % Please edit documentation in R/moo_os.R
 \name{os}
 \alias{os}
-\title{Overall Pareto spread}
+\title{Overall (Pareto) spread}
 \usage{
 os(x, np = NULL, ip = NULL)
 }

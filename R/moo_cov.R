@@ -1,7 +1,8 @@
 #' @title
 #' Coverage / C-metrix of two (approximation) sets.
 #'
-#' @description Given two (approximation) sets \eqn{X = \{x_1, \ldots, x_{|X|}\}}
+#' @description
+#' Given two (approximation) sets \eqn{X = \{x_1, \ldots, x_{|X|}\}}
 #' and \eqn{Y = \{y_1, \ldots, y_{|Y|}\}} this indidcator calculates the fraction
 #' of points from \eqn{Y} which are dominated by at least one point \eqn{x \in X}.
 #' Formally it is defined as:
@@ -22,7 +23,7 @@
 #'   First point set in column major format.
 #' @param y [\code{matrix}]\cr
 #'   Second point set in column major format.
-#' @return [\code{numeric(1)}] Coverage value between zero and one.
+#' @return [\code{numeric(1)}] Coverage value.
 #'
 #' @keywords optimize
 #' @family mootools

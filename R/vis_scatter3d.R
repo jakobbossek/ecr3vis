@@ -1,6 +1,8 @@
-#' @title 3D scatter plot
+#' @title
+#' 3D scatter plot
 #'
-#' @description Given a data frame with the results of (multiple) runs of (multiple)
+#' @description
+#' Given a data frame with the results of (multiple) runs of (multiple)
 #' different three-objective optimization algorithms on (multiple) problem instances
 #' the function generates 3D scatterplots of the obtained Pareto-front approximations.
 #'

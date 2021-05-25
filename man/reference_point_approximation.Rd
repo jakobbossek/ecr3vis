@@ -3,7 +3,7 @@
 \name{get_nadir}
 \alias{get_nadir}
 \alias{get_ideal}
-\title{Reference point approximations.}
+\title{Reference point approximation.}
 \usage{
 get_nadir(..., sets = NULL)
 
@@ -21,8 +21,9 @@ exclusively or combined with \code{...}.}
 [\code{numeric}] Reference point.
 }
 \description{
-Helper functions to compute nadir or ideal point from sets of
-points, e.g., multiple approximation sets.
+Helper functions to compute nadir or ideal point from multiple sets of
+points, e.g., multiple approximation sets produced by some multi-objective
+evolutionary algorithm.
 }
 \seealso{
 Other mootools: 

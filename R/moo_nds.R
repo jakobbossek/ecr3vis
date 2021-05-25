@@ -1,4 +1,5 @@
-#' @title Fast non-dominated sorting
+#' @title
+#' Fast non-dominated sorting
 #'
 #' @description
 #' Fast non-dominated sorting algorithm proposed by Deb et al. [1].
@@ -34,6 +35,8 @@
 #' @family mootools
 #' @export
 nds = function(x) {
-  checkmate::assert_matrix(x, mode = "numeric", min.rows = 2L, min.cols = 1L, any.missing = FALSE, all.missing = FALSE)
+  checkmate::assert_matrix(x, mode = "numeric", min.rows = 2L, min.cols = 1L,
+    any.missing = FALSE, all.missing = FALSE)
+
   return(.Call("nds_c", x))
 }

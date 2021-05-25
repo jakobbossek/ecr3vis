@@ -1,4 +1,5 @@
-#' @title Empirical attainment function (EAF)
+#' @title
+#' Empirical attainment function (EAF)
 #'
 #' @description ...
 #'

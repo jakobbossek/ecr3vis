@@ -1,22 +1,24 @@
-#' @title Radar plot
+#' @title
+#' Radar plot
 #'
 #' @description A radar plot or spider plot is an elegant method to visualize
 #' solution quality of solutions with more than two objectives. Essentially it
 #' shows multiple numeric values starting from the same origin in a circular
 #' two-dimensional representation
 #'
-#' Users who are into gaming might know the kind of visualization from games like Pro
-#' Evolution Soccer, NHL or most likely any kind of sport games. Here, the
-#' individual strength and weaknesses of players become obvious.
+#' Users who are into gaming might know the kind of visualization from games like
+#' Pro Evolution Soccer, NHL or most likely any kind of sport games. Here, the
+#' individual strength and weaknesses of players are offten visualized by means
+#' of radar plots.
 #'
 #' The drawback of this method that it is difficult to compare many solutions
 #' or - even worse - many solutions from different algorithms to get the big picture.
 #'
 #' @references
-#' [1] T. Tušar and B. Filipič, "Visualization of Pareto Front Approximations in
+#' [1] T. Tušar and B. Filipič, Visualization of Pareto Front Approximations in
 #' Evolutionary Multiobjective Optimization: A Critical Review and the Prosection
-#' Method," in IEEE Transactions on Evolutionary Computation, vol. 19, no. 2,
-#' pp. 225-245, April 2015, doi: 10.1109/TEVC.2014.2313407
+#' Method, in IEEE Transactions on Evolutionary Computation, vol. 19, no. 2,
+#' pp. 225-245, April 2015, doi: 10.1109/TEVC.2014.2313407.
 #'
 #' @template arg_df
 #' @template arg_obj_cols

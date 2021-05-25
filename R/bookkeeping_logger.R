@@ -1,6 +1,8 @@
-#' @title Initialize logger.
+#' @title
+#' Initialize logger.
 #'
-#' @description Generates a fairly flexible container to log stuff.
+#' @description
+#' Generates a fairly flexible container to log stuff.
 #'
 #' @param what [\code{named(character)}]\cr
 #'   Named character vector. The names (i.e. \code{names(what)}) describe which
@@ -66,9 +68,11 @@ log_init = function(what, init.size, at = NULL, to = NULL) {
   return(log)
 }
 
-#' @title Update logger.
+#' @title
+#' Update logger.
 #'
-#' @description Store stuff in logger object.
+#' @description
+#' Store stuff in logger object.
 #'
 #' @param log [\code{enviroment}]\cr
 #'   Logger initialized with \code{\link{log_init}}.

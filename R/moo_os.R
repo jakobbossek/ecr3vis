@@ -1,6 +1,8 @@
-#' @title Overall Pareto spread
+#' @title
+#' Overall (Pareto) spread
 #'
-#' @description A simple multi-objective performance indicator proposed in [1].
+#' @description
+#' A simple multi-objective performance indicator proposed in [1].
 #' Given a point set\eqn{X = \{x_1, \ldots, x_{n}\}} of \eqn{m} objectives,
 #' the ideal point \eqn{I} (or an approximation) and the nadir point \eqn{N}
 #' (or a approximation) it is defined as

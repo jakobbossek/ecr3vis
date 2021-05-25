@@ -14,7 +14,7 @@ First point set in column major format.}
 Second point set in column major format.}
 }
 \value{
-[\code{numeric(1)}] Coverage value between zero and one.
+[\code{numeric(1)}] Coverage value.
 }
 \description{
 Given two (approximation) sets \eqn{X = \{x_1, \ldots, x_{|X|}\}}

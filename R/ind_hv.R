@@ -1,17 +1,17 @@
 #' @title
-#' Functions for the calculation of the dominated hypervolume (contribution).
+#' Dominated hypervolume (contribution).
 #'
 #' @description
-#' The function \code{hv} computes the dominated
-#' hypervolume of a set of points given a reference set whereby
-#' \code{hv_contr} computes the hypervolume contribution
+#' The function \code{hv} computes the dominated hypervolume of a set of points
+#' given a reference set whereby \code{hv_contr} computes the hypervolume contribution
 #' of each point.
 #'
 #' If no reference point is given the nadir point of the set \code{x} is
 #' determined and a positive offset with default 1 is added. This is to ensure
-#' that the reference point dominates all of the points in the reference set.
+#' that the reference point is dominated by all of the points in the reference set.
 #'
-#' @note: Keep in mind that this function assumes all objectives to be minimized.
+#' @note
+#' Keep in mind that this function assumes all objectives to be minimized.
 #' In case at least one objective is to be maximized the matrix \code{x} needs
 #' to be transformed accordingly in advance.
 #'
@@ -23,6 +23,7 @@
 #' @param offset [\code{numeric(1)}]\cr
 #'   Offset to be added to each component of the reference point only in the case
 #'   where no reference is provided and one is calculated automatically.
+#'   Default is 1.
 #' @param ... [any]\cr
 #'   Not used at the moment.
 #' @return [\code{numeric(1)}] Dominated hypervolume in the case of
@@ -33,11 +34,11 @@
 #' @family multi-objective performance indicators
 #' @export
 #FIXME: add offset as in hv_contr?
-hv = function(x, ref.point = NULL, ...) {
+hv = function(x, ref.point = NULL, offset = 1, ...) {
   checkmate::assert_matrix(x, mode = "numeric", min.rows = 2L, min.cols = 1L, any.missing = FALSE, all.missing = FALSE)
 
   if (is.null(ref.point)) {
-    ref.point = apply(x, 1L, max)
+    ref.point = get_nadir(x) + offset
   }
 
   if (any(is.infinite(x))) {

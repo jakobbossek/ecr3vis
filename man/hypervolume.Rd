@@ -3,9 +3,9 @@
 \name{hv}
 \alias{hv}
 \alias{hv_contr}
-\title{Functions for the calculation of the dominated hypervolume (contribution).}
+\title{Dominated hypervolume (contribution).}
 \usage{
-hv(x, ref.point = NULL, ...)
+hv(x, ref.point = NULL, offset = 1, ...)
 
 hv_contr(x, ref.point = NULL, offset = 1)
 }
@@ -17,12 +17,13 @@ Matrix of points (column-wise).}
 Reference point.
 Set to the maximum in each dimension by default if not provided.}
 
-\item{...}{[any]\cr
-Not used at the moment.}
-
 \item{offset}{[\code{numeric(1)}]\cr
 Offset to be added to each component of the reference point only in the case
-where no reference is provided and one is calculated automatically.}
+where no reference is provided and one is calculated automatically.
+Default is 1.}
+
+\item{...}{[any]\cr
+Not used at the moment.}
 }
 \value{
 [\code{numeric(1)}] Dominated hypervolume in the case of
@@ -30,17 +31,16 @@ where no reference is provided and one is calculated automatically.}
  for each point in the case of \code{hv_contr}.
 }
 \description{
-The function \code{hv} computes the dominated
-hypervolume of a set of points given a reference set whereby
-\code{hv_contr} computes the hypervolume contribution
+The function \code{hv} computes the dominated hypervolume of a set of points
+given a reference set whereby \code{hv_contr} computes the hypervolume contribution
 of each point.
 
 If no reference point is given the nadir point of the set \code{x} is
 determined and a positive offset with default 1 is added. This is to ensure
-that the reference point dominates all of the points in the reference set.
+that the reference point is dominated by all of the points in the reference set.
 }
 \note{
-: Keep in mind that this function assumes all objectives to be minimized.
+Keep in mind that this function assumes all objectives to be minimized.
 In case at least one objective is to be maximized the matrix \code{x} needs
 to be transformed accordingly in advance.
 }
