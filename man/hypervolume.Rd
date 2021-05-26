@@ -5,15 +5,15 @@
 \alias{hv_contr}
 \title{Dominated hypervolume (contribution).}
 \usage{
-hv(x, ref.point = NULL, offset = 1, ...)
+hv(x, r = NULL, offset = 1, ...)
 
-hv_contr(x, ref.point = NULL, offset = 1)
+hv_contr(x, r = NULL, offset = 1)
 }
 \arguments{
 \item{x}{[\code{matrix}]\cr
 Matrix of points (column-wise).}
 
-\item{ref.point}{[\code{numeric} | \code{NULL}]\cr
+\item{r}{[\code{numeric} | \code{NULL}]\cr
 Reference point.
 Set to the maximum in each dimension by default if not provided.}
 
@@ -31,7 +31,21 @@ Not used at the moment.}
  for each point in the case of \code{hv_contr}.
 }
 \description{
-The function \code{hv} computes the dominated hypervolume of a set of points
+The hypervolume (HV) indicator is arguebly one of the most often used performance
+indicator likely due to its straight-forward definition. Given a set of points
+\eqn{X = \{x_1, \ldots, x_{|X|}\}} and an anti-optimal reference point
+\eqn{r \in R^m} the HV-indicator, also called the S-metric, is defined
+as
+\deqn{
+  HV(X, r) = \lambda_m\left(\bigcup_{x \in X} [x;r]\right).
+}
+Here, \eqn{\lambda_m} is the \eqn{m}-dimensional Lebesgue measure. Informally,
+the hypervolume indicator is the space/volume enclosed by the point set and
+the anti-optimal (i.e., it is dominated by every point \eqn{x \in X}) reference
+point. It is known to be strictly monotonic. I.e., if point set \eqn{X} strictly
+dominates another point set \eqn{Y}, then \eqn{HV(X,r) > HV(Y, r)} holds.
+
+Function \code{hv} computes the dominated hypervolume of a set of points
 given a reference set whereby \code{hv_contr} computes the hypervolume contribution
 of each point.
 

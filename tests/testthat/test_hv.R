@@ -19,10 +19,10 @@ test_that("calculation of dominated hypervolume works as expected", {
       4, 2,
       5, 1),
     nrow = 2L)
-  ref.point = c(6, 6)
+  r = c(6, 6)
 
   # HV with passed reference point
-  hv = hv(points, ref.point)
+  hv = hv(points, r)
   expect_true(is.numeric(hv))
   expect_equal(hv, hv.exp)
 
@@ -31,21 +31,21 @@ test_that("calculation of dominated hypervolume works as expected", {
   expect_true(is.numeric(hv))
 
   # Unequal dimensions
-  expect_error(hv(points, ref.point[-1L]))
+  expect_error(hv(points, r[-1L]))
 
   # check for warnings on infinite values
   points2 = points
   points2[1L, 1L] = Inf
-  expect_warning(hv(points2, ref.point), "point", ignore.case = TRUE)
-  expect_true(suppressWarnings(is.nan(hv(points2, ref.point))))
+  expect_warning(hv(points2, r), "point", ignore.case = TRUE)
+  expect_true(suppressWarnings(is.nan(hv(points2, r))))
 
-  ref.point2 = ref.point
-  ref.point2[2L] = Inf
-  expect_warning(hv(points, ref.point2), "Reference point", ignore.case = TRUE)
-  expect_true(suppressWarnings(is.nan(hv(points, ref.point2))))
+  r2 = r
+  r2[2L] = Inf
+  expect_warning(hv(points, r2), "Reference point", ignore.case = TRUE)
+  expect_true(suppressWarnings(is.nan(hv(points, r2))))
 
   # now check the hypervolume contributions
-  hv.contribs = hv_contr(points, ref.point)
+  hv.contribs = hv_contr(points, r)
   expect_true(all(hv.contribs == 1))
   # the computed reference point should be equal to (6,6) too
   hv.contribs = hv_contr(points)
@@ -55,7 +55,7 @@ test_that("calculation of dominated hypervolume works as expected", {
 test_that("assertions on hypervolume (contribution)", {
   n.points = 100L
   n.reps = 5L
-  ref.point = c(11, 11)
+  r = c(11, 11)
   for (i in seq(n.reps)) {
     # generate set of points
     x = matrix(runif(n.points * 2L, min = 0, max = 10), nrow = 2L)
@@ -71,17 +71,16 @@ test_that("assertions on hypervolume (contribution)", {
     nondom.idx = which_nondominated(x)
     x2 = x[, nondom.idx, drop = FALSE]
 
-    hv1 = hv(x1, ref.point)
-    hv2 = hv(x2, ref.point)
+    hv1 = hv(x1, r)
+    hv2 = hv(x2, r)
 
     expect_true(hv1 >= 0)
     expect_true(hv2 >= 0)
     expect_true(hv1 > hv2, info = "HV of first non-dominanted front should be
       larger than the dominated HV of the second.")
-    hvctrb1 = hv_contr(x1, ref.point)
-    hvctrb2 = hv_contr(x2, ref.point)
+    hvctrb1 = hv_contr(x1, r)
+    hvctrb2 = hv_contr(x2, r)
     expect_true(all(hvctrb1 >= 0))
     expect_true(all(hvctrb2 >= 0))
   }
 })
-

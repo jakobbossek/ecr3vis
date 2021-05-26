@@ -2,7 +2,21 @@
 #' Dominated hypervolume (contribution).
 #'
 #' @description
-#' The function \code{hv} computes the dominated hypervolume of a set of points
+#' The hypervolume (HV) indicator is arguebly one of the most often used performance
+#' indicator likely due to its straight-forward definition. Given a set of points
+#' \eqn{X = \{x_1, \ldots, x_{|X|}\}} and an anti-optimal reference point
+#' \eqn{r \in R^m} the HV-indicator, also called the S-metric, is defined
+#' as
+#' \deqn{
+#'   HV(X, r) = \lambda_m\left(\bigcup_{x \in X} [x;r]\right).
+#' }
+#' Here, \eqn{\lambda_m} is the \eqn{m}-dimensional Lebesgue measure. Informally,
+#' the hypervolume indicator is the space/volume enclosed by the point set and
+#' the anti-optimal (i.e., it is dominated by every point \eqn{x \in X}) reference
+#' point. It is known to be strictly monotonic. I.e., if point set \eqn{X} strictly
+#' dominates another point set \eqn{Y}, then \eqn{HV(X,r) > HV(Y, r)} holds.
+#'
+#' Function \code{hv} computes the dominated hypervolume of a set of points
 #' given a reference set whereby \code{hv_contr} computes the hypervolume contribution
 #' of each point.
 #'
@@ -17,7 +31,7 @@
 #'
 #' @param x [\code{matrix}]\cr
 #'   Matrix of points (column-wise).
-#' @param ref.point [\code{numeric} | \code{NULL}]\cr
+#' @param r [\code{numeric} | \code{NULL}]\cr
 #'   Reference point.
 #'   Set to the maximum in each dimension by default if not provided.
 #' @param offset [\code{numeric(1)}]\cr
@@ -33,12 +47,11 @@
 #' @family mootools
 #' @family multi-objective performance indicators
 #' @export
-#FIXME: add offset as in hv_contr?
-hv = function(x, ref.point = NULL, offset = 1, ...) {
+hv = function(x, r = NULL, offset = 1, ...) {
   checkmate::assert_matrix(x, mode = "numeric", min.rows = 2L, min.cols = 1L, any.missing = FALSE, all.missing = FALSE)
 
-  if (is.null(ref.point)) {
-    ref.point = get_nadir(x) + offset
+  if (is.null(r)) {
+    r = get_nadir(x) + offset
   }
 
   if (any(is.infinite(x))) {
@@ -46,29 +59,29 @@ hv = function(x, ref.point = NULL, offset = 1, ...) {
     return(NaN)
   }
 
-  if (length(ref.point) != nrow(x)) {
+  if (length(r) != nrow(x)) {
     re::stopf("Set of points and reference point need to have the same dimension, but
-      set of points has dimension %i and reference point has dimension %i.", nrow(x), length(ref.point))
+      set of points has dimension %i and reference point has dimension %i.", nrow(x), length(r))
   }
 
-  if (any(is.infinite(ref.point))) {
-    re::warningf("Reference point contains %i infinite values.", sum(is.infinite(ref.point)))
+  if (any(is.infinite(r))) {
+    re::warningf("Reference point contains %i infinite values.", sum(is.infinite(r)))
     return(NaN)
   }
 
-  return(.Call("hv_c", x, ref.point))
+  return(.Call("hv_c", x, r))
 }
 
 #' @export
 #' @rdname hypervolume
-hv_contr = function(x, ref.point = NULL, offset = 1) {
-  if (is.null(ref.point)) {
-    ref.point = get_nadir(x) + offset
+hv_contr = function(x, r = NULL, offset = 1) {
+  if (is.null(r)) {
+    r = get_nadir(x) + offset
   }
   checkmate::assert_matrix(x, mode = "numeric", min.rows = 2L, min.cols = 2L, any.missing = FALSE, all.missing = FALSE)
-  checkmate::assert_numeric(ref.point, any.missing = FALSE, all.missing = FALSE)
+  checkmate::assert_numeric(r, any.missing = FALSE, all.missing = FALSE)
   checkmate::assert_number(offset, finite = TRUE, lower = 0)
 
   # NOTE: we pass  a copy of x here, since otherwise the C-code changes x in place
-  return(.Call("hv_contr_c", x[,], ref.point))
+  return(.Call("hv_contr_c", x[,], r))
 }
