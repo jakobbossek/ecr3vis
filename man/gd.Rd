@@ -106,6 +106,7 @@ Other mootools:
 \code{\link{plot_radar}()},
 \code{\link{plot_scatter2d}()},
 \code{\link{plot_scatter3d}()},
+\code{\link{rse}()},
 \code{\link{set_dominates}()},
 \code{\link{which_dominated}()}
 
@@ -113,7 +114,8 @@ Other multi-objective performance indicators:
 \code{\link{cov}()},
 \code{\link{eps}()},
 \code{\link{hv}()},
-\code{\link{os}()}
+\code{\link{os}()},
+\code{\link{rse}()}
 }
 \concept{mootools}
 \concept{multi-objective performance indicators}

@@ -9,6 +9,10 @@ os_c <- function(A, np, ip) {
     .Call(`_ecr3vis_os_c`, A, np, ip)
 }
 
+rse_c <- function(A, s) {
+    .Call(`_ecr3vis_rse_c`, A, s)
+}
+
 gd_c <- function(A, B, p, modified) {
     .Call(`_ecr3vis_gd_c`, A, B, p, modified)
 }
