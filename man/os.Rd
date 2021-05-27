@@ -49,6 +49,7 @@ Other mootools:
 \code{\link{plot_radar}()},
 \code{\link{plot_scatter2d}()},
 \code{\link{plot_scatter3d}()},
+\code{\link{r1}()},
 \code{\link{rse}()},
 \code{\link{set_dominates}()},
 \code{\link{which_dominated}()}
@@ -58,6 +59,7 @@ Other multi-objective performance indicators:
 \code{\link{eps}()},
 \code{\link{gd}()},
 \code{\link{hv}()},
+\code{\link{r1}()},
 \code{\link{rse}()}
 }
 \concept{mootools}

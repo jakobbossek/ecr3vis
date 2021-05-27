@@ -76,6 +76,7 @@ RcppExport SEXP eps_c(SEXP, SEXP);
 RcppExport SEXP hv_c(SEXP, SEXP);
 RcppExport SEXP hv_contr_c(SEXP, SEXP);
 RcppExport SEXP nds_c(SEXP);
+RcppExport SEXP r_c(SEXP, SEXP, SEXP, SEXP, SEXP);
 
 static const R_CallMethodDef CallEntries[] = {
     {"_ecr3vis_cov_c", (DL_FUNC) &_ecr3vis_cov_c, 2},
@@ -88,6 +89,7 @@ static const R_CallMethodDef CallEntries[] = {
     {"hv_c",           (DL_FUNC) &hv_c,           2},
     {"hv_contr_c",     (DL_FUNC) &hv_contr_c,     2},
     {"nds_c",          (DL_FUNC) &nds_c,          1},
+    {"r_c",            (DL_FUNC) &r_c,            5},
     {NULL, NULL, 0}
 };
 

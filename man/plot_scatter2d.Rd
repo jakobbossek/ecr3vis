@@ -105,6 +105,7 @@ Other mootools:
 \code{\link{plot_pcp}()},
 \code{\link{plot_radar}()},
 \code{\link{plot_scatter3d}()},
+\code{\link{r1}()},
 \code{\link{rse}()},
 \code{\link{set_dominates}()},
 \code{\link{which_dominated}()}
