@@ -4,7 +4,7 @@
 \alias{rse}
 \title{Riesz \eqn{s}-energy}
 \usage{
-rse(x, s)
+rse(x, s, ...)
 }
 \arguments{
 \item{x}{[\code{matrix}]\cr
@@ -12,6 +12,9 @@ Point set in column major format.}
 
 \item{s}{[\code{numeric}]\cr
 Parameter \eqn{s \geq 0} (see description).}
+
+\item{...}{[any]\cr
+Not used.}
 }
 \value{
 [\code{numeric(1)}] Scalar indicator value.

@@ -4,7 +4,7 @@
 \alias{cov}
 \title{Coverage / C-metrix of two (approximation) sets.}
 \usage{
-cov(x, y)
+cov(x, y, ...)
 }
 \arguments{
 \item{x}{[\code{matrix}]\cr
@@ -12,6 +12,9 @@ First point set in column major format.}
 
 \item{y}{[\code{matrix}]\cr
 Second point set in column major format.}
+
+\item{...}{[any]\cr
+Not used.}
 }
 \value{
 [\code{numeric(1)}] Coverage value.

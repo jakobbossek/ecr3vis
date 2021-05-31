@@ -27,8 +27,7 @@
 #' @param utility [\code{character(1)}]\cr
 #'   Name of the utility function to use. Must be one of \dQuote{weighted-sum},
 #'   \dQuote{tschebycheff} or \dQuote{augmented-tschbycheff}.
-#' @param ... [any]\cr
-#'   Not used at the moment.
+#' @template arg_dots_not_used
 #' @keywords optimize
 #' @family mootools
 #' @family multi-objective performance indicators

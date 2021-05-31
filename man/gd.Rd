@@ -8,15 +8,15 @@
 \alias{ahd}
 \title{(Modified) (Inverted) Generational distance.}
 \usage{
-gd(x, y, p = 2, modified = TRUE)
+gd(x, y, p = 2, modified = TRUE, ...)
 
-igd(x, y, p = 2, modified = TRUE)
+igd(x, y, p = 2, modified = TRUE, ...)
 
-gdp(x, y, p = 2, modified = TRUE)
+gdp(x, y, p = 2, modified = TRUE, ...)
 
-igdp(x, y, p = 2, modified = TRUE)
+igdp(x, y, p = 2, modified = TRUE, ...)
 
-ahd(x, y, p = 2, modified = TRUE)
+ahd(x, y, p = 2, modified = TRUE, ...)
 }
 \arguments{
 \item{x}{[\code{matrix}]\cr
@@ -31,6 +31,9 @@ Parameter \eqn{p} (see description).}
 \item{modified}{[\code{logical(1)}]\cr
 Should the modified GD/IGD calculation by Schuetze et al. [2] be used?
 Default is \code{TRUE}.}
+
+\item{...}{[any]\cr
+Not used.}
 }
 \value{
 [\code{numeric(1)}] Scalar indicator value.

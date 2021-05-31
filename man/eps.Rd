@@ -4,7 +4,7 @@
 \alias{eps}
 \title{Binary \eqn{\varepsilon}-indicator}
 \usage{
-eps(x, y)
+eps(x, y, ...)
 }
 \arguments{
 \item{x}{[\code{matrix}]\cr
@@ -12,6 +12,9 @@ First point set in column major format.}
 
 \item{y}{[\code{matrix}]\cr
 Second point set in column major format.}
+
+\item{...}{[any]\cr
+Not used.}
 }
 \value{
 [\code{numeric(1)}] Scalar indicator value.

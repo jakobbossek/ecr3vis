@@ -4,7 +4,7 @@
 \alias{os}
 \title{Overall (Pareto) spread}
 \usage{
-os(x, np = NULL, ip = NULL)
+os(x, np = NULL, ip = NULL, ...)
 }
 \arguments{
 \item{x}{[\code{matrix}]\cr
@@ -15,6 +15,9 @@ Nadir point or approximtion of it.}
 
 \item{ip}{[\code{numeric}]\cr
 Ideal point or approximtion of it.}
+
+\item{...}{[any]\cr
+Not used.}
 }
 \value{
 [\code{numeric(1)}] Scalar indicator value.

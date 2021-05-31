@@ -38,13 +38,14 @@
 #'   First point set in column major format.
 #' @param y [\code{matrix}]\cr
 #'   Second point set in column major format.
+#' @template arg_dots_not_used
 #' @return [\code{numeric(1)}] Scalar indicator value.
 #'
 #' @keywords optimize
 #' @family mootools
 #' @family multi-objective performance indicators
 #' @export
-eps = function(x, y) {
+eps = function(x, y, ...) {
   checkmate::assert_matrix(x, mode = "numeric", min.rows = 2L, min.cols = 2L, any.missing = FALSE, all.missing = FALSE)
   checkmate::assert_matrix(y, mode = "numeric", min.rows = 2L, min.cols = 2L, any.missing = FALSE, all.missing = FALSE)
   if (nrow(x) != nrow(y))

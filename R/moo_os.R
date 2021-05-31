@@ -21,13 +21,14 @@
 #'   Nadir point or approximtion of it.
 #' @param ip [\code{numeric}]\cr
 #'   Ideal point or approximtion of it.
+#' @template arg_dots_not_used
 #' @return [\code{numeric(1)}] Scalar indicator value.
 #'
 #' @keywords optimize
 #' @family mootools
 #' @family multi-objective performance indicators
 #' @export
-os = function(x, np = NULL, ip = NULL) {
+os = function(x, np = NULL, ip = NULL, ...) {
   checkmate::assert_matrix(x, mode = "numeric", min.rows = 2L, min.cols = 1L, any.missing = FALSE, all.missing = FALSE)
   checkmate::assert_numeric(np, any.missing = FALSE, all.missing = FALSE, null.ok = TRUE)
   checkmate::assert_numeric(ip, any.missing = FALSE, all.missing = FALSE, null.ok = TRUE)

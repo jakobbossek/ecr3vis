@@ -37,13 +37,14 @@
 #'   Point set in column major format.
 #' @param s [\code{numeric}]\cr
 #'   Parameter \eqn{s \geq 0} (see description).
+#' @template arg_dots_not_used
 #' @return [\code{numeric(1)}] Scalar indicator value.
 #'
 #' @keywords optimize
 #' @family mootools
 #' @family multi-objective performance indicators
 #' @export
-rse = function(x, s) {
+rse = function(x, s, ...) {
   checkmate::assert_matrix(x, mode = "numeric", min.rows = 2L, min.cols = 1L, any.missing = FALSE, all.missing = FALSE)
   checkmate::assert_number(s, lower = 0, finite = TRUE)
 

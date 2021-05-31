@@ -38,7 +38,7 @@ Name of the utility function to use. Must be one of \dQuote{weighted-sum},
 \dQuote{tschebycheff} or \dQuote{augmented-tschbycheff}.}
 
 \item{...}{[any]\cr
-Not used at the moment.}
+Not used.}
 }
 \description{
 ...

@@ -66,6 +66,7 @@
 #' @param modified [\code{logical(1)}]\cr
 #'   Should the modified GD/IGD calculation by Schuetze et al. [2] be used?
 #'   Default is \code{TRUE}.
+#' @template arg_dots_not_used
 #' @return [\code{numeric(1)}] Scalar indicator value.
 #'
 #' @keywords optimize
@@ -73,7 +74,7 @@
 #' @family multi-objective performance indicators
 #' @rdname gd
 #' @export
-gd = function(x, y, p = 2, modified = TRUE) {
+gd = function(x, y, p = 2, modified = TRUE, ...) {
   checkmate::assert_matrix(x, mode = "numeric", min.rows = 2L, min.cols = 1L, any.missing = FALSE, all.missing = FALSE)
   checkmate::assert_matrix(y, mode = "numeric", min.rows = 2L, min.cols = 1L, any.missing = FALSE, all.missing = FALSE)
   checkmate::assert_number(p, lower = 1, na.ok = FALSE)
@@ -87,13 +88,13 @@ gd = function(x, y, p = 2, modified = TRUE) {
 
 #' @rdname gd
 #' @export
-igd = function(x, y, p = 2, modified = TRUE) {
+igd = function(x, y, p = 2, modified = TRUE, ...) {
   gd(y, x, p, modified)
 }
 
 #' @rdname gd
 #' @export
-gdp = function(x, y, p = 2, modified = TRUE) {
+gdp = function(x, y, p = 2, modified = TRUE, ...) {
   checkmate::assert_matrix(x, mode = "numeric", min.rows = 2L, min.cols = 1L, any.missing = FALSE, all.missing = FALSE)
   checkmate::assert_matrix(y, mode = "numeric", min.rows = 2L, min.cols = 1L, any.missing = FALSE, all.missing = FALSE)
   checkmate::assert_number(p, lower = 1, na.ok = FALSE)
@@ -106,13 +107,13 @@ gdp = function(x, y, p = 2, modified = TRUE) {
 
 #' @rdname gd
 #' @export
-igdp = function(x, y, p = 2, modified = TRUE) {
+igdp = function(x, y, p = 2, modified = TRUE, ...) {
   gdp(y, x, p, modified)
 }
 
 #' @rdname gd
 #' @export
-ahd = function(x, y, p = 2, modified = TRUE) {
+ahd = function(x, y, p = 2, modified = TRUE, ...) {
   gd = gd(x, y, p, modified)
   igd = igd(y, x, p, modified)
   max(gd, igd)
