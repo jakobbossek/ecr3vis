@@ -55,6 +55,7 @@ IEEE Transactions on evolutionary computation 7 (2) (2003) 117–132.
 \seealso{
 Other mootools: 
 \code{\link{cov}()},
+\code{\link{df_get_indicators}()},
 \code{\link{dominated}()},
 \code{\link{dominates}()},
 \code{\link{gd}()},
@@ -75,6 +76,7 @@ Other mootools:
 
 Other multi-objective performance indicators: 
 \code{\link{cov}()},
+\code{\link{df_get_indicators}()},
 \code{\link{gd}()},
 \code{\link{hv}()},
 \code{\link{os}()},

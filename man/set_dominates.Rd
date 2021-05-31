@@ -28,6 +28,7 @@ Other pareto-dominance:
 
 Other mootools: 
 \code{\link{cov}()},
+\code{\link{df_get_indicators}()},
 \code{\link{dominated}()},
 \code{\link{dominates}()},
 \code{\link{eps}()},

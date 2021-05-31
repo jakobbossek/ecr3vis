@@ -39,6 +39,7 @@ optimization solution set, Journal of Mechanical Design 123 (1) (2001) 18–25.
 \seealso{
 Other mootools: 
 \code{\link{cov}()},
+\code{\link{df_get_indicators}()},
 \code{\link{dominated}()},
 \code{\link{dominates}()},
 \code{\link{eps}()},
@@ -59,6 +60,7 @@ Other mootools:
 
 Other multi-objective performance indicators: 
 \code{\link{cov}()},
+\code{\link{df_get_indicators}()},
 \code{\link{eps}()},
 \code{\link{gd}()},
 \code{\link{hv}()},

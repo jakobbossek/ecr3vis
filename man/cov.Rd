@@ -39,6 +39,7 @@ Technology Zurich (1999).
 }
 \seealso{
 Other mootools: 
+\code{\link{df_get_indicators}()},
 \code{\link{dominated}()},
 \code{\link{dominates}()},
 \code{\link{eps}()},
@@ -59,6 +60,7 @@ Other mootools:
 \code{\link{which_dominated}()}
 
 Other multi-objective performance indicators: 
+\code{\link{df_get_indicators}()},
 \code{\link{eps}()},
 \code{\link{gd}()},
 \code{\link{hv}()},

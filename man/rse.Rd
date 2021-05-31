@@ -54,6 +54,7 @@ Notices of the AMS, vol. 51, no. 10, pp. 1186–1194, 2004.
 \seealso{
 Other mootools: 
 \code{\link{cov}()},
+\code{\link{df_get_indicators}()},
 \code{\link{dominated}()},
 \code{\link{dominates}()},
 \code{\link{eps}()},
@@ -74,6 +75,7 @@ Other mootools:
 
 Other multi-objective performance indicators: 
 \code{\link{cov}()},
+\code{\link{df_get_indicators}()},
 \code{\link{eps}()},
 \code{\link{gd}()},
 \code{\link{hv}()},

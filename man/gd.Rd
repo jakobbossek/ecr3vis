@@ -96,6 +96,7 @@ Cham, 2015. Springer International Publishing.
 \seealso{
 Other mootools: 
 \code{\link{cov}()},
+\code{\link{df_get_indicators}()},
 \code{\link{dominated}()},
 \code{\link{dominates}()},
 \code{\link{eps}()},
@@ -116,6 +117,7 @@ Other mootools:
 
 Other multi-objective performance indicators: 
 \code{\link{cov}()},
+\code{\link{df_get_indicators}()},
 \code{\link{eps}()},
 \code{\link{hv}()},
 \code{\link{os}()},
