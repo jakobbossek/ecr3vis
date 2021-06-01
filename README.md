@@ -4,14 +4,15 @@ ecr3vis: ecr3 visualization
 
 <!-- badges: start -->
 
+[![Status](https://img.shields.io/badge/Status-experimental-red.svg)](https://GitHub.com/jakobbossek/ecr3vis)
 [![R-CMD-check](https://github.com/jakobbossek/ecr3vis/workflows/R-CMD-check/badge.svg)](https://github.com/jakobbossek/ecr3vis/actions)
 [![Coveralls test
 coverage](https://coveralls.io/repos/github/jakobbossek/ecr3vis/badge.svg)](https://coveralls.io/r/jakobbossek/ecr3vis?branch=main)
-[![Status](https://img.shields.io/badge/Status-experimental-red.svg)](https://GitHub.com/jakobbossek/ecr3vis)
+[![CRAN\_Status\_Badge](https://www.r-pkg.org/badges/version/ecr3vis)](https://cran.r-project.org/package=ecr3vis)
 <!-- badges: end -->
 
-**NOTE:** **Under development** **NOTE**: It is likely that **ecr3vis**
-will be merged into **ecr3** in the course of development.
+**NOTE:** **Under development**! (It is likely that **ecr3vis** will be
+merged/renamed into **ecr3** in the course of development.
 
 Introduction
 ------------
@@ -36,14 +37,13 @@ library(ecr3vis)
 library(tidyverse)
 
 # import sample data-set
-tbl = readr::read_delim("inst/sampledf.csv", delim = " ")
-tbl = filter(tbl, repl == 1L)
+data(emoas_on_zdt)
+tbl = filter(emoas_on_zdt, repl == 1L)
 
 plot_scatter2d(tbl, colour = "algorithm")
 
 # Add third objective
 tbl$y3 = tbl$y2 + 1
-plot_pcp(tbl)
 plot_heatmap(tbl)
 plot_radar(tbl[1:3, ])
 plot_radar(tbl[1:3, ]) + facet_grid(. ~ nr)
