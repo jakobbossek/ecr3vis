@@ -4,6 +4,9 @@ ecr3vis: ecr3 visualization
 
 <!-- badges: start -->
 
+[![Project Status: Active – The project has reached a stable, usable
+state and is being actively
+developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
 [![Status](https://img.shields.io/badge/Status-experimental-red.svg)](https://GitHub.com/jakobbossek/ecr3vis)
 [![R-CMD-check](https://github.com/jakobbossek/ecr3vis/workflows/R-CMD-check/badge.svg)](https://github.com/jakobbossek/ecr3vis/actions)
 [![Coveralls test
@@ -11,8 +14,8 @@ coverage](https://coveralls.io/repos/github/jakobbossek/ecr3vis/badge.svg)](http
 [![CRAN\_Status\_Badge](https://www.r-pkg.org/badges/version/ecr3vis)](https://cran.r-project.org/package=ecr3vis)
 <!-- badges: end -->
 
-**NOTE:** **Under development**! (It is likely that **ecr3vis** will be
-merged/renamed into **ecr3** in the course of development.
+**NOTE:** **Under development!!!** (It is likely that **ecr3vis** will
+be merged/renamed into **ecr3** in the course of development)
 
 Introduction
 ------------
