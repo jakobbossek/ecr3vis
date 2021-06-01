@@ -43,7 +43,7 @@ df_get_indicators = function(x, obj.cols, unary, format = "long") {
   # split by (prob, algorithm, repl)
   #FIXME: make this a parameter?
   sep = "-----"
-  xs = split(x, f = list(x$prob, x$algorithm, x$repl), drop = TRUE, sep = sep)
+  xs = split(x, f = list(x$problem, x$algorithm, x$repl), drop = TRUE, sep = sep)
 
   inds.names = names(unary)
   prob.names = names(xs)

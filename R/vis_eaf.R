@@ -34,7 +34,7 @@ plot_eaf = function(
   df = prepare_pf_for_visualization(df, obj.cols, n.obj = 2L)
 
   #FIXME: group by (algorithm, prob)
-  dfeaf = eaf::eafs(points = df[, obj.cols], sets = df$repl, groups = df$prob, percentiles = percentiles)
+  dfeaf = eaf::eafs(points = df[, obj.cols], sets = df$repl, groups = df$problem, percentiles = percentiles)
   colnames(dfeaf) = c("y1", "y2", "percentiles", "group")
 
   n.groups = re::nunique(dfeaf$group)

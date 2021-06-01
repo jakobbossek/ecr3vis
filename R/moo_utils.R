@@ -1,12 +1,12 @@
 df_get_nadir = function(x, obj.cols, as.df = FALSE, ...) {
-  if (is.null(x$prob))
-    x$prob = 1
+  if (is.null(x$problem))
+    x$problem = 1
   if (is.null(x$algorithm))
     x$algorithm = 1
   x$repl = NULL
 
   idx.meta = !(colnames(x) %in% obj.cols)
-  xs = split(x, f = list(x$prob), drop = TRUE)
+  xs = split(x, f = list(x$problem), drop = TRUE)
   nps = lapply(xs, function(e) {
     get_nadir(t(as.matrix(e[, obj.cols, drop = FALSE])))
   })
@@ -16,14 +16,14 @@ df_get_nadir = function(x, obj.cols, as.df = FALSE, ...) {
 }
 
 df_get_reference_sets = function(x, obj.cols, as.df = FALSE, ...) {
-  if (is.null(x$prob))
-    x$prob = 1
+  if (is.null(x$problem))
+    x$problem = 1
   if (is.null(x$algorithm))
     x$algorithm = 1
   #x$repl = NULL
 
   idx.meta = !(colnames(x) %in% obj.cols)
-  xs = split(x, f = list(x$prob), drop = TRUE)
+  xs = split(x, f = list(x$problem), drop = TRUE)
   lapply(xs, function(e) {
     res = e[1L, idx.meta, drop = FALSE]
     #FIXME: add which_nondominated.data.frame function to encapsulate this

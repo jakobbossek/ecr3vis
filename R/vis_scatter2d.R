@@ -82,7 +82,7 @@ plot_scatter2d = function(
 
   # get algorithm names
   algos = unique(df$algorithm)
-  probs = unique(df$prob)
+  probs = unique(df$problem)
 
   # get number of problems and algorithms
   n.algos = length(algos)
@@ -126,7 +126,7 @@ plot_scatter2d = function(
   g = g + ggplot2::scale_shape_manual(values = 1:nlevels(as.factor(data[[shape]])))
   if (n.probs > 1L) {
     # how to group stuff
-    group.by = if (facet.type == "wrap") formula( ~ prob) else formula(. ~ prob)
+    group.by = if (facet.type == "wrap") formula( ~ problem) else formula(. ~ problem)
     default.facet.args = list(facets = group.by, scale = "free")
     facet.args = re::insert(default.facet.args, facet.args)
     if (facet.type == "wrap")

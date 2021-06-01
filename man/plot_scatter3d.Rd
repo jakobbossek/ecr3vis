@@ -14,7 +14,7 @@ plot_scatter3d(
 }
 \arguments{
 \item{df}{[\code{data.frame}]\cr
-Data.frame with columns at least \code{obj.cols}, \dQuote{prob} and \dQuote{algorithm}.}
+Data.frame with columns at least \code{obj.cols}, \dQuote{problem} and \dQuote{algorithm}.}
 
 \item{obj.cols}{[\code{character(>= 3)}]\cr
 Column names of the objective functions.

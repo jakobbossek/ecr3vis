@@ -30,8 +30,8 @@ prepare_pf_for_visualization = function(df, obj.cols, n.obj = NULL) {
   # add meta data if missing
   if (is.null(df$algorithm))
     df$algorithm = "Algorithm"
-  if (is.null(df$prob))
-    df$prob = "Problem"
+  if (is.null(df$problem))
+    df$problem = "Problem"
   if (is.null(df$repl))
     df$repl = as.factor(1L)
 

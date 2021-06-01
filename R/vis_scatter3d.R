@@ -45,7 +45,7 @@ plot_scatter3d = function(
 
   # get algorithm and problem names
   algos = factor(unique(df$algorithm))
-  probs = factor(unique(df$prob))
+  probs = factor(unique(df$problem))
 
   # how many algorithms/problems are we faced with?
   n.algos = nlevels(algos)
@@ -66,7 +66,7 @@ plot_scatter3d = function(
 
   if (package %in% c("scatterplot3d", "plot3D", "plot3Drgl")) {
     for (prob in probs) {
-      df2 = df[df$prob == prob, , drop = FALSE]
+      df2 = df[df$problem == prob, , drop = FALSE]
       prob.enc = as.integer(as.factor(df2$algorithm))
       pchs2 = pchs[prob.enc]
       cols2 = cols[prob.enc]
@@ -112,7 +112,7 @@ plot_scatter3d = function(
   if (package == "plotly") {
     i = 1
     plot.list = lapply(probs, function(prob) {
-      df2 = df[df$prob == prob, , drop = FALSE]
+      df2 = df[df$problem == prob, , drop = FALSE]
       prob.enc = as.integer(as.factor(df2$algorithm))
 
       x = df2[[obj.cols[1L]]]
