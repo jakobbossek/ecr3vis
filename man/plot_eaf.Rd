@@ -11,8 +11,8 @@ plot_eaf(df, obj.cols, percentiles = c(0, 50, 75, 100))
 Data.frame with columns at least \code{obj.cols}, \dQuote{prob} and \dQuote{algorithm}.}
 
 \item{obj.cols}{[\code{character(>= 2)}]\cr
-Column names of the objective functions.
-Default is \code{c("f1", "f2")}.}
+Column names of the objective function values.
+Default is \code{c("y1", "y2")}.}
 
 \item{percentiles}{[\code{numeric}]\cr
 Percentiles of the EAF that will be plotted as attainment surfaces.}

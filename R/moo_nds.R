@@ -2,17 +2,17 @@
 #' Fast non-dominated sorting
 #'
 #' @description
-#' Fast non-dominated sorting algorithm proposed by Deb et al. [1].
+#' Fast non-dominated sorting algorithm proposed by Deb et al. [1].
 #' Non-dominated sorting expects a set of points and returns a
 #' set of non-dominated fronts. In short words this is done as follows: the
 #' non-dominated points of the entire set are determined and assigned rank 1.
 #' Afterwards all points with the current rank are removed, the rank is increased
-#' by one and the procedure starts again. This is done until the set is empty, i.~e.,
+#' by one and the procedure starts again. This is done until the set is empty, i.e.,
 #' each point is assigned a rank.
 #'
 #' @note
 #' This procedure is the key survival selection of the famous NSGA-II multi-objective
-#' evolutionary algorithm.
+#' evolutionary algorithm [1].
 #'
 #' @references
 #' [1] Deb, K., Pratap, A., and Agarwal, S. A Fast and Elitist Multiobjective Genetic
@@ -29,8 +29,8 @@
 #'     \item{ranks}{Integer vector of ranks of length \code{ncol(x)}. The higher
 #'     the rank, the higher the domination front the corresponding point is
 #'     located on.}
-#'     \item{dom.counter}{Integer vector of length \code{ncol(x)}. The i-th element
-#'     is the domination number of the i-th point.}
+#'     \item{dom.counter}{Integer vector of length \code{ncol(x)}. The \eqn{i}th element
+#'     is the domination number of the \eqn{i}th point.}
 #'   }
 #' @family mootools
 #' @export

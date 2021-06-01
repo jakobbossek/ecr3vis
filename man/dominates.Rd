@@ -29,8 +29,8 @@ Second vector.}
 [\code{logical(1)}]
 }
 \description{
-Check if a vector dominates another (\code{dominates}) or is
-dominated by another (\code{is_dominated}). There are corresponding infix
+Check if a vector dominates another (\code{dominates} or \code{does_dominate})
+or is dominated by another (\code{is_dominated}). There are corresponding infix
 operators \code{dominates} and \code{is_dominated}.
 }
 \seealso{

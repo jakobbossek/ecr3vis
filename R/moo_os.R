@@ -3,7 +3,7 @@
 #'
 #' @description
 #' A simple multi-objective performance indicator proposed in [1].
-#' Given a point set\eqn{X = \{x_1, \ldots, x_{n}\}} of \eqn{m} objectives,
+#' Given a point set\eqn{X = \{x_1, \ldots, x_{|X|}\}} of \eqn{m} objectives,
 #' the ideal point \eqn{I} (or an approximation) and the nadir point \eqn{N}
 #' (or a approximation) it is defined as
 #' \deqn{

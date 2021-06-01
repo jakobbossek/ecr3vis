@@ -2,7 +2,7 @@
 #' (Modified) (Inverted) Generational distance.
 #'
 #' @description
-#' The generational distance (GD) measure the distance of a point set
+#' The generational distance (GD) measures the distance of a point set
 #' \eqn{X = \{r_1, \ldots, r_{|X|}\}}, e.g., a Pareto-front approximation, to
 #' a reference set \eqn{R = \{r_1, \ldots, r_{|R|}\}}. Then GD is defined as
 #' \deqn{
@@ -10,7 +10,7 @@
 #' }
 #' where \eqn{d_i} is the Euclidean distance of point \eqn{x_i \in X} to
 #' its nearest neigbor point in \eqn{R}. The inverted generational distance works
-#' the other way around, i.e.
+#' the other way around, i.e.,
 #' \deqn{
 #'  IGD_p(A, R) = \frac{1}{|R|} \left(\sum_{i=1}^{|R|} \hat{d}_i^p\right)^{1/p}
 #' }
@@ -38,8 +38,10 @@
 #' Eventuelly, function \code{ahd} calculates the Average Hausdorff distance [2]
 #' which combines GD and IGD and is defined as
 #' \deqn{
-#'  \delta_p(A, R) = \max\{GD_p(A, R), IGD_p(A, R)\}.
+#'  \Delta_p(A, R) = \max\{GD_p(A, R), IGD_p(A, R)\}.
 #' }
+#' By default, \code{ahd} uses the modified versions of \eqn{GD} and \eqn{IGD}
+#' respectively (see argument \code{modified}).
 #'
 #' @references
 #' [1] David A. Van Veldhuizen and David A. Van Veldhuizen. Multiobjective

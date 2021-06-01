@@ -11,8 +11,8 @@ plot_radar(df, obj.cols = c("y1", "y2", "y3"))
 Data.frame with columns at least \code{obj.cols}, \dQuote{prob} and \dQuote{algorithm}.}
 
 \item{obj.cols}{[\code{character(>= 2)}]\cr
-Column names of the objective functions.
-Default is \code{c("f1", "f2")}.}
+Column names of the objective function values.
+Default is \code{c("y1", "y2")}.}
 }
 \value{
 [\code{\link[ggplot2]{ggplot}}] ggplot object.
@@ -25,8 +25,8 @@ two-dimensional representation
 
 Users who are into gaming might know the kind of visualization from games like
 Pro Evolution Soccer, NHL or most likely any kind of sport games. Here, the
-individual strength and weaknesses of players are offten visualized by means
-of radar plots.
+individual strength and weaknesses of players (speed, tequniqual skills,
+fitness etc.) are often visualized by means of radar plots.
 
 The drawback of this method that it is difficult to compare many solutions
 or - even worse - many solutions from different algorithms to get the big picture.

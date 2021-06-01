@@ -2,10 +2,10 @@
 #' Calculate multi-objective performance indicators
 #'
 #' @description
-#' The function expects a data frame with Pareto approximation sets given
-#' in the columns passed by \code{obj.cols} and optional columns \dQuote{problem}
+#' The function expects a data frame with Pareto -front approximation sets given
+#' in the columns passed by \code{obj.cols} and optional meta-columns \dQuote{problem}
 #' \dQuote{algorithm} and \dQuote{repl}. Given a set of multi-objective performance
-#' indicators, the function splits the data by the meta-column and calculates the
+#' indicators, the function splits the data by the meta-columns and calculates the
 #' indicator values for each approximation set.
 #'
 #' @param x [\code{data.frame}]\cr
@@ -13,9 +13,10 @@
 #' @template arg_obj_cols
 #' @param unary [\code{list}]\cr
 #'   Named list of indicators. The names must be strings which correspond to
-#'   the function name of the indicator (e.g. \dQuote{gd} for \code{\link{gd}}).
-#'   The value is an (empty) named list of parameter values for the indicator
-#'   (e.g. \code{list(p = 2)} to modify the \eqn{p} parameter for GD).
+#'   the function name of the indicator (e.g., \dQuote{gd} for \code{\link{gd}}).
+#'   The value is an (possibly empty) named list of parameter values for the indicator
+#'   (e.g. \code{list(p = 2)} to modify the \eqn{p} parameter of the generational
+#'   distance indicator \code{\link{gd}}).
 #' @param format [\code{character(1)}]\cr
 #'   If \dQuote{long}, the data is returned as a data frame in long format. I.e.,
 #'   there is a column \dQuote{indicator} and another column \dQuote{value} for

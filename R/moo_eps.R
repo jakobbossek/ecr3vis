@@ -5,9 +5,9 @@
 #' The \eqn{\varepsilon}-indicator, often denoted as \eqn{I_{\varepsilon}},
 #' requires for understanding the concept of \eqn{\varepsilon}-dominance.
 #' A vector \eqn{x \in R^m}, for some \eqn{\varepsilon > 0}, \eqn{\varepsilon}-dominates
-#' another vector \eqn{y \in R^m}, iff
+#' another vector \eqn{y \in R^m}, \eqn{x \preceq_{\varepsilon} y}, iff
 #' \deqn{
-#'   x \preceq_{\varepsilon} y :\Leftrightarrow x_i \leq \varepsilon y_i \forall i = 1,\ldots,m.
+#'   \Leftrightarrow x_i \leq \varepsilon y_i \quad \forall i = 1,\ldots,m.
 #' }
 #' Equipped with this, Zitzler et al. [1] define the (multiplicative) binary
 #' \eqn{\varepsilon}-indicator as follows for two point sets \eqn{X = \{x_1, \ldots, x_{|X|}\}}

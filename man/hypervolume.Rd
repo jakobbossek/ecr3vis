@@ -37,7 +37,7 @@ indicator likely due to its straight-forward definition. Given a set of points
 \eqn{r \in R^m} the HV-indicator, also called the S-metric, is defined
 as
 \deqn{
-  HV(X, r) = \lambda_m\left(\bigcup_{x \in X} [x;r]\right).
+  HV(X, r) = \lambda_m\left(\bigcup_{x \in X} [x \preceq x' \preceq r]\right).
 }
 Here, \eqn{\lambda_m} is the \eqn{m}-dimensional Lebesgue measure. Informally,
 the hypervolume indicator is the space/volume enclosed by the point set and
@@ -51,7 +51,8 @@ of each point.
 
 If no reference point is given the nadir point of the set \code{x} is
 determined and a positive offset with default 1 is added. This is to ensure
-that the reference point is dominated by all of the points in the reference set.
+that the reference point is dominated by all of the points in the reference set
+(anti-optimality property).
 }
 \note{
 Keep in mind that this function assumes all objectives to be minimized.

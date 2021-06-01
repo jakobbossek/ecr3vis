@@ -8,8 +8,8 @@
 #'
 #' Users who are into gaming might know the kind of visualization from games like
 #' Pro Evolution Soccer, NHL or most likely any kind of sport games. Here, the
-#' individual strength and weaknesses of players are offten visualized by means
-#' of radar plots.
+#' individual strength and weaknesses of players (speed, tequniqual skills,
+#' fitness etc.) are often visualized by means of radar plots.
 #'
 #' The drawback of this method that it is difficult to compare many solutions
 #' or - even worse - many solutions from different algorithms to get the big picture.

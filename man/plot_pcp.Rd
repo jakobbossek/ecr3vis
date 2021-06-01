@@ -11,8 +11,8 @@ plot_pcp(df, obj.cols = c("y1", "y2"))
 Data.frame with columns at least \code{obj.cols}, \dQuote{prob} and \dQuote{algorithm}.}
 
 \item{obj.cols}{[\code{character(>= 2)}]\cr
-Column names of the objective functions.
-Default is \code{c("f1", "f2")}.}
+Column names of the objective function values.
+Default is \code{c("y1", "y2")}.}
 }
 \value{
 [\code{\link[ggplot2]{ggplot}}] ggplot object.

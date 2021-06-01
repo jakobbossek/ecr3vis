@@ -14,8 +14,8 @@ is_maximally_dominated(x)
 }
 \arguments{
 \item{x}{[\code{matrix}]\cr
-Numeric (n x d) matrix where n is the number of points and d is the number
-of objectives.}
+Numeric \eqn{(m \times n)} matrix where \eqn{n} is the number of points and \eqn{m}
+is the number of objectives.}
 }
 \value{
 [\code{integer}]
@@ -32,8 +32,12 @@ non-domination level.
   # assume we want to maximize horsepower and minimize gas consumption
   cars = mtcars[, c("mpg", "hp")]
   cars$hp = -cars$hp
-  idxs = which_nondominated(as.matrix(cars))
+  idxs = which_nondominated(t(as.matrix(cars)))
+  \dontrun{
   print(mtcars[idxs, ])
+  plot(cars)
+  points(cars[idxs, ], col = "tomato", pch = 10)
+  }
 }
 \seealso{
 Other pareto-dominance: 

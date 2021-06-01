@@ -2,8 +2,8 @@
 #' Dominance relation checks
 #'
 #' @description
-#' Check if a vector dominates another (\code{dominates}) or is
-#' dominated by another (\code{is_dominated}). There are corresponding infix
+#' Check if a vector dominates another (\code{dominates} or \code{does_dominate})
+#' or is dominated by another (\code{is_dominated}). There are corresponding infix
 #' operators \code{dominates} and \code{is_dominated}.
 #'
 #' @keywords optimize
@@ -50,16 +50,16 @@ is_dominated = function(x, y) {
 #' Check for Pareto-dominance.
 #'
 #' @description
-#' These functions take a numeric matrix \code{x} where each column corresponds to
-#' a point and return a logical vector. The i-th position of the latter is
-#' \code{TRUE} if the i-th point is dominated by at least one other point for
-#' \code{dominated} and \code{FALSE} for \code{nonDominated}.
+#' These functions take a numeric matrix as input where each column corresponds to
+#' a point and return a logical vector. The \eqn{i}th position of the latter is
+#' \code{TRUE} if the \eqn{i}th point is dominated by at least one other point for
+#' \code{dominated} and \code{FALSE} for \code{nondominated}.
 #'
 #' @keywords optimize
 #'
 #' @param x [\code{matrix}]\cr
-#'   Numeric (d x n) matrix where d is the number of objectives and n is the
-#'   number of points.
+#'   Numeric \eqn{(m \times n)} matrix where \eqn{m} is the number of objectives
+#'   and \eqn{n} is thenumber of points.
 #' @return [\code{logical}]
 #' @rdname dominated
 #' @family pareto-dominance
@@ -88,17 +88,21 @@ nondominated = function(x) {
 #' @keywords optimize
 #'
 #' @param x [\code{matrix}]\cr
-#'   Numeric (n x d) matrix where n is the number of points and d is the number
-#'   of objectives.
+#'   Numeric \eqn{(m \times n)} matrix where \eqn{n} is the number of points and \eqn{m}
+#'   is the number of objectives.
 #' @return [\code{integer}]
 #' @examples
 #'   data(mtcars)
 #'   # assume we want to maximize horsepower and minimize gas consumption
 #'   cars = mtcars[, c("mpg", "hp")]
 #'   cars$hp = -cars$hp
-#'   idxs = which_nondominated(as.matrix(cars))
+#'   idxs = which_nondominated(t(as.matrix(cars)))
+#'   \dontrun{
 #'   print(mtcars[idxs, ])
-#' @rdname which.dominated
+#'   plot(cars)
+#'   points(cars[idxs, ], col = "tomato", pch = 10)
+#'   }
+#' @rdname which_dominated
 #' @family pareto-dominance
 #' @family mootools
 #' @export
@@ -106,13 +110,13 @@ which_dominated = function(x) {
   which(dominated(x))
 }
 
-#' @rdname which.dominated
+#' @rdname which_dominated
 #' @export
 which_nondominated = function(x) {
   which(!dominated(x))
 }
 
-#' @rdname which.dominated
+#' @rdname which_dominated
 #' @export
 is_maximally_dominated = function(x) {
   checkmate::assert_matrix(x, min.rows = 2L, min.cols = 1L, any.missing = FALSE, all.missing = FALSE)

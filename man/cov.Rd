@@ -2,7 +2,7 @@
 % Please edit documentation in R/moo_cov.R
 \name{cov}
 \alias{cov}
-\title{Coverage / C-metrix of two (approximation) sets.}
+\title{Coverage / C-metric of two (approximation) sets}
 \usage{
 cov(x, y, ...)
 }
@@ -25,12 +25,9 @@ and \eqn{Y = \{y_1, \ldots, y_{|Y|}\}} this indidcator calculates the fraction
 of points from \eqn{Y} which are dominated by at least one point \eqn{x \in X}.
 Formally it is defined as:
 \deqn{
-  C(X, Y) = \frac{|\{y \in Y \mid \exists x \in X with x \preceq y\}|}{|Y|}.
+  C(X, Y) = \frac{|\{y \in Y \mid \exists x \in X \, with \, x \preceq y\}|}{|Y|}.
 }
-It holds that \eqn{C(X, Y) \in [0,1]}. Note that in general
-\deqn{
-  C(X, Y) \neq 1 - C(Y, X).
-}
+It holds that \eqn{C(X, Y) \in [0,1]}. Note that in general \eqn{C(X, Y) \neq 1 - C(Y, X)}.
 }
 \references{
 [1] E. Zitzler, Evolutionary algorithms for multiobjective optimization:

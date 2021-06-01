@@ -24,8 +24,8 @@ plot_scatter2d(
 Data.frame with columns at least \code{obj.cols}, \dQuote{prob} and \dQuote{algorithm}.}
 
 \item{obj.cols}{[\code{character(>= 2)}]\cr
-Column names of the objective functions.
-Default is \code{c("f1", "f2")}.}
+Column names of the objective function values.
+Default is \code{c("y1", "y2")}.}
 
 \item{shape}{[\code{character(1)}]\cr
 Name of column which shall be used to define shape of points.

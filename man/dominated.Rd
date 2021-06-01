@@ -11,17 +11,17 @@ nondominated(x)
 }
 \arguments{
 \item{x}{[\code{matrix}]\cr
-Numeric (d x n) matrix where d is the number of objectives and n is the
-number of points.}
+Numeric \eqn{(m \times n)} matrix where \eqn{m} is the number of objectives
+and \eqn{n} is thenumber of points.}
 }
 \value{
 [\code{logical}]
 }
 \description{
-These functions take a numeric matrix \code{x} where each column corresponds to
-a point and return a logical vector. The i-th position of the latter is
-\code{TRUE} if the i-th point is dominated by at least one other point for
-\code{dominated} and \code{FALSE} for \code{nonDominated}.
+These functions take a numeric matrix as input where each column corresponds to
+a point and return a logical vector. The \eqn{i}th position of the latter is
+\code{TRUE} if the \eqn{i}th point is dominated by at least one other point for
+\code{dominated} and \code{FALSE} for \code{nondominated}.
 }
 \seealso{
 Other pareto-dominance: 

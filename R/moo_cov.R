@@ -1,5 +1,5 @@
 #' @title
-#' Coverage / C-metrix of two (approximation) sets.
+#' Coverage / C-metric of two (approximation) sets
 #'
 #' @description
 #' Given two (approximation) sets \eqn{X = \{x_1, \ldots, x_{|X|}\}}
@@ -7,12 +7,9 @@
 #' of points from \eqn{Y} which are dominated by at least one point \eqn{x \in X}.
 #' Formally it is defined as:
 #' \deqn{
-#'   C(X, Y) = \frac{|\{y \in Y \mid \exists x \in X with x \preceq y\}|}{|Y|}.
+#'   C(X, Y) = \frac{|\{y \in Y \mid \exists x \in X \, with \, x \preceq y\}|}{|Y|}.
 #' }
-#' It holds that \eqn{C(X, Y) \in [0,1]}. Note that in general
-#' \deqn{
-#'   C(X, Y) \neq 1 - C(Y, X).
-#' }
+#' It holds that \eqn{C(X, Y) \in [0,1]}. Note that in general \eqn{C(X, Y) \neq 1 - C(Y, X)}.
 #'
 #' @references
 #' [1] E. Zitzler, Evolutionary algorithms for multiobjective optimization:
