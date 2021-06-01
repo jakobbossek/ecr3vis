@@ -29,7 +29,8 @@ Imports:
     eaf
 Suggests:
     testthat (>= 0.9.1),
-    knitr
+    knitr,
+    covr
 Encoding: UTF-8
 ByteCompile: yes
 LinkingTo: Rcpp

@@ -5,8 +5,10 @@ ecr3vis: ecr3 visualization
 <!-- badges: start -->
 
 [![R-CMD-check](https://github.com/jakobbossek/ecr3vis/workflows/R-CMD-check/badge.svg)](https://github.com/jakobbossek/ecr3vis/actions)
-<!-- badges: end -->
+[![Coveralls test
+coverage](https://coveralls.io/repos/github/jakobbossek/ecr3vis/badge.svg)](https://coveralls.io/r/jakobbossek/ecr3vis?branch=main)
 [![Status](https://img.shields.io/badge/Status-experimental-red.svg)](https://GitHub.com/jakobbossek/ecr3vis)
+<!-- badges: end -->
 
 **NOTE:** **Under development** **NOTE**: It is likely that **ecr3vis**
 will be merged into **ecr3** in the course of development.
