@@ -17,6 +17,13 @@
 #' @family pareto-dominance
 #' @family mootools
 #' @export
+#' @examples
+#' dominates(c(2, 3), c(4, 5))
+#' dominates(c(2, 3), c(2, 3))
+#' is_dominated(c(2, 3), c(4, 5))
+#' is_dominated(c(4, 5), c(2, 3))
+#' c(1, 2, 3) %dominates% c(4, 5, 6)
+#' c(1, 2, 3) %is_dominated% c(4, 5, 6)
 dominates = function(x, y) {
   stopifnot(length(x) == length(y))
   return(all(x <= y) && any(x < y))
@@ -59,12 +66,16 @@ is_dominated = function(x, y) {
 #'
 #' @param x [\code{matrix}]\cr
 #'   Numeric \eqn{(m \times n)} matrix where \eqn{m} is the number of objectives
-#'   and \eqn{n} is thenumber of points.
+#'   and \eqn{n} is the number of points.
 #' @return [\code{logical}]
 #' @rdname dominated
 #' @family pareto-dominance
 #' @family mootools
 #' @export
+#' @examples
+#' x = matrix(c(1, 1, 2, 2, 1, 3), byrow = FALSE, ncol = 3L)
+#' dominated(x)
+#' nondominated(x)
 dominated = function(x) {
   checkmate::assert_matrix(x, mode = "numeric", min.rows = 2L, min.cols = 1L, any.missing = FALSE, all.missing = FALSE)
   return(.Call("dominated_c", x))
@@ -106,6 +117,11 @@ nondominated = function(x) {
 #' @family pareto-dominance
 #' @family mootools
 #' @export
+#' @examples
+#' # first point is the sole nondominated point
+#' x = matrix(c(1, 1, 2, 2, 1, 3), byrow = FALSE, ncol = 3L)
+#' which_dominated(x)
+#' which_nondominated(x)
 which_dominated = function(x) {
   which(dominated(x))
 }
@@ -139,6 +155,11 @@ is_maximally_dominated = function(x) {
 #' @family pareto-dominance
 #' @family mootools
 #' @export
+#' @examples
+#' x = matrix(c(1, 1, 2, 2, 1, 3), byrow = FALSE, ncol = 3L)
+#' y = matrix(c(3, 4, 2, 2, 5, 6, 7, 7), byrow = FALSE, ncol = 4L)
+#' set_dominates(x, y)
+#' set_dominates(y, x)
 set_dominates = function(x, y) {
   n1 = ncol(x)
   n2 = ncol(y)

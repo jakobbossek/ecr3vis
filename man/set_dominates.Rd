@@ -20,6 +20,12 @@ Second set of points.}
 The function checks, whether every point from the second set of points
 is dominated by at least one point from the first set.
 }
+\examples{
+x = matrix(c(1, 1, 2, 2, 1, 3), byrow = FALSE, ncol = 3L)
+y = matrix(c(3, 4, 2, 2, 5, 6, 7, 7), byrow = FALSE, ncol = 4L)
+set_dominates(x, y)
+set_dominates(y, x)
+}
 \seealso{
 Other pareto-dominance: 
 \code{\link{dominated}()},

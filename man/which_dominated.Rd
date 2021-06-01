@@ -38,6 +38,10 @@ non-domination level.
   plot(cars)
   points(cars[idxs, ], col = "tomato", pch = 10)
   }
+# first point is the sole nondominated point
+x = matrix(c(1, 1, 2, 2, 1, 3), byrow = FALSE, ncol = 3L)
+which_dominated(x)
+which_nondominated(x)
 }
 \seealso{
 Other pareto-dominance: 
