@@ -8,8 +8,10 @@
 #' indicators, the function splits the data by the meta-columns and calculates the
 #' indicator values for each approximation set.
 #'
+#' @template section_parallelization
+#'
 #' @param x [\code{data.frame}]\cr
-#'   Input data frame. Requires at least the column names given by \code{obj.cols}.
+#'   Input data frame. There must be at least the variables specified in \code{obj.cols}.
 #' @template arg_obj_cols
 #' @param unary [\code{list}]\cr
 #'   Named list of indicators. The names must be strings which correspond to
@@ -17,6 +19,11 @@
 #'   The value is an (possibly empty) named list of parameter values for the indicator
 #'   (e.g. \code{list(p = 2)} to modify the \eqn{p} parameter of the generational
 #'   distance indicator \code{\link{gd}}).
+#' @param rsets [\code{list}]\cr
+#'   Named list of reference sets in form of data frames. The names need to correspond
+#'   to problem names in column \code{x$problem}. For all problem where no explicit
+#'   reference set is given, the set is approximated as the nondominated set of
+#'   point of the union of all approximations for each problem.
 #' @param format [\code{character(1)}]\cr
 #'   If \dQuote{long}, the data is returned as a data frame in long format. I.e.,
 #'   there is a column \dQuote{indicator} and another column \dQuote{value} for
@@ -32,11 +39,21 @@
 #' @family mootools
 #' @family multi-objective performance indicators
 #' @export
-df_get_indicators = function(x, obj.cols, unary, format = "long") {
-  #FIXME: add option to pass (named) lists of reference points and reference sets
+#' @examples
+#' # load sample data set
+#' data(emoas_on_zdt)
+#'
+#' # get indicators in long format
+#' inds = df_get_indicators(emoas_on_zdt, obj.cols = c("y1", "y2"),
+#'   unary = list(
+#'     hv = list(), # hv has no parameters
+#'     rse = list(s = 0.5),
+#'     ahd = list(p = 2)))
+df_get_indicators = function(x, obj.cols, unary, rsets = list(), format = "long") {
   checkmate::assert_data_frame(x, min.cols = 3L, min.rows = 2L, any.missing = FALSE, all.missing = FALSE)
   checkmate::assert_subset(obj.cols, choices = colnames(x), empty.ok = FALSE)
   checkmate::assert_list(unary, types = "list")
+  checkmate::assert_list(rsets, types = "data.frame")
   checkmate::assert_choice(format, choices = c("long", "wide"))
 
   # split by (problem, algorithm, repl)
@@ -48,9 +65,8 @@ df_get_indicators = function(x, obj.cols, unary, format = "long") {
 
   problem.grid = expand.grid(problem = prob.names, indicator = inds.names, stringsAsFactors = FALSE)
   nps = df_get_nadir(x, obj.cols, as.df = FALSE)
-  rsets = df_get_reference_sets(x, obj.cols, as.df = FALSE)
+  rsets = re::insert(df_get_reference_sets(x, obj.cols, as.df = FALSE), rsets)
 
-  #FIXME: parallize via future
   inds.unary = future.apply::future_sapply(re::df_rows_to_list(problem.grid), function(e) {
     meta = strsplit(e$problem, split = sep, fixed = TRUE)[[1L]]
     problem = meta[1L]
@@ -76,8 +92,14 @@ df_get_indicators = function(x, obj.cols, unary, format = "long") {
 
   #FIXME: ugly as hell! Why is re::explode defined for single string only and
   # why does re::df_split_col has a different interface?!?
-  #FIXME: reshape::dcast to convert into wide format if option is set.
   problem.grid$value = inds.unary
   meta = re::rbindlapply(problem.grid$problem, re::explode, split = sep, names = c("problem", "algorithm", "repl"), types = c("cci"))
-  cbind(meta, problem.grid[, -1L, drop = FALSE])
+  meta = cbind(meta, problem.grid[, -1L, drop = FALSE])
+
+  if (format == "long")
+    return(meta)
+
+  # convert to wide format
+  id.vars = setdiff(colnames(meta), c("indicator", "value"))
+  reshape2::dcast(meta, stats::as.formula(paste0(re::collapse(id.vars, sep = " + "), "~ indicator")))
 }

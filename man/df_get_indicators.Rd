@@ -4,11 +4,11 @@
 \alias{df_get_indicators}
 \title{Calculate multi-objective performance indicators}
 \usage{
-df_get_indicators(x, obj.cols, unary, format = "long")
+df_get_indicators(x, obj.cols, unary, rsets = list(), format = "long")
 }
 \arguments{
 \item{x}{[\code{data.frame}]\cr
-Input data frame. Requires at least the column names given by \code{obj.cols}.}
+Input data frame. There must be at least the variables specified in \code{obj.cols}.}
 
 \item{obj.cols}{[\code{character(>= 2)}]\cr
 Column names of the objective function values.
@@ -20,6 +20,12 @@ the function name of the indicator (e.g., \dQuote{gd} for \code{\link{gd}}).
 The value is an (possibly empty) named list of parameter values for the indicator
 (e.g. \code{list(p = 2)} to modify the \eqn{p} parameter of the generational
 distance indicator \code{\link{gd}}).}
+
+\item{rsets}{[\code{list}]\cr
+Named list of reference sets in form of data frames. The names need to correspond
+to problem names in column \code{x$problem}. For all problem where no explicit
+reference set is given, the set is approximated as the nondominated set of
+point of the union of all approximations for each problem.}
 
 \item{format}{[\code{character(1)}]\cr
 If \dQuote{long}, the data is returned as a data frame in long format. I.e.,
@@ -40,6 +46,25 @@ in the columns passed by \code{obj.cols} and optional meta-columns \dQuote{probl
 \dQuote{algorithm} and \dQuote{repl}. Given a set of multi-objective performance
 indicators, the function splits the data by the meta-columns and calculates the
 indicator values for each approximation set.
+}
+\section{Parallelization}{
+
+
+This function supports parallelization for faster execution via the
+package \pkg{future}. A parallel backend (e.g., multicore (on Unix/Linux/MacOS),
+multisession etc.) can be selected via \code{\link[future]{plan}}.
+}
+
+\examples{
+# load sample data set
+data(emoas_on_zdt)
+
+# get indicators in long format
+inds = df_get_indicators(emoas_on_zdt, obj.cols = c("y1", "y2"),
+  unary = list(
+    hv = list(), # hv has no parameters
+    rse = list(s = 0.5),
+    ahd = list(p = 2)))
 }
 \seealso{
 Other mootools: 
