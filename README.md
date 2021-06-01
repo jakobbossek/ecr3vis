@@ -2,6 +2,10 @@
 ecr3vis: ecr3 visualization
 ===========================
 
+<!-- badges: start -->
+
+[![R-CMD-check](https://github.com/jakobbossek/ecr3vis/workflows/R-CMD-check/badge.svg)](https://github.com/jakobbossek/ecr3vis/actions)
+<!-- badges: end -->
 [![Status](https://img.shields.io/badge/Status-experimental-red.svg)](https://GitHub.com/jakobbossek/ecr3vis)
 
 **NOTE:** **Under development** **NOTE**: It is likely that **ecr3vis**
@@ -40,6 +44,7 @@ tbl$y3 = tbl$y2 + 1
 plot_pcp(tbl)
 plot_heatmap(tbl)
 plot_radar(tbl[1:3, ])
+plot_radar(tbl[1:3, ]) + facet_grid(. ~ nr)
 ```
 
 Development Team

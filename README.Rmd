@@ -3,6 +3,9 @@ output: github_document
 ---
 # ecr3vis: ecr3 visualization
 
+<!-- badges: start -->
+[![R-CMD-check](https://github.com/jakobbossek/ecr3vis/workflows/R-CMD-check/badge.svg)](https://github.com/jakobbossek/ecr3vis/actions)
+<!-- badges: end -->
 [![Status](https://img.shields.io/badge/Status-experimental-red.svg)](https://GitHub.com/jakobbossek/ecr3vis)
 
 **NOTE:** __Under development__
