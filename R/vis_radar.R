@@ -26,6 +26,21 @@
 #' @family mootools
 #' @family visualization
 #' @export
+#' @examples
+#' data(mtcars)
+#'
+#' # scale to [0, 1]
+#' tbl = as.data.frame(scale(mtcars[1:6, ], center = FALSE, scale = TRUE))
+#' tbl$car = rownames(tbl)
+#'
+#' \dontrun{
+#' # 6 cars in one plot
+#' g = plot_radar(tbl, c("mpg", "cyl", "hp"))
+#' print(g)
+#'
+#' # split by car (-> 6 plots)
+#' print(g + facet_wrap(car ~ .))
+#' }
 plot_radar = function(
   df,
   obj.cols = c("y1", "y2", "y3")) {

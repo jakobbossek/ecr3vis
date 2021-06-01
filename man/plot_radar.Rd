@@ -31,6 +31,22 @@ fitness etc.) are often visualized by means of radar plots.
 The drawback of this method that it is difficult to compare many solutions
 or - even worse - many solutions from different algorithms to get the big picture.
 }
+\examples{
+data(mtcars)
+
+# scale to [0, 1]
+tbl = as.data.frame(scale(mtcars[1:6, ], center = FALSE, scale = TRUE))
+tbl$car = rownames(tbl)
+
+\dontrun{
+# 6 cars in one plot
+g = plot_radar(tbl, c("mpg", "cyl", "hp"))
+print(g)
+
+# split by car (-> 6 plots)
+print(g + facet_wrap(car ~ .))
+}
+}
 \references{
 [1] T. Tušar and B. Filipič, Visualization of Pareto Front Approximations in
 Evolutionary Multiobjective Optimization: A Critical Review and the Prosection
