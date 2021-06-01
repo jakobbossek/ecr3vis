@@ -34,14 +34,12 @@
 #' @export
 df_get_indicators = function(x, obj.cols, unary, format = "long") {
   #FIXME: add option to pass (named) lists of reference points and reference sets
-  #FIXME: parallelize via future
   checkmate::assert_data_frame(x, min.cols = 3L, min.rows = 2L, any.missing = FALSE, all.missing = FALSE)
-  checkmate::assert_choice(obj.cols, choices = colnames(x))
+  checkmate::assert_subset(obj.cols, choices = colnames(x), empty.ok = FALSE)
   checkmate::assert_list(unary, types = "list")
   checkmate::assert_choice(format, choices = c("long", "wide"))
 
-  # split by (prob, algorithm, repl)
-  #FIXME: make this a parameter?
+  # split by (problem, algorithm, repl)
   sep = "-----"
   xs = split(x, f = list(x$problem, x$algorithm, x$repl), drop = TRUE, sep = sep)
 
@@ -53,7 +51,7 @@ df_get_indicators = function(x, obj.cols, unary, format = "long") {
   rsets = df_get_reference_sets(x, obj.cols, as.df = FALSE)
 
   #FIXME: parallize via future
-  inds.unary = sapply(re::df_rows_to_list(problem.grid), function(e) {
+  inds.unary = future.apply::future_sapply(re::df_rows_to_list(problem.grid), function(e) {
     meta = strsplit(e$problem, split = sep, fixed = TRUE)[[1L]]
     problem = meta[1L]
     algorithm = meta[2L]
@@ -74,7 +72,7 @@ df_get_indicators = function(x, obj.cols, unary, format = "long") {
     if (inherits(ind, "try-error"))
       return(NA_real_)
     return(ind)
-  })
+  }, future.globals = FALSE, future.packages = "ecr3vis", future.seed = TRUE)
 
   #FIXME: ugly as hell! Why is re::explode defined for single string only and
   # why does re::df_split_col has a different interface?!?
