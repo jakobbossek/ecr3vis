@@ -50,8 +50,8 @@ plot_radar = function(
     theta = match.arg(theta, c("x", "y"))
     r = if (theta == "x") "y" else "x"
     ggproto("CordRadar", CoordPolar, theta = theta, r = r, start = start,
-            direction = sign(direction),
-            is_linear = function(coord) TRUE)
+      direction = sign(direction),
+      is_linear = function(coord) TRUE)
   }
 
   df = to_long_with_objective_column(df, obj.cols, solution.as.factor = TRUE)
@@ -69,7 +69,7 @@ plot_radar = function(
   g = g + ggplot2::geom_point(ggplot2::aes_string(group = "nr", color = "nr"))
   g = g + ggplot2::labs(x = "", y = "", fill = "Solution", color = "Solution", linetype = "Solution")
   g = g + ggplot2::ylim(c(0, max(df$value)))
-  g = g + coord_radar()
+  g = g + coord_radar() # see local function above
   g = g + ggplot2::scale_color_brewer(palette = "Dark2")
   g = g + ggplot2::scale_fill_brewer(palette = "Dark2")
   g = g + ggplot2::theme_minimal()
