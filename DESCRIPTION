@@ -20,17 +20,17 @@ Imports:
     checkmate (>= 1.1),
     Rcpp (>= 0.12.16),
     ggplot2 (>= 1.0.0),
+    reshape2,
+    viridis,
+    future.apply (>= 1.5.0)
+Suggests:
+    testthat (>= 0.9.1),
+    knitr,
     plot3D,
     plot3Drgl,
     plotly,
     scatterplot3d,
-    reshape2,
-    viridis,
-    future.apply (>= 1.5.0),
-    eaf
-Suggests:
-    testthat (>= 0.9.1),
-    knitr,
+    eaf,
     covr
 Encoding: UTF-8
 ByteCompile: yes

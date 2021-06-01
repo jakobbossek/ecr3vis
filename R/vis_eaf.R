@@ -31,6 +31,9 @@ plot_eaf = function(
   checkmate::assert_numeric(percentiles, lower = 0, upper = 100, min.len = 1L,
     any.missing = FALSE, all.missing = FALSE)
 
+  if (!requireNamespace("eaf", quietly = TRUE))
+    re::stopf("[plot_scatter3d] Package \"eaf\" needed for this function to work.")
+
   df = prepare_pf_for_visualization(df, obj.cols, n.obj = 2L)
 
   #FIXME: group by (algorithm, prob)

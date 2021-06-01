@@ -26,8 +26,8 @@ Default is 4.}
 
 \item{package}{[\code{character(1L)}]\cr
 Which package to use for 3d scatterplot generation?
-Possible choices are \dQuote{scatterplot3d}, \dQuote{plot3D}, \dQuote{plot3Drgl}
-or \dQuote{plotly}.
+Possible choices are \dQuote{scatterplot3d} (\pkg{scatterplot3d}), \dQuote{plot3D},
+(\pkg{plot3D}), \dQuote{plot3Drgl} (\pkg{plot3Drgl}) or \dQuote{plotly} (\pkg{plotly}).
 Default is \dQuote{scatterplot3d}.}
 
 \item{...}{[any]\cr

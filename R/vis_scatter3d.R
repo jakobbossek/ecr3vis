@@ -21,8 +21,8 @@
 #'   Default is 4.
 #' @param package [\code{character(1L)}]\cr
 #'   Which package to use for 3d scatterplot generation?
-#'   Possible choices are \dQuote{scatterplot3d}, \dQuote{plot3D}, \dQuote{plot3Drgl}
-#'   or \dQuote{plotly}.
+#'   Possible choices are \dQuote{scatterplot3d} (\pkg{scatterplot3d}), \dQuote{plot3D},
+#'   (\pkg{plot3D}), \dQuote{plot3Drgl} (\pkg{plot3Drgl}) or \dQuote{plotly} (\pkg{plotly}).
 #'   Default is \dQuote{scatterplot3d}.
 #' @param ... [any]\cr
 #'   Further arguments passed down to scatterplot function.
@@ -40,6 +40,9 @@ plot_scatter3d = function(
   checkmate::assert_character(obj.cols, min.len = 2L)
   checkmate::assert_choice(package, c("scatterplot3d", "plot3D", "plot3Drgl", "plotly"))
   max.in.row = checkmate::asInt(max.in.row, lower = 1L, upper = 10L)
+
+  if (!requireNamespace(package, quietly = TRUE))
+    re::stopf("[plot_scatter3d] Package \"%s\" needed for this function to work.", package)
 
   df = prepare_pf_for_visualization(df, obj.cols, n.obj = 3L)
 
