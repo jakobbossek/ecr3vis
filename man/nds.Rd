@@ -11,8 +11,7 @@ nds(x)
 Numeric matrix of points. Each column contains one point.}
 }
 \value{
-[\code{list}]
-  List with the following components
+List with the following components
   \describe{
     \item{ranks}{Integer vector of ranks of length \code{ncol(x)}. The higher
     the rank, the higher the domination front the corresponding point is

@@ -34,7 +34,7 @@ Default is \dQuote{scatterplot3d}.}
 Further arguments passed down to scatterplot function.}
 }
 \value{
-Nothing
+Nothing (function has side-effects by calling the respective drawing routines).
 }
 \description{
 Given a data frame with the results of (multiple) runs of (multiple)

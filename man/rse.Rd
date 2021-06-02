@@ -17,7 +17,7 @@ Degree of uniformity \eqn{s \geq 0} (see description).}
 Not used.}
 }
 \value{
-[\code{numeric(1)}] Scalar indicator value.
+Single numeric indicator value.
 }
 \description{
 The Riesz \eqn{s}-energy is designed as a measure for the evenness of a set

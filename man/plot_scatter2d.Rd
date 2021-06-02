@@ -75,7 +75,7 @@ E.g., \code{nrow} to change layout.
 Default is the empty list. In this case data is grouped by problem.}
 }
 \value{
-[\code{\link[ggplot2]{ggplot}}] A ggplot object.
+A \code{\link[ggplot2]{ggplot}} object.
 }
 \description{
 Given a data frame with the results of (multiple) runs of (multiple)

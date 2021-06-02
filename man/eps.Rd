@@ -17,7 +17,7 @@ Second point set in column major format.}
 Not used.}
 }
 \value{
-[\code{numeric(1)}] Scalar indicator value.
+Single numeric indicator value.
 }
 \description{
 The \eqn{\varepsilon}-indicator, often denoted as \eqn{I_{\varepsilon}},

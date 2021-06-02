@@ -63,7 +63,7 @@
 #' @template arg_obj_cols
 #' @param percentiles [\code{numeric}]\cr
 #'   Percentiles of the EAF that will be plotted as attainment surfaces.
-#' @return [\code{\link[ggplot2]{ggplot}}] A ggplot object.
+#' @template return_ggplot
 #' @family mootools
 #' @family visualization
 #' @export

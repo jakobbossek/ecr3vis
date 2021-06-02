@@ -32,7 +32,7 @@ If not \code{NULL}, each call to \code{log_update} stores the serialized
 state in file \dQuote{<to>/<iteration>.rds}.}
 }
 \value{
-[\code{enviroment}] Logger environment.
+Logger environment.
 }
 \description{
 Generates a fairly flexible container to log stuff.

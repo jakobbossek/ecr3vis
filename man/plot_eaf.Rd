@@ -18,7 +18,7 @@ Default is \code{c("y1", "y2")}.}
 Percentiles of the EAF that will be plotted as attainment surfaces.}
 }
 \value{
-[\code{\link[ggplot2]{ggplot}}] A ggplot object.
+A \code{\link[ggplot2]{ggplot}} object.
 }
 \description{
 The following description closely follows the excellent introduction into

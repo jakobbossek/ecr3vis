@@ -36,7 +36,7 @@ Default is \code{TRUE}.}
 Not used.}
 }
 \value{
-[\code{numeric(1)}] Scalar indicator value.
+Single numeric indicator value.
 }
 \description{
 The generational distance (GD) measures the distance of a point set

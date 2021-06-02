@@ -14,7 +14,7 @@ First set of points.}
 Second set of points.}
 }
 \value{
-[\code{logical(1)}]
+Single logical value.
 }
 \description{
 The function checks, whether every point from the second set of points

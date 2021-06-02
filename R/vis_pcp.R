@@ -14,7 +14,7 @@
 #'
 #' @template arg_df
 #' @template arg_obj_cols
-#' @return [\code{\link[ggplot2]{ggplot}}] ggplot object.
+#' @template return_ggplot
 #' @template family_multi_objective_visualizations
 #' @export
 plot_pcp = function(

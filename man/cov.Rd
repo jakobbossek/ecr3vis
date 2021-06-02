@@ -17,7 +17,7 @@ Second point set in column major format.}
 Not used.}
 }
 \value{
-[\code{numeric(1)}] Coverage value.
+Coverage value.
 }
 \description{
 Given two (approximation) sets \eqn{X = \{x_1, \ldots, x_{|X|}\}}

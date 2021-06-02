@@ -11,7 +11,7 @@
 #' @param sets [\code{list}]\cr
 #'   List of matrizes. This is an alternative way of passing the sets. Can be used
 #'   exclusively or combined with \code{...}.
-#' @return [\code{numeric}] Reference point.
+#' @return Reference point (numeric vector).
 #' @rdname reference_point_approximation
 #' @family mootools
 #' @export

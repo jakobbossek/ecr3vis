@@ -26,7 +26,7 @@ First vector.}
 Second vector.}
 }
 \value{
-[\code{logical(1)}]
+Single logical value.
 }
 \description{
 Check if a vector dominates another (\code{dominates} or \code{does_dominate})

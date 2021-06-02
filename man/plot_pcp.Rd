@@ -15,7 +15,7 @@ Column names of the objective function values.
 Default is \code{c("y1", "y2")}.}
 }
 \value{
-[\code{\link[ggplot2]{ggplot}}] ggplot object.
+A \code{\link[ggplot2]{ggplot}} object.
 }
 \description{
 Visualizes a Pareto-front approximation set with parallel coordinate

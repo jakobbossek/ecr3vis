@@ -87,6 +87,7 @@
 #'   Name of the utility function to use. Must be one of \dQuote{weighted-sum},
 #'   \dQuote{tschebycheff} or \dQuote{augmented-tschbycheff}.
 #'   Default is \dQuote{tschebycheff}.
+#' @return Single numeric indicator value.
 #' @template arg_dots_not_used
 #' @keywords optimize
 #' @template family_multi_objective_performance_indicators

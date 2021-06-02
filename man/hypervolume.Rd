@@ -26,9 +26,9 @@ Default is 1.}
 Not used at the moment.}
 }
 \value{
-[\code{numeric(1)}] Dominated hypervolume in the case of
- \code{hv} and the dominated hypervolume contributions
- for each point in the case of \code{hv_contr}.
+Dominated hypervolume in the case of
+ \code{hv} or a vector the dominated hypervolume contributions
+ for each point of \code{x} in the case of \code{hv_contr}.
 }
 \description{
 The \emph{hypervolume (HV) indicator} [1, 2] is arguebly one of the most often used performance

@@ -22,7 +22,7 @@
 #' @param ip [\code{numeric}]\cr
 #'   Ideal point or approximtion of it.
 #' @template arg_dots_not_used
-#' @return [\code{numeric(1)}] Scalar indicator value.
+#' @return Single numeric indicator value.
 #'
 #' @keywords optimize
 #' @template family_multi_objective_performance_indicators

@@ -19,7 +19,7 @@ Numeric \eqn{(m \times n)} matrix where \eqn{n} is the number of points and \eqn
 is the number of objectives.}
 }
 \value{
-[\code{integer}]
+Integer vector of positions of (non)dominated points.
 }
 \description{
 Given a matrix with one point per column \code{which_dominated} returns the

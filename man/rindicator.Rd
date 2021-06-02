@@ -41,6 +41,9 @@ Default is \dQuote{tschebycheff}.}
 \item{...}{[any]\cr
 Not used.}
 }
+\value{
+Single numeric indicator value.
+}
 \description{
 Consider two Pareto-front (approximation) sets
 \eqn{X = \{x_1, \ldots, x_{|X|}\}} and \eqn{Y = \{y_1, \ldots, y_{|Y|}\}} for

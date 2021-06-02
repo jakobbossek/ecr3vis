@@ -59,7 +59,7 @@
 #' @param ... [any]\cr
 #'   Further argument passed down to \code{\link[stats]{dist}}
 #'   in case \code{d} is \code{NULL}.
-#' @return [\code{numeric(1)}] Solow-Polasky diversity measure.
+#' @return Solow-Polasky diversity measure (scalar numeric value).
 #' @template family_diversity_indicators
 #' @export
 #' @examples

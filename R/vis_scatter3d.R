@@ -26,7 +26,7 @@
 #'   Default is \dQuote{scatterplot3d}.
 #' @param ... [any]\cr
 #'   Further arguments passed down to scatterplot function.
-#' @return Nothing
+#' @return Nothing (function has side-effects by calling the respective drawing routines).
 #' @template family_multi_objective_visualizations
 #' @export
 plot_scatter3d = function(

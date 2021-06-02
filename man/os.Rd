@@ -20,7 +20,7 @@ Ideal point or approximtion of it.}
 Not used.}
 }
 \value{
-[\code{numeric(1)}] Scalar indicator value.
+Single numeric indicator value.
 }
 \description{
 A simple multi-objective performance indicator proposed in [1].

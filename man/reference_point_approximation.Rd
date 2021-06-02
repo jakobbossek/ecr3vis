@@ -18,7 +18,7 @@ List of matrizes. This is an alternative way of passing the sets. Can be used
 exclusively or combined with \code{...}.}
 }
 \value{
-[\code{numeric}] Reference point.
+Reference point (numeric vector).
 }
 \description{
 Helper functions to compute nadir or ideal point from multiple sets of

@@ -24,7 +24,7 @@ Further argument passed down to \code{\link[stats]{dist}}
 in case \code{d} is \code{NULL}.}
 }
 \value{
-[\code{numeric(1)}] Solow-Polasky diversity measure.
+Solow-Polasky diversity measure (scalar numeric value).
 }
 \description{
 This measure was introduced by Solow and Polasky back in 1994 to measure the

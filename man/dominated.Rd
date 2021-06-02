@@ -15,7 +15,8 @@ Numeric \eqn{(m \times n)} matrix where \eqn{m} is the number of objectives
 and \eqn{n} is the number of points.}
 }
 \value{
-[\code{logical}]
+Logical vector where the \eqn{i}th component is \code{TRUE} if
+  the point is dominated or nondominated respectively.
 }
 \description{
 These functions take a numeric matrix as input where each column corresponds to

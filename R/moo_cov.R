@@ -21,7 +21,7 @@
 #' @param y [\code{matrix}]\cr
 #'   Second point set in column major format.
 #' @template arg_dots_not_used
-#' @return [\code{numeric(1)}] Coverage value.
+#' @return Coverage value.
 #'
 #' @keywords optimize
 #' @template family_multi_objective_performance_indicators

@@ -12,7 +12,7 @@
 #'   First vector.
 #' @param y [\code{numeric}]\cr
 #'   Second vector.
-#' @return [\code{logical(1)}]
+#' @return Single logical value.
 #' @rdname dominates
 #' @template family_pareto_dominance_checks
 #' @template family_multi_objective_tools
@@ -67,7 +67,8 @@ is_dominated = function(x, y) {
 #' @param x [\code{matrix}]\cr
 #'   Numeric \eqn{(m \times n)} matrix where \eqn{m} is the number of objectives
 #'   and \eqn{n} is the number of points.
-#' @return [\code{logical}]
+#' @return Logical vector where the \eqn{i}th component is \code{TRUE} if
+#'   the point is dominated or nondominated respectively.
 #' @rdname dominated
 #' @template family_pareto_dominance_checks
 #' @template family_multi_objective_tools
@@ -102,7 +103,7 @@ nondominated = function(x) {
 #' @param x [\code{matrix}]\cr
 #'   Numeric \eqn{(m \times n)} matrix where \eqn{n} is the number of points and \eqn{m}
 #'   is the number of objectives.
-#' @return [\code{integer}]
+#' @return Integer vector of positions of (non)dominated points.
 #' @examples
 #'   data(mtcars)
 #'   # assume we want to maximize horsepower and minimize gas consumption
@@ -152,7 +153,7 @@ is_maximally_dominated = function(x) {
 #'   First set of points.
 #' @param y [\code{matrix}]\cr
 #'   Second set of points.
-#' @return [\code{logical(1)}]
+#' @return Single logical value.
 #' @template family_pareto_dominance_checks
 #' @template family_multi_objective_tools
 #' @export

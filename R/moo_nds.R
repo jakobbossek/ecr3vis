@@ -23,8 +23,7 @@
 #'
 #' @param x [\code{matrix}]\cr
 #'   Numeric matrix of points. Each column contains one point.
-#' @return [\code{list}]
-#'   List with the following components
+#' @return List with the following components
 #'   \describe{
 #'     \item{ranks}{Integer vector of ranks of length \code{ncol(x)}. The higher
 #'     the rank, the higher the domination front the corresponding point is

@@ -60,9 +60,9 @@
 #'   Default is 1.
 #' @param ... [any]\cr
 #'   Not used at the moment.
-#' @return [\code{numeric(1)}] Dominated hypervolume in the case of
-#'  \code{hv} and the dominated hypervolume contributions
-#'  for each point in the case of \code{hv_contr}.
+#' @return Dominated hypervolume in the case of
+#'  \code{hv} or a vector the dominated hypervolume contributions
+#'  for each point of \code{x} in the case of \code{hv_contr}.
 #' @rdname hypervolume
 #' @template family_multi_objective_performance_indicators
 #' @export

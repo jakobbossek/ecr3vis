@@ -24,7 +24,7 @@
 #'   File path to log-directory.
 #'   If not \code{NULL}, each call to \code{log_update} stores the serialized
 #'   state in file \dQuote{<to>/<iteration>.rds}.
-#' @return [\code{enviroment}] Logger environment.
+#' @return Logger environment.
 #' @examples
 #' log = log_init(c("P" = "list", "f" = "list", "C" = "character"),
 #'   init.size = 5L, at = c(1, 3))

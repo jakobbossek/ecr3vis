@@ -36,7 +36,7 @@ In contrast, for format \dQuote{wide}, there is one column for each
 indicator. This format is less redundant and memory-intensive.}
 }
 \value{
-[\code{data.frame}] A data frame with columns \dQuote{problem},
+A data frame with columns \dQuote{problem},
   \dQuote{algorithm}, \dQuote{repl} and columns with the respective
   indicator values (see argument \code{format} for details).
 }
