@@ -20,3 +20,5 @@ data-raw
 ^\.github$
 ^_pkgdown\.yml$
 ^pkgdown$
+lit
+.Rd2pdf.*
