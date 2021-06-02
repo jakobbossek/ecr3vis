@@ -72,6 +72,7 @@ Other mootools:
 \code{\link{r1}()},
 \code{\link{rse}()},
 \code{\link{set_dominates}()},
+\code{\link{solow_polasky}()},
 \code{\link{which_dominated}()}
 
 Other multi-objective performance indicators: 

@@ -51,6 +51,7 @@ Other mootools:
 \code{\link{plot_scatter3d}()},
 \code{\link{r1}()},
 \code{\link{rse}()},
+\code{\link{solow_polasky}()},
 \code{\link{which_dominated}()}
 }
 \concept{mootools}

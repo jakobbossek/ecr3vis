@@ -128,6 +128,7 @@ Other mootools:
 \code{\link{plot_scatter3d}()},
 \code{\link{rse}()},
 \code{\link{set_dominates}()},
+\code{\link{solow_polasky}()},
 \code{\link{which_dominated}()}
 
 Other multi-objective performance indicators: 
