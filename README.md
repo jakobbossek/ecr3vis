@@ -2,6 +2,12 @@
 ecr3vis: ecr3 visualization
 ===========================
 
+**Visit the [package website](https://jakobbossek.github.io/ecr3vis/).**
+
+**NOTE:** **Under heavy development!!! :construction:**  
+It is likely that **ecr3vis** will be merged/renamed into **ecr3** in
+the course of development.
+
 <!-- badges: start -->
 
 [![Project Status: Active – The project has reached a stable, usable
@@ -13,9 +19,6 @@ developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.re
 coverage](https://coveralls.io/repos/github/jakobbossek/ecr3vis/badge.svg)](https://coveralls.io/r/jakobbossek/ecr3vis?branch=main)
 [![CRAN\_Status\_Badge](https://www.r-pkg.org/badges/version/ecr3vis)](https://cran.r-project.org/package=ecr3vis)
 <!-- badges: end -->
-
-**NOTE:** **Under development!!!** (It is likely that **ecr3vis** will
-be merged/renamed into **ecr3** in the course of development)
 
 Introduction
 ------------
