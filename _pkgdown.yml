@@ -2,3 +2,10 @@ template:
     params:
         bootswatch: flatly
         #bootswatch: Solar
+
+authors:
+  Jay Hesselberth:
+    href: https://www.jakobbossek.de
+
+development:
+  mode: auto
