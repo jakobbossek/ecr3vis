@@ -109,28 +109,6 @@ approximations to the nondominated set. Imm-rep-1998-7. Institute of
 Mathematical Modeling, Technical University of Denmark.
 }
 \seealso{
-Other mootools: 
-\code{\link{cov}()},
-\code{\link{df_get_indicators}()},
-\code{\link{dominated}()},
-\code{\link{dominates}()},
-\code{\link{eps}()},
-\code{\link{gd}()},
-\code{\link{get_nadir}()},
-\code{\link{hv}()},
-\code{\link{nds}()},
-\code{\link{os}()},
-\code{\link{plot_eaf}()},
-\code{\link{plot_heatmap}()},
-\code{\link{plot_pcp}()},
-\code{\link{plot_radar}()},
-\code{\link{plot_scatter2d}()},
-\code{\link{plot_scatter3d}()},
-\code{\link{rse}()},
-\code{\link{set_dominates}()},
-\code{\link{solow_polasky}()},
-\code{\link{which_dominated}()}
-
 Other multi-objective performance indicators: 
 \code{\link{cov}()},
 \code{\link{df_get_indicators}()},
@@ -140,6 +118,5 @@ Other multi-objective performance indicators:
 \code{\link{os}()},
 \code{\link{rse}()}
 }
-\concept{mootools}
 \concept{multi-objective performance indicators}
 \keyword{optimize}

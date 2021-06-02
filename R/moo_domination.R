@@ -14,8 +14,8 @@
 #'   Second vector.
 #' @return [\code{logical(1)}]
 #' @rdname dominates
-#' @family pareto-dominance
-#' @family mootools
+#' @template family_pareto_dominance_checks
+#' @template family_multi_objective_tools
 #' @export
 #' @examples
 #' dominates(c(2, 3), c(4, 5))
@@ -69,8 +69,8 @@ is_dominated = function(x, y) {
 #'   and \eqn{n} is the number of points.
 #' @return [\code{logical}]
 #' @rdname dominated
-#' @family pareto-dominance
-#' @family mootools
+#' @template family_pareto_dominance_checks
+#' @template family_multi_objective_tools
 #' @export
 #' @examples
 #' x = matrix(c(1, 1, 2, 2, 1, 3), byrow = FALSE, ncol = 3L)
@@ -114,8 +114,8 @@ nondominated = function(x) {
 #'   points(cars[idxs, ], col = "tomato", pch = 10)
 #'   }
 #' @rdname which_dominated
-#' @family pareto-dominance
-#' @family mootools
+#' @template family_pareto_dominance_checks
+#' @template family_multi_objective_tools
 #' @export
 #' @examples
 #' # first point is the sole nondominated point
@@ -152,8 +152,8 @@ is_maximally_dominated = function(x) {
 #' @param y [\code{matrix}]\cr
 #'   Second set of points.
 #' @return [\code{logical(1)}]
-#' @family pareto-dominance
-#' @family mootools
+#' @template family_pareto_dominance_checks
+#' @template family_multi_objective_tools
 #' @export
 #' @examples
 #' x = matrix(c(1, 1, 2, 2, 1, 3), byrow = FALSE, ncol = 3L)

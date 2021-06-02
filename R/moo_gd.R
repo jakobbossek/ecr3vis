@@ -72,8 +72,7 @@
 #' @return [\code{numeric(1)}] Scalar indicator value.
 #'
 #' @keywords optimize
-#' @family mootools
-#' @family multi-objective performance indicators
+#' @template family_multi_objective_performance_indicators
 #' @rdname gd
 #' @export
 gd = function(x, y, p = 2, modified = TRUE, ...) {

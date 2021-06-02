@@ -64,8 +64,7 @@
 #'  \code{hv} and the dominated hypervolume contributions
 #'  for each point in the case of \code{hv_contr}.
 #' @rdname hypervolume
-#' @family mootools
-#' @family multi-objective performance indicators
+#' @template family_multi_objective_performance_indicators
 #' @export
 hv = function(x, r = NULL, offset = 1, ...) {
   checkmate::assert_matrix(x, mode = "numeric", min.rows = 2L, min.cols = 1L, any.missing = FALSE, all.missing = FALSE)

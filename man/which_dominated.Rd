@@ -44,33 +44,16 @@ which_dominated(x)
 which_nondominated(x)
 }
 \seealso{
-Other pareto-dominance: 
+Other Pareto-dominance checks: 
 \code{\link{dominated}()},
 \code{\link{dominates}()},
 \code{\link{set_dominates}()}
 
-Other mootools: 
-\code{\link{cov}()},
-\code{\link{df_get_indicators}()},
+Other multi-objective tools: 
 \code{\link{dominated}()},
 \code{\link{dominates}()},
-\code{\link{eps}()},
-\code{\link{gd}()},
-\code{\link{get_nadir}()},
-\code{\link{hv}()},
-\code{\link{nds}()},
-\code{\link{os}()},
-\code{\link{plot_eaf}()},
-\code{\link{plot_heatmap}()},
-\code{\link{plot_pcp}()},
-\code{\link{plot_radar}()},
-\code{\link{plot_scatter2d}()},
-\code{\link{plot_scatter3d}()},
-\code{\link{r1}()},
-\code{\link{rse}()},
-\code{\link{set_dominates}()},
-\code{\link{solow_polasky}()}
+\code{\link{set_dominates}()}
 }
-\concept{mootools}
-\concept{pareto-dominance}
+\concept{Pareto-dominance checks}
+\concept{multi-objective tools}
 \keyword{optimize}

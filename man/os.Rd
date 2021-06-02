@@ -37,28 +37,6 @@ This indicator only captures the extend of the Pareto-front approximation.
 optimization solution set, Journal of Mechanical Design 123 (1) (2001) 18–25.
 }
 \seealso{
-Other mootools: 
-\code{\link{cov}()},
-\code{\link{df_get_indicators}()},
-\code{\link{dominated}()},
-\code{\link{dominates}()},
-\code{\link{eps}()},
-\code{\link{gd}()},
-\code{\link{get_nadir}()},
-\code{\link{hv}()},
-\code{\link{nds}()},
-\code{\link{plot_eaf}()},
-\code{\link{plot_heatmap}()},
-\code{\link{plot_pcp}()},
-\code{\link{plot_radar}()},
-\code{\link{plot_scatter2d}()},
-\code{\link{plot_scatter3d}()},
-\code{\link{r1}()},
-\code{\link{rse}()},
-\code{\link{set_dominates}()},
-\code{\link{solow_polasky}()},
-\code{\link{which_dominated}()}
-
 Other multi-objective performance indicators: 
 \code{\link{cov}()},
 \code{\link{df_get_indicators}()},
@@ -68,6 +46,5 @@ Other multi-objective performance indicators:
 \code{\link{r1}()},
 \code{\link{rse}()}
 }
-\concept{mootools}
 \concept{multi-objective performance indicators}
 \keyword{optimize}

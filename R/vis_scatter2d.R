@@ -53,8 +53,7 @@
 #'   E.g., \code{nrow} to change layout.
 #'   Default is the empty list. In this case data is grouped by problem.
 #' @return [\code{\link[ggplot2]{ggplot}}] A ggplot object.
-#' @family mootools
-#' @family visualization
+#' @template family_multi_objective_visualizations
 #' @export
 plot_scatter2d = function(
   df,

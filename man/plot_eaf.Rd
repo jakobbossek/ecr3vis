@@ -80,33 +80,8 @@ First version, January 2005). doi: 10.3929/ethz-b-000023822
 }
 \seealso{
 Other mootools: 
-\code{\link{cov}()},
-\code{\link{df_get_indicators}()},
-\code{\link{dominated}()},
-\code{\link{dominates}()},
-\code{\link{eps}()},
-\code{\link{gd}()},
 \code{\link{get_nadir}()},
-\code{\link{hv}()},
-\code{\link{nds}()},
-\code{\link{os}()},
-\code{\link{plot_heatmap}()},
-\code{\link{plot_pcp}()},
-\code{\link{plot_radar}()},
-\code{\link{plot_scatter2d}()},
-\code{\link{plot_scatter3d}()},
-\code{\link{r1}()},
-\code{\link{rse}()},
-\code{\link{set_dominates}()},
-\code{\link{solow_polasky}()},
-\code{\link{which_dominated}()}
-
-Other visualization: 
-\code{\link{plot_heatmap}()},
-\code{\link{plot_pcp}()},
-\code{\link{plot_radar}()},
-\code{\link{plot_scatter2d}()},
-\code{\link{plot_scatter3d}()}
+\code{\link{nds}()}
 }
 \concept{mootools}
 \concept{visualization}

@@ -52,28 +52,6 @@ Evolutionary Computation (CEC), 2020, pp. 1-8, doi: 10.1109/CEC48606.2020.918583
 Notices of the AMS, vol. 51, no. 10, pp. 1186–1194, 2004.
 }
 \seealso{
-Other mootools: 
-\code{\link{cov}()},
-\code{\link{df_get_indicators}()},
-\code{\link{dominated}()},
-\code{\link{dominates}()},
-\code{\link{eps}()},
-\code{\link{gd}()},
-\code{\link{get_nadir}()},
-\code{\link{hv}()},
-\code{\link{nds}()},
-\code{\link{os}()},
-\code{\link{plot_eaf}()},
-\code{\link{plot_heatmap}()},
-\code{\link{plot_pcp}()},
-\code{\link{plot_radar}()},
-\code{\link{plot_scatter2d}()},
-\code{\link{plot_scatter3d}()},
-\code{\link{r1}()},
-\code{\link{set_dominates}()},
-\code{\link{solow_polasky}()},
-\code{\link{which_dominated}()}
-
 Other multi-objective performance indicators: 
 \code{\link{cov}()},
 \code{\link{df_get_indicators}()},
@@ -83,6 +61,5 @@ Other multi-objective performance indicators:
 \code{\link{os}()},
 \code{\link{r1}()}
 }
-\concept{mootools}
 \concept{multi-objective performance indicators}
 \keyword{optimize}

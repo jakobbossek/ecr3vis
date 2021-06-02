@@ -42,8 +42,7 @@
 #' @return [\code{numeric(1)}] Scalar indicator value.
 #'
 #' @keywords optimize
-#' @family mootools
-#' @family multi-objective performance indicators
+#' @template family_multi_objective_performance_indicators
 #' @export
 eps = function(x, y, ...) {
   checkmate::assert_matrix(x, mode = "numeric", min.rows = 2L, min.cols = 2L, any.missing = FALSE, all.missing = FALSE)

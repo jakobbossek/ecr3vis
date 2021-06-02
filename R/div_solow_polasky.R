@@ -60,8 +60,7 @@
 #'   Further argument passed down to \code{\link[stats]{dist}}
 #'   in case \code{d} is \code{NULL}.
 #' @return [\code{numeric(1)}] Solow-Polasky diversity measure.
-#' @family diversity measures
-#' @family mootools
+#' @template family_diversity_indicators
 #' @export
 #' @examples
 #' # Generate a random point cloud in [0,1] x [0,1]

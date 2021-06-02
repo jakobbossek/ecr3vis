@@ -36,8 +36,7 @@
 #'   indicator values (see argument \code{format} for details).
 #'
 #' @keywords optimize
-#' @family mootools
-#' @family multi-objective performance indicators
+#' @template family_multi_objective_performance_indicators
 #' @export
 #' @examples
 #' # load sample data set

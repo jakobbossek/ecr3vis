@@ -89,8 +89,7 @@
 #'   Default is \dQuote{tschebycheff}.
 #' @template arg_dots_not_used
 #' @keywords optimize
-#' @family mootools
-#' @family multi-objective performance indicators
+#' @template family_multi_objective_performance_indicators
 #' @rdname rindicator
 #' @export
 r1 = function(

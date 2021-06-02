@@ -54,34 +54,10 @@ Method, in IEEE Transactions on Evolutionary Computation, vol. 19, no. 2,
 pp. 225-245, April 2015, doi: 10.1109/TEVC.2014.2313407.
 }
 \seealso{
-Other mootools: 
-\code{\link{cov}()},
-\code{\link{df_get_indicators}()},
-\code{\link{dominated}()},
-\code{\link{dominates}()},
-\code{\link{eps}()},
-\code{\link{gd}()},
-\code{\link{get_nadir}()},
-\code{\link{hv}()},
-\code{\link{nds}()},
-\code{\link{os}()},
-\code{\link{plot_eaf}()},
-\code{\link{plot_heatmap}()},
-\code{\link{plot_pcp}()},
-\code{\link{plot_scatter2d}()},
-\code{\link{plot_scatter3d}()},
-\code{\link{r1}()},
-\code{\link{rse}()},
-\code{\link{set_dominates}()},
-\code{\link{solow_polasky}()},
-\code{\link{which_dominated}()}
-
-Other visualization: 
-\code{\link{plot_eaf}()},
+Other multi-objective visualizations: 
 \code{\link{plot_heatmap}()},
 \code{\link{plot_pcp}()},
 \code{\link{plot_scatter2d}()},
 \code{\link{plot_scatter3d}()}
 }
-\concept{mootools}
-\concept{visualization}
+\concept{multi-objective visualizations}
