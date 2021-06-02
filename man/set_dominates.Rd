@@ -2,7 +2,7 @@
 % Please edit documentation in R/moo_domination.R
 \name{set_dominates}
 \alias{set_dominates}
-\title{Check if one set is better than another.}
+\title{Check if one set Pareto-dominates another}
 \usage{
 set_dominates(x, y)
 }

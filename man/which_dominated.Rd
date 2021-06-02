@@ -4,7 +4,8 @@
 \alias{which_dominated}
 \alias{which_nondominated}
 \alias{is_maximally_dominated}
-\title{Determine which points of a set are (non)dominated.}
+\title{D
+etermine which points of a set are (non)dominated}
 \usage{
 which_dominated(x)
 

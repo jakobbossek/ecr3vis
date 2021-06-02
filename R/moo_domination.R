@@ -54,7 +54,7 @@ is_dominated = function(x, y) {
 }
 
 #' @title
-#' Check for Pareto-dominance.
+#' Check for Pareto-dominance
 #'
 #' @description
 #' These functions take a numeric matrix as input where each column corresponds to
@@ -87,7 +87,8 @@ nondominated = function(x) {
   return(!dominated(x))
 }
 
-#' @title Determine which points of a set are (non)dominated.
+#' @title D
+#' etermine which points of a set are (non)dominated
 #'
 #' @description
 #' Given a matrix with one point per column \code{which_dominated} returns the
@@ -141,7 +142,7 @@ is_maximally_dominated = function(x) {
 }
 
 #' @title
-#' Check if one set is better than another.
+#' Check if one set Pareto-dominates another
 #'
 #' @description
 #' The function checks, whether every point from the second set of points

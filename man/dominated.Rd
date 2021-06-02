@@ -3,7 +3,7 @@
 \name{dominated}
 \alias{dominated}
 \alias{nondominated}
-\title{Check for Pareto-dominance.}
+\title{Check for Pareto-dominance}
 \usage{
 dominated(x)
 
