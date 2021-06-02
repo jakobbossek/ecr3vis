@@ -41,10 +41,10 @@ Given \eqn{P = \{P_1, \ldots, P_{\mu}\}} and pairwise distances \eqn{d(P_i, P_j)
 \eqn{1 \leq, i,j \leq \mu} let \eqn{M} be a \eqn{(\mu \times \mu)} matrix
 with
 \deqn{
-  M_{ij} = \exp(-\theta \cdot d(P_i, P-J)).
+  M_{ij} = \exp(-\theta \cdot d(P_i, P_j)).
 }
 Then the Solow-Polasky diversity is defined as
-\eqn{
+\deqn{
   D_{SP}(P) = \sum_{1 \leq i,j \leq \mu} M_{ij}^{-1} \in [1, \mu]
 }
 where matrix \eqn{M^{-1}} is the Moore-Penrose generalized inverse of a
