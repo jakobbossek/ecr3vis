@@ -2,7 +2,7 @@
 % Please edit documentation in R/bookkeeping_logger.R
 \name{log_update}
 \alias{log_update}
-\title{Update logger.}
+\title{Logger update}
 \usage{
 log_update(log, log.stuff = list(), ...)
 }

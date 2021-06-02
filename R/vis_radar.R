@@ -1,7 +1,8 @@
 #' @title
-#' Radar plot
+#' Radar/spider plot
 #'
-#' @description A radar plot or spider plot is an elegant method to visualize
+#' @description
+#' A radar plot or spider plot is an elegant method to visualize
 #' solution quality of solutions with more than two objectives. Essentially it
 #' shows multiple numeric values starting from the same origin in a circular
 #' two-dimensional representation

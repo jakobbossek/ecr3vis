@@ -3,7 +3,7 @@
 \docType{data}
 \name{emoas_on_zdt}
 \alias{emoas_on_zdt}
-\title{Examplary Pareto-front approximations sets.}
+\title{Exemplary Pareto-front approximations sets}
 \format{
 A data frame with 5 columns/variables: \code{y1} and \code{y2}
 (objective function values), \code{algorithm}, \code{problem} and \code{repl}

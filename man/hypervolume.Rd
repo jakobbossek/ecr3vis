@@ -3,7 +3,7 @@
 \name{hv}
 \alias{hv}
 \alias{hv_contr}
-\title{Dominated hypervolume (contribution).}
+\title{Dominated hypervolume (contribution)}
 \usage{
 hv(x, r = NULL, offset = 1, ...)
 

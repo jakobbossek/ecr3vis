@@ -3,7 +3,7 @@
 \name{get_nadir}
 \alias{get_nadir}
 \alias{get_ideal}
-\title{Reference point approximation.}
+\title{Reference point approximation}
 \usage{
 get_nadir(..., sets = NULL)
 

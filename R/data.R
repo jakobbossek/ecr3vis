@@ -1,5 +1,5 @@
 #' @title
-#' Examplary Pareto-front approximations sets.
+#' Exemplary Pareto-front approximations sets
 #'
 #' @description
 #' A dataset containing Pareto-front approximation sets for the continuous

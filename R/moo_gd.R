@@ -1,5 +1,5 @@
 #' @title
-#' (Modified) (Inverted) Generational distance.
+#' (Inverted) Generational distance and Average Hausdorff Distance
 #'
 #' @description
 #' The generational distance (GD) measures the distance of a point set

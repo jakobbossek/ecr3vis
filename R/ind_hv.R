@@ -1,5 +1,5 @@
 #' @title
-#' Dominated hypervolume (contribution).
+#' Dominated hypervolume (contribution)
 #'
 #' @description
 #' The hypervolume (HV) indicator is arguebly one of the most often used performance

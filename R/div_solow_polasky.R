@@ -1,5 +1,5 @@
 #' @title
-#' Solow-Polasky measure.
+#' Solow-Polasky measure
 #'
 #' @description
 #' This measure was introduced by Solow and Polasky back in 1994 to measure the

@@ -2,7 +2,7 @@
 % Please edit documentation in R/bookkeeping_logger.R
 \name{log_init}
 \alias{log_init}
-\title{Initialize logger.}
+\title{Logger initialization}
 \usage{
 log_init(what, init.size, at = NULL, to = NULL)
 }

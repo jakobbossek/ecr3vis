@@ -2,7 +2,7 @@
 % Please edit documentation in R/vis_radar.R
 \name{plot_radar}
 \alias{plot_radar}
-\title{Radar plot}
+\title{Radar/spider plot}
 \usage{
 plot_radar(df, obj.cols = c("y1", "y2", "y3"))
 }

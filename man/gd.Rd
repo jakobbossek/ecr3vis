@@ -6,7 +6,7 @@
 \alias{gdp}
 \alias{igdp}
 \alias{ahd}
-\title{(Modified) (Inverted) Generational distance.}
+\title{(Inverted) Generational distance and Average Hausdorff Distance}
 \usage{
 gd(x, y, p = 2, modified = TRUE, ...)
 

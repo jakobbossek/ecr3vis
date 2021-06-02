@@ -2,7 +2,7 @@
 % Please edit documentation in R/div_solow_polasky.R
 \name{solow_polasky}
 \alias{solow_polasky}
-\title{Solow-Polasky measure.}
+\title{Solow-Polasky measure}
 \usage{
 solow_polasky(x, d = NULL, theta = 1, ...)
 }

@@ -1,5 +1,5 @@
 #' @title
-#' Initialize logger.
+#' Logger initialization
 #'
 #' @description
 #' Generates a fairly flexible container to log stuff.
@@ -69,7 +69,7 @@ log_init = function(what, init.size, at = NULL, to = NULL) {
 }
 
 #' @title
-#' Update logger.
+#' Logger update
 #'
 #' @description
 #' Store stuff in logger object.
