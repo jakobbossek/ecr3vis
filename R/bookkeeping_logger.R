@@ -26,12 +26,16 @@
 #'   state in file \dQuote{<to>/<iteration>.rds}.
 #' @return [\code{enviroment}] Logger environment.
 #' @examples
-#' log = log_init(c("P" = "list", "f" = "list", "C" = "character"), init.size = 5L, at = c(1, 3))
+#' log = log_init(c("P" = "list", "f" = "list", "C" = "character"),
+#'   init.size = 5L, at = c(1, 3))
 #'
 #' # note that div is not subject to logging since it was not specified in log_init
-#' log_update(log, P = matrix(runif(10), ncol = 2L), C = "a", f = runif(10), iter = 1, div = letters[1:3])
-#' log_update(log, P = matrix(runif(10), ncol = 2L), C = "b", f = runif(10), iter = 2, div = letters[1:3])
-#' log_update(log, P = matrix(runif(10), ncol = 2L), C = "a", f = runif(10), iter = 3, div = letters[1:3])
+#' log_update(log, P = matrix(runif(10), ncol = 2L), C = "a",
+#'   f = runif(10), iter = 1, div = letters[1:3])
+#' log_update(log, P = matrix(runif(10), ncol = 2L), C = "b",
+#'   f = runif(10), iter = 2, div = letters[1:3])
+#' log_update(log, P = matrix(runif(10), ncol = 2L), C = "a",
+#'   f = runif(10), iter = 3, div = letters[1:3])
 #' print(log$df)
 #' @seealso log_update
 #' @export
