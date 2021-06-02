@@ -11,7 +11,7 @@ Authors@R: c(
     comment = c(ORCID = "0000-0002-4121-4668")))
 Maintainer: Jakob Bossek <j.bossek@gmail.com>
 License: GPL-3 | file LICENSE
-URL: https://github.com/jakobbossek/ecr3vis
+URL: https://jakobbossek.github.io/ecr3vis/, https://github.com/jakobbossek/ecr3vis
 BugReports: https://github.com/jakobbossek/ecr3vis/issues
 Depends:
     R (>= 2.10),
