@@ -66,3 +66,16 @@ remotes::install_github("jakobbossek/ecr3vis")
 ## Getting help
 
 Please address questions and missing features about the *ecr3vis* as weell as annoying bug reports in the [issue tracker](https://github.com/jakobbossek/ecr3vis/issues). Pay attention to explain your problem as good as possible. At its best you provide an example, so I can reproduce your problem quickly. Please avoid sending e-mails.
+
+
+## Related Software
+
+There are many alternatives in both R and other languages. We list some examples in the following:
+
+* [**ecr**](https://cran.r-project.org/package=ecr) *Evolutionary Computation in R*, short **ecr**, is the predecessor of **ecrvis**.
+* [**mco**](https://cran.r-project.org/package=mco) A R package with focus on the rapid implementation of multi-objective evolutionary algorithms only.
+* [**emoa**](https://cran.r-project.org/package=emoa) Another R package with focus on the development of multi-objective evolutionary algorithms (same author as in **mco**).
+* [**GA**](https://cran.r-project.org/package=GA) R package with some building blocks for evoltionary algorithms. Also offers the possibility for island model EAs. However, restricted to standard representations and single-objective problems.
+* [**MaOEA**](https://cran.r-project.org/package=MaOEA): A set of evolutionary algorithms to solve many-objective optimization (i.e. problems with more than three objectives).
+* [**pymoo**](https://pymoo.org) A quite new, yet comprehensive, Python library for evolutionary multi-objective optimization.
+* [**DEAP**](https://github.com/deap/deap) Another prominent and established Python framework on evolutionary computation with a wide range of functionality.
