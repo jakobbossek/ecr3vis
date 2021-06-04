@@ -152,6 +152,22 @@ Second vector.</p></td>
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
     <p>Single logical value.</p>
+    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
+
+    <p>Given two vectors \(x,y \in R^m\) we say that \(x\) dominates \(y\),
+denoted as \(x \preceq y\) if and only if
+$$
+  x_i \leq y_i \, \forall i \in \{1, \ldots, m\}
+$$
+and
+$$
+  \exists j \in \{1, \ldots, m\}: x_i &lt; y_i.
+$$
+Informally, \(x\) dominates \(y\) if \(x\) is no worse than \(y\) in
+all components and \(x\) is strictly better than \(y\) in at least one
+component. Note that this definition focuses on minimization of all
+objectives. This is no restriction, since the maximization of some function
+is equivalent to the minimization of its negative.</p>
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
     <div class='dont-index'><p>Other Pareto-dominance checks: 

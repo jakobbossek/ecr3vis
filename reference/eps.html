@@ -40,32 +40,8 @@
 
 
 <meta property="og:title" content="Binary \(\varepsilon\)-indicator — eps" />
-<meta property="og:description" content="The \(\varepsilon\)-indicator, often denoted as \(I_{\varepsilon}\),
-requires for understanding the concept of \(\varepsilon\)-dominance.
-A vector \(x \in R^m\), for some \(\varepsilon &amp;gt; 0\), \(\varepsilon\)-dominates
-another vector \(y \in R^m\), \(x \preceq_{\varepsilon} y\), iff
-$$
-  \Leftrightarrow x_i \leq \varepsilon y_i \quad \forall i = 1,\ldots,m.
-$$
-Equipped with this, Zitzler et al. [1] define the (multiplicative) binary
-\(\varepsilon\)-indicator as follows for two point sets \(X = \{x_1, \ldots, x_{|X|}\}\)
-and \(Y = \{y_1, \ldots, y_{|Y|}\}\)
-$$
-  I_{\varepsilon}(X, Y) = \inf_{\varepsilon &amp;gt; 0}\{y \in Y \mid \exists x \in X: x \preceq_{\varepsilon} y\},
-$$
-It means that \(I_{\varepsilon}(X, Y)\) is the smallest \(\varepsilon\)
-such that there exists a point in \(X\) that dominates a point \(y \in Y\)
-in the \(\varepsilon\)-dominance sense. It can be calculated the following way
-$$
-  I_{\varepsilon}(X, Y) = \max_{y \in Y} \min_{x \in X} \max_{1 \le i \le m} \frac{x_i}{y_i}.
-$$
-Given a reference set \(R\), e.g., the known true Pareto-front or a good
-approximation of it, the unary version is simply
-$$
-  I_{\varepsilon}(X) := I_{\varepsilon}(R, X).
-$$
-Function eps implements the binary \(\varepsilon\)-indicator. It
-should be obvious how to calculate the unary indicator." />
+<meta property="og:description" content="For two point sets x and y the function returns the value
+of the binary \(\varepsilon\)-indicator [1]." />
 
 
 
@@ -142,32 +118,8 @@ should be obvious how to calculate the unary indicator." />
     </div>
 
     <div class="ref-description">
-    <p>The \(\varepsilon\)-indicator, often denoted as \(I_{\varepsilon}\),
-requires for understanding the concept of \(\varepsilon\)-dominance.
-A vector \(x \in R^m\), for some \(\varepsilon &gt; 0\), \(\varepsilon\)-dominates
-another vector \(y \in R^m\), \(x \preceq_{\varepsilon} y\), iff
-$$
-  \Leftrightarrow x_i \leq \varepsilon y_i \quad \forall i = 1,\ldots,m.
-$$
-Equipped with this, Zitzler et al. [1] define the (multiplicative) binary
-\(\varepsilon\)-indicator as follows for two point sets \(X = \{x_1, \ldots, x_{|X|}\}\)
-and \(Y = \{y_1, \ldots, y_{|Y|}\}\)
-$$
-  I_{\varepsilon}(X, Y) = \inf_{\varepsilon &gt; 0}\{y \in Y \mid \exists x \in X: x \preceq_{\varepsilon} y\},
-$$
-It means that \(I_{\varepsilon}(X, Y)\) is the smallest \(\varepsilon\)
-such that there exists a point in \(X\) that dominates a point \(y \in Y\)
-in the \(\varepsilon\)-dominance sense. It can be calculated the following way
-$$
-  I_{\varepsilon}(X, Y) = \max_{y \in Y} \min_{x \in X} \max_{1 \le i \le m} \frac{x_i}{y_i}.
-$$
-Given a reference set \(R\), e.g., the known true Pareto-front or a good
-approximation of it, the unary version is simply
-$$
-  I_{\varepsilon}(X) := I_{\varepsilon}(R, X).
-$$
-Function <code>eps</code> implements the binary \(\varepsilon\)-indicator. It
-should be obvious how to calculate the unary indicator.</p>
+    <p>For two point sets <code>x</code> and <code>y</code> the function returns the value
+of the binary \(\varepsilon\)-indicator [1].</p>
     </div>
 
     <pre class="usage"><span class='fu'>eps</span><span class='op'>(</span><span class='va'>x</span>, <span class='va'>y</span>, <span class='va'>...</span><span class='op'>)</span></pre>
@@ -195,6 +147,39 @@ Not used.</p></td>
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
     <p>Single numeric indicator value.</p>
+    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
+
+    <p>The \(\varepsilon\)-indicator, often denoted as \(I_{\varepsilon}\),
+requires for understanding the concept of \(\varepsilon\)-dominance.
+A vector \(x \in R^m\), for some \(\varepsilon &gt; 0\), \(\varepsilon\)-dominates
+another vector \(y \in R^m\), \(x \preceq_{\varepsilon} y\), iff
+$$
+  \Leftrightarrow x_i \leq \varepsilon y_i \quad \forall i = 1,\ldots,m.
+$$
+Equipped with this, Zitzler et al. [1] define the (multiplicative) binary
+\(\varepsilon\)-indicator as follows for two point sets \(X = \{x_1, \ldots, x_{|X|}\}\)
+and \(Y = \{y_1, \ldots, y_{|Y|}\}\)
+$$
+  I_{\varepsilon}(X, Y) = \inf_{\varepsilon &gt; 0}\{y \in Y \mid \exists x \in X: x \preceq_{\varepsilon} y\},
+$$
+It means that \(I_{\varepsilon}(X, Y)\) is the smallest \(\varepsilon\)
+such that there exists a point in \(X\) that dominates a point \(y \in Y\)
+in the \(\varepsilon\)-dominance sense. It can be calculated the following way
+$$
+  I_{\varepsilon}(X, Y) = \max_{y \in Y} \min_{x \in X} \max_{1 \le i \le m} \frac{x_i}{y_i}.
+$$
+Given a reference set \(R\), e.g., the known true Pareto-front or a good
+approximation of it, the unary version is simply
+$$
+  I_{\varepsilon}(X) := I_{\varepsilon}(R, X).
+$$
+Function <code>eps</code> implements the binary \(\varepsilon\)-indicator. It
+should be obvious how to calculate the unary indicator.</p>
+    <h2 class="hasAnchor" id="note"><a class="anchor" href="#note"></a>Note</h2>
+
+    <p>Keep in mind that this function assumes all objectives to be minimized.
+In case at least one objective is to be maximized the data needs
+to be transformed accordingly in advance.</p>
     <h2 class="hasAnchor" id="references"><a class="anchor" href="#references"></a>References</h2>
 
     <p>[1] E. Zitzler, L. Thiele, M. Laumanns, C. M. Fonseca, V. G. Da Fonseca,

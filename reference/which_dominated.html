@@ -163,21 +163,17 @@ is the number of objectives.</p></td>
 <code><a href='set_dominates.html'>set_dominates</a>()</code></p></div>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'>  <span class='fu'><a href='https://rdrr.io/r/utils/data.html'>data</a></span><span class='op'>(</span><span class='va'>mtcars</span><span class='op'>)</span>
-  <span class='co'># assume we want to maximize horsepower and minimize gas consumption</span>
-  <span class='va'>cars</span> <span class='op'>=</span> <span class='va'>mtcars</span><span class='op'>[</span>, <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"mpg"</span>, <span class='st'>"hp"</span><span class='op'>)</span><span class='op'>]</span>
-  <span class='va'>cars</span><span class='op'>$</span><span class='va'>hp</span> <span class='op'>=</span> <span class='op'>-</span><span class='va'>cars</span><span class='op'>$</span><span class='va'>hp</span>
-  <span class='va'>idxs</span> <span class='op'>=</span> <span class='fu'>which_nondominated</span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/t.html'>t</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/matrix.html'>as.matrix</a></span><span class='op'>(</span><span class='va'>cars</span><span class='op'>)</span><span class='op'>)</span><span class='op'>)</span>
-  <span class='kw'>if</span> <span class='op'>(</span><span class='cn'>FALSE</span><span class='op'>)</span> <span class='op'>{</span>
-  <span class='fu'><a href='https://rdrr.io/r/base/print.html'>print</a></span><span class='op'>(</span><span class='va'>mtcars</span><span class='op'>[</span><span class='va'>idxs</span>, <span class='op'>]</span><span class='op'>)</span>
-  <span class='fu'><a href='https://rdrr.io/r/graphics/plot.default.html'>plot</a></span><span class='op'>(</span><span class='va'>cars</span><span class='op'>)</span>
-  <span class='fu'><a href='https://rdrr.io/r/graphics/points.html'>points</a></span><span class='op'>(</span><span class='va'>cars</span><span class='op'>[</span><span class='va'>idxs</span>, <span class='op'>]</span>, col <span class='op'>=</span> <span class='st'>"tomato"</span>, pch <span class='op'>=</span> <span class='fl'>10</span><span class='op'>)</span>
-  <span class='op'>}</span>
-<span class='co'># first point is the sole nondominated point</span>
-<span class='va'>x</span> <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/matrix.html'>matrix</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>1</span>, <span class='fl'>1</span>, <span class='fl'>2</span>, <span class='fl'>2</span>, <span class='fl'>1</span>, <span class='fl'>3</span><span class='op'>)</span>, byrow <span class='op'>=</span> <span class='cn'>FALSE</span>, ncol <span class='op'>=</span> <span class='fl'>3L</span><span class='op'>)</span>
-<span class='fu'>which_dominated</span><span class='op'>(</span><span class='va'>x</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; [1] 2 3</div><div class='input'><span class='fu'>which_nondominated</span><span class='op'>(</span><span class='va'>x</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; [1] 1</div></pre>
+    <pre class="examples"><div class='input'><span class='fu'><a href='https://rdrr.io/r/utils/data.html'>data</a></span><span class='op'>(</span><span class='va'>mtcars</span><span class='op'>)</span>
+<span class='co'># assume we want to maximize horsepower and minimize gas consumption</span>
+<span class='va'>cars</span> <span class='op'>=</span> <span class='va'>mtcars</span><span class='op'>[</span>, <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"mpg"</span>, <span class='st'>"hp"</span><span class='op'>)</span><span class='op'>]</span>
+<span class='va'>cars</span><span class='op'>$</span><span class='va'>hp</span> <span class='op'>=</span> <span class='op'>-</span><span class='va'>cars</span><span class='op'>$</span><span class='va'>hp</span>
+<span class='va'>idxs</span> <span class='op'>=</span> <span class='fu'>which_nondominated</span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/t.html'>t</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/matrix.html'>as.matrix</a></span><span class='op'>(</span><span class='va'>cars</span><span class='op'>)</span><span class='op'>)</span><span class='op'>)</span>
+<span class='kw'>if</span> <span class='op'>(</span><span class='cn'>FALSE</span><span class='op'>)</span> <span class='op'>{</span>
+<span class='fu'><a href='https://rdrr.io/r/base/print.html'>print</a></span><span class='op'>(</span><span class='va'>mtcars</span><span class='op'>[</span><span class='va'>idxs</span>, <span class='op'>]</span><span class='op'>)</span>
+<span class='fu'><a href='https://rdrr.io/r/graphics/plot.default.html'>plot</a></span><span class='op'>(</span><span class='va'>cars</span><span class='op'>)</span>
+<span class='fu'><a href='https://rdrr.io/r/graphics/points.html'>points</a></span><span class='op'>(</span><span class='va'>cars</span><span class='op'>[</span><span class='va'>idxs</span>, <span class='op'>]</span>, col <span class='op'>=</span> <span class='st'>"tomato"</span>, pch <span class='op'>=</span> <span class='fl'>10</span><span class='op'>)</span>
+<span class='op'>}</span>
+</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">

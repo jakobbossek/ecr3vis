@@ -40,25 +40,7 @@
 
 
 <meta property="og:title" content="Riesz \(s\)-energy — rse" />
-<meta property="og:description" content="The Riesz \(s\)-energy is designed as a measure for the evenness of a set
-of points \(X = \{x_1, \ldots, x_{|X|}\}\). It is formally defined as
-$$
-  R_s(X) = \sum_{x \in X} \sum_{y \in X, y \neq x} k_s(x, y)
-$$
-where function
-$$
-  k_s(x, y) = d(x, y)^{-s}, s &amp;gt; 0
-$$
-and
-$$
-  k_s(x, y) = -\log(d(x, y)), s = 0
-$$
-is the so-called Riesz \(s\)-kernel and \(d(x,y)\) is the Euclidean
-distance between \(x\) and \(y\). The parameter \(s \geq 0\) steers
-the desired degree of uniformity of the distribution with increasing
-emphasis on uniformity for \(s \to \infty\). See [1] for an application
-of the Riesz \(s\)-energy in multi-objective evolutionary optimization
-and [2, 3] for a mathematically rigorous introduction into the general idea." />
+<meta property="og:description" content="Calculate the Riesz \(s\)-energy measure for a set of points." />
 
 
 
@@ -135,25 +117,7 @@ and [2, 3] for a mathematically rigorous introduction into the general idea." />
     </div>
 
     <div class="ref-description">
-    <p>The Riesz \(s\)-energy is designed as a measure for the evenness of a set
-of points \(X = \{x_1, \ldots, x_{|X|}\}\). It is formally defined as
-$$
-  R_s(X) = \sum_{x \in X} \sum_{y \in X, y \neq x} k_s(x, y)
-$$
-where function
-$$
-  k_s(x, y) = d(x, y)^{-s}, s &gt; 0
-$$
-and
-$$
-  k_s(x, y) = -\log(d(x, y)), s = 0
-$$
-is the so-called Riesz \(s\)-kernel and \(d(x,y)\) is the Euclidean
-distance between \(x\) and \(y\). The parameter \(s \geq 0\) steers
-the desired degree of uniformity of the distribution with increasing
-emphasis on uniformity for \(s \to \infty\). See [1] for an application
-of the Riesz \(s\)-energy in multi-objective evolutionary optimization
-and [2, 3] for a mathematically rigorous introduction into the general idea.</p>
+    <p>Calculate the Riesz \(s\)-energy measure for a set of points.</p>
     </div>
 
     <pre class="usage"><span class='fu'>rse</span><span class='op'>(</span><span class='va'>x</span>, <span class='va'>s</span>, <span class='va'>...</span><span class='op'>)</span></pre>
@@ -181,6 +145,27 @@ Not used.</p></td>
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
     <p>Single numeric indicator value.</p>
+    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
+
+    <p>The Riesz \(s\)-energy is designed as a measure for the evenness of a set
+of points \(X = \{x_1, \ldots, x_{|X|}\}\). It is formally defined as
+$$
+  R_s(X) = \sum_{x \in X} \sum_{y \in X, y \neq x} k_s(x, y)
+$$
+where function
+$$
+  k_s(x, y) = d(x, y)^{-s}, s &gt; 0
+$$
+and
+$$
+  k_s(x, y) = -\log(d(x, y)), s = 0
+$$
+is the so-called Riesz \(s\)-kernel and \(d(x,y)\) is the Euclidean
+distance between \(x\) and \(y\). The parameter \(s \geq 0\) steers
+the desired degree of uniformity of the distribution with increasing
+emphasis on uniformity for \(s \to \infty\). See [1] for an application
+of the Riesz \(s\)-energy in multi-objective evolutionary optimization
+and [2, 3] for a mathematically rigorous introduction into the general idea.</p>
     <h2 class="hasAnchor" id="references"><a class="anchor" href="#references"></a>References</h2>
 
     <p>[1] J. G. Falcón-Cardona, H. Ishibuchi and C. A. C. Coello, Riesz s-energy-based

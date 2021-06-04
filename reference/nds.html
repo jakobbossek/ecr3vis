@@ -159,6 +159,9 @@ Numeric matrix of points. Each column contains one point.</p></td>
 
     <p>This procedure is the key survival selection of the famous NSGA-II multi-objective
 evolutionary algorithm [1].</p>
+<p>Keep in mind that this function assumes all objectives to be minimized.
+In case at least one objective is to be maximized the data needs
+to be transformed accordingly in advance.</p>
     <h2 class="hasAnchor" id="references"><a class="anchor" href="#references"></a>References</h2>
 
     <p>[1] Deb, K., Pratap, A., and Agarwal, S. A Fast and Elitist Multiobjective Genetic
@@ -167,8 +170,7 @@ Algorithm: NSGA-II. IEEE Transactions on Evolutionary Computation, 6 (8) (2002),
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
     <div class='dont-index'><p>Other mootools: 
-<code><a href='get_nadir.html'>get_nadir</a>()</code>,
-<code><a href='plot_eaf.html'>plot_eaf</a>()</code></p></div>
+<code><a href='get_nadir.html'>get_nadir</a>()</code></p></div>
 
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">

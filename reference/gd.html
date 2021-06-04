@@ -40,43 +40,15 @@
 
 
 <meta property="og:title" content="(Inverted) Generational distance and Average Hausdorff Distance — gd" />
-<meta property="og:description" content="The generational distance (GD) measures the distance of a point set
-\(X = \{r_1, \ldots, r_{|X|}\}\), e.g., a Pareto-front approximation, to
-a reference set \(R = \{r_1, \ldots, r_{|R|}\}\). Then GD is defined as
-$$
- GD_p(A, R) = \frac{1}{|X|} \left(\sum_{i=1}^{|X|} d_i^p\right)^{1/p}
-$$
-where \(d_i\) is the Euclidean distance of point \(x_i \in X\) to
-its nearest neigbor point in \(R\). The inverted generational distance works
-the other way around, i.e.,
-$$
- IGD_p(A, R) = \frac{1}{|R|} \left(\sum_{i=1}^{|R|} \hat{d}_i^p\right)^{1/p}
-$$
-where \(\hat{d}_i\) is the respective nearest neighbor distance of \(r_i\)
-to any point in \(X\). Put differently, \(IGD_p(A, R) = GD_p(R, A)\).
-Functions gd and igd calcute these versions.
-Schütze et al. [2] proposed a slight modification:
-$$
- GD_p(A, R) = \left(\frac{1}{|X|} \sum_{i=1}^{|X|} d_i^p\right)^{1/p}
-$$
-where the average is taken before the power operation. \(IGD_p\) is apdated
-analogeously. This versions are calclated by gd and igd if argument
-modified is set TRUE.
-Ishibushi et al. [3] proposed another modification which works on the
-formulation by Schütze et al. (see above). They modified the distance
-calculation:
-$$
- GD_p^{+}(A, R) = \left(\frac{1}{|X|} \sum_{i=1}^{|X|} d^{+^p}_i\right)^{1/p}
-$$
-where \(d_i^{+} = \max\{x_i, z_i\}\). This version can be calculated
-with function gdp (the trailing p stands for &amp;#8220;plus&amp;#8221;).
-Eventuelly, function ahd calculates the Average Hausdorff distance [2]
-which combines GD and IGD and is defined as
-$$
- \Delta_p(A, R) = \max\{GD_p(A, R), IGD_p(A, R)\}.
-$$
-By default, ahd uses the modified versions of \(GD\) and \(IGD\)
-respectively (see argument modified)." />
+<meta property="og:description" content="These functions expect as mandatory arguments a point set x and
+a set of reference points y. For details on the optional arguments
+p and modified see the section on details.
+gd calculates the Generational Distance (GD).
+igd calculates the Inverse Generational Distance (IGD).
+gdp/igdp compute the (I)GD+ indicator [3].
+ahd calculates the Average Hausdorff distance.
+
+" />
 
 
 
@@ -153,43 +125,15 @@ respectively (see argument modified)." />
     </div>
 
     <div class="ref-description">
-    <p>The generational distance (GD) measures the distance of a point set
-\(X = \{r_1, \ldots, r_{|X|}\}\), e.g., a Pareto-front approximation, to
-a reference set \(R = \{r_1, \ldots, r_{|R|}\}\). Then GD is defined as
-$$
- GD_p(A, R) = \frac{1}{|X|} \left(\sum_{i=1}^{|X|} d_i^p\right)^{1/p}
-$$
-where \(d_i\) is the Euclidean distance of point \(x_i \in X\) to
-its nearest neigbor point in \(R\). The inverted generational distance works
-the other way around, i.e.,
-$$
- IGD_p(A, R) = \frac{1}{|R|} \left(\sum_{i=1}^{|R|} \hat{d}_i^p\right)^{1/p}
-$$
-where \(\hat{d}_i\) is the respective nearest neighbor distance of \(r_i\)
-to any point in \(X\). Put differently, \(IGD_p(A, R) = GD_p(R, A)\).
-Functions <code>gd</code> and <code>igd</code> calcute these versions.</p>
-<p>Schütze et al. [2] proposed a slight modification:
-$$
- GD_p(A, R) = \left(\frac{1}{|X|} \sum_{i=1}^{|X|} d_i^p\right)^{1/p}
-$$
-where the average is taken before the power operation. \(IGD_p\) is apdated
-analogeously. This versions are calclated by <code>gd</code> and <code>igd</code> if argument
-<code>modified</code> is set <code>TRUE</code>.</p>
-<p>Ishibushi et al. [3] proposed another modification which works on the
-formulation by Schütze et al. (see above). They modified the distance
-calculation:
-$$
- GD_p^{+}(A, R) = \left(\frac{1}{|X|} \sum_{i=1}^{|X|} d^{+^p}_i\right)^{1/p}
-$$
-where \(d_i^{+} = \max\{x_i, z_i\}\). This version can be calculated
-with function <code>gdp</code> (the trailing p stands for &#8220;plus&#8221;).</p>
-<p>Eventuelly, function <code>ahd</code> calculates the Average Hausdorff distance [2]
-which combines GD and IGD and is defined as
-$$
- \Delta_p(A, R) = \max\{GD_p(A, R), IGD_p(A, R)\}.
-$$
-By default, <code>ahd</code> uses the modified versions of \(GD\) and \(IGD\)
-respectively (see argument <code>modified</code>).</p>
+    <p>These functions expect as mandatory arguments a point set <code>x</code> and
+a set of reference points <code>y</code>. For details on the optional arguments
+<code>p</code> and <code>modified</code> see the section on details.</p><ul>
+<li><p><code>gd</code> calculates the Generational Distance (GD).</p></li>
+<li><p><code>igd</code> calculates the Inverse Generational Distance (IGD).</p></li>
+<li><p><code>gdp/igdp</code> compute the (I)GD+ indicator [3].</p></li>
+<li><p><code>ahd</code> calculates the Average Hausdorff distance.</p></li>
+</ul>
+
     </div>
 
     <pre class="usage"><span class='fu'>gd</span><span class='op'>(</span><span class='va'>x</span>, <span class='va'>y</span>, p <span class='op'>=</span> <span class='fl'>2</span>, modified <span class='op'>=</span> <span class='cn'>TRUE</span>, <span class='va'>...</span><span class='op'>)</span>
@@ -236,6 +180,45 @@ Not used.</p></td>
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
     <p>Single numeric indicator value.</p>
+    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
+
+    <p>The generational distance (GD) measures the distance of a point set
+\(X = \{r_1, \ldots, r_{|X|}\}\), e.g., a Pareto-front approximation, to
+a reference set \(R = \{r_1, \ldots, r_{|R|}\}\). Then GD is defined as
+$$
+ GD_p(A, R) = \frac{1}{|X|} \left(\sum_{i=1}^{|X|} d_i^p\right)^{1/p}
+$$
+where \(d_i\) is the Euclidean distance of point \(x_i \in X\) to
+its nearest neigbor point in \(R\). The inverted generational distance works
+the other way around, i.e.,
+$$
+ IGD_p(A, R) = \frac{1}{|R|} \left(\sum_{i=1}^{|R|} \hat{d}_i^p\right)^{1/p}
+$$
+where \(\hat{d}_i\) is the respective nearest neighbor distance of \(r_i\)
+to any point in \(X\). Put differently, \(IGD_p(A, R) = GD_p(R, A)\).
+Functions <code>gd</code> and <code>igd</code> calcute these versions.</p>
+<p>Schütze et al. [2] proposed a slight modification:
+$$
+ GD_p(A, R) = \left(\frac{1}{|X|} \sum_{i=1}^{|X|} d_i^p\right)^{1/p}
+$$
+where the average is taken before the power operation. \(IGD_p\) is apdated
+analogeously. This versions are calclated by <code>gd</code> and <code>igd</code> if argument
+<code>modified</code> is set <code>TRUE</code>.</p>
+<p>Ishibushi et al. [3] proposed another modification which works on the
+formulation by Schütze et al. (see above). They modified the distance
+calculation:
+$$
+ GD_p^{+}(A, R) = \left(\frac{1}{|X|} \sum_{i=1}^{|X|} d^{+^p}_i\right)^{1/p}
+$$
+where \(d_i^{+} = \max\{x_i, z_i\}\). This version can be calculated
+with function <code>gdp</code> (the trailing p stands for &#8220;plus&#8221;).</p>
+<p>Eventuelly, function <code>ahd</code> calculates the Average Hausdorff distance [2]
+which combines GD and IGD and is defined as
+$$
+ \Delta_p(A, R) = \max\{GD_p(A, R), IGD_p(A, R)\}.
+$$
+By default, <code>ahd</code> uses the modified versions of \(GD\) and \(IGD\)
+respectively (see argument <code>modified</code>).</p>
     <h2 class="hasAnchor" id="references"><a class="anchor" href="#references"></a>References</h2>
 
     <p>[1] David A. Van Veldhuizen and David A. Van Veldhuizen. Multiobjective

@@ -40,14 +40,8 @@
 
 
 <meta property="og:title" content="Overall (Pareto) spread — os" />
-<meta property="og:description" content="A simple multi-objective performance indicator proposed in [1].
-Given a point set\(X = \{x_1, \ldots, x_{|X|}\}\) of \(m\) objectives,
-the ideal point \(I\) (or an approximation) and the nadir point \(N\)
-(or a approximation) it is defined as
-$$
-  OS(X) = \prod_{i=1}^{m} \frac{\max_{x \in X} x_i - \min_{x \in X} x_i}{N_i - I_i}.
-$$
-This indicator only captures the extend of the Pareto-front approximation." />
+<meta property="og:description" content="Calculates the Overall (Pareto-) Spread multi-objective performance indicator
+for a point set x." />
 
 
 
@@ -124,14 +118,8 @@ This indicator only captures the extend of the Pareto-front approximation." />
     </div>
 
     <div class="ref-description">
-    <p>A simple multi-objective performance indicator proposed in [1].
-Given a point set\(X = \{x_1, \ldots, x_{|X|}\}\) of \(m\) objectives,
-the ideal point \(I\) (or an approximation) and the nadir point \(N\)
-(or a approximation) it is defined as
-$$
-  OS(X) = \prod_{i=1}^{m} \frac{\max_{x \in X} x_i - \min_{x \in X} x_i}{N_i - I_i}.
-$$
-This indicator only captures the extend of the Pareto-front approximation.</p>
+    <p>Calculates the Overall (Pareto-) Spread multi-objective performance indicator
+for a point set <code>x</code>.</p>
     </div>
 
     <pre class="usage"><span class='fu'>os</span><span class='op'>(</span><span class='va'>x</span>, np <span class='op'>=</span> <span class='cn'>NULL</span>, ip <span class='op'>=</span> <span class='cn'>NULL</span>, <span class='va'>...</span><span class='op'>)</span></pre>
@@ -164,6 +152,16 @@ Not used.</p></td>
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
     <p>Single numeric indicator value.</p>
+    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
+
+    <p>A simple multi-objective performance indicator proposed in [1].
+Given a point set\(X = \{x_1, \ldots, x_{|X|}\}\) of \(m\) objectives,
+the ideal point \(I\) (or an approximation) and the nadir point \(N\)
+(or a approximation) it is defined as
+$$
+  OS(X) = \prod_{i=1}^{m} \frac{\max_{x \in X} x_i - \min_{x \in X} x_i}{N_i - I_i}.
+$$
+This indicator only captures the extend of the Pareto-front approximation.</p>
     <h2 class="hasAnchor" id="references"><a class="anchor" href="#references"></a>References</h2>
 
     <p>[1] J. Wu, S. Azarm, Metrics for quality assessment of a multiobjective design

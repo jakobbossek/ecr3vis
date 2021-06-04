@@ -40,60 +40,8 @@
 
 
 <meta property="og:title" content="R1, R2 and R3-indicator — r1" />
-<meta property="og:description" content="Consider two Pareto-front (approximation) sets
-\(X = \{x_1, \ldots, x_{|X|}\}\) and \(Y = \{y_1, \ldots, y_{|Y|}\}\) for
-some optimization problem with \(m\) objectives. Furthermore, let \(U\) be
-a set of utility functions
-each of the form \(u : R^m \to R\) which maps each point in the objective
-space into a so-called measure of utility. Let \(p\) be a probability
-distribution over \(U\). We denote by \(u^{*}(A) = \max_{x \in A} u(x)\)
-the maximum value reached by some utility function \(u\) on a set \(A\).
-The R1-indicator measures the probability that approximation set \(X\) is
-better than approximation set \(Y\) by integrating over the all utility
-function \(u \in U\). More precisely, it is defined as
-$$
-  R1(X, Y, U, p) = \int_{u \in U} C(X, Y, u)p(x)du
-$$
-where \(C(X, Y, u) = 1\) if \(u^{*}(X) &amp;gt; u^{*}(Y)\), \(C(X, Y, u) = 1/2\)
-if \(u^{*}(X)=u^{*}(Y)\) and \(C(X, Y, u) = 0\) otherwise is termed the
-outcome function.
-Interpretation: if \(R1(X, Y, U, p) &amp;gt; 0.5\), \(X\) is better than \(Y\).
-Owing to the definition it holds that
-$$
-  R1(X, Y, U, p) = 1 - R1(X, Y, U, p)
-$$
-and therefore \(X\) and \(Y\) cannot outperform each other simultaneously.
-In practice this defintion is not of much use. Therefore, a finite discrete
-set of utility functions is used with the uniform probability distribution.
-Then, \(R1\) can be written as
-$$
-  R1(X, Y) = \frac{1}{|U|}\sum_{u \in U} C(X, Y, u).
-$$
-The same approach is done for \(R2\) and \(R3\) which will be discussed in the
-following.
-Classical utility functions involve weighted sum, Tschebycheff and augmented
-Tschbycheff all of which are availabe via the argument utility in the
-implementation. As an example, the set of (weighted) Tschebycheff utility
-functions is \(U_{\infty} = (u_{\lambda})\) where
-$$
-  u_{\lambda}(x) = -\max_{j=1, \ldots, m} \left(\lambda_j \cdot |x_j - r_j|\right)
-$$
-where \(r \in R^m\) is the ideal point or an approximation thereof and
-\(\lambda \in R^m\) is a weight vector with \(\lambda_j \geq 0\) for \(j=1,\ldots,m\)
-and \(\sum_{j=1}^{m} \lambda_j = 1\). Further details are beyond the scope
-of this documentation (see [1] for in-depth information).
-The R2-indicator instead considers the expected utility values. It is defined as
-$$
-  R2(X, Y, U, p) = E(u^{*}(X)) - E(u^{*}(Y)) = \int_{u \in U} (u^{*}(A) - u^{*}(B))p(u)du.
-$$
-Interpretation: here, since the measure is defined as the difference of
-expectations, approximation set \(X\) is considered better than set \(Y\)
-if \(R(X, Y) &amp;gt; 0\).
-Eventually, indicator R3 considers the ratios of best utility function values:
-$$
-  R3(X, Y, U, p) = E\left(\frac{u^{*}(Y) - u^{*}(X)}{u^{*}(Y)}\right) = \int_{u \in U} \frac{u^{*}(Y) - u^{*}(X)}{u^{*}(Y)}p(u)du.
-$$
-For further details we refer the reader to Hansen and Jaszkiewicz [1]." />
+<meta property="og:description" content="Functions r1, r2 and r3 calculate the R1, R2 and R3
+indicator respectively for two sets of points x and y." />
 
 
 
@@ -170,60 +118,8 @@ For further details we refer the reader to Hansen and Jaszkiewicz [1]." />
     </div>
 
     <div class="ref-description">
-    <p>Consider two Pareto-front (approximation) sets
-\(X = \{x_1, \ldots, x_{|X|}\}\) and \(Y = \{y_1, \ldots, y_{|Y|}\}\) for
-some optimization problem with \(m\) objectives. Furthermore, let \(U\) be
-a set of <em>utility functions</em>
-each of the form \(u : R^m \to R\) which maps each point in the objective
-space into a so-called measure of utility. Let \(p\) be a probability
-distribution over \(U\). We denote by \(u^{*}(A) = \max_{x \in A} u(x)\)
-the maximum value reached by some utility function \(u\) on a set \(A\).</p>
-<p>The R1-indicator measures the probability that approximation set \(X\) is
-better than approximation set \(Y\) by integrating over the all utility
-function \(u \in U\). More precisely, it is defined as
-$$
-  R1(X, Y, U, p) = \int_{u \in U} C(X, Y, u)p(x)du
-$$
-where \(C(X, Y, u) = 1\) if \(u^{*}(X) &gt; u^{*}(Y)\), \(C(X, Y, u) = 1/2\)
-if \(u^{*}(X)=u^{*}(Y)\) and \(C(X, Y, u) = 0\) otherwise is termed the
-<em>outcome function</em>.</p>
-<p>Interpretation: if \(R1(X, Y, U, p) &gt; 0.5\), \(X\) is better than \(Y\).
-Owing to the definition it holds that
-$$
-  R1(X, Y, U, p) = 1 - R1(X, Y, U, p)
-$$
-and therefore \(X\) and \(Y\) cannot outperform each other simultaneously.</p>
-<p>In practice this defintion is not of much use. Therefore, a finite discrete
-set of utility functions is used with the uniform probability distribution.
-Then, \(R1\) can be written as
-$$
-  R1(X, Y) = \frac{1}{|U|}\sum_{u \in U} C(X, Y, u).
-$$
-The same approach is done for \(R2\) and \(R3\) which will be discussed in the
-following.</p>
-<p>Classical utility functions involve <em>weighted sum</em>, <em>Tschebycheff</em> and <em>augmented
-Tschbycheff</em> all of which are availabe via the argument <code>utility</code> in the
-implementation. As an example, the set of (weighted) Tschebycheff utility
-functions is \(U_{\infty} = (u_{\lambda})\) where
-$$
-  u_{\lambda}(x) = -\max_{j=1, \ldots, m} \left(\lambda_j \cdot |x_j - r_j|\right)
-$$
-where \(r \in R^m\) is the ideal point or an approximation thereof and
-\(\lambda \in R^m\) is a weight vector with \(\lambda_j \geq 0\) for \(j=1,\ldots,m\)
-and \(\sum_{j=1}^{m} \lambda_j = 1\). Further details are beyond the scope
-of this documentation (see [1] for in-depth information).</p>
-<p>The R2-indicator instead considers the expected utility values. It is defined as
-$$
-  R2(X, Y, U, p) = E(u^{*}(X)) - E(u^{*}(Y)) = \int_{u \in U} (u^{*}(A) - u^{*}(B))p(u)du.
-$$
-Interpretation: here, since the measure is defined as the difference of
-expectations, approximation set \(X\) is considered better than set \(Y\)
-if \(R(X, Y) &gt; 0\).</p>
-<p>Eventually, indicator R3 considers the ratios of best utility function values:
-$$
-  R3(X, Y, U, p) = E\left(\frac{u^{*}(Y) - u^{*}(X)}{u^{*}(Y)}\right) = \int_{u \in U} \frac{u^{*}(Y) - u^{*}(X)}{u^{*}(Y)}p(u)du.
-$$
-For further details we refer the reader to Hansen and Jaszkiewicz [1].</p>
+    <p>Functions <code>r1</code>, <code>r2</code> and <code>r3</code> calculate the R1, R2 and R3
+indicator respectively for two sets of points <code>x</code> and <code>y</code>.</p>
     </div>
 
     <pre class="usage"><span class='fu'>r1</span><span class='op'>(</span><span class='va'>x</span>, <span class='va'>y</span>, ip <span class='op'>=</span> <span class='cn'>NULL</span>, np <span class='op'>=</span> <span class='cn'>NULL</span>, lambda <span class='op'>=</span> <span class='cn'>NULL</span>, utility <span class='op'>=</span> <span class='st'>"tschebycheff"</span>, <span class='va'>...</span><span class='op'>)</span>
@@ -282,6 +178,62 @@ Not used.</p></td>
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
     <p>Single numeric indicator value.</p>
+    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
+
+    <p>Consider two Pareto-front (approximation) sets
+\(X = \{x_1, \ldots, x_{|X|}\}\) and \(Y = \{y_1, \ldots, y_{|Y|}\}\) for
+some optimization problem with \(m\) objectives. Furthermore, let \(U\) be
+a set of <em>utility functions</em>
+each of the form \(u : R^m \to R\) which maps each point in the objective
+space into a so-called measure of utility. Let \(p\) be a probability
+distribution over \(U\). We denote by \(u^{*}(A) = \max_{x \in A} u(x)\)
+the maximum value reached by some utility function \(u\) on a set \(A\).</p>
+<p>The R1-indicator measures the probability that approximation set \(X\) is
+better than approximation set \(Y\) by integrating over the all utility
+function \(u \in U\). More precisely, it is defined as
+$$
+  R1(X, Y, U, p) = \int_{u \in U} C(X, Y, u)p(x)du
+$$
+where \(C(X, Y, u) = 1\) if \(u^{*}(X) &gt; u^{*}(Y)\), \(C(X, Y, u) = 1/2\)
+if \(u^{*}(X)=u^{*}(Y)\) and \(C(X, Y, u) = 0\) otherwise is termed the
+<em>outcome function</em>.</p>
+<p>Interpretation: if \(R1(X, Y, U, p) &gt; 0.5\), \(X\) is better than \(Y\).
+Owing to the definition it holds that
+$$
+  R1(X, Y, U, p) = 1 - R1(X, Y, U, p)
+$$
+and therefore \(X\) and \(Y\) cannot outperform each other simultaneously.</p>
+<p>In practice this defintion is not of much use. Therefore, a finite discrete
+set of utility functions is used with the uniform probability distribution.
+Then, \(R1\) can be written as
+$$
+  R1(X, Y) = \frac{1}{|U|}\sum_{u \in U} C(X, Y, u).
+$$
+The same approach is done for \(R2\) and \(R3\) which will be discussed in the
+following.</p>
+<p>Classical utility functions involve <em>weighted sum</em>, <em>Tschebycheff</em> and <em>augmented
+Tschbycheff</em> all of which are availabe via the argument <code>utility</code> in the
+implementation. As an example, the set of (weighted) Tschebycheff utility
+functions is \(U_{\infty} = (u_{\lambda})\) where
+$$
+  u_{\lambda}(x) = -\max_{j=1, \ldots, m} \left(\lambda_j \cdot |x_j - r_j|\right)
+$$
+where \(r \in R^m\) is the ideal point or an approximation thereof and
+\(\lambda \in R^m\) is a weight vector with \(\lambda_j \geq 0\) for \(j=1,\ldots,m\)
+and \(\sum_{j=1}^{m} \lambda_j = 1\). Further details are beyond the scope
+of this documentation (see [1] for in-depth information).</p>
+<p>The R2-indicator instead considers the expected utility values. It is defined as
+$$
+  R2(X, Y, U, p) = E(u^{*}(X)) - E(u^{*}(Y)) = \int_{u \in U} (u^{*}(A) - u^{*}(B))p(u)du.
+$$
+Interpretation: here, since the measure is defined as the difference of
+expectations, approximation set \(X\) is considered better than set \(Y\)
+if \(R(X, Y) &gt; 0\).</p>
+<p>Eventually, indicator R3 considers the ratios of best utility function values:
+$$
+  R3(X, Y, U, p) = E\left(\frac{u^{*}(Y) - u^{*}(X)}{u^{*}(Y)}\right) = \int_{u \in U} \frac{u^{*}(Y) - u^{*}(X)}{u^{*}(Y)}p(u)du.
+$$
+For further details we refer the reader to Hansen and Jaszkiewicz [1].</p>
     <h2 class="hasAnchor" id="references"><a class="anchor" href="#references"></a>References</h2>
 
     <p>[1] M. P. Hansen and A. Jaszkiewicz. 1998. Evaluating the quality of

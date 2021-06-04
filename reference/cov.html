@@ -40,14 +40,8 @@
 
 
 <meta property="og:title" content="Coverage / C-metric of two (approximation) sets — cov" />
-<meta property="og:description" content="Given two (approximation) sets \(X = \{x_1, \ldots, x_{|X|}\}\)
-and \(Y = \{y_1, \ldots, y_{|Y|}\}\) this indidcator calculates the fraction
-of points from \(Y\) which are dominated by at least one point \(x \in X\).
-Formally it is defined as:
-$$
-  C(X, Y) = \frac{|\{y \in Y \mid \exists x \in X \, with \, x \preceq y\}|}{|Y|}.
-$$
-It holds that \(C(X, Y) \in [0,1]\). Note that in general \(C(X, Y) \neq 1 - C(Y, X)\)." />
+<meta property="og:description" content="Calculates the Coverage metric [1] (also known as the C-metric) given two sets
+of points." />
 
 
 
@@ -124,14 +118,8 @@ It holds that \(C(X, Y) \in [0,1]\). Note that in general \(C(X, Y) \neq 1 - C(Y
     </div>
 
     <div class="ref-description">
-    <p>Given two (approximation) sets \(X = \{x_1, \ldots, x_{|X|}\}\)
-and \(Y = \{y_1, \ldots, y_{|Y|}\}\) this indidcator calculates the fraction
-of points from \(Y\) which are dominated by at least one point \(x \in X\).
-Formally it is defined as:
-$$
-  C(X, Y) = \frac{|\{y \in Y \mid \exists x \in X \, with \, x \preceq y\}|}{|Y|}.
-$$
-It holds that \(C(X, Y) \in [0,1]\). Note that in general \(C(X, Y) \neq 1 - C(Y, X)\).</p>
+    <p>Calculates the Coverage metric [1] (also known as the C-metric) given two sets
+of points.</p>
     </div>
 
     <pre class="usage"><span class='fu'>cov</span><span class='op'>(</span><span class='va'>x</span>, <span class='va'>y</span>, <span class='va'>...</span><span class='op'>)</span></pre>
@@ -159,6 +147,21 @@ Not used.</p></td>
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
     <p>Coverage value.</p>
+    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
+
+    <p>Given two (approximation) sets \(X = \{x_1, \ldots, x_{|X|}\}\)
+and \(Y = \{y_1, \ldots, y_{|Y|}\}\) this indidcator calculates the fraction
+of points from \(Y\) which are dominated by at least one point \(x \in X\).
+Formally it is defined as:
+$$
+  C(X, Y) = \frac{|\{y \in Y \mid \exists x \in X \, with \, x \preceq y\}|}{|Y|}.
+$$
+It holds that \(C(X, Y) \in [0,1]\). Note that in general \(C(X, Y) \neq 1 - C(Y, X)\).</p>
+    <h2 class="hasAnchor" id="note"><a class="anchor" href="#note"></a>Note</h2>
+
+    <p>Keep in mind that this function assumes all objectives to be minimized.
+In case at least one objective is to be maximized the data needs
+to be transformed accordingly in advance.</p>
     <h2 class="hasAnchor" id="references"><a class="anchor" href="#references"></a>References</h2>
 
     <p>[1] E. Zitzler, Evolutionary algorithms for multiobjective optimization:

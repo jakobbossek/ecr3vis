@@ -40,38 +40,8 @@
 
 
 <meta property="og:title" content="Solow-Polasky measure — solow_polasky" />
-<meta property="og:description" content="This measure was introduced by Solow and Polasky back in 1994 to measure the
-amount of diversity between species in biology [1]. Later, Ulrich and Thiele [2]
-adopted this measures for Evolutionary Diversity Optimization where the
-goal is to come up with a population \(P = \{P_1, \ldots, P_{\mu}\}\) of \(\mu\)
-individuals such that (i) all individuals in \(P\) adhere to a minimum quality
-threhold, i.e., \(f(x) \leq v_{\min}\) for some threhold value \(v_{\min}\)
-(we assume the fitness function \(f\) w.l.o.g. to be minimized). (ii) the
-population should be &amp;#8220;diverse&amp;#8221; with respect to some diversity measure
-\(D\) that maps the population to a single scalar numeric value.
-Given \(P = \{P_1, \ldots, P_{\mu}\}\) and pairwise distances \(d(P_i, P_j)\)
-\(1 \leq, i,j \leq \mu\) let \(M\) be a \((\mu \times \mu)\) matrix
-with
-$$
-  M_{ij} = \exp(-\theta \cdot d(P_i, P_j)).
-$$
-Then the Solow-Polasky diversity is defined as
-$$
-  D_{SP}(P) = \sum_{1 \leq i,j \leq \mu} M_{ij}^{-1} \in [1, \mu]
-$$
-where matrix \(M^{-1}\) is the Moore-Penrose generalized inverse of a
-matrix \(M\).
-\(D_{SP}\) can be interpreted as &amp;#8220;as the number of different species in
-the population&amp;#8221; [2]. Note however, that the measure calculates a real valued
-diversty in \([1, \mu]\) and no integer value. Hence, it can be seen as
-a more fine-grained measure of diversity that captures so kind of distance
-other than the &amp;#8220;binary&amp;#8221; distance \(d'\) were \(d'(P_i, P_j) = 1\)
-if \(P_i \neq P_j\) and \(d'(P_i, P_j) = 0\) otherwise.
-The runtime is dominated by the inverse matrix calculation and hence is upper
-bounded by \(O(\mu^3)\). In [2] the authors propose an alternative method
-to update the calculation once the population changes. However, the measure
-implemented here is meant to be used a-posteriori to assess the
-&amp;#8220;diversity&amp;#8221; of a final population." />
+<meta property="og:description" content="Calculates the Solow-Polasky measure [1] for a set of points given as columns
+of a numeric matrix." />
 
 
 
@@ -148,6 +118,46 @@ implemented here is meant to be used a-posteriori to assess the
     </div>
 
     <div class="ref-description">
+    <p>Calculates the Solow-Polasky measure [1] for a set of points given as columns
+of a numeric matrix.</p>
+    </div>
+
+    <pre class="usage"><span class='fu'>solow_polasky</span><span class='op'>(</span><span class='va'>x</span>, d <span class='op'>=</span> <span class='cn'>NULL</span>, theta <span class='op'>=</span> <span class='fl'>1</span>, <span class='va'>...</span><span class='op'>)</span></pre>
+
+    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
+    <table class="ref-arguments">
+    <colgroup><col class="name" /><col class="desc" /></colgroup>
+    <tr>
+      <th>x</th>
+      <td><p>[<code>matrix</code>]<br />
+Numeric input matrix (e.g., a EA-population) where each column holds one point / individual.</p></td>
+    </tr>
+    <tr>
+      <th>d</th>
+      <td><p>[<code>matrix</code> | <code>NULL</code>]<br />
+Optional distance matrix.
+If <code>NULL</code>, the default, the Euclidean distance is calculated
+automatically via <code><a href='https://rdrr.io/r/stats/dist.html'>dist</a></code>.</p></td>
+    </tr>
+    <tr>
+      <th>theta</th>
+      <td><p>[<code><a href='https://rdrr.io/r/base/numeric.html'>numeric(1)</a></code>]<br />
+Single scalar value (see details section).
+Default is 1.</p></td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td><p>[any]<br />
+Further argument passed down to <code><a href='https://rdrr.io/r/stats/dist.html'>dist</a></code>
+in case <code>d</code> is <code>NULL</code>.</p></td>
+    </tr>
+    </table>
+
+    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
+
+    <p>Solow-Polasky diversity measure (scalar numeric value).</p>
+    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
+
     <p>This measure was introduced by Solow and Polasky back in 1994 to measure the
 amount of diversity between species in biology [1]. Later, Ulrich and Thiele [2]
 adopted this measures for <em>Evolutionary Diversity Optimization</em> where the
@@ -180,42 +190,6 @@ bounded by \(O(\mu^3)\). In [2] the authors propose an alternative method
 to update the calculation once the population changes. However, the measure
 implemented here is meant to be used <em>a-posteriori</em> to assess the
 &#8220;diversity&#8221; of a final population.</p>
-    </div>
-
-    <pre class="usage"><span class='fu'>solow_polasky</span><span class='op'>(</span><span class='va'>x</span>, d <span class='op'>=</span> <span class='cn'>NULL</span>, theta <span class='op'>=</span> <span class='fl'>1</span>, <span class='va'>...</span><span class='op'>)</span></pre>
-
-    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
-    <table class="ref-arguments">
-    <colgroup><col class="name" /><col class="desc" /></colgroup>
-    <tr>
-      <th>x</th>
-      <td><p>[<code>matrix</code>]<br />
-Input matrix (i.e., the population) where each column holds one point / individual.</p></td>
-    </tr>
-    <tr>
-      <th>d</th>
-      <td><p>[<code>matrix</code> | <code>NULL</code>]<br />
-Optional distance matrix.
-If <code>NULL</code>, the default, the Euclidean distance is calculated
-automatically via <code><a href='https://rdrr.io/r/stats/dist.html'>dist</a></code>.</p></td>
-    </tr>
-    <tr>
-      <th>theta</th>
-      <td><p>[<code><a href='https://rdrr.io/r/base/numeric.html'>numeric(1)</a></code>]<br />
-Single scalar value (see description).
-Default is 1.</p></td>
-    </tr>
-    <tr>
-      <th>...</th>
-      <td><p>[any]<br />
-Further argument passed down to <code><a href='https://rdrr.io/r/stats/dist.html'>dist</a></code>
-in case <code>d</code> is <code>NULL</code>.</p></td>
-    </tr>
-    </table>
-
-    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
-
-    <p>Solow-Polasky diversity measure (scalar numeric value).</p>
     <h2 class="hasAnchor" id="references"><a class="anchor" href="#references"></a>References</h2>
 
     <p>[1] Andrew R. Solow and Stephen Polasky. Measuring biological diversity.
