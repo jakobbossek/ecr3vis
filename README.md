@@ -1,6 +1,5 @@
 
-ecr3vis: ecr3 visualization
-===========================
+# ecr3vis: ecr3 visualization
 
 **Visit the [package website](https://jakobbossek.github.io/ecr3vis/).**
 
@@ -17,11 +16,10 @@ developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.re
 [![R-CMD-check](https://github.com/jakobbossek/ecr3vis/workflows/R-CMD-check/badge.svg)](https://github.com/jakobbossek/ecr3vis/actions)
 [![Coveralls test
 coverage](https://coveralls.io/repos/github/jakobbossek/ecr3vis/badge.svg)](https://coveralls.io/r/jakobbossek/ecr3vis?branch=main)
-[![CRAN\_Status\_Badge](https://www.r-pkg.org/badges/version/ecr3vis)](https://cran.r-project.org/package=ecr3vis)
+[![CRAN_Status_Badge](https://www.r-pkg.org/badges/version/ecr3vis)](https://cran.r-project.org/package=ecr3vis)
 <!-- badges: end -->
 
-Introduction
-------------
+## Introduction
 
 **ecr3vis** is the visualization module of **ecr3** (under development).
 It offers a collection of functions for the visualization of results of
@@ -29,8 +27,7 @@ randomized search heuristics. The focus is on multi-objective problems.
 The package includes 2d- and 3d-scatter-plots, parallel coordinate plots
 (PCP), heatmaps etc.
 
-Example
--------
+## Example
 
 In the following we demonstrate how to build a simple mutation-based EA
 to optimize the Pseudo-boolean function ONEMAX which counts the number
@@ -55,8 +52,7 @@ plot_radar(tbl[1:3, ])
 plot_radar(tbl[1:3, ]) + facet_grid(. ~ nr)
 ```
 
-Development Team
-----------------
+## Development Team
 
 The package is a one-man project by [Jakob
 Bossek](https://researchers.adelaide.edu.au/profile/jakob.bossek) at the
@@ -64,8 +60,7 @@ moment of writing. However, the package interfaces some neat
 implementations of various other people (see DESCRIPTION file for
 details).
 
-How to contribute?
-------------------
+## How to contribute?
 
 You can contribute by identifing annoying bugs in the [issue
 tracker](http://github.com/jakobbossek/ecr3vis). This is also the
@@ -76,8 +71,7 @@ the ecr3vis repository, implementing feautures or bugfixes and raising a
 [pull
 request](https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/about-pull-requests).
 
-Installation Instructions
--------------------------
+## Installation Instructions
 
 The package will be available at [CRAN](http://cran.r-project.org) *when
 it is done*. If you are interested in trying out and playing around with
@@ -89,8 +83,7 @@ following command in R:
 remotes::install_github("jakobbossek/ecr3vis")
 ```
 
-Getting help
-------------
+## Getting help
 
 Please address questions and missing features about the *ecr3vis* as
 weell as annoying bug reports in the [issue
