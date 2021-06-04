@@ -2,6 +2,10 @@
 #' Overall (Pareto) spread
 #'
 #' @description
+#' Calculates the Overall (Pareto-) Spread multi-objective performance indicator
+#' for a point set \code{x}.
+#'
+#' @details
 #' A simple multi-objective performance indicator proposed in [1].
 #' Given a point set\eqn{X = \{x_1, \ldots, x_{|X|}\}} of \eqn{m} objectives,
 #' the ideal point \eqn{I} (or an approximation) and the nadir point \eqn{N}
@@ -15,6 +19,9 @@
 #' [1] J. Wu, S. Azarm, Metrics for quality assessment of a multiobjective design
 #' optimization solution set, Journal of Mechanical Design 123 (1) (2001) 18–25.
 #'
+#' @keywords optimize
+#' @template family_multi_objective_performance_indicators
+#'
 #' @param x [\code{matrix}]\cr
 #'   Point set in column major format.
 #' @param np [\code{numeric}]\cr
@@ -24,8 +31,6 @@
 #' @template arg_dots_not_used
 #' @return Single numeric indicator value.
 #'
-#' @keywords optimize
-#' @template family_multi_objective_performance_indicators
 #' @export
 os = function(x, np = NULL, ip = NULL, ...) {
   checkmate::assert_matrix(x, mode = "numeric", min.rows = 2L, min.cols = 1L, any.missing = FALSE, all.missing = FALSE)

@@ -45,6 +45,10 @@ Not used.}
 Single numeric indicator value.
 }
 \description{
+Functions \code{r1}, \code{r2} and \code{r3} calculate the R1, R2 and R3
+indicator respectively for two sets of points \code{x} and \code{y}.
+}
+\details{
 Consider two Pareto-front (approximation) sets
 \eqn{X = \{x_1, \ldots, x_{|X|}\}} and \eqn{Y = \{y_1, \ldots, y_{|Y|}\}} for
 some optimization problem with \eqn{m} objectives. Furthermore, let \eqn{U} be

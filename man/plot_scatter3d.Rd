@@ -18,7 +18,7 @@ Data.frame with columns at least \code{obj.cols}, \dQuote{problem} and \dQuote{a
 
 \item{obj.cols}{[\code{character(>= 3)}]\cr
 Column names of the objective functions.
-Default is \code{c("f1", "f2", "f3")}.}
+Default is \code{c("y1", "y2", "y3")}.}
 
 \item{max.in.row}{[\code{integer(1)}]\cr
 Maximum number of plots to be displayed side by side in a row.
@@ -49,6 +49,7 @@ pp. 225-245, April 2015, doi: 10.1109/TEVC.2014.2313407
 }
 \seealso{
 Other multi-objective visualizations: 
+\code{\link{plot_eaf}()},
 \code{\link{plot_heatmap}()},
 \code{\link{plot_pcp}()},
 \code{\link{plot_radar}()},

@@ -2,6 +2,9 @@
 #' Riesz \eqn{s}-energy
 #'
 #' @description
+#' Calculate the Riesz \eqn{s}-energy measure for a set of points.
+#'
+#' @details
 #' The Riesz \eqn{s}-energy is designed as a measure for the evenness of a set
 #' of points \eqn{X = \{x_1, \ldots, x_{|X|}\}}. It is formally defined as
 #' \deqn{
@@ -33,15 +36,15 @@
 #' [3] D. P. Hardin and E. B. Saff, Discretizing Manifolds via Minimum Energy Points,
 #' Notices of the AMS, vol. 51, no. 10, pp. 1186–1194, 2004.
 #'
+#' @keywords optimize
+#' @template family_multi_objective_performance_indicators
+#'
 #' @param x [\code{matrix}]\cr
 #'   Point set in column major format.
 #' @param s [\code{numeric}]\cr
 #'   Degree of uniformity \eqn{s \geq 0} (see description).
 #' @template arg_dots_not_used
 #' @return Single numeric indicator value.
-#'
-#' @keywords optimize
-#' @template family_multi_objective_performance_indicators
 #' @export
 rse = function(x, s, ...) {
   checkmate::assert_matrix(x, mode = "numeric", min.rows = 2L, min.cols = 1L, any.missing = FALSE, all.missing = FALSE)

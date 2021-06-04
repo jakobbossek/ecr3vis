@@ -20,6 +20,9 @@ Not used.}
 Single numeric indicator value.
 }
 \description{
+Calculate the Riesz \eqn{s}-energy measure for a set of points.
+}
+\details{
 The Riesz \eqn{s}-energy is designed as a measure for the evenness of a set
 of points \eqn{X = \{x_1, \ldots, x_{|X|}\}}. It is formally defined as
 \deqn{

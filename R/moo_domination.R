@@ -6,7 +6,25 @@
 #' or is dominated by another (\code{is_dominated}). There are corresponding infix
 #' operators \code{dominates} and \code{is_dominated}.
 #'
+#' @details
+#' Given two vectors \eqn{x,y \in R^m} we say that \eqn{x} dominates \eqn{y},
+#' denoted as \eqn{x \preceq y} if and only if
+#' \deqn{
+#'   x_i \leq y_i \, \forall i \in \{1, \ldots, m\}
+#' }
+#' and
+#' \deqn{
+#'   \exists j \in \{1, \ldots, m\}: x_i < y_i.
+#' }
+#' Informally, \eqn{x} dominates \eqn{y} if \eqn{x} is no worse than \eqn{y} in
+#' all components and \eqn{x} is strictly better than \eqn{y} in at least one
+#' component. Note that this definition focuses on minimization of all
+#' objectives. This is no restriction, since the maximization of some function
+#' is equivalent to the minimization of its negative.
+#'
 #' @keywords optimize
+#' @template family_pareto_dominance_checks
+#' @template family_multi_objective_tools
 #'
 #' @param x [\code{numeric}]\cr
 #'   First vector.
@@ -14,8 +32,6 @@
 #'   Second vector.
 #' @return Single logical value.
 #' @rdname dominates
-#' @template family_pareto_dominance_checks
-#' @template family_multi_objective_tools
 #' @export
 #' @examples
 #' dominates(c(2, 3), c(4, 5))
@@ -63,16 +79,16 @@ is_dominated = function(x, y) {
 #' \code{dominated} and \code{FALSE} for \code{nondominated}.
 #'
 #' @keywords optimize
+#' @template family_pareto_dominance_checks
+#' @template family_multi_objective_tools
 #'
 #' @param x [\code{matrix}]\cr
 #'   Numeric \eqn{(m \times n)} matrix where \eqn{m} is the number of objectives
 #'   and \eqn{n} is the number of points.
 #' @return Logical vector where the \eqn{i}th component is \code{TRUE} if
 #'   the point is dominated or nondominated respectively.
-#' @rdname dominated
-#' @template family_pareto_dominance_checks
-#' @template family_multi_objective_tools
 #' @export
+#' @rdname dominated
 #' @examples
 #' x = matrix(c(1, 1, 2, 2, 1, 3), byrow = FALSE, ncol = 3L)
 #' dominated(x)
@@ -99,31 +115,26 @@ nondominated = function(x) {
 #' non-domination level.
 #'
 #' @keywords optimize
+#' @template family_pareto_dominance_checks
+#' @template family_multi_objective_tools
 #'
 #' @param x [\code{matrix}]\cr
 #'   Numeric \eqn{(m \times n)} matrix where \eqn{n} is the number of points and \eqn{m}
 #'   is the number of objectives.
 #' @return Integer vector of positions of (non)dominated points.
-#' @examples
-#'   data(mtcars)
-#'   # assume we want to maximize horsepower and minimize gas consumption
-#'   cars = mtcars[, c("mpg", "hp")]
-#'   cars$hp = -cars$hp
-#'   idxs = which_nondominated(t(as.matrix(cars)))
-#'   \dontrun{
-#'   print(mtcars[idxs, ])
-#'   plot(cars)
-#'   points(cars[idxs, ], col = "tomato", pch = 10)
-#'   }
 #' @rdname which_dominated
-#' @template family_pareto_dominance_checks
-#' @template family_multi_objective_tools
 #' @export
 #' @examples
-#' # first point is the sole nondominated point
-#' x = matrix(c(1, 1, 2, 2, 1, 3), byrow = FALSE, ncol = 3L)
-#' which_dominated(x)
-#' which_nondominated(x)
+#' data(mtcars)
+#' # assume we want to maximize horsepower and minimize gas consumption
+#' cars = mtcars[, c("mpg", "hp")]
+#' cars$hp = -cars$hp
+#' idxs = which_nondominated(t(as.matrix(cars)))
+#' \dontrun{
+#' print(mtcars[idxs, ])
+#' plot(cars)
+#' points(cars[idxs, ], col = "tomato", pch = 10)
+#' }
 which_dominated = function(x) {
   which(dominated(x))
 }
@@ -149,13 +160,14 @@ is_maximally_dominated = function(x) {
 #' The function checks, whether every point from the second set of points
 #' is dominated by at least one point from the first set.
 #'
+#' @template family_pareto_dominance_checks
+#' @template family_multi_objective_tools
+#'
 #' @param x [\code{matrix}]\cr
 #'   First set of points.
 #' @param y [\code{matrix}]\cr
 #'   Second set of points.
 #' @return Single logical value.
-#' @template family_pareto_dominance_checks
-#' @template family_multi_objective_tools
 #' @export
 #' @examples
 #' x = matrix(c(1, 1, 2, 2, 1, 3), byrow = FALSE, ncol = 3L)

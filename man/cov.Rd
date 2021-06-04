@@ -20,6 +20,10 @@ Not used.}
 Coverage value.
 }
 \description{
+Calculates the Coverage metric [1] (also known as the C-metric) given two sets
+of points.
+}
+\details{
 Given two (approximation) sets \eqn{X = \{x_1, \ldots, x_{|X|}\}}
 and \eqn{Y = \{y_1, \ldots, y_{|Y|}\}} this indidcator calculates the fraction
 of points from \eqn{Y} which are dominated by at least one point \eqn{x \in X}.
@@ -28,6 +32,11 @@ Formally it is defined as:
   C(X, Y) = \frac{|\{y \in Y \mid \exists x \in X \, with \, x \preceq y\}|}{|Y|}.
 }
 It holds that \eqn{C(X, Y) \in [0,1]}. Note that in general \eqn{C(X, Y) \neq 1 - C(Y, X)}.
+}
+\note{
+Keep in mind that this function assumes all objectives to be minimized.
+In case at least one objective is to be maximized the data needs
+to be transformed accordingly in advance.
 }
 \references{
 [1] E. Zitzler, Evolutionary algorithms for multiobjective optimization:

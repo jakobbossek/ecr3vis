@@ -32,6 +32,10 @@ each point is assigned a rank.
 \note{
 This procedure is the key survival selection of the famous NSGA-II multi-objective
 evolutionary algorithm [1].
+
+Keep in mind that this function assumes all objectives to be minimized.
+In case at least one objective is to be maximized the data needs
+to be transformed accordingly in advance.
 }
 \references{
 [1] Deb, K., Pratap, A., and Agarwal, S. A Fast and Elitist Multiobjective Genetic
@@ -40,8 +44,7 @@ Algorithm: NSGA-II. IEEE Transactions on Evolutionary Computation, 6 (8) (2002),
 }
 \seealso{
 Other mootools: 
-\code{\link{get_nadir}()},
-\code{\link{plot_eaf}()}
+\code{\link{get_nadir}()}
 }
 \concept{mootools}
 \keyword{optimize}

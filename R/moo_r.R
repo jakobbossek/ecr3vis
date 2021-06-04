@@ -2,6 +2,10 @@
 #' R1, R2 and R3-indicator
 #'
 #' @description
+#' Functions \code{r1}, \code{r2} and \code{r3} calculate the R1, R2 and R3
+#' indicator respectively for two sets of points \code{x} and \code{y}.
+#'
+#' @details
 #' Consider two Pareto-front (approximation) sets
 #' \eqn{X = \{x_1, \ldots, x_{|X|}\}} and \eqn{Y = \{y_1, \ldots, y_{|Y|}\}} for
 #' some optimization problem with \eqn{m} objectives. Furthermore, let \eqn{U} be
@@ -68,6 +72,9 @@
 #' approximations to the nondominated set. Imm-rep-1998-7. Institute of
 #' Mathematical Modeling, Technical University of Denmark.
 #'
+#' @keywords optimize
+#' @template family_multi_objective_performance_indicators
+#'
 #' @param x [\code{matrix}]\cr
 #'   First point set in column major format.
 #' @param y [\code{matrix}]\cr
@@ -89,8 +96,6 @@
 #'   Default is \dQuote{tschebycheff}.
 #' @return Single numeric indicator value.
 #' @template arg_dots_not_used
-#' @keywords optimize
-#' @template family_multi_objective_performance_indicators
 #' @rdname rindicator
 #' @export
 r1 = function(

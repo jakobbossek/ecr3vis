@@ -12,10 +12,12 @@
 #' Method," in IEEE Transactions on Evolutionary Computation, vol. 19, no. 2,
 #' pp. 225-245, April 2015, doi: 10.1109/TEVC.2014.2313407
 #'
+#' @template family_multi_objective_visualizations
+#'
 #' @template arg_df
 #' @param obj.cols [\code{character(>= 3)}]\cr
 #'   Column names of the objective functions.
-#'   Default is \code{c("f1", "f2", "f3")}.
+#'   Default is \code{c("y1", "y2", "y3")}.
 #' @param max.in.row [\code{integer(1)}]\cr
 #'   Maximum number of plots to be displayed side by side in a row.
 #'   Default is 4.
@@ -27,7 +29,6 @@
 #' @param ... [any]\cr
 #'   Further arguments passed down to scatterplot function.
 #' @return Nothing (function has side-effects by calling the respective drawing routines).
-#' @template family_multi_objective_visualizations
 #' @export
 plot_scatter3d = function(
   df,

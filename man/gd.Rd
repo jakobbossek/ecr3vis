@@ -39,6 +39,17 @@ Not used.}
 Single numeric indicator value.
 }
 \description{
+These functions expect as mandatory arguments a point set \code{x} and
+a set of reference points \code{y}. For details on the optional arguments
+\code{p} and \code{modified} see the section on details.
+\itemize{
+  \item \code{gd} calculates the Generational Distance (GD).
+  \item \code{igd} calculates the Inverse Generational Distance (IGD).
+  \item \code{gdp/igdp} compute the (I)GD+ indicator [3].
+  \item \code{ahd} calculates the Average Hausdorff distance.
+}
+}
+\details{
 The generational distance (GD) measures the distance of a point set
 \eqn{X = \{r_1, \ldots, r_{|X|}\}}, e.g., a Pareto-front approximation, to
 a reference set \eqn{R = \{r_1, \ldots, r_{|R|}\}}. Then GD is defined as

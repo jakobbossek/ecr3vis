@@ -13,6 +13,8 @@
 #' Method," in IEEE Transactions on Evolutionary Computation, vol. 19, no. 2,
 #' pp. 225-245, April 2015, doi: 10.1109/TEVC.2014.2313407
 #'
+#' @template family_multi_objective_visualizations
+#'
 #' @template arg_df
 #' @template arg_obj_cols
 #' @param highlight.algos [\code{character(1)}]\cr
@@ -53,7 +55,6 @@
 #'   E.g., \code{nrow} to change layout.
 #'   Default is the empty list. In this case data is grouped by problem.
 #' @template return_ggplot
-#' @template family_multi_objective_visualizations
 #' @export
 plot_scatter2d = function(
   df,

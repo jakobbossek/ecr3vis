@@ -33,6 +33,22 @@ Check if a vector dominates another (\code{dominates} or \code{does_dominate})
 or is dominated by another (\code{is_dominated}). There are corresponding infix
 operators \code{dominates} and \code{is_dominated}.
 }
+\details{
+Given two vectors \eqn{x,y \in R^m} we say that \eqn{x} dominates \eqn{y},
+denoted as \eqn{x \preceq y} if and only if
+\deqn{
+  x_i \leq y_i \, \forall i \in \{1, \ldots, m\}
+}
+and
+\deqn{
+  \exists j \in \{1, \ldots, m\}: x_i < y_i.
+}
+Informally, \eqn{x} dominates \eqn{y} if \eqn{x} is no worse than \eqn{y} in
+all components and \eqn{x} is strictly better than \eqn{y} in at least one
+component. Note that this definition focuses on minimization of all
+objectives. This is no restriction, since the maximization of some function
+is equivalent to the minimization of its negative.
+}
 \examples{
 dominates(c(2, 3), c(4, 5))
 dominates(c(2, 3), c(2, 3))

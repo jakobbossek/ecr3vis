@@ -2,6 +2,17 @@
 #' (Inverted) Generational distance and Average Hausdorff Distance
 #'
 #' @description
+#' These functions expect as mandatory arguments a point set \code{x} and
+#' a set of reference points \code{y}. For details on the optional arguments
+#' \code{p} and \code{modified} see the section on details.
+#' \itemize{
+#'   \item \code{gd} calculates the Generational Distance (GD).
+#'   \item \code{igd} calculates the Inverse Generational Distance (IGD).
+#'   \item \code{gdp/igdp} compute the (I)GD+ indicator [3].
+#'   \item \code{ahd} calculates the Average Hausdorff distance.
+#' }
+#'
+#' @details
 #' The generational distance (GD) measures the distance of a point set
 #' \eqn{X = \{r_1, \ldots, r_{|X|}\}}, e.g., a Pareto-front approximation, to
 #' a reference set \eqn{R = \{r_1, \ldots, r_{|R|}\}}. Then GD is defined as
@@ -58,6 +69,8 @@
 #' Coello Coello, editors, Evolutionary Multi-Criterion Optimization, 110–125.
 #' Cham, 2015. Springer International Publishing.
 #'
+#' @keywords optimize
+#' @template family_multi_objective_performance_indicators
 #'
 #' @param x [\code{matrix}]\cr
 #'   Point set in column major format.
@@ -71,8 +84,6 @@
 #' @template arg_dots_not_used
 #' @return Single numeric indicator value.
 #'
-#' @keywords optimize
-#' @template family_multi_objective_performance_indicators
 #' @rdname gd
 #' @export
 gd = function(x, y, p = 2, modified = TRUE, ...) {

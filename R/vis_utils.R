@@ -1,16 +1,15 @@
-# DATA TRANSFORMATION / PREPROCESSING
-# ===
-
-# Sanity checks and preprocessing for PF-visualization
-#
-# @param df [\code{data.frame()}]\cr
-#  Data frame, i.e., Pareto-front approximation.
-# @param obj.cols [\code{character}]\cr
-#  Names of objective columns.
-# @param n.obj [\code{integer(1) | NULL}]\cr
-#  Number of objectives required.
-#  Defaults to NULL.
-# @return [\code{data.frame}] Modified data frame.
+#' @title
+#' Sanity checks and preprocessing for PF-visualization
+#'
+#' @param df [\code{data.frame()}]\cr
+#'  Data frame, i.e., Pareto-front approximation.
+#' @param obj.cols [\code{character}]\cr
+#'  Names of objective columns.
+#' @param n.obj [\code{integer(1) | NULL}]\cr
+#'  Number of objectives required.
+#'  Defaults to NULL.
+#' @return Modified data frame.
+#' @noRd
 prepare_pf_for_visualization = function(df, obj.cols, n.obj = NULL) {
   # check if obj column exist
   if (!all(obj.cols %in% colnames(df)))
@@ -39,19 +38,21 @@ prepare_pf_for_visualization = function(df, obj.cols, n.obj = NULL) {
   return(df)
 }
 
-# @title Convert a pf approximation into ggplot-friendly format
-#
-# @param df [\code{data.frame}]\cr
-#  Pareto-front approximation with columns \code{obj.cols} and optionl further
-#  columns.
-# @param obj.cols [\code{character}]\cr
-#  Names of objective columns.
-# @param solutions.as.factor [\code{logical(1)}]\cr
-#  If \code{TRUE}, solutions are numbered consecutively as they appear in
-#  \code{df}.
-#  Default is \code{FALSE}.
-# @return [\code{data.frame}] \code{df} in long format with factor column
-#  \dQuote{objective} and numeric column \dQuote{value}.
+#' @title
+#' Convert a pf approximation into ggplot-friendly format
+#'
+#' @param df [\code{data.frame}]\cr
+#'  Pareto-front approximation with columns \code{obj.cols} and optionl further
+#'  columns.
+#' @param obj.cols [\code{character}]\cr
+#'  Names of objective columns.
+#' @param solutions.as.factor [\code{logical(1)}]\cr
+#'  If \code{TRUE}, solutions are numbered consecutively as they appear in
+#'  \code{df}.
+#'  Default is \code{FALSE}.
+#' @return The \code{df} data frame in long format with factor column
+#'  \dQuote{objective} and numeric column \dQuote{value}.
+#' @noRd
 to_long_with_objective_column = function(df, obj.cols, solution.as.factor = FALSE) {
   df$nr = 1:nrow(df) # needed for grouping
   if (solution.as.factor)

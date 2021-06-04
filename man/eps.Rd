@@ -20,6 +20,10 @@ Not used.}
 Single numeric indicator value.
 }
 \description{
+For two point sets \code{x} and \code{y} the function returns the value
+of the binary \eqn{\varepsilon}-indicator [1].
+}
+\details{
 The \eqn{\varepsilon}-indicator, often denoted as \eqn{I_{\varepsilon}},
 requires for understanding the concept of \eqn{\varepsilon}-dominance.
 A vector \eqn{x \in R^m}, for some \eqn{\varepsilon > 0}, \eqn{\varepsilon}-dominates
@@ -46,6 +50,11 @@ approximation of it, the unary version is simply
 }
 Function \code{eps} implements the binary \eqn{\varepsilon}-indicator. It
 should be obvious how to calculate the unary indicator.
+}
+\note{
+Keep in mind that this function assumes all objectives to be minimized.
+In case at least one objective is to be maximized the data needs
+to be transformed accordingly in advance.
 }
 \references{
 [1] E. Zitzler, L. Thiele, M. Laumanns, C. M. Fonseca, V. G. Da Fonseca,

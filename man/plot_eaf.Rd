@@ -21,6 +21,9 @@ Percentiles of the EAF that will be plotted as attainment surfaces.}
 A \code{\link[ggplot2]{ggplot}} object.
 }
 \description{
+Plots the Empiriccal Attainment Function (EAF) given approximation sets of
+multi-objective stochastic algorithms.
+
 The following description closely follows the excellent introduction into
 performance assessment of multi-objective optimizers by Knowles et al. [3].
 (Evolutionary) multi-objective algorithms are stochastic. Hence, naturally,
@@ -79,9 +82,11 @@ Engineering and Networks Laboratory, ETH Zurich, February 2006 (Revised version.
 First version, January 2005). doi: 10.3929/ethz-b-000023822
 }
 \seealso{
-Other mootools: 
-\code{\link{get_nadir}()},
-\code{\link{nds}()}
+Other multi-objective visualizations: 
+\code{\link{plot_heatmap}()},
+\code{\link{plot_pcp}()},
+\code{\link{plot_radar}()},
+\code{\link{plot_scatter2d}()},
+\code{\link{plot_scatter3d}()}
 }
-\concept{mootools}
-\concept{visualization}
+\concept{multi-objective visualizations}

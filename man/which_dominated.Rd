@@ -29,20 +29,16 @@ a logical vector with \code{TRUE} for each point which is located on the last
 non-domination level.
 }
 \examples{
-  data(mtcars)
-  # assume we want to maximize horsepower and minimize gas consumption
-  cars = mtcars[, c("mpg", "hp")]
-  cars$hp = -cars$hp
-  idxs = which_nondominated(t(as.matrix(cars)))
-  \dontrun{
-  print(mtcars[idxs, ])
-  plot(cars)
-  points(cars[idxs, ], col = "tomato", pch = 10)
-  }
-# first point is the sole nondominated point
-x = matrix(c(1, 1, 2, 2, 1, 3), byrow = FALSE, ncol = 3L)
-which_dominated(x)
-which_nondominated(x)
+data(mtcars)
+# assume we want to maximize horsepower and minimize gas consumption
+cars = mtcars[, c("mpg", "hp")]
+cars$hp = -cars$hp
+idxs = which_nondominated(t(as.matrix(cars)))
+\dontrun{
+print(mtcars[idxs, ])
+plot(cars)
+points(cars[idxs, ], col = "tomato", pch = 10)
+}
 }
 \seealso{
 Other Pareto-dominance checks: 

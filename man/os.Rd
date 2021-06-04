@@ -23,6 +23,10 @@ Not used.}
 Single numeric indicator value.
 }
 \description{
+Calculates the Overall (Pareto-) Spread multi-objective performance indicator
+for a point set \code{x}.
+}
+\details{
 A simple multi-objective performance indicator proposed in [1].
 Given a point set\eqn{X = \{x_1, \ldots, x_{|X|}\}} of \eqn{m} objectives,
 the ideal point \eqn{I} (or an approximation) and the nadir point \eqn{N}

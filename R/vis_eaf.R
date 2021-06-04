@@ -2,6 +2,10 @@
 #' Empirical attainment function (EAF)
 #'
 #' @description
+#' Plots the Empiriccal Attainment Function (EAF) given approximation sets of
+#' multi-objective stochastic algorithms.
+#'
+#' @description
 #' The following description closely follows the excellent introduction into
 #' performance assessment of multi-objective optimizers by Knowles et al. [3].
 #' (Evolutionary) multi-objective algorithms are stochastic. Hence, naturally,
@@ -41,6 +45,8 @@
 #' For further details we refer the reader to the technical report by Knowles,
 #' Thiele and Zitzler (reference [3]).
 #'
+#' @template family_multi_objective_visualizations
+#'
 #' @references
 #' [1] V. Grunert da Fonseca and C. M. Fonseca, The attainment-function approach
 #' to stochastic multiobjective optimizer assessment and comparison, in
@@ -64,8 +70,6 @@
 #' @param percentiles [\code{numeric}]\cr
 #'   Percentiles of the EAF that will be plotted as attainment surfaces.
 #' @template return_ggplot
-#' @family mootools
-#' @family visualization
 #' @export
 plot_eaf = function(
   df,

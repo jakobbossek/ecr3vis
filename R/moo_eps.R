@@ -2,6 +2,10 @@
 #' Binary \eqn{\varepsilon}-indicator
 #'
 #' @description
+#' For two point sets \code{x} and \code{y} the function returns the value
+#' of the binary \eqn{\varepsilon}-indicator [1].
+#'
+#' @details
 #' The \eqn{\varepsilon}-indicator, often denoted as \eqn{I_{\varepsilon}},
 #' requires for understanding the concept of \eqn{\varepsilon}-dominance.
 #' A vector \eqn{x \in R^m}, for some \eqn{\varepsilon > 0}, \eqn{\varepsilon}-dominates
@@ -29,10 +33,15 @@
 #' Function \code{eps} implements the binary \eqn{\varepsilon}-indicator. It
 #' should be obvious how to calculate the unary indicator.
 #'
+#' @template note_minimization
+#'
 #' @references
 #' [1] E. Zitzler, L. Thiele, M. Laumanns, C. M. Fonseca, V. G. Da Fonseca,
 #' Performance assessment of multiobjective optimizers: An analysis and review,
 #' IEEE Transactions on evolutionary computation 7 (2) (2003) 117–132.
+#'
+#' @keywords optimize
+#' @template family_multi_objective_performance_indicators
 #'
 #' @param x [\code{matrix}]\cr
 #'   First point set in column major format.
@@ -40,9 +49,6 @@
 #'   Second point set in column major format.
 #' @template arg_dots_not_used
 #' @return Single numeric indicator value.
-#'
-#' @keywords optimize
-#' @template family_multi_objective_performance_indicators
 #' @export
 eps = function(x, y, ...) {
   checkmate::assert_matrix(x, mode = "numeric", min.rows = 2L, min.cols = 2L, any.missing = FALSE, all.missing = FALSE)

@@ -2,6 +2,10 @@
 #' Solow-Polasky measure
 #'
 #' @description
+#' Calculates the Solow-Polasky measure [1] for a set of points given as columns
+#' of a numeric matrix.
+#'
+#' @details
 #' This measure was introduced by Solow and Polasky back in 1994 to measure the
 #' amount of diversity between species in biology [1]. Later, Ulrich and Thiele [2]
 #' adopted this measures for \emph{Evolutionary Diversity Optimization} where the
@@ -47,20 +51,21 @@
 #' Computation Conference (GECCO 2011). ACM, 2011, pp. 641–648.
 #' doi: 10.1145/2001576.2001665.
 #'
+#' @template family_diversity_indicators
+#'
 #' @param x [\code{matrix}]\cr
-#'   Input matrix (i.e., the population) where each column holds one point / individual.
+#'   Numeric input matrix (e.g., a EA-population) where each column holds one point / individual.
 #' @param d [\code{matrix} | \code{NULL}]\cr
 #'   Optional distance matrix.
 #'   If \code{NULL}, the default, the Euclidean distance is calculated
 #'   automatically via \code{\link[stats]{dist}}.
 #' @param theta [\code{numeric(1)}]\cr
-#'   Single scalar value (see description).
+#'   Single scalar value (see details section).
 #'   Default is 1.
 #' @param ... [any]\cr
 #'   Further argument passed down to \code{\link[stats]{dist}}
 #'   in case \code{d} is \code{NULL}.
 #' @return Solow-Polasky diversity measure (scalar numeric value).
-#' @template family_diversity_indicators
 #' @export
 #' @examples
 #' # Generate a random point cloud in [0,1] x [0,1]
@@ -96,6 +101,5 @@ solow_polasky = function(x, d = NULL, theta = 1, ...) {
   # calculate Solow-Polasky
   M = exp((-1) * theta * d)
   M = MASS::ginv(M)
-  # FIXME: do we need a factor of 1/2?
   return(sum(M))
 }

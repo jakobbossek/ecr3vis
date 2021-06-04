@@ -1,7 +1,8 @@
 #' @title
 #' Parallel coordinate plot (PCP)
 #'
-#' @description Visualizes a Pareto-front approximation set with parallel coordinate
+#' @description
+#' Visualizes a Pareto-front approximation set with parallel coordinate
 #' plots. The \eqn{x}-axis shows the objectives as an ordered factor where the order
 #' is determined by the \code{obj.cols} argument. On the \eqn{y}-axis objective values
 #' are shown colored by solution as lines. Suitable for any number of objectives.

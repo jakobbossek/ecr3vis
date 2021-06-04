@@ -8,7 +8,7 @@ solow_polasky(x, d = NULL, theta = 1, ...)
 }
 \arguments{
 \item{x}{[\code{matrix}]\cr
-Input matrix (i.e., the population) where each column holds one point / individual.}
+Numeric input matrix (e.g., a EA-population) where each column holds one point / individual.}
 
 \item{d}{[\code{matrix} | \code{NULL}]\cr
 Optional distance matrix.
@@ -16,7 +16,7 @@ If \code{NULL}, the default, the Euclidean distance is calculated
 automatically via \code{\link[stats]{dist}}.}
 
 \item{theta}{[\code{numeric(1)}]\cr
-Single scalar value (see description).
+Single scalar value (see details section).
 Default is 1.}
 
 \item{...}{[any]\cr
@@ -27,6 +27,10 @@ in case \code{d} is \code{NULL}.}
 Solow-Polasky diversity measure (scalar numeric value).
 }
 \description{
+Calculates the Solow-Polasky measure [1] for a set of points given as columns
+of a numeric matrix.
+}
+\details{
 This measure was introduced by Solow and Polasky back in 1994 to measure the
 amount of diversity between species in biology [1]. Later, Ulrich and Thiele [2]
 adopted this measures for \emph{Evolutionary Diversity Optimization} where the

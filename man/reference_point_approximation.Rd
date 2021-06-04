@@ -27,7 +27,6 @@ evolutionary algorithm.
 }
 \seealso{
 Other mootools: 
-\code{\link{nds}()},
-\code{\link{plot_eaf}()}
+\code{\link{nds}()}
 }
 \concept{mootools}

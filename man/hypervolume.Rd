@@ -31,6 +31,12 @@ Dominated hypervolume in the case of
  for each point of \code{x} in the case of \code{hv_contr}.
 }
 \description{
+Given a point set \code{x} and a reference point \code{r} funcction \code{hv}
+calcultes the hypervolume indicator value [1]. In contrast, function \code{hv_contr}
+returns a vector of length \code{nrow(x)} where the \eqn{i}th position
+contains the hypervolume contribuntion of the \eqn{i}th point in \code{x}.
+}
+\details{
 The \emph{hypervolume (HV) indicator} [1, 2] is arguebly one of the most often used performance
 indicator likely due to its straight-forward definition. Given a set of points
 \eqn{X = \{x_1, \ldots, x_{|X|}\}} and an anti-optimal reference point
@@ -57,7 +63,7 @@ that the reference point is dominated by all of the points in the reference set
 }
 \note{
 Keep in mind that this function assumes all objectives to be minimized.
-In case at least one objective is to be maximized the matrix \code{x} needs
+In case at least one objective is to be maximized the data needs
 to be transformed accordingly in advance.
 }
 \references{

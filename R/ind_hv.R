@@ -2,6 +2,12 @@
 #' Dominated hypervolume (contribution)
 #'
 #' @description
+#' Given a point set \code{x} and a reference point \code{r} funcction \code{hv}
+#' calcultes the hypervolume indicator value [1]. In contrast, function \code{hv_contr}
+#' returns a vector of length \code{nrow(x)} where the \eqn{i}th position
+#' contains the hypervolume contribuntion of the \eqn{i}th point in \code{x}.
+#'
+#' @details
 #' The \emph{hypervolume (HV) indicator} [1, 2] is arguebly one of the most often used performance
 #' indicator likely due to its straight-forward definition. Given a set of points
 #' \eqn{X = \{x_1, \ldots, x_{|X|}\}} and an anti-optimal reference point
@@ -26,10 +32,7 @@
 #' that the reference point is dominated by all of the points in the reference set
 #' (anti-optimality property).
 #'
-#' @note
-#' Keep in mind that this function assumes all objectives to be minimized.
-#' In case at least one objective is to be maximized the matrix \code{x} needs
-#' to be transformed accordingly in advance.
+#' @template note_minimization
 #'
 #' @references
 #' [1] E. Zitzler and L. Thiele. Multiobjective Optimization Using Evolutionary
@@ -49,6 +52,8 @@
 #' based on dominated hypervolume. European Journal of Operational Research, 2007,
 #' vol. 181, issue 3, 1653-1669.
 #'
+#' @template family_multi_objective_performance_indicators
+#'
 #' @param x [\code{matrix}]\cr
 #'   Matrix of points (column-wise).
 #' @param r [\code{numeric} | \code{NULL}]\cr
@@ -64,7 +69,6 @@
 #'  \code{hv} or a vector the dominated hypervolume contributions
 #'  for each point of \code{x} in the case of \code{hv_contr}.
 #' @rdname hypervolume
-#' @template family_multi_objective_performance_indicators
 #' @export
 hv = function(x, r = NULL, offset = 1, ...) {
   checkmate::assert_matrix(x, mode = "numeric", min.rows = 2L, min.cols = 1L, any.missing = FALSE, all.missing = FALSE)
