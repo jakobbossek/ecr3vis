@@ -32,7 +32,11 @@ plot_heatmap = function(
 
   g = ggplot2::ggplot(df, mapping = ggplot2::aes_string(x = "objective", y = "nr", fill = "value"))
   g = g + ggplot2::geom_tile()
-  g = g + viridis::scale_fill_viridis(discrete = FALSE)
+  if (requireNamespace("viridis", quietly = TRUE)) {
+    g = g + viridis::scale_fill_viridis(discrete = FALSE)
+  } else {
+    re::catf("[plot_heatmap] Package \"viridis\" not installed. Using default ggplot2 colors.")
+  }
   g = g + ggplot2::labs(x = "Objective", y = "Solution")
   g = g + ggplot2::theme_minimal()
   return(g)

@@ -149,7 +149,11 @@ plot_scatter2d = function(
     if (!bubble) {
       g = g + ggplot2::scale_color_brewer(palette = "Dark2")
     } else {
-      g = g + viridis::scale_color_viridis()
+      if (requireNamespace("viridis", quietly = TRUE)) {
+        g = g + viridis::scale_color_viridis()
+      } else {
+        re::catf("[plot_scatter2d] Package \"viridis\" not installed. Using default ggplot2 colors.")
+      }
       g = g + ggplot2::labs(colour = sprintf("Obj. %s", colour))
     }
   }

@@ -59,6 +59,9 @@ plot_scatter3d = function(
 
   # points types and colours
   pchs = 1:16
+
+  if (!requireNamespace("viridis", quietly = TRUE))
+    re::stopf("[plot_scatter3d] Package \"viridis\" needed by this function.")
   cols = viridis::viridis_pal()(n.algos)
 
   if (n.probs > 1L) {
