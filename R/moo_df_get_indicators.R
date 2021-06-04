@@ -89,11 +89,10 @@ df_get_indicators = function(x, obj.cols, unary, rsets = list(), format = "long"
     return(ind)
   }, future.globals = FALSE, future.packages = "ecr3vis", future.seed = TRUE)
 
-  #FIXME: ugly as hell! Why is re::explode defined for single string only and
-  # why does re::df_split_col has a different interface?!?
   problem.grid$value = inds.unary
-  meta = re::rbindlapply(problem.grid$problem, re::explode, split = sep, names = c("problem", "algorithm", "repl"), types = c("cci"))
-  meta = cbind(meta, problem.grid[, -1L, drop = FALSE])
+
+  meta = re::df_explode(problem.grid, split.col = "problem", split = sep, names = c("problem", "algorithm", "repl"),
+    types = c("cci"), keep = FALSE)
 
   if (format == "long")
     return(meta)
