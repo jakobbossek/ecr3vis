@@ -90,6 +90,11 @@ which combines GD and IGD and is defined as
 }
 By default, \code{ahd} uses the modified versions of \eqn{GD} and \eqn{IGD}
 respectively (see argument \code{modified}).
+
+IGDX [4] is a meaasure for decision space diversity.vThis is simply IGD;
+however, the input consistsvof the non-dominated solutions in decision space
+rather in objective space. Naturally, all implemented functions can be used as
+an \dQuote{*X} version.
 }
 \references{
 [1] David A. Van Veldhuizen and David A. Van Veldhuizen. Multiobjective
@@ -105,6 +110,9 @@ Modified distance calculation in generational distance and inverted generational
 distance. In António Gaspar-Cunha, Carlos Henggeler Antunes, and Carlos
 Coello Coello, editors, Evolutionary Multi-Criterion Optimization, 110–125.
 Cham, 2015. Springer International Publishing.
+
+[4] O. Schütze, M. Vasile, and C. A. C. Coello, Computing the Set of
+Epsilon-Efficient Solutions in Multiobjective Space Mission Design,
 }
 \seealso{
 Other multi-objective performance indicators: 
