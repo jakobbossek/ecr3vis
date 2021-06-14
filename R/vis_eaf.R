@@ -71,6 +71,13 @@
 #'   Percentiles of the EAF that will be plotted as attainment surfaces.
 #' @template return_ggplot
 #' @export
+#' @examples
+#' \dontrun{
+#' data(emoas_on_zdt)
+#' plot_eaf(emoas_on_zdt, obj.cols = c("y1", "y2"))
+#' plot_eaf(emoas_on_zdt[emoas_on_zdt$algorithm == "nsga2", ], obj.cols = c("y1", "y2"))
+#' plot_eaf(emoas_on_zdt[emoas_on_zdt$algorithm == "nsga2", ], obj.cols = c("y1", "y2"), percentiles = c(50, 100))
+#' }
 plot_eaf = function(
   df,
   obj.cols,
@@ -83,12 +90,18 @@ plot_eaf = function(
 
   df = prepare_pf_for_visualization(df, obj.cols, n.obj = 2L)
 
-  #FIXME: group by (algorithm, prob)
-  dfeaf = eaf::eafs(points = df[, obj.cols], sets = df$repl, groups = df$problem, percentiles = percentiles)
-  colnames(dfeaf) = c("y1", "y2", "percentiles", "group")
+  # Merge columns algorithm and problem
+  df$grouping = paste0(as.character(df$problem), "-----", as.character(df$algorithm))
 
-  n.groups = re::nunique(dfeaf$group)
+  dfeaf = eaf::eafs(points = df[, obj.cols], sets = df$repl, groups = df$grouping, percentiles = percentiles)
+  colnames(dfeaf) = c("y1", "y2", "percentiles", "group")
   dfeaf$percentiles = factor(dfeaf$percentiles, levels = percentiles, ordered = TRUE)
+
+  # Undo merging
+  dfeaf = re::df_explode(dfeaf, split.col = "group", split = "-----", names =  c("problem", "algorithm"), keep = FALSE)
+
+  n.algorithms = re::nunique(dfeaf$algorithm)
+  n.problems = re::nunique(dfeaf$problem)
 
   g = ggplot2::ggplot(dfeaf, ggplot2::aes_string(x = "y1", y = "y2",
     linetype = "percentiles", colour = "percentiles"))
@@ -97,11 +110,15 @@ plot_eaf = function(
   g = g + ggplot2::labs(
     x = "y1",
     y = "y2",
-    linetype = "Att. surface",
-    colour = "Att. surface")
+    linetype = "Attainment surface",
+    colour = "Attainment surface")
   g = g + ggplot2::scale_color_grey()
   g = g + ggplot2::theme(legend.position = "bottom")
-  if (n.groups > 1L)
-    g = g + ggplot2::facet_wrap(. ~ group, scales = "free")
+  if (n.algorithms > 1L & n.problems > 1L)
+    g = g + ggplot2::facet_wrap(algorithm ~ problem, scales = "free")
+  else if (n.algorithms > 1L)
+    g = g + ggplot2::facet_wrap(algorithm ~ ., scales = "free")
+  else if (n.problems > 1L)
+    g = g + ggplot2::facet_wrap(problem ~ ., scales = "free")
   return(g)
 }

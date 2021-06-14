@@ -63,6 +63,14 @@ and the goals that have not been attained with a frequency of at least
 For further details we refer the reader to the technical report by Knowles,
 Thiele and Zitzler (reference [3]).
 }
+\examples{
+\dontrun{
+data(emoas_on_zdt)
+plot_eaf(emoas_on_zdt, obj.cols = c("y1", "y2"))
+plot_eaf(emoas_on_zdt[emoas_on_zdt$algorithm == "nsga2", ], obj.cols = c("y1", "y2"))
+plot_eaf(emoas_on_zdt[emoas_on_zdt$algorithm == "nsga2", ], obj.cols = c("y1", "y2"), percentiles = c(50, 100))
+}
+}
 \references{
 [1] V. Grunert da Fonseca and C. M. Fonseca, The attainment-function approach
 to stochastic multiobjective optimizer assessment and comparison, in
