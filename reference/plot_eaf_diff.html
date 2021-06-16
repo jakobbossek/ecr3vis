@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Radar/spider plot — plot_radar • ecr3vis</title>
+<title>Empirical attainment function (EAF) difference — plot_eaf_diff • ecr3vis</title>
 
 
 <!-- jquery -->
@@ -39,17 +39,11 @@
 
 
 
-<meta property="og:title" content="Radar/spider plot — plot_radar" />
-<meta property="og:description" content="A radar plot or spider plot is an elegant method to visualize
-solution quality of solutions with more than two objectives. Essentially it
-shows multiple numeric values starting from the same origin in a circular
-two-dimensional representation
-Users who are into gaming might know the kind of visualization from games like
-Pro Evolution Soccer, NHL or most likely any kind of sport games. Here, the
-individual strength and weaknesses of players (speed, tequniqual skills,
-fitness etc.) are often visualized by means of radar plots.
-The drawback of this method that it is difficult to compare many solutions
-or - even worse - many solutions from different algorithms to get the big picture." />
+<meta property="og:title" content="Empirical attainment function (EAF) difference — plot_eaf_diff" />
+<meta property="og:description" content="Plot the differences between the empirical attainment functions (EAFs) of two
+approximations sets side by side adopting ggplot2. The left plot
+shows the the values of the left EAF minus the right EAF and the right side
+shows it the other way around." />
 
 
 
@@ -120,33 +114,34 @@ or - even worse - many solutions from different algorithms to get the big pictur
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Radar/spider plot</h1>
-    <small class="dont-index">Source: <a href='https://github.com/jakobbossek/ecr3vis/blob/master/R/vis_radar.R'><code>R/vis_radar.R</code></a></small>
-    <div class="hidden name"><code>plot_radar.Rd</code></div>
+    <h1>Empirical attainment function (EAF) difference</h1>
+    <small class="dont-index">Source: <a href='https://github.com/jakobbossek/ecr3vis/blob/master/R/vis_eaf_diff.R'><code>R/vis_eaf_diff.R</code></a></small>
+    <div class="hidden name"><code>plot_eaf_diff.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>A radar plot or spider plot is an elegant method to visualize
-solution quality of solutions with more than two objectives. Essentially it
-shows multiple numeric values starting from the same origin in a circular
-two-dimensional representation</p>
-<p>Users who are into gaming might know the kind of visualization from games like
-Pro Evolution Soccer, NHL or most likely any kind of sport games. Here, the
-individual strength and weaknesses of players (speed, tequniqual skills,
-fitness etc.) are often visualized by means of radar plots.</p>
-<p>The drawback of this method that it is difficult to compare many solutions
-or - even worse - many solutions from different algorithms to get the big picture.</p>
+    <p>Plot the differences between the empirical attainment functions (EAFs) of two
+approximations sets side by side adopting <a href='https://CRAN.R-project.org/package=ggplot2'><span class="pkg">ggplot2</span></a>. The left plot
+shows the the values of the left EAF minus the right EAF and the right side
+shows it the other way around.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>plot_radar</span><span class='op'>(</span><span class='va'>df</span>, obj.cols <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"y1"</span>, <span class='st'>"y2"</span>, <span class='st'>"y3"</span><span class='op'>)</span><span class='op'>)</span></pre>
+    <pre class="usage"><span class='fu'>plot_eaf_diff</span><span class='op'>(</span><span class='va'>df1</span>, <span class='va'>df2</span>, <span class='va'>obj.cols</span>, intervals <span class='op'>=</span> <span class='fl'>5L</span>, percentiles <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>0</span>, <span class='fl'>50</span>, <span class='fl'>75</span><span class='op'>)</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>df</th>
+      <th>df1</th>
       <td><p>[<code>data.frame</code>]<br />
-Data.frame with columns at least <code>obj.cols</code>, &#8220;problem&#8221; and &#8220;algorithm&#8221;.</p></td>
+First approximation set: data.frame with columns at least <code>obj.cols</code>
+and &#8220;repl&#8221;. All other columns will be ignored!</p></td>
+    </tr>
+    <tr>
+      <th>df2</th>
+      <td><p>[<code>data.frame</code>]<br />
+First approximation set: data.frame with columns at least <code>obj.cols</code>
+and &#8220;repl&#8221;. All other columns will be ignored!</p></td>
     </tr>
     <tr>
       <th>obj.cols</th>
@@ -154,41 +149,65 @@ Data.frame with columns at least <code>obj.cols</code>, &#8220;problem&#8221; an
 Column names of the objective function values.
 Default is <code><a href='https://rdrr.io/r/base/c.html'>c("y1", "y2")</a></code>.</p></td>
     </tr>
+    <tr>
+      <th>intervals</th>
+      <td><p>[<code><a href='https://rdrr.io/r/base/integer.html'>integer(1)</a></code>]<br />
+The absolute range of the differences \([0, 1]\) is partitioned into the
+number of intervals provided.
+Default is 5.</p></td>
+    </tr>
+    <tr>
+      <th>percentiles</th>
+      <td><p>[<code>numeric</code>]<br />
+Percentiles of the EAF that will be plotted as attainment surfaces.</p></td>
+    </tr>
     </table>
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
     <p>A <code><a href='https://ggplot2.tidyverse.org/reference/ggplot.html'>ggplot</a></code> object.</p>
+    <h2 class="hasAnchor" id="note"><a class="anchor" href="#note"></a>Note</h2>
+
+    <p>If the given approxximation sets are huge, generating the plot may take some
+time. Here, it is most often helpful to store the plot first in a file. Due
+to the huge number of points the size of the file may be also very large. Here,
+it is advisible to save the file in a image file format (PNG or JPEG) instead
+of PDF.</p>
+<p>This function re-implements partial functionality of <code><a href='http://lopez-ibanez.eu/eaftools/reference/eafdiffplot.html'>eafdiffplot</a></code>
+realizing the plotting with <a href='https://CRAN.R-project.org/package=ggplot2'><span class="pkg">ggplot2</span></a> rather than base R plot functions.</p>
     <h2 class="hasAnchor" id="references"><a class="anchor" href="#references"></a>References</h2>
 
-    <p>[1] T. Tušar and B. Filipič, Visualization of Pareto Front Approximations in
-Evolutionary Multiobjective Optimization: A Critical Review and the Prosection
-Method, in IEEE Transactions on Evolutionary Computation, vol. 19, no. 2,
-pp. 225-245, April 2015, doi: 10.1109/TEVC.2014.2313407.</p>
+    <p>[1] V. Grunert da Fonseca and C. M. Fonseca, The attainment-function approach
+to stochastic multiobjective optimizer assessment and comparison, in
+Experimental Methods for the Analysis of Optimization Algorithms
+(T. Bartz-Beielstein, M. Chiarandini, L. Paquete, and M. Preuss, eds.),
+ch. 5, pp. 103-130, Springer Berlin Heidelberg, 2010.</p>
+<p>[2] Manuel López-Ibáñez, Luís Paquete, and Thomas Stützle. Exploratory Analysis
+of Stochastic Local Search Algorithms in Biobjective Optimization. In T.
+Bartz-Beielstein, M. Chiarandini, L. Paquete, and M. Preuss, editors,
+Experimental Methods for the Analysis of Optimization Algorithms,
+pages 209–222. Springer, Berlin, Germany, 2010. doi: 10.1007/978-3-642-02538-9_9</p>
+<p>[3] Knowles, J. D., Thiele, L. and Zitzler, E. A tutorial on the performance
+assessment of stochastive multiobjective optimizers. TIK-Report No. 214, Computer
+Engineering and Networks Laboratory, ETH Zurich, February 2006 (Revised version.
+First version, January 2005). doi: 10.3929/ethz-b-000023822</p>
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
-    <div class='dont-index'><p>Other multi-objective visualizations: 
-<code><a href='plot_eaf_diff.html'>plot_eaf_diff</a>()</code>,
+    <div class='dont-index'><p>plot_eaf</p>
+<p>Other multi-objective visualizations: 
 <code><a href='plot_eaf.html'>plot_eaf</a>()</code>,
 <code><a href='plot_heatmap.html'>plot_heatmap</a>()</code>,
 <code><a href='plot_pcp.html'>plot_pcp</a>()</code>,
+<code><a href='plot_radar.html'>plot_radar</a>()</code>,
 <code><a href='plot_scatter2d.html'>plot_scatter2d</a>()</code>,
 <code><a href='plot_scatter3d.html'>plot_scatter3d</a>()</code></p></div>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'><a href='https://rdrr.io/r/utils/data.html'>data</a></span><span class='op'>(</span><span class='va'>mtcars</span><span class='op'>)</span>
-
-<span class='co'># scale to [0, 1]</span>
-<span class='va'>tbl</span> <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/as.data.frame.html'>as.data.frame</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/scale.html'>scale</a></span><span class='op'>(</span><span class='va'>mtcars</span><span class='op'>[</span><span class='fl'>1</span><span class='op'>:</span><span class='fl'>6</span>, <span class='op'>]</span>, center <span class='op'>=</span> <span class='cn'>FALSE</span>, scale <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span><span class='op'>)</span>
-<span class='va'>tbl</span><span class='op'>$</span><span class='va'>car</span> <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/colnames.html'>rownames</a></span><span class='op'>(</span><span class='va'>tbl</span><span class='op'>)</span>
-
-<span class='kw'>if</span> <span class='op'>(</span><span class='cn'>FALSE</span><span class='op'>)</span> <span class='op'>{</span>
-<span class='co'># 6 cars in one plot</span>
-<span class='va'>g</span> <span class='op'>=</span> <span class='fu'>plot_radar</span><span class='op'>(</span><span class='va'>tbl</span>, <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"mpg"</span>, <span class='st'>"cyl"</span>, <span class='st'>"hp"</span><span class='op'>)</span><span class='op'>)</span>
-<span class='fu'><a href='https://rdrr.io/r/base/print.html'>print</a></span><span class='op'>(</span><span class='va'>g</span><span class='op'>)</span>
-
-<span class='co'># split by car (-&gt; 6 plots)</span>
-<span class='fu'><a href='https://rdrr.io/r/base/print.html'>print</a></span><span class='op'>(</span><span class='va'>g</span> <span class='op'>+</span> <span class='fu'>facet_wrap</span><span class='op'>(</span><span class='va'>car</span> <span class='op'>~</span> <span class='va'>.</span><span class='op'>)</span><span class='op'>)</span>
+    <pre class="examples"><div class='input'><span class='kw'>if</span> <span class='op'>(</span><span class='cn'>FALSE</span><span class='op'>)</span> <span class='op'>{</span>
+<span class='fu'><a href='https://rdrr.io/r/utils/data.html'>data</a></span><span class='op'>(</span><span class='va'>emoas_on_zdt</span><span class='op'>)</span>
+<span class='va'>df1</span> <span class='op'>=</span> <span class='va'>emoas_on_zdt</span><span class='op'>[</span><span class='va'>emoas_on_zdt</span><span class='op'>$</span><span class='va'>algorithm</span> <span class='op'>==</span> <span class='st'>"nsga2"</span> <span class='op'>&amp;</span> <span class='va'>emoas_on_zdt</span><span class='op'>$</span><span class='va'>problem</span> <span class='op'>==</span> <span class='st'>"zdt1_2d_2o"</span>, <span class='op'>]</span>
+<span class='va'>df2</span> <span class='op'>=</span> <span class='va'>emoas_on_zdt</span><span class='op'>[</span><span class='va'>emoas_on_zdt</span><span class='op'>$</span><span class='va'>algorithm</span> <span class='op'>==</span> <span class='st'>"smsemoa"</span> <span class='op'>&amp;</span> <span class='va'>emoas_on_zdt</span><span class='op'>$</span><span class='va'>problem</span> <span class='op'>==</span> <span class='st'>"zdt1_2d_2o"</span>, <span class='op'>]</span>
+<span class='fu'>plot_eaf_diff</span><span class='op'>(</span><span class='va'>df1</span>, <span class='va'>df2</span>, obj.cols <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"y1"</span>, <span class='st'>"y2"</span><span class='op'>)</span><span class='op'>)</span>
 <span class='op'>}</span>
 </div></pre>
   </div>
