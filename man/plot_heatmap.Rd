@@ -32,6 +32,7 @@ pp. 225-245, April 2015, doi: 10.1109/TEVC.2014.2313407.
 }
 \seealso{
 Other multi-objective visualizations: 
+\code{\link{plot_eaf_diff}()},
 \code{\link{plot_eaf}()},
 \code{\link{plot_pcp}()},
 \code{\link{plot_radar}()},

@@ -91,6 +91,7 @@ First version, January 2005). doi: 10.3929/ethz-b-000023822
 }
 \seealso{
 Other multi-objective visualizations: 
+\code{\link{plot_eaf_diff}()},
 \code{\link{plot_heatmap}()},
 \code{\link{plot_pcp}()},
 \code{\link{plot_radar}()},
