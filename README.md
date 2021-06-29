@@ -98,6 +98,10 @@ examples in the following:
 
 -   [**ecr**](https://cran.r-project.org/package=ecr) *Evolutionary
     Computation in R*, short **ecr**, is the predecessor of **ecrvis**.
+-   [**eaf**](https://cran.r-project.org/package=eaf) R package with
+    functions to plot *Empirical Attainment Functions* (EAF) and
+    EAF-differences. In addition, the package offers various
+    multi-objective performance indicators.
 -   [**mco**](https://cran.r-project.org/package=mco) A R package with
     focus on the rapid implementation of multi-objective evolutionary
     algorithms only.

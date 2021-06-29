@@ -73,6 +73,7 @@ Please address questions and missing features about the *ecr3vis* as weell as an
 There are many alternatives in both R and other languages. We list some examples in the following:
 
 * [**ecr**](https://cran.r-project.org/package=ecr) *Evolutionary Computation in R*, short **ecr**, is the predecessor of **ecrvis**.
+* [**eaf**](https://cran.r-project.org/package=eaf) R package with functions to plot *Empirical Attainment Functions* (EAF) and EAF-differences. In addition, the package offers various multi-objective performance indicators.
 * [**mco**](https://cran.r-project.org/package=mco) A R package with focus on the rapid implementation of multi-objective evolutionary algorithms only.
 * [**emoa**](https://cran.r-project.org/package=emoa) Another R package with focus on the development of multi-objective evolutionary algorithms (same author as in **mco**).
 * [**GA**](https://cran.r-project.org/package=GA) R package with some building blocks for evoltionary algorithms. Also offers the possibility for island model EAs. However, restricted to standard representations and single-objective problems.
