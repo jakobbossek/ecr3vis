@@ -14,8 +14,7 @@ state and is being actively
 developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
 [![Status](https://img.shields.io/badge/Status-experimental-red.svg)](https://GitHub.com/jakobbossek/ecr3vis)
 [![R-CMD-check](https://github.com/jakobbossek/ecr3vis/workflows/R-CMD-check/badge.svg)](https://github.com/jakobbossek/ecr3vis/actions)
-[![Coveralls test
-coverage](https://coveralls.io/repos/github/jakobbossek/ecr3vis/badge.svg)](https://coveralls.io/r/jakobbossek/ecr3vis?branch=main)
+[![codecov](https://codecov.io/gh/jakobbossek/ecr3vis/branch/main/graph/badge.svg?token=CJH8ZATFJW)](https://codecov.io/gh/jakobbossek/ecr3vis)
 [![CRAN_Status_Badge](https://www.r-pkg.org/badges/version/ecr3vis)](https://cran.r-project.org/package=ecr3vis)
 <!-- badges: end -->
 
