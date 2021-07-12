@@ -41,7 +41,7 @@
 
 <meta property="og:title" content="2D scatter plot — plot_scatter2d" />
 <meta property="og:description" content="Given a data frame with the results of (multiple) runs of (multiple)
-different multi-objective optimization algorithms on (multiple) problem instances
+different multi-objective optimization algorithms on (multiple) problem instances,
 the function generates ggplot scatter-plots of the obtained
 Pareto-front approximations." />
 
@@ -121,7 +121,7 @@ Pareto-front approximations." />
 
     <div class="ref-description">
     <p>Given a data frame with the results of (multiple) runs of (multiple)
-different multi-objective optimization algorithms on (multiple) problem instances
+different multi-objective optimization algorithms on (multiple) problem instances,
 the function generates <code><a href='https://ggplot2.tidyverse.org/reference/ggplot.html'>ggplot</a></code> scatter-plots of the obtained
 Pareto-front approximations.</p>
     </div>
@@ -147,7 +147,8 @@ Pareto-front approximations.</p>
     <tr>
       <th>df</th>
       <td><p>[<code>data.frame</code>]<br />
-Data.frame with columns at least <code>obj.cols</code>, &#8220;problem&#8221; and &#8220;algorithm&#8221;.</p></td>
+Data frame with columns at least those given via parameter <code>obj.cols</code>,
+&#8220;problem&#8221; and &#8220;algorithm&#8221;.</p></td>
     </tr>
     <tr>
       <th>obj.cols</th>
@@ -158,26 +159,26 @@ Default is <code><a href='https://rdrr.io/r/base/c.html'>c("y1", "y2")</a></code
     <tr>
       <th>shape</th>
       <td><p>[<code><a href='https://rdrr.io/r/base/character.html'>character(1)</a></code>]<br />
-Name of column which shall be used to define shape of points.
+Name of column that shall be used to define the point's shape.
 Default is &#8220;algorithm&#8221;.</p></td>
     </tr>
     <tr>
       <th>colour</th>
       <td><p>[<code><a href='https://rdrr.io/r/base/character.html'>character(1)</a></code>]<br />
-Name of column which shall be used to define colour of points.
+Name of column that shall be used to define the point's colour
 Default is <code>NULL</code>, i.e., coloring is deactivated.</p></td>
     </tr>
     <tr>
       <th>size</th>
       <td><p>[<code><a href='https://rdrr.io/r/base/character.html'>character(1)</a></code>]<br />
-Name of column which shall be used to define the size of points.
+Name of column that shall be used to define the point's size.
 Default is <code>NULL</code>, i.e., sizing is deactivated.
 Useful to visualize a third objective (bubble-chart; see argument <code>bubble</code>).</p></td>
     </tr>
     <tr>
       <th>bubble</th>
       <td><p>[<code><a href='https://rdrr.io/r/base/logical.html'>logical(1)</a></code>]<br />
-Plot bubble-chart? I.e. is <code>colour</code> used to highlight another
+Plot bubble-chart? I.e., is <code>colour</code> used to highlight another
 objective?
 Default is <code>FALSE</code>.</p></td>
     </tr>
@@ -193,7 +194,7 @@ Default is <code>NULL</code>, i.e., unknown.</p></td>
       <td><p>[<code><a href='https://rdrr.io/r/base/numeric.html'>numeric(1)</a></code>]<br />
 Numeric offset used to shift set (see <code>highlight.algos</code>)
 which should be highlighted.
-Even though this produces objective vectors it
+Even though this produces objective vectors, it
 may be used to make visible reference sets which otherwise would
 be hidden by overlap of multiple other approximation sets.</p></td>
     </tr>
@@ -220,7 +221,7 @@ Default is &#8220;wrap&#8221;.</p></td>
 Named list of arguments passed down to <code><a href='https://ggplot2.tidyverse.org/reference/facet_wrap.html'>facet_wrap</a></code> or
 <code><a href='https://ggplot2.tidyverse.org/reference/facet_grid.html'>facet_grid</a></code> respectively (depends on <code>facet.type</code>).
 E.g., <code>nrow</code> to change layout.
-Default is the empty list. In this case data is grouped by problem.</p></td>
+Default is the empty list. In this case, data is grouped by problem.</p></td>
     </tr>
     </table>
 
@@ -232,7 +233,7 @@ Default is the empty list. In this case data is grouped by problem.</p></td>
     <p>[1] T. Tušar and B. Filipič, "Visualization of Pareto Front Approximations in
 Evolutionary Multiobjective Optimization: A Critical Review and the Prosection
 Method," in IEEE Transactions on Evolutionary Computation, vol. 19, no. 2,
-pp. 225-245, April 2015, doi: 10.1109/TEVC.2014.2313407</p>
+pp. 225-245, April 2015, doi: 10.1109/TEVC.2014.2313407.</p>
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
     <div class='dont-index'><p>Other multi-objective visualizations: 

@@ -134,14 +134,14 @@ shows it the other way around.</p>
     <tr>
       <th>df1</th>
       <td><p>[<code>data.frame</code>]<br />
-First approximation set: data.frame with columns at least <code>obj.cols</code>
-and &#8220;repl&#8221;. All other columns will be ignored!</p></td>
+First approximation set: a data frame with columns at least those given via
+parameter <code>obj.cols</code>, and &#8220;repl&#8221;. All other columns will be ignored!</p></td>
     </tr>
     <tr>
       <th>df2</th>
       <td><p>[<code>data.frame</code>]<br />
-First approximation set: data.frame with columns at least <code>obj.cols</code>
-and &#8220;repl&#8221;. All other columns will be ignored!</p></td>
+First approximation set: a data frame with columns at least those given via
+<code>obj.cols</code>, and &#8220;repl&#8221;. All other columns will be ignored!</p></td>
     </tr>
     <tr>
       <th>obj.cols</th>
@@ -168,10 +168,10 @@ Percentiles of the EAF that will be plotted as attainment surfaces.</p></td>
     <p>A <code><a href='https://ggplot2.tidyverse.org/reference/ggplot.html'>ggplot</a></code> object.</p>
     <h2 class="hasAnchor" id="note"><a class="anchor" href="#note"></a>Note</h2>
 
-    <p>If the given approxximation sets are huge, generating the plot may take some
+    <p>If the given approximation sets are huge in size, generating the plot may take some
 time. Here, it is most often helpful to store the plot first in a file. Due
-to the huge number of points the size of the file may be also very large. Here,
-it is advisible to save the file in a image file format (PNG or JPEG) instead
+to the huge number of points, the size of the file may become also very large. Here,
+it is advisible to save the file in an image file format (PNG or JPEG) instead
 of PDF.</p>
 <p>This function re-implements partial functionality of <code><a href='http://lopez-ibanez.eu/eaftools/reference/eafdiffplot.html'>eafdiffplot</a></code>
 realizing the plotting with <a href='https://CRAN.R-project.org/package=ggplot2'><span class="pkg">ggplot2</span></a> rather than base R plot functions.</p>
@@ -186,11 +186,11 @@ ch. 5, pp. 103-130, Springer Berlin Heidelberg, 2010.</p>
 of Stochastic Local Search Algorithms in Biobjective Optimization. In T.
 Bartz-Beielstein, M. Chiarandini, L. Paquete, and M. Preuss, editors,
 Experimental Methods for the Analysis of Optimization Algorithms,
-pages 209–222. Springer, Berlin, Germany, 2010. doi: 10.1007/978-3-642-02538-9_9</p>
+pages 209–222. Springer, Berlin, Germany, 2010. doi: 10.1007/978-3-642-02538-9_9.</p>
 <p>[3] Knowles, J. D., Thiele, L. and Zitzler, E. A tutorial on the performance
 assessment of stochastive multiobjective optimizers. TIK-Report No. 214, Computer
 Engineering and Networks Laboratory, ETH Zurich, February 2006 (Revised version.
-First version, January 2005). doi: 10.3929/ethz-b-000023822</p>
+First version, January 2005). doi: 10.3929/ethz-b-000023822.</p>
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
     <div class='dont-index'><p>plot_eaf</p>
@@ -205,8 +205,10 @@ First version, January 2005). doi: 10.3929/ethz-b-000023822</p>
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='kw'>if</span> <span class='op'>(</span><span class='cn'>FALSE</span><span class='op'>)</span> <span class='op'>{</span>
 <span class='fu'><a href='https://rdrr.io/r/utils/data.html'>data</a></span><span class='op'>(</span><span class='va'>emoas_on_zdt</span><span class='op'>)</span>
-<span class='va'>df1</span> <span class='op'>=</span> <span class='va'>emoas_on_zdt</span><span class='op'>[</span><span class='va'>emoas_on_zdt</span><span class='op'>$</span><span class='va'>algorithm</span> <span class='op'>==</span> <span class='st'>"nsga2"</span> <span class='op'>&amp;</span> <span class='va'>emoas_on_zdt</span><span class='op'>$</span><span class='va'>problem</span> <span class='op'>==</span> <span class='st'>"zdt1_2d_2o"</span>, <span class='op'>]</span>
-<span class='va'>df2</span> <span class='op'>=</span> <span class='va'>emoas_on_zdt</span><span class='op'>[</span><span class='va'>emoas_on_zdt</span><span class='op'>$</span><span class='va'>algorithm</span> <span class='op'>==</span> <span class='st'>"smsemoa"</span> <span class='op'>&amp;</span> <span class='va'>emoas_on_zdt</span><span class='op'>$</span><span class='va'>problem</span> <span class='op'>==</span> <span class='st'>"zdt1_2d_2o"</span>, <span class='op'>]</span>
+<span class='va'>df1</span> <span class='op'>=</span> <span class='va'>emoas_on_zdt</span><span class='op'>[</span><span class='va'>emoas_on_zdt</span><span class='op'>$</span><span class='va'>algorithm</span> <span class='op'>==</span> <span class='st'>"nsga2"</span>
+  <span class='op'>&amp;</span> <span class='va'>emoas_on_zdt</span><span class='op'>$</span><span class='va'>problem</span> <span class='op'>==</span> <span class='st'>"zdt1_2d_2o"</span>, <span class='op'>]</span>
+<span class='va'>df2</span> <span class='op'>=</span> <span class='va'>emoas_on_zdt</span><span class='op'>[</span><span class='va'>emoas_on_zdt</span><span class='op'>$</span><span class='va'>algorithm</span> <span class='op'>==</span> <span class='st'>"smsemoa"</span>
+  <span class='op'>&amp;</span> <span class='va'>emoas_on_zdt</span><span class='op'>$</span><span class='va'>problem</span> <span class='op'>==</span> <span class='st'>"zdt1_2d_2o"</span>, <span class='op'>]</span>
 <span class='fu'>plot_eaf_diff</span><span class='op'>(</span><span class='va'>df1</span>, <span class='va'>df2</span>, obj.cols <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"y1"</span>, <span class='st'>"y2"</span><span class='op'>)</span><span class='op'>)</span>
 <span class='op'>}</span>
 </div></pre>

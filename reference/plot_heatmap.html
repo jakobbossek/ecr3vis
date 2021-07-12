@@ -41,10 +41,10 @@
 
 <meta property="og:title" content="Heatmap — plot_heatmap" />
 <meta property="og:description" content="Visualize a Pareto-front approximation set by means of a heatmap.
-Here, on the \(x\)-axis the objectives are given in the order provided by
+Here, on the \(x\)-axis, the objectives are given in the order provided by
 obj.cols. The \(y\)-axis shows the different solutions. The color of the
 cells indicates the objective value of the respective (objective, solution)-pair.
-Works with any kind of objectives." />
+It works with any kind of objectives." />
 
 
 
@@ -122,10 +122,10 @@ Works with any kind of objectives." />
 
     <div class="ref-description">
     <p>Visualize a Pareto-front approximation set by means of a heatmap.
-Here, on the \(x\)-axis the objectives are given in the order provided by
+Here, on the \(x\)-axis, the objectives are given in the order provided by
 <code>obj.cols</code>. The \(y\)-axis shows the different solutions. The color of the
 cells indicates the objective value of the respective (objective, solution)-pair.
-Works with any kind of objectives.</p>
+It works with any kind of objectives.</p>
     </div>
 
     <pre class="usage"><span class='fu'>plot_heatmap</span><span class='op'>(</span><span class='va'>df</span>, obj.cols <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"y1"</span>, <span class='st'>"y2"</span><span class='op'>)</span><span class='op'>)</span></pre>
@@ -136,7 +136,8 @@ Works with any kind of objectives.</p>
     <tr>
       <th>df</th>
       <td><p>[<code>data.frame</code>]<br />
-Data.frame with columns at least <code>obj.cols</code>, &#8220;problem&#8221; and &#8220;algorithm&#8221;.</p></td>
+Data frame with columns at least those given via parameter <code>obj.cols</code>,
+&#8220;problem&#8221; and &#8220;algorithm&#8221;.</p></td>
     </tr>
     <tr>
       <th>obj.cols</th>

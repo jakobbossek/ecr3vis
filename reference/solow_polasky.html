@@ -162,12 +162,13 @@ in case <code>d</code> is <code>NULL</code>.</p></td>
 amount of diversity between species in biology [1]. Later, Ulrich and Thiele [2]
 adopted this measures for <em>Evolutionary Diversity Optimization</em> where the
 goal is to come up with a population \(P = \{P_1, \ldots, P_{\mu}\}\) of \(\mu\)
-individuals such that (i) all individuals in \(P\) adhere to a minimum quality
+individuals such that the following holds:</p><ol>
+<li><p>All individuals in \(P\) adhere to a minimum quality
 threhold, i.e., \(f(x) \leq v_{\min}\) for some threhold value \(v_{\min}\)
-(we assume the fitness function \(f\) w.l.o.g. to be minimized). (ii) the
-population should be &#8220;diverse&#8221; with respect to some diversity measure
-\(D\) that maps the population to a single scalar numeric value.</p>
-<p>Given \(P = \{P_1, \ldots, P_{\mu}\}\) and pairwise distances \(d(P_i, P_j)\)
+(we assume the fitness function \(f\) w.l.o.g. to be minimized).</p></li>
+<li><p>The population should be &#8220;diverse&#8221; with respect to some diversity
+  measure \(D\) that maps the population to a single scalar numeric value.</p></li>
+</ol><p>Given \(P = \{P_1, \ldots, P_{\mu}\}\) and pairwise distances \(d(P_i, P_j)\)
 \(1 \leq, i,j \leq \mu\) let \(M\) be a \((\mu \times \mu)\) matrix
 with
 $$
@@ -180,13 +181,13 @@ $$
 where matrix \(M^{-1}\) is the Moore-Penrose generalized inverse of a
 matrix \(M\).
 \(D_{SP}\) can be interpreted as &#8220;as the number of different species in
-the population&#8221; [2]. Note however, that the measure calculates a real valued
+the population&#8221; [2]. Note however that the measure calculates a real valued
 diversty in \([1, \mu]\) and no integer value. Hence, it can be seen as
-a more fine-grained measure of diversity that captures so kind of distance
+a more fine-grained measure of diversity that captures a distance
 other than the &#8220;binary&#8221; distance \(d'\) were \(d'(P_i, P_j) = 1\)
 if \(P_i \neq P_j\) and \(d'(P_i, P_j) = 0\) otherwise.</p>
 <p>The runtime is dominated by the inverse matrix calculation and hence is upper
-bounded by \(O(\mu^3)\). In [2] the authors propose an alternative method
+bounded by \(O(\mu^3)\). In [2], the authors propose an alternative method
 to update the calculation once the population changes. However, the measure
 implemented here is meant to be used <em>a-posteriori</em> to assess the
 &#8220;diversity&#8221; of a final population.</p>

@@ -46,7 +46,7 @@ The following description closely follows the excellent introduction into
 performance assessment of multi-objective optimizers by Knowles et al. [3].
 (Evolutionary) multi-objective algorithms are stochastic. Hence, naturally,
 the result produced by such an algorithm can be described by a probability
-distribution. This distribution can be descibed by a random set
+distribution. This distribution can be characterized by a random set
 $$
   Z = \{z^j \in R^m \,|\, j = 1, \ldots, |Z|\}
 $$
@@ -62,12 +62,12 @@ the sense that there is at least one objective vector in the solution set
 that weakly dominates, i.e., &amp;#8220;attains&amp;#8221;, \(z\).
 Given \(r\) independent runs of a stochastic multi-objective optimizer and
 denoting by \(X^i, 1 \leq i \leq r\) the corresponding Pareto-front
-approximation set the empirical attainment function (EAF) is defined
+approximation set, the empirical attainment function (EAF) is defined
 as
 $$
   \hat{\alpha}_r(z) = \frac{1}{r} \sum_{i=1}^{r} I(X^i \preceq \{z\})
 $$
-where \(I(\cdot)\) is the indictor function evaluating to \(1\)
+where \(I(\cdot)\) is the indicator function evaluating to \(1\)
 if and only if the condition is true; \(0\) otherwise.
 This is a straight-forward estimation from empirical data and simply describes
 the frequency of attaining \(z\) within \(r\) runs.
@@ -159,7 +159,7 @@ multi-objective stochastic algorithms.</p>
 performance assessment of multi-objective optimizers by Knowles et al. [3].
 (Evolutionary) multi-objective algorithms are stochastic. Hence, naturally,
 the result produced by such an algorithm can be described by a probability
-distribution. This distribution can be descibed by a random set
+distribution. This distribution can be characterized by a random set
 $$
   Z = \{z^j \in R^m \,|\, j = 1, \ldots, |Z|\}
 $$
@@ -175,12 +175,12 @@ the sense that there is at least one objective vector in the solution set
 that weakly dominates, i.e., &#8220;attains&#8221;, \(z\).</p>
 <p>Given \(r\) independent runs of a stochastic multi-objective optimizer and
 denoting by \(X^i, 1 \leq i \leq r\) the corresponding Pareto-front
-approximation set the <em>empirical attainment function (EAF)</em> is defined
+approximation set, the <em>empirical attainment function (EAF)</em> is defined
 as
 $$
   \hat{\alpha}_r(z) = \frac{1}{r} \sum_{i=1}^{r} I(X^i \preceq \{z\})
 $$
-where \(I(\cdot)\) is the <em>indictor function</em> evaluating to \(1\)
+where \(I(\cdot)\) is the <em>indicator function</em> evaluating to \(1\)
 if and only if the condition is true; \(0\) otherwise.
 This is a straight-forward estimation from empirical data and simply describes
 the frequency of attaining \(z\) within \(r\) runs.</p>
@@ -200,7 +200,8 @@ Thiele and Zitzler (reference [3]).</p>
     <tr>
       <th>df</th>
       <td><p>[<code>data.frame</code>]<br />
-Data.frame with columns at least <code>obj.cols</code>, &#8220;problem&#8221; and &#8220;algorithm&#8221;.</p></td>
+Data frame with columns at least those given via parameter <code>obj.cols</code>,
+&#8220;problem&#8221; and &#8220;algorithm&#8221;.</p></td>
     </tr>
     <tr>
       <th>obj.cols</th>
@@ -229,11 +230,11 @@ ch. 5, pp. 103-130, Springer Berlin Heidelberg, 2010.</p>
 of Stochastic Local Search Algorithms in Biobjective Optimization. In T.
 Bartz-Beielstein, M. Chiarandini, L. Paquete, and M. Preuss, editors,
 Experimental Methods for the Analysis of Optimization Algorithms,
-pages 209–222. Springer, Berlin, Germany, 2010. doi: 10.1007/978-3-642-02538-9_9</p>
+pages 209–222. Springer, Berlin, Germany, 2010. doi: 10.1007/978-3-642-02538-9_9.</p>
 <p>[3] Knowles, J. D., Thiele, L. and Zitzler, E. A tutorial on the performance
 assessment of stochastive multiobjective optimizers. TIK-Report No. 214, Computer
 Engineering and Networks Laboratory, ETH Zurich, February 2006 (Revised version.
-First version, January 2005). doi: 10.3929/ethz-b-000023822</p>
+First version, January 2005). doi: 10.3929/ethz-b-000023822.</p>
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
     <div class='dont-index'><p>Other multi-objective visualizations: 
@@ -249,7 +250,8 @@ First version, January 2005). doi: 10.3929/ethz-b-000023822</p>
 <span class='fu'><a href='https://rdrr.io/r/utils/data.html'>data</a></span><span class='op'>(</span><span class='va'>emoas_on_zdt</span><span class='op'>)</span>
 <span class='fu'>plot_eaf</span><span class='op'>(</span><span class='va'>emoas_on_zdt</span>, obj.cols <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"y1"</span>, <span class='st'>"y2"</span><span class='op'>)</span><span class='op'>)</span>
 <span class='fu'>plot_eaf</span><span class='op'>(</span><span class='va'>emoas_on_zdt</span><span class='op'>[</span><span class='va'>emoas_on_zdt</span><span class='op'>$</span><span class='va'>algorithm</span> <span class='op'>==</span> <span class='st'>"nsga2"</span>, <span class='op'>]</span>, obj.cols <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"y1"</span>, <span class='st'>"y2"</span><span class='op'>)</span><span class='op'>)</span>
-<span class='fu'>plot_eaf</span><span class='op'>(</span><span class='va'>emoas_on_zdt</span><span class='op'>[</span><span class='va'>emoas_on_zdt</span><span class='op'>$</span><span class='va'>algorithm</span> <span class='op'>==</span> <span class='st'>"nsga2"</span>, <span class='op'>]</span>, obj.cols <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"y1"</span>, <span class='st'>"y2"</span><span class='op'>)</span>, percentiles <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>50</span>, <span class='fl'>100</span><span class='op'>)</span><span class='op'>)</span>
+<span class='fu'>plot_eaf</span><span class='op'>(</span><span class='va'>emoas_on_zdt</span><span class='op'>[</span><span class='va'>emoas_on_zdt</span><span class='op'>$</span><span class='va'>algorithm</span> <span class='op'>==</span> <span class='st'>"nsga2"</span>, <span class='op'>]</span>, obj.cols <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"y1"</span>, <span class='st'>"y2"</span><span class='op'>)</span>,
+  percentiles <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>50</span>, <span class='fl'>100</span><span class='op'>)</span><span class='op'>)</span>
 <span class='op'>}</span>
 </div></pre>
   </div>

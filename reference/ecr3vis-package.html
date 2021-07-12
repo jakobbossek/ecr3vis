@@ -130,27 +130,27 @@ problems and for the analysis of such algoritms' performances.</p>
 
     
 
-<p>Evolutionary Computation is an umbrella term for randomized search heuristics
+<p><em>Evolutionary Computation</em> is an umbrella term for randomized search heuristics
 that draw inspiration from natural evolution. There are four historic strands that
-are nowadys known as <em>Evolutionary Algorithms</em>: Evolutionary Programming,
+are nowdays known as <em>Evolutionary Algorithms</em>: Evolutionary Programming,
 Evolution Strategies, Genetic Algorithms and Genetic Programming. All four
 flavors emerged in the 1980s mainly in the area of engineering and differ
 with respect to the considered decision space, operators and
 algorithmic parameters.</p>
 <p>Evolutionary Algorithms maintain a so-called <em>population</em> of
-<em>(candidate) solutions</em> or <em>individuals</em> which is often initialized
+<em>(candidate) solutions</em> or <em>individuals</em> that is often initialized
 with initial solutions sampled randomly from the decision space. Next,
 in a loop the algorithms basically (i) select some individuals as parents
 (ii) generate new individuals from the parents by applying bio-inspired
 random operators like recombination/crossover and/or mutation and (iii) in
-a second round of selection choose a subset of parents and/or offspring
-individuls to &#8220;survive&#8221; and form the next population. In this last step
-often &#8220;fitter&#8221; individuals have a higher probability to survive
+a second round of selection, choose a subset of parents and/or offspring
+individuls to &#8220;survive&#8221; and form the next population. In this last step,
+&#8220;fitter&#8221; individuals have a higher probability to survive
 (analogy to the <em>survival of the fittest</em> principle from Darwin's evolution
 theory). This process is repeated until some kind of stopping condition is met.
-Basically all EAs fit into this general theme. There exists a plethora of variation
+Basically, all EAs fit into this general theme. There exists a plethora of variation
 operators, representations and ideas in this field of research. Despite this
-rather simple strucuture, EAs have been successfully applied to countless
+rather simple structure, EAs have been successfully applied to countless
 (very) complex (often multi-objective) optimization problems with major success.
 One of the benefits of EAs is that they are often easy to implement.</p>
     <h2 class="hasAnchor" id="implementing-eas-with-ecr-vis"><a class="anchor" href="#implementing-eas-with-ecr-vis"></a>Implementing EAs with ecr3vis</h2>
@@ -162,7 +162,7 @@ ideas: fast C(++)-based implementations of well-known crossover and mutation
 operators for standard representations (binary, permutation, real-valued),
 various selection operators (uniform random, \(k\)-tournament, fitness-
 proportionate etc.) and various utility functions. The user can easily set up
-custom objective functions, operators, building blocks and representations
+custom objective functions, operators, building blocks, and representations
 sticking to few conventions. The package allows both a black-box approach for
 standard tasks (plug-and-play style) and a much more flexible approach where
 the evolutionary cycle is written by hand. The package excells with support
@@ -174,38 +174,14 @@ and much more.</p>
 
 <p>The package offers a rich set of functions for the assessment of performance
 of single algorithms and the comparison of multiple algorithms. Here, the
-of focus is on performance assessment of multi-objective randomized search
-heuristics were the comparison of approximation sets with incomparable
+of focus lies on performance measurement of multi-objective randomized search
+heuristics where the comparison of approximation sets with incomparable
 solutions is much more challenging than in the single-objective setting.</p>
-<p>## Multi-objective performance indicators
-So-called quality indicators map an approximation set \(X\) to the real
-numbers. Our package offers the most relevant multi-objective performance
-indicators among others (see reference [1] for an excellent tutorial):</p><ul>
-<li><p>Hypervolume / S-metric (HV),</p></li>
-<li><p>(Inverted) Generational Distance (GD, IGD, IGD+),</p></li>
-<li><p>\(\varepsilon\)-indicator,</p></li>
-<li><p>R-indicator family (R1, R2 and R3),</p></li>
-<li><p>Coverage / C-metric,</p></li>
-<li><p>Riesz \(s\)-energy.</p></li>
-</ul>
-
-<p>## Multi-objective set visualization
-Visualizing solutions sets calculated by Evolutionary Multi-Objective Algorithms
-(EMOAs) is crucial since humans are usually better in grasping information
-form a (good) graphic rather than large tables of numbers [2]. Currently,
-the package offers the following plot types:</p><ul>
-<li><p>2D/3D Scatterplots,</p></li>
-<li><p>Empirical Attainment Functions (EAF),</p></li>
-<li><p>Parallel Coordinate Plots (PCP),</p></li>
-<li><p>Heatmaps,</p></li>
-<li><p>Radar/Spider Plots.</p></li>
-</ul>
-
     <h2 class="hasAnchor" id="parallelization"><a class="anchor" href="#parallelization"></a>Parallelization</h2>
 
     
 
-<p>In this package somee function support parallelization for faster execution via
+<p>In this package some functions support parallelization for faster execution via
 the package <a href='https://CRAN.R-project.org/package=future'><span class="pkg">future</span></a>. A parallel backend (e.g., multicore (on Unix/Linux/MacOS),
 multisession etc.) can be selected via <code><a href='https://rdrr.io/pkg/future/man/plan.html'>plan</a></code>.</p>
     <h2 class="hasAnchor" id="suggested-packages"><a class="anchor" href="#suggested-packages"></a>Suggested packages</h2>
@@ -227,7 +203,7 @@ First version, January 2005). doi: 10.3929/ethz-b-000023822</p>
 <p>[2] T. Tušar and B. Filipič, Visualization of Pareto Front Approximations in
 Evolutionary Multiobjective Optimization: A Critical Review and the Prosection
 Method, in IEEE Transactions on Evolutionary Computation, vol. 19, no. 2,
-pp. 225-245, April 2015, doi: 10.1109/TEVC.2014.2313407.</p>
+pp. 225-245, April 2015, doi: 10.1109/TEVC.2014.2313407</p>
 
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">

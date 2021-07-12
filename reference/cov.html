@@ -130,12 +130,12 @@ of points.</p>
     <tr>
       <th>x</th>
       <td><p>[<code>matrix</code>]<br />
-First point set in column major format.</p></td>
+First numeric matrix of points (each colum contains one point).</p></td>
     </tr>
     <tr>
       <th>y</th>
       <td><p>[<code>matrix</code>]<br />
-Second point set in column major format.</p></td>
+Second numeric matrix of points (each colum contains one point).</p></td>
     </tr>
     <tr>
       <th>...</th>
@@ -152,15 +152,15 @@ Not used.</p></td>
     <p>Given two (approximation) sets \(X = \{x_1, \ldots, x_{|X|}\}\)
 and \(Y = \{y_1, \ldots, y_{|Y|}\}\) this indidcator calculates the fraction
 of points from \(Y\) which are dominated by at least one point \(x \in X\).
-Formally it is defined as:
+Formally, it is defined as:
 $$
-  C(X, Y) = \frac{|\{y \in Y \mid \exists x \in X \, with \, x \preceq y\}|}{|Y|}.
+  C(X, Y) = \frac{|\{y \in Y \mid \exists x \in X,\, x \preceq y\}|}{|Y|}.
 $$
 It holds that \(C(X, Y) \in [0,1]\). Note that in general \(C(X, Y) \neq 1 - C(Y, X)\).</p>
     <h2 class="hasAnchor" id="note"><a class="anchor" href="#note"></a>Note</h2>
 
     <p>Keep in mind that this function assumes all objectives to be minimized.
-In case at least one objective is to be maximized the data needs
+In case at least one objective is to be maximized, the data needs
 to be transformed accordingly in advance.</p>
     <h2 class="hasAnchor" id="references"><a class="anchor" href="#references"></a>References</h2>
 

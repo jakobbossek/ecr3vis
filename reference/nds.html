@@ -40,13 +40,13 @@
 
 
 <meta property="og:title" content="Fast non-dominated sorting — nds" />
-<meta property="og:description" content="Fast non-dominated sorting algorithm proposed by Deb et al. [1].
+<meta property="og:description" content="The fast non-dominated sorting algorithm was proposed by Deb et al. [1].
 Non-dominated sorting expects a set of points and returns a
-set of non-dominated fronts. In short words this is done as follows: the
+set of non-dominated fronts. In short words, this is done as follows: the
 non-dominated points of the entire set are determined and assigned rank 1.
 Afterwards all points with the current rank are removed, the rank is increased
 by one and the procedure starts again. This is done until the set is empty, i.e.,
-each point is assigned a rank." />
+each point is assigned to a rank/level." />
 
 
 
@@ -123,13 +123,13 @@ each point is assigned a rank." />
     </div>
 
     <div class="ref-description">
-    <p>Fast non-dominated sorting algorithm proposed by Deb et al. [1].
+    <p>The <em>fast non-dominated sorting algorithm</em> was proposed by Deb et al. [1].
 Non-dominated sorting expects a set of points and returns a
-set of non-dominated fronts. In short words this is done as follows: the
+set of non-dominated fronts. In short words, this is done as follows: the
 non-dominated points of the entire set are determined and assigned rank 1.
 Afterwards all points with the current rank are removed, the rank is increased
 by one and the procedure starts again. This is done until the set is empty, i.e.,
-each point is assigned a rank.</p>
+each point is assigned to a rank/level.</p>
     </div>
 
     <pre class="usage"><span class='fu'>nds</span><span class='op'>(</span><span class='va'>x</span><span class='op'>)</span></pre>
@@ -160,17 +160,13 @@ Numeric matrix of points. Each column contains one point.</p></td>
     <p>This procedure is the key survival selection of the famous NSGA-II multi-objective
 evolutionary algorithm [1].</p>
 <p>Keep in mind that this function assumes all objectives to be minimized.
-In case at least one objective is to be maximized the data needs
+In case at least one objective is to be maximized, the data needs
 to be transformed accordingly in advance.</p>
     <h2 class="hasAnchor" id="references"><a class="anchor" href="#references"></a>References</h2>
 
     <p>[1] Deb, K., Pratap, A., and Agarwal, S. A Fast and Elitist Multiobjective Genetic
 Algorithm: NSGA-II. IEEE Transactions on Evolutionary Computation, 6 (8) (2002),
 182-197.</p>
-    <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
-
-    <div class='dont-index'><p>Other mootools: 
-<code><a href='get_nadir.html'>get_nadir</a>()</code></p></div>
 
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">

@@ -40,10 +40,10 @@
 
 
 <meta property="og:title" content="Dominated hypervolume (contribution) — hv" />
-<meta property="og:description" content="Given a point set x and a reference point r funcction hv
+<meta property="og:description" content="Given a point set x and a reference point r function hv
 calcultes the hypervolume indicator value [1]. In contrast, function hv_contr
 returns a vector of length nrow(x) where the \(i\)th position
-contains the hypervolume contribuntion of the \(i\)th point in x." />
+contains the hypervolume contribution of the \(i\)th point in x." />
 
 
 
@@ -120,10 +120,10 @@ contains the hypervolume contribuntion of the \(i\)th point in x." />
     </div>
 
     <div class="ref-description">
-    <p>Given a point set <code>x</code> and a reference point <code>r</code> funcction <code>hv</code>
+    <p>Given a point set <code>x</code> and a reference point <code>r</code> function <code>hv</code>
 calcultes the hypervolume indicator value [1]. In contrast, function <code>hv_contr</code>
 returns a vector of length <code><a href='https://rdrr.io/r/base/nrow.html'>nrow(x)</a></code> where the \(i\)th position
-contains the hypervolume contribuntion of the \(i\)th point in <code>x</code>.</p>
+contains the hypervolume contribution of the \(i\)th point in <code>x</code>.</p>
     </div>
 
     <pre class="usage"><span class='fu'>hv</span><span class='op'>(</span><span class='va'>x</span>, r <span class='op'>=</span> <span class='cn'>NULL</span>, offset <span class='op'>=</span> <span class='fl'>1</span>, <span class='va'>...</span><span class='op'>)</span>
@@ -161,12 +161,12 @@ Not used at the moment.</p></td>
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
     <p>Dominated hypervolume in the case of
- <code>hv</code> or a vector the dominated hypervolume contributions
+ <code>hv</code> or a vector of the dominated hypervolume contributions
  for each point of <code>x</code> in the case of <code>hv_contr</code>.</p>
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
     <p>The <em>hypervolume (HV) indicator</em> [1, 2] is arguebly one of the most often used performance
-indicator likely due to its straight-forward definition. Given a set of points
+indicators likely due to its straight-forward definition. Given a set of points
 \(X = \{x_1, \ldots, x_{|X|}\}\) and an anti-optimal reference point
 \(r \in R^m\) the <em>HV-indicator</em>, also called the <em>S-metric</em>, is defined
 as
@@ -176,20 +176,20 @@ $$
 Here, \(\lambda_m\) is the \(m\)-dimensional Lebesgue measure. Informally,
 the hypervolume indicator is the space/volume enclosed by the point set and
 the anti-optimal (i.e., it is dominated by every point \(x \in X\)) reference
-point. It is known to be strictly monotonic. I.e., if point set \(X\) strictly
+point. It is known to be strictly monotonic. I.e., if the point set \(X\) strictly
 dominates another point set \(Y\), then \(HV(X,r) &gt; HV(Y, r)\) holds.</p>
 <p>Function <code>hv</code> computes the dominated hypervolume of a set of points
 given a reference set whereby <code>hv_contr</code> computes the hypervolume contribution
 of each point which is a key ingredient of the S-Metric Selection EMOA
 (SMS-EMOA) [3, 4].</p>
-<p>If no reference point is given the nadir point of the set <code>x</code> is
+<p>If no reference point is given, the nadir point of the set <code>x</code> is
 determined and a positive offset with default 1 is added. This is to ensure
 that the reference point is dominated by all of the points in the reference set
 (anti-optimality property).</p>
     <h2 class="hasAnchor" id="note"><a class="anchor" href="#note"></a>Note</h2>
 
     <p>Keep in mind that this function assumes all objectives to be minimized.
-In case at least one objective is to be maximized the data needs
+In case at least one objective is to be maximized, the data needs
 to be transformed accordingly in advance.</p>
     <h2 class="hasAnchor" id="references"><a class="anchor" href="#references"></a>References</h2>
 
@@ -199,7 +199,7 @@ from Nature (PPSN V), volume 1498 of LNCS, pages 292–301, 1998.</p>
 <p>[2] Knowles, J. D., Thiele, L. and Zitzler, E. A tutorial on the performance
 assessment of stochastive multiobjective optimizers. TIK-Report No. 214, Computer
 Engineering and Networks Laboratory, ETH Zurich, February 2006 (Revised version.
-First version, January 2005). doi: 10.3929/ethz-b-000023822</p>
+First version, January 2005). doi: 10.3929/ethz-b-000023822.</p>
 <p>[3] M. Emmerich, N. Beume, and B. Naujoks. An EMO Algorithm Using the Hypervolume
 Measure as Selection Criterion. In Conference on Evolutionary Multi-Criterion
 Optimization (EMO 2005), volume 3410 of LNCS, pages 62–76. Springer Berlin, 2005.</p>

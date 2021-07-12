@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Overall (Pareto) spread — os • ecr3vis</title>
+<title>Overall (Pareto) Spread — os • ecr3vis</title>
 
 
 <!-- jquery -->
@@ -39,7 +39,7 @@
 
 
 
-<meta property="og:title" content="Overall (Pareto) spread — os" />
+<meta property="og:title" content="Overall (Pareto) Spread — os" />
 <meta property="og:description" content="Calculates the Overall (Pareto-) Spread multi-objective performance indicator
 for a point set x." />
 
@@ -112,7 +112,7 @@ for a point set x." />
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Overall (Pareto) spread</h1>
+    <h1>Overall (Pareto) Spread</h1>
     <small class="dont-index">Source: <a href='https://github.com/jakobbossek/ecr3vis/blob/master/R/moo_os.R'><code>R/moo_os.R</code></a></small>
     <div class="hidden name"><code>os.Rd</code></div>
     </div>
@@ -130,7 +130,7 @@ for a point set <code>x</code>.</p>
     <tr>
       <th>x</th>
       <td><p>[<code>matrix</code>]<br />
-Point set in column major format.</p></td>
+Numeric matrix of points (each colum contains one point).</p></td>
     </tr>
     <tr>
       <th>np</th>
@@ -155,8 +155,8 @@ Not used.</p></td>
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
     <p>A simple multi-objective performance indicator proposed in [1].
-Given a point set\(X = \{x_1, \ldots, x_{|X|}\}\) of \(m\) objectives,
-the ideal point \(I\) (or an approximation) and the nadir point \(N\)
+Given a point set \(X = \{x_1, \ldots, x_{|X|}\}\) of \(m\) objectives,
+the ideal point \(I\) (or an approximation thereof) and the nadir point \(N\)
 (or a approximation) it is defined as
 $$
   OS(X) = \prod_{i=1}^{m} \frac{\max_{x \in X} x_i - \min_{x \in X} x_i}{N_i - I_i}.

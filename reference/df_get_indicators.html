@@ -40,7 +40,7 @@
 
 
 <meta property="og:title" content="Calculate multi-objective performance indicators — df_get_indicators" />
-<meta property="og:description" content="The function expects a data frame with Pareto -front approximation sets given
+<meta property="og:description" content="The function expects a data frame with Pareto-front approximation sets given
 in the columns passed by obj.cols and optional meta-columns &amp;#8220;problem&amp;#8221;
 &amp;#8220;algorithm&amp;#8221; and &amp;#8220;repl&amp;#8221;. Given a set of multi-objective performance
 indicators, the function splits the data by the meta-columns and calculates the
@@ -121,7 +121,7 @@ indicator values for each approximation set." />
     </div>
 
     <div class="ref-description">
-    <p>The function expects a data frame with Pareto -front approximation sets given
+    <p>The function expects a data frame with Pareto-front approximation sets given
 in the columns passed by <code>obj.cols</code> and optional meta-columns &#8220;problem&#8221;
 &#8220;algorithm&#8221; and &#8220;repl&#8221;. Given a set of multi-objective performance
 indicators, the function splits the data by the meta-columns and calculates the
@@ -147,7 +147,7 @@ Default is <code><a href='https://rdrr.io/r/base/c.html'>c("y1", "y2")</a></code
     <tr>
       <th>unary</th>
       <td><p>[<code>list</code>]<br />
-Named list of indicators. The names must be strings which correspond to
+Named list of indicators. The names must be strings that correspond to
 the function name of the indicator (e.g., &#8220;gd&#8221; for <code><a href='gd.html'>gd</a></code>).
 The value is an (possibly empty) named list of parameter values for the indicator
 (e.g. <code><a href='https://rdrr.io/r/base/list.html'>list(p = 2)</a></code> to modify the \(p\) parameter of the generational
@@ -157,9 +157,9 @@ distance indicator <code><a href='gd.html'>gd</a></code>).</p></td>
       <th>rsets</th>
       <td><p>[<code>list</code>]<br />
 Named list of reference sets in form of data frames. The names need to correspond
-to problem names in column <code>x$problem</code>. For all problem where no explicit
-reference set is given, the set is approximated as the nondominated set of
-point of the union of all approximations for each problem.</p></td>
+to problem names in column <code>x$problem</code>. For all problems where no explicit
+reference set is given, the set is approximated as the non-dominated set of
+points of the union of all approximations for each problem.</p></td>
     </tr>
     <tr>
       <th>format</th>
@@ -176,7 +176,7 @@ indicator. This format is less redundant and memory-intensive.</p></td>
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
     <p>A data frame with columns &#8220;problem&#8221;,
-  &#8220;algorithm&#8221;, &#8220;repl&#8221; and columns with the respective
+  &#8220;algorithm&#8221;, &#8220;repl&#8221;, and columns with the respective
   indicator values (see argument <code>format</code> for details).</p>
     <h2 class="hasAnchor" id="parallelization"><a class="anchor" href="#parallelization"></a>Parallelization</h2>
 

@@ -43,7 +43,8 @@
 <meta property="og:description" content="These functions take a numeric matrix as input where each column corresponds to
 a point and return a logical vector. The \(i\)th position of the latter is
 TRUE if the \(i\)th point is dominated by at least one other point for
-dominated and FALSE for nondominated." />
+dominated. Likewise, the \(i\)th entry of nondominated is TRUE
+if it is not dominated by any other point." />
 
 
 
@@ -123,7 +124,8 @@ dominated and FALSE for nondominated." />
     <p>These functions take a numeric matrix as input where each column corresponds to
 a point and return a logical vector. The \(i\)th position of the latter is
 <code>TRUE</code> if the \(i\)th point is dominated by at least one other point for
-<code>dominated</code> and <code>FALSE</code> for <code>nondominated</code>.</p>
+<code>dominated</code>. Likewise, the \(i\)th entry of <code>nondominated</code> is <code>TRUE</code>
+if it is not dominated by any other point.</p>
     </div>
 
     <pre class="usage"><span class='fu'>dominated</span><span class='op'>(</span><span class='va'>x</span><span class='op'>)</span>
@@ -144,7 +146,8 @@ and \(n\) is the number of points.</p></td>
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
     <p>Logical vector where the \(i\)th component is <code>TRUE</code> if
-  the point is dominated or nondominated respectively.</p>
+  <code>x[i]</code> is dominated or nondominated respectively and <code>FALSE</code>
+  otherwise.</p>
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
     <div class='dont-index'><p>Other Pareto-dominance checks: 

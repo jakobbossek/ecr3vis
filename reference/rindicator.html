@@ -134,38 +134,38 @@ indicator respectively for two sets of points <code>x</code> and <code>y</code>.
     <tr>
       <th>x</th>
       <td><p>[<code>matrix</code>]<br />
-First point set in column major format.</p></td>
+First numeric matrix of points (each colum contains one point).</p></td>
     </tr>
     <tr>
       <th>y</th>
       <td><p>[<code>matrix</code>]<br />
-Second point set in column major format.</p></td>
+Second numeric matrix of points (each colum contains one point).</p></td>
     </tr>
     <tr>
       <th>ip</th>
       <td><p>[<code>numeric</code>]<br />
 The utopia point of the true Pareto-front, i.e., each component of the point
 contains the best value if the other objectives are neglected.
-If <code>NULL</code> (default) the ideal point of the union of <code>x</code> and
+If <code>NULL</code> (default), the ideal point of the union of <code>x</code> and
 <code>y</code> is used.</p></td>
     </tr>
     <tr>
       <th>np</th>
       <td><p>[<code>numeric</code>]<br />
 Nadir point of the true Pareto front or an approximation.
-If <code>NULL</code> (default) the nadir point of the union of <code>x</code> and
+If <code>NULL</code> (default), the nadir point of the union of <code>x</code> and
 <code>y</code> is used.</p></td>
     </tr>
     <tr>
       <th>lambda</th>
       <td><p>[<code><a href='https://rdrr.io/r/base/integer.html'>integer(1)</a></code>]<br />
-Number of weight vectors to use in estimating the utility function.</p></td>
+Number of weight vectors to use for estimating the utility function.</p></td>
     </tr>
     <tr>
       <th>utility</th>
       <td><p>[<code><a href='https://rdrr.io/r/base/character.html'>character(1)</a></code>]<br />
 Name of the utility function to use. Must be one of &#8220;weighted-sum&#8221;,
-&#8220;tschebycheff&#8221; or &#8220;augmented-tschbycheff&#8221;.
+&#8220;tschebycheff&#8221; or &#8220;augmented-tschebycheff&#8221;.
 Default is &#8220;tschebycheff&#8221;.</p></td>
     </tr>
     <tr>
@@ -187,9 +187,9 @@ a set of <em>utility functions</em>
 each of the form \(u : R^m \to R\) which maps each point in the objective
 space into a so-called measure of utility. Let \(p\) be a probability
 distribution over \(U\). We denote by \(u^{*}(A) = \max_{x \in A} u(x)\)
-the maximum value reached by some utility function \(u\) on a set \(A\).</p>
+the maximal value reached by some utility function \(u\) on a set \(A\).</p>
 <p>The R1-indicator measures the probability that approximation set \(X\) is
-better than approximation set \(Y\) by integrating over the all utility
+better than approximation set \(Y\) by integrating over the utility
 function \(u \in U\). More precisely, it is defined as
 $$
   R1(X, Y, U, p) = \int_{u \in U} C(X, Y, u)p(x)du
@@ -209,10 +209,10 @@ Then, \(R1\) can be written as
 $$
   R1(X, Y) = \frac{1}{|U|}\sum_{u \in U} C(X, Y, u).
 $$
-The same approach is done for \(R2\) and \(R3\) which will be discussed in the
+The same approach is used for \(R2\) and \(R3\) which will be discussed in the
 following.</p>
 <p>Classical utility functions involve <em>weighted sum</em>, <em>Tschebycheff</em> and <em>augmented
-Tschbycheff</em> all of which are availabe via the argument <code>utility</code> in the
+Tschbycheff</em>. All three are availabe via the argument <code>utility</code> in the
 implementation. As an example, the set of (weighted) Tschebycheff utility
 functions is \(U_{\infty} = (u_{\lambda})\) where
 $$
@@ -227,7 +227,7 @@ $$
   R2(X, Y, U, p) = E(u^{*}(X)) - E(u^{*}(Y)) = \int_{u \in U} (u^{*}(A) - u^{*}(B))p(u)du.
 $$
 Interpretation: here, since the measure is defined as the difference of
-expectations, approximation set \(X\) is considered better than set \(Y\)
+expectations approximation set \(X\) is considered better than set \(Y\)
 if \(R(X, Y) &gt; 0\).</p>
 <p>Eventually, indicator R3 considers the ratios of best utility function values:
 $$

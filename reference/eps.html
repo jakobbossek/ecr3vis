@@ -130,12 +130,12 @@ of the binary \(\varepsilon\)-indicator [1].</p>
     <tr>
       <th>x</th>
       <td><p>[<code>matrix</code>]<br />
-First point set in column major format.</p></td>
+First numeric matrix of points (each colum contains one point).</p></td>
     </tr>
     <tr>
       <th>y</th>
       <td><p>[<code>matrix</code>]<br />
-Second point set in column major format.</p></td>
+Second numeric matrix of points (each colum contains one point).</p></td>
     </tr>
     <tr>
       <th>...</th>
@@ -150,17 +150,17 @@ Not used.</p></td>
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
     <p>The \(\varepsilon\)-indicator, often denoted as \(I_{\varepsilon}\),
-requires for understanding the concept of \(\varepsilon\)-dominance.
+requires the concept of \(\varepsilon\)-dominance.
 A vector \(x \in R^m\), for some \(\varepsilon &gt; 0\), \(\varepsilon\)-dominates
-another vector \(y \in R^m\), \(x \preceq_{\varepsilon} y\), iff
+another vector \(y \in R^m\), \(x \preceq_{\varepsilon} y\), if and only if
 $$
   \Leftrightarrow x_i \leq \varepsilon y_i \quad \forall i = 1,\ldots,m.
 $$
 Equipped with this, Zitzler et al. [1] define the (multiplicative) binary
-\(\varepsilon\)-indicator as follows for two point sets \(X = \{x_1, \ldots, x_{|X|}\}\)
-and \(Y = \{y_1, \ldots, y_{|Y|}\}\)
+\(\varepsilon\)-indicator for two point sets \(X = \{x_1, \ldots, x_{|X|}\}\)
+and \(Y = \{y_1, \ldots, y_{|Y|}\}\) as follows:
 $$
-  I_{\varepsilon}(X, Y) = \inf_{\varepsilon &gt; 0}\{y \in Y \mid \exists x \in X: x \preceq_{\varepsilon} y\},
+  I_{\varepsilon}(X, Y) = \inf_{\varepsilon &gt; 0}\{y \in Y \mid \exists x \in X: x \preceq_{\varepsilon} y\}.
 $$
 It means that \(I_{\varepsilon}(X, Y)\) is the smallest \(\varepsilon\)
 such that there exists a point in \(X\) that dominates a point \(y \in Y\)
@@ -178,7 +178,7 @@ should be obvious how to calculate the unary indicator.</p>
     <h2 class="hasAnchor" id="note"><a class="anchor" href="#note"></a>Note</h2>
 
     <p>Keep in mind that this function assumes all objectives to be minimized.
-In case at least one objective is to be maximized the data needs
+In case at least one objective is to be maximized, the data needs
 to be transformed accordingly in advance.</p>
     <h2 class="hasAnchor" id="references"><a class="anchor" href="#references"></a>References</h2>
 
