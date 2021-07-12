@@ -15,7 +15,7 @@ Column names of the objective function values.
 Default is \code{c("y1", "y2")}.}
 
 \item{unary}{[\code{list}]\cr
-Named list of indicators. The names must be strings which correspond to
+Named list of indicators. The names must be strings that correspond to
 the function name of the indicator (e.g., \dQuote{gd} for \code{\link{gd}}).
 The value is an (possibly empty) named list of parameter values for the indicator
 (e.g. \code{list(p = 2)} to modify the \eqn{p} parameter of the generational
@@ -23,9 +23,9 @@ distance indicator \code{\link{gd}}).}
 
 \item{rsets}{[\code{list}]\cr
 Named list of reference sets in form of data frames. The names need to correspond
-to problem names in column \code{x$problem}. For all problem where no explicit
-reference set is given, the set is approximated as the nondominated set of
-point of the union of all approximations for each problem.}
+to problem names in column \code{x$problem}. For all problems where no explicit
+reference set is given, the set is approximated as the non-dominated set of
+points of the union of all approximations for each problem.}
 
 \item{format}{[\code{character(1)}]\cr
 If \dQuote{long}, the data is returned as a data frame in long format. I.e.,
@@ -37,11 +37,11 @@ indicator. This format is less redundant and memory-intensive.}
 }
 \value{
 A data frame with columns \dQuote{problem},
-  \dQuote{algorithm}, \dQuote{repl} and columns with the respective
+  \dQuote{algorithm}, \dQuote{repl}, and columns with the respective
   indicator values (see argument \code{format} for details).
 }
 \description{
-The function expects a data frame with Pareto -front approximation sets given
+The function expects a data frame with Pareto-front approximation sets given
 in the columns passed by \code{obj.cols} and optional meta-columns \dQuote{problem}
 \dQuote{algorithm} and \dQuote{repl}. Given a set of multi-objective performance
 indicators, the function splits the data by the meta-columns and calculates the

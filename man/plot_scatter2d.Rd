@@ -21,27 +21,28 @@ plot_scatter2d(
 }
 \arguments{
 \item{df}{[\code{data.frame}]\cr
-Data.frame with columns at least \code{obj.cols}, \dQuote{problem} and \dQuote{algorithm}.}
+Data frame with columns at least those given via parameter \code{obj.cols},
+\dQuote{problem} and \dQuote{algorithm}.}
 
 \item{obj.cols}{[\code{character(>= 2)}]\cr
 Column names of the objective function values.
 Default is \code{c("y1", "y2")}.}
 
 \item{shape}{[\code{character(1)}]\cr
-Name of column which shall be used to define shape of points.
+Name of column that shall be used to define the point's shape.
 Default is \dQuote{algorithm}.}
 
 \item{colour}{[\code{character(1)}]\cr
-Name of column which shall be used to define colour of points.
+Name of column that shall be used to define the point's colour
 Default is \code{NULL}, i.e., coloring is deactivated.}
 
 \item{size}{[\code{character(1)}]\cr
-Name of column which shall be used to define the size of points.
+Name of column that shall be used to define the point's size.
 Default is \code{NULL}, i.e., sizing is deactivated.
 Useful to visualize a third objective (bubble-chart; see argument \code{bubble}).}
 
 \item{bubble}{[\code{logical(1)}]\cr
-Plot bubble-chart? I.e. is \code{colour} used to highlight another
+Plot bubble-chart? I.e., is \code{colour} used to highlight another
 objective?
 Default is \code{FALSE}.}
 
@@ -53,7 +54,7 @@ Default is \code{NULL}, i.e., unknown.}
 \item{offset.highlighted}{[\code{numeric(1)}]\cr
 Numeric offset used to shift set (see \code{highlight.algos})
 which should be highlighted.
-Even though this produces objective vectors it
+Even though this produces objective vectors, it
 may be used to make visible reference sets which otherwise would
 be hidden by overlap of multiple other approximation sets.}
 
@@ -72,14 +73,14 @@ Default is \dQuote{wrap}.}
 Named list of arguments passed down to \code{\link[ggplot2]{facet_wrap}} or
 \code{\link[ggplot2]{facet_grid}} respectively (depends on \code{facet.type}).
 E.g., \code{nrow} to change layout.
-Default is the empty list. In this case data is grouped by problem.}
+Default is the empty list. In this case, data is grouped by problem.}
 }
 \value{
 A \code{\link[ggplot2]{ggplot}} object.
 }
 \description{
 Given a data frame with the results of (multiple) runs of (multiple)
-different multi-objective optimization algorithms on (multiple) problem instances
+different multi-objective optimization algorithms on (multiple) problem instances,
 the function generates \code{\link[ggplot2]{ggplot}} scatter-plots of the obtained
 Pareto-front approximations.
 }
@@ -87,7 +88,7 @@ Pareto-front approximations.
 [1] T. Tušar and B. Filipič, "Visualization of Pareto Front Approximations in
 Evolutionary Multiobjective Optimization: A Critical Review and the Prosection
 Method," in IEEE Transactions on Evolutionary Computation, vol. 19, no. 2,
-pp. 225-245, April 2015, doi: 10.1109/TEVC.2014.2313407
+pp. 225-245, April 2015, doi: 10.1109/TEVC.2014.2313407.
 }
 \seealso{
 Other multi-objective visualizations: 

@@ -2,13 +2,13 @@
 #' Fast non-dominated sorting
 #'
 #' @description
-#' Fast non-dominated sorting algorithm proposed by Deb et al. [1].
+#' The \emph{fast non-dominated sorting algorithm} was proposed by Deb et al. [1].
 #' Non-dominated sorting expects a set of points and returns a
-#' set of non-dominated fronts. In short words this is done as follows: the
+#' set of non-dominated fronts. In short words, this is done as follows: the
 #' non-dominated points of the entire set are determined and assigned rank 1.
 #' Afterwards all points with the current rank are removed, the rank is increased
 #' by one and the procedure starts again. This is done until the set is empty, i.e.,
-#' each point is assigned a rank.
+#' each point is assigned to a rank/level.
 #'
 #' @note
 #' This procedure is the key survival selection of the famous NSGA-II multi-objective
@@ -33,7 +33,6 @@
 #'     \item{dom.counter}{Integer vector of length \code{ncol(x)}. The \eqn{i}th element
 #'     is the domination number of the \eqn{i}th point.}
 #'   }
-#' @family mootools
 #' @export
 nds = function(x) {
   checkmate::assert_matrix(x, mode = "numeric", min.rows = 2L, min.cols = 1L,

@@ -1,5 +1,5 @@
 #' @title
-#' Overall (Pareto) spread
+#' Overall (Pareto) Spread
 #'
 #' @description
 #' Calculates the Overall (Pareto-) Spread multi-objective performance indicator
@@ -7,8 +7,8 @@
 #'
 #' @details
 #' A simple multi-objective performance indicator proposed in [1].
-#' Given a point set\eqn{X = \{x_1, \ldots, x_{|X|}\}} of \eqn{m} objectives,
-#' the ideal point \eqn{I} (or an approximation) and the nadir point \eqn{N}
+#' Given a point set \eqn{X = \{x_1, \ldots, x_{|X|}\}} of \eqn{m} objectives,
+#' the ideal point \eqn{I} (or an approximation thereof) and the nadir point \eqn{N}
 #' (or a approximation) it is defined as
 #' \deqn{
 #'   OS(X) = \prod_{i=1}^{m} \frac{\max_{x \in X} x_i - \min_{x \in X} x_i}{N_i - I_i}.
@@ -23,7 +23,7 @@
 #' @template family_multi_objective_performance_indicators
 #'
 #' @param x [\code{matrix}]\cr
-#'   Point set in column major format.
+#'   Numeric matrix of points (each colum contains one point).
 #' @param np [\code{numeric}]\cr
 #'   Nadir point or approximtion of it.
 #' @param ip [\code{numeric}]\cr

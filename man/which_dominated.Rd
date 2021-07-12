@@ -4,8 +4,7 @@
 \alias{which_dominated}
 \alias{which_nondominated}
 \alias{is_maximally_dominated}
-\title{D
-etermine which points of a set are (non)dominated}
+\title{Determine which points of a set are (non)dominated}
 \usage{
 which_dominated(x)
 
@@ -19,12 +18,12 @@ Numeric \eqn{(m \times n)} matrix where \eqn{n} is the number of points and \eqn
 is the number of objectives.}
 }
 \value{
-Integer vector of positions of (non)dominated points.
+Integer vector of positions of (non-)dominated points.
 }
 \description{
-Given a matrix with one point per column \code{which_dominated} returns the
+Given a matrix with one point per column, \code{which_dominated} returns the
 column numbers of the dominated points and \code{which_nondominated} the column
-numbers of the nondominated points. Function \code{is_maximally_dominated} returns
+numbers of the non-dominated points. Function \code{is_maximally_dominated} returns
 a logical vector with \code{TRUE} for each point which is located on the last
 non-domination level.
 }

@@ -1,6 +1,6 @@
 Package: ecr3vis
 Title: Evolutionary Computation in R - Version 3
-Description: Framework for building evolutionary algorithms for both single- and multi-objective continuous or discrete optimization problems. A set of predefined evolutionary building blocks and operators is included. Moreover, the user can easily set up custom objective functions, operators, building blocks and representations sticking to few conventions. The package allows both a black-box approach for standard tasks (plug-and-play style) and a much more flexible white-box approach where the evolutionary cycle is written by hand. In addition the package offers many performance assessment and visualization capabilities.
+Description: Framework for building evolutionary algorithms for both single-, multi- and many-objective continuous or discrete optimization problems. A set of predefined evolutionary building blocks and operators is included. Moreover, the user can easily set up custom objective functions, operators, building blocks, and representations sticking to few conventions. The package allows both a black-box approach for standard tasks (plug-and-play style). More sophisticated and customized algorithms can be implemented by writing the evolutionary loop by hand using a plethore of utility functions for common tasks. Additionally, the package offers many performance assessment and visualization capabilities.
 Version: 1.0.0
 Date: 2021-06-01
 Authors@R: c(

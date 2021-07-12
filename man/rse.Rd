@@ -8,7 +8,7 @@ rse(x, s, ...)
 }
 \arguments{
 \item{x}{[\code{matrix}]\cr
-Point set in column major format.}
+Numeric matrix of points (each colum contains one point).}
 
 \item{s}{[\code{numeric}]\cr
 Degree of uniformity \eqn{s \geq 0} (see description).}

@@ -17,7 +17,7 @@ Second set of points.}
 Single logical value.
 }
 \description{
-The function checks, whether every point from the second set of points
+The function checks whether every point from the second set of points
 is dominated by at least one point from the first set.
 }
 \examples{

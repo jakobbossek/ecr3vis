@@ -10,12 +10,14 @@
 #' amount of diversity between species in biology [1]. Later, Ulrich and Thiele [2]
 #' adopted this measures for \emph{Evolutionary Diversity Optimization} where the
 #' goal is to come up with a population \eqn{P = \{P_1, \ldots, P_{\mu}\}} of \eqn{\mu}
-#' individuals such that (i) all individuals in \eqn{P} adhere to a minimum quality
+#' individuals such that the following holds:
+#' \enumerate{
+#'   \item All individuals in \eqn{P} adhere to a minimum quality
 #' threhold, i.e., \eqn{f(x) \leq v_{\min}} for some threhold value \eqn{v_{\min}}
-#' (we assume the fitness function \eqn{f} w.l.o.g. to be minimized). (ii) the
-#' population should be \dQuote{diverse} with respect to some diversity measure
-#' \eqn{D} that maps the population to a single scalar numeric value.
-#'
+#' (we assume the fitness function \eqn{f} w.l.o.g. to be minimized).
+#'   \item The population should be \dQuote{diverse} with respect to some diversity
+#'   measure \eqn{D} that maps the population to a single scalar numeric value.
+#' }
 #' Given \eqn{P = \{P_1, \ldots, P_{\mu}\}} and pairwise distances \eqn{d(P_i, P_j)}
 #' \eqn{1 \leq, i,j \leq \mu} let \eqn{M} be a \eqn{(\mu \times \mu)} matrix
 #' with
@@ -29,14 +31,14 @@
 #' where matrix \eqn{M^{-1}} is the Moore-Penrose generalized inverse of a
 #' matrix \eqn{M}.
 #' \eqn{D_{SP}} can be interpreted as \dQuote{as the number of different species in
-#' the population} [2]. Note however, that the measure calculates a real valued
+#' the population} [2]. Note however that the measure calculates a real valued
 #' diversty in \eqn{[1, \mu]} and no integer value. Hence, it can be seen as
-#' a more fine-grained measure of diversity that captures so kind of distance
+#' a more fine-grained measure of diversity that captures a distance
 #' other than the \dQuote{binary} distance \eqn{d'} were \eqn{d'(P_i, P_j) = 1}
 #' if \eqn{P_i \neq P_j} and \eqn{d'(P_i, P_j) = 0} otherwise.
 #'
 #' The runtime is dominated by the inverse matrix calculation and hence is upper
-#' bounded by \eqn{O(\mu^3)}. In [2] the authors propose an alternative method
+#' bounded by \eqn{O(\mu^3)}. In [2], the authors propose an alternative method
 #' to update the calculation once the population changes. However, the measure
 #' implemented here is meant to be used \emph{a-posteriori} to assess the
 #' \dQuote{diversity} of a final population.

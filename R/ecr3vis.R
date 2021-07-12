@@ -5,28 +5,28 @@
 #' problems and for the analysis of such algoritms' performances.
 #'
 #' @section Evolutionary Algorithms (EAs):
-#' Evolutionary Computation is an umbrella term for randomized search heuristics
+#' \emph{Evolutionary Computation} is an umbrella term for randomized search heuristics
 #' that draw inspiration from natural evolution. There are four historic strands that
-#' are nowadys known as \emph{Evolutionary Algorithms}: Evolutionary Programming,
+#' are nowdays known as \emph{Evolutionary Algorithms}: Evolutionary Programming,
 #' Evolution Strategies, Genetic Algorithms and Genetic Programming. All four
 #' flavors emerged in the 1980s mainly in the area of engineering and differ
 #' with respect to the considered decision space, operators and
 #' algorithmic parameters.
 #'
 #' Evolutionary Algorithms maintain a so-called \emph{population} of
-#' \emph{(candidate) solutions} or \emph{individuals} which is often initialized
+#' \emph{(candidate) solutions} or \emph{individuals} that is often initialized
 #' with initial solutions sampled randomly from the decision space. Next,
 #' in a loop the algorithms basically (i) select some individuals as parents
 #' (ii) generate new individuals from the parents by applying bio-inspired
 #' random operators like recombination/crossover and/or mutation and (iii) in
-#' a second round of selection choose a subset of parents and/or offspring
-#' individuls to \dQuote{survive} and form the next population. In this last step
-#' often \dQuote{fitter} individuals have a higher probability to survive
+#' a second round of selection, choose a subset of parents and/or offspring
+#' individuls to \dQuote{survive} and form the next population. In this last step,
+#' \dQuote{fitter} individuals have a higher probability to survive
 #' (analogy to the \emph{survival of the fittest} principle from Darwin's evolution
 #' theory). This process is repeated until some kind of stopping condition is met.
-#' Basically all EAs fit into this general theme. There exists a plethora of variation
+#' Basically, all EAs fit into this general theme. There exists a plethora of variation
 #' operators, representations and ideas in this field of research. Despite this
-#' rather simple strucuture, EAs have been successfully applied to countless
+#' rather simple structure, EAs have been successfully applied to countless
 #' (very) complex (often multi-objective) optimization problems with major success.
 #' One of the benefits of EAs is that they are often easy to implement.
 #'
@@ -36,7 +36,7 @@
 #' operators for standard representations (binary, permutation, real-valued),
 #' various selection operators (uniform random, \eqn{k}-tournament, fitness-
 #' proportionate etc.) and various utility functions. The user can easily set up
-#' custom objective functions, operators, building blocks and representations
+#' custom objective functions, operators, building blocks, and representations
 #' sticking to few conventions. The package allows both a black-box approach for
 #' standard tasks (plug-and-play style) and a much more flexible approach where
 #' the evolutionary cycle is written by hand. The package excells with support
@@ -46,11 +46,11 @@
 #' @section Performance Assessment and Visualization:
 #' The package offers a rich set of functions for the assessment of performance
 #' of single algorithms and the comparison of multiple algorithms. Here, the
-#' of focus is on performance assessment of multi-objective randomized search
-#' heuristics were the comparison of approximation sets with incomparable
+#' of focus lies on performance measurement of multi-objective randomized search
+#' heuristics where the comparison of approximation sets with incomparable
 #' solutions is much more challenging than in the single-objective setting.
 #'
-#' ## Multi-objective performance indicators
+#' @subsection Multi-objective performance indicators
 #' So-called quality indicators map an approximation set \eqn{X} to the real
 #' numbers. Our package offers the most relevant multi-objective performance
 #' indicators among others (see reference [1] for an excellent tutorial):
@@ -63,10 +63,10 @@
 #'   \item Riesz \eqn{s}-energy.
 #' }
 #'
-#' ## Multi-objective set visualization
-#' Visualizing solutions sets calculated by Evolutionary Multi-Objective Algorithms
+#' @subsection Multi-objective set visualization
+#' Visualizing solution sets calculated by Evolutionary Multi-Objective Algorithms
 #' (EMOAs) is crucial since humans are usually better in grasping information
-#' form a (good) graphic rather than large tables of numbers [2]. Currently,
+#' from a (good) graphic rather than large tables of numbers [2]. Currently,
 #' the package offers the following plot types:
 #' \itemize{
 #'   \item 2D/3D Scatterplots,
@@ -77,7 +77,7 @@
 #' }
 #'
 #' @section Parallelization:
-#' In this package somee function support parallelization for faster execution via
+#' In this package some functions support parallelization for faster execution via
 #' the package \CRANpkg{future}. A parallel backend (e.g., multicore (on Unix/Linux/MacOS),
 #' multisession etc.) can be selected via \code{\link[future]{plan}}.
 #'
@@ -97,7 +97,7 @@
 #' [2] T. Tušar and B. Filipič, Visualization of Pareto Front Approximations in
 #' Evolutionary Multiobjective Optimization: A Critical Review and the Prosection
 #' Method, in IEEE Transactions on Evolutionary Computation, vol. 19, no. 2,
-#' pp. 225-245, April 2015, doi: 10.1109/TEVC.2014.2313407.
+#' pp. 225-245, April 2015, doi: 10.1109/TEVC.2014.2313407
 #'
 #' @docType package
 #' @name ecr3vis-package

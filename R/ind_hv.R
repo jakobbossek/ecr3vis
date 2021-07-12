@@ -2,14 +2,14 @@
 #' Dominated hypervolume (contribution)
 #'
 #' @description
-#' Given a point set \code{x} and a reference point \code{r} funcction \code{hv}
+#' Given a point set \code{x} and a reference point \code{r} function \code{hv}
 #' calcultes the hypervolume indicator value [1]. In contrast, function \code{hv_contr}
 #' returns a vector of length \code{nrow(x)} where the \eqn{i}th position
-#' contains the hypervolume contribuntion of the \eqn{i}th point in \code{x}.
+#' contains the hypervolume contribution of the \eqn{i}th point in \code{x}.
 #'
 #' @details
 #' The \emph{hypervolume (HV) indicator} [1, 2] is arguebly one of the most often used performance
-#' indicator likely due to its straight-forward definition. Given a set of points
+#' indicators likely due to its straight-forward definition. Given a set of points
 #' \eqn{X = \{x_1, \ldots, x_{|X|}\}} and an anti-optimal reference point
 #' \eqn{r \in R^m} the \emph{HV-indicator}, also called the \emph{S-metric}, is defined
 #' as
@@ -19,7 +19,7 @@
 #' Here, \eqn{\lambda_m} is the \eqn{m}-dimensional Lebesgue measure. Informally,
 #' the hypervolume indicator is the space/volume enclosed by the point set and
 #' the anti-optimal (i.e., it is dominated by every point \eqn{x \in X}) reference
-#' point. It is known to be strictly monotonic. I.e., if point set \eqn{X} strictly
+#' point. It is known to be strictly monotonic. I.e., if the point set \eqn{X} strictly
 #' dominates another point set \eqn{Y}, then \eqn{HV(X,r) > HV(Y, r)} holds.
 #'
 #' Function \code{hv} computes the dominated hypervolume of a set of points
@@ -27,7 +27,7 @@
 #' of each point which is a key ingredient of the S-Metric Selection EMOA
 #' (SMS-EMOA) [3, 4].
 #'
-#' If no reference point is given the nadir point of the set \code{x} is
+#' If no reference point is given, the nadir point of the set \code{x} is
 #' determined and a positive offset with default 1 is added. This is to ensure
 #' that the reference point is dominated by all of the points in the reference set
 #' (anti-optimality property).
@@ -42,7 +42,7 @@
 #' [2] Knowles, J. D., Thiele, L. and Zitzler, E. A tutorial on the performance
 #' assessment of stochastive multiobjective optimizers. TIK-Report No. 214, Computer
 #' Engineering and Networks Laboratory, ETH Zurich, February 2006 (Revised version.
-#' First version, January 2005). doi: 10.3929/ethz-b-000023822
+#' First version, January 2005). doi: 10.3929/ethz-b-000023822.
 #'
 #' [3] M. Emmerich, N. Beume, and B. Naujoks. An EMO Algorithm Using the Hypervolume
 #' Measure as Selection Criterion. In Conference on Evolutionary Multi-Criterion
@@ -66,7 +66,7 @@
 #' @param ... [any]\cr
 #'   Not used at the moment.
 #' @return Dominated hypervolume in the case of
-#'  \code{hv} or a vector the dominated hypervolume contributions
+#'  \code{hv} or a vector of the dominated hypervolume contributions
 #'  for each point of \code{x} in the case of \code{hv_contr}.
 #' @rdname hypervolume
 #' @export

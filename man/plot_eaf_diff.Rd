@@ -8,12 +8,12 @@ plot_eaf_diff(df1, df2, obj.cols, intervals = 5L, percentiles = c(0, 50, 75))
 }
 \arguments{
 \item{df1}{[\code{data.frame}]\cr
-First approximation set: data.frame with columns at least \code{obj.cols}
-and \dQuote{repl}. All other columns will be ignored!}
+First approximation set: a data frame with columns at least those given via
+parameter \code{obj.cols}, and \dQuote{repl}. All other columns will be ignored!}
 
 \item{df2}{[\code{data.frame}]\cr
-First approximation set: data.frame with columns at least \code{obj.cols}
-and \dQuote{repl}. All other columns will be ignored!}
+First approximation set: a data frame with columns at least those given via
+\code{obj.cols}, and \dQuote{repl}. All other columns will be ignored!}
 
 \item{obj.cols}{[\code{character(>= 2)}]\cr
 Column names of the objective function values.
@@ -37,10 +37,10 @@ shows the the values of the left EAF minus the right EAF and the right side
 shows it the other way around.
 }
 \note{
-If the given approxximation sets are huge, generating the plot may take some
+If the given approximation sets are huge in size, generating the plot may take some
 time. Here, it is most often helpful to store the plot first in a file. Due
-to the huge number of points the size of the file may be also very large. Here,
-it is advisible to save the file in a image file format (PNG or JPEG) instead
+to the huge number of points, the size of the file may become also very large. Here,
+it is advisible to save the file in an image file format (PNG or JPEG) instead
 of PDF.
 
 This function re-implements partial functionality of \code{\link[eaf]{eafdiffplot}}
@@ -49,8 +49,10 @@ realizing the plotting with \CRANpkg{ggplot2} rather than base R plot functions.
 \examples{
 \dontrun{
 data(emoas_on_zdt)
-df1 = emoas_on_zdt[emoas_on_zdt$algorithm == "nsga2" & emoas_on_zdt$problem == "zdt1_2d_2o", ]
-df2 = emoas_on_zdt[emoas_on_zdt$algorithm == "smsemoa" & emoas_on_zdt$problem == "zdt1_2d_2o", ]
+df1 = emoas_on_zdt[emoas_on_zdt$algorithm == "nsga2"
+  & emoas_on_zdt$problem == "zdt1_2d_2o", ]
+df2 = emoas_on_zdt[emoas_on_zdt$algorithm == "smsemoa"
+  & emoas_on_zdt$problem == "zdt1_2d_2o", ]
 plot_eaf_diff(df1, df2, obj.cols = c("y1", "y2"))
 }
 }
@@ -65,12 +67,12 @@ ch. 5, pp. 103-130, Springer Berlin Heidelberg, 2010.
 of Stochastic Local Search Algorithms in Biobjective Optimization. In T.
 Bartz-Beielstein, M. Chiarandini, L. Paquete, and M. Preuss, editors,
 Experimental Methods for the Analysis of Optimization Algorithms,
-pages 209–222. Springer, Berlin, Germany, 2010. doi: 10.1007/978-3-642-02538-9_9
+pages 209–222. Springer, Berlin, Germany, 2010. doi: 10.1007/978-3-642-02538-9_9.
 
 [3] Knowles, J. D., Thiele, L. and Zitzler, E. A tutorial on the performance
 assessment of stochastive multiobjective optimizers. TIK-Report No. 214, Computer
 Engineering and Networks Laboratory, ETH Zurich, February 2006 (Revised version.
-First version, January 2005). doi: 10.3929/ethz-b-000023822
+First version, January 2005). doi: 10.3929/ethz-b-000023822.
 }
 \seealso{
 plot_eaf

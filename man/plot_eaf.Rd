@@ -8,7 +8,8 @@ plot_eaf(df, obj.cols, percentiles = c(0, 50, 75, 100))
 }
 \arguments{
 \item{df}{[\code{data.frame}]\cr
-Data.frame with columns at least \code{obj.cols}, \dQuote{problem} and \dQuote{algorithm}.}
+Data frame with columns at least those given via parameter \code{obj.cols},
+\dQuote{problem} and \dQuote{algorithm}.}
 
 \item{obj.cols}{[\code{character(>= 2)}]\cr
 Column names of the objective function values.
@@ -28,7 +29,7 @@ The following description closely follows the excellent introduction into
 performance assessment of multi-objective optimizers by Knowles et al. [3].
 (Evolutionary) multi-objective algorithms are stochastic. Hence, naturally,
 the result produced by such an algorithm can be described by a probability
-distribution. This distribution can be descibed by a random set
+distribution. This distribution can be characterized by a random set
 \deqn{
   Z = \{z^j \in R^m \,|\, j = 1, \ldots, |Z|\}
 }
@@ -45,12 +46,12 @@ that weakly dominates, i.e., \dQuote{attains}, \eqn{z}.
 
 Given \eqn{r} independent runs of a stochastic multi-objective optimizer and
 denoting by \eqn{X^i, 1 \leq i \leq r} the corresponding Pareto-front
-approximation set the \emph{empirical attainment function (EAF)} is defined
+approximation set, the \emph{empirical attainment function (EAF)} is defined
 as
 \deqn{
   \hat{\alpha}_r(z) = \frac{1}{r} \sum_{i=1}^{r} I(X^i \preceq \{z\})
 }
-where \eqn{I(\cdot)} is the \emph{indictor function} evaluating to \eqn{1}
+where \eqn{I(\cdot)} is the \emph{indicator function} evaluating to \eqn{1}
 if and only if the condition is true; \eqn{0} otherwise.
 This is a straight-forward estimation from empirical data and simply describes
 the frequency of attaining \eqn{z} within \eqn{r} runs.
@@ -68,7 +69,8 @@ Thiele and Zitzler (reference [3]).
 data(emoas_on_zdt)
 plot_eaf(emoas_on_zdt, obj.cols = c("y1", "y2"))
 plot_eaf(emoas_on_zdt[emoas_on_zdt$algorithm == "nsga2", ], obj.cols = c("y1", "y2"))
-plot_eaf(emoas_on_zdt[emoas_on_zdt$algorithm == "nsga2", ], obj.cols = c("y1", "y2"), percentiles = c(50, 100))
+plot_eaf(emoas_on_zdt[emoas_on_zdt$algorithm == "nsga2", ], obj.cols = c("y1", "y2"),
+  percentiles = c(50, 100))
 }
 }
 \references{
@@ -82,12 +84,12 @@ ch. 5, pp. 103-130, Springer Berlin Heidelberg, 2010.
 of Stochastic Local Search Algorithms in Biobjective Optimization. In T.
 Bartz-Beielstein, M. Chiarandini, L. Paquete, and M. Preuss, editors,
 Experimental Methods for the Analysis of Optimization Algorithms,
-pages 209–222. Springer, Berlin, Germany, 2010. doi: 10.1007/978-3-642-02538-9_9
+pages 209–222. Springer, Berlin, Germany, 2010. doi: 10.1007/978-3-642-02538-9_9.
 
 [3] Knowles, J. D., Thiele, L. and Zitzler, E. A tutorial on the performance
 assessment of stochastive multiobjective optimizers. TIK-Report No. 214, Computer
 Engineering and Networks Laboratory, ETH Zurich, February 2006 (Revised version.
-First version, January 2005). doi: 10.3929/ethz-b-000023822
+First version, January 2005). doi: 10.3929/ethz-b-000023822.
 }
 \seealso{
 Other multi-objective visualizations: 

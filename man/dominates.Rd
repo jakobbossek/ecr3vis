@@ -46,8 +46,8 @@ and
 Informally, \eqn{x} dominates \eqn{y} if \eqn{x} is no worse than \eqn{y} in
 all components and \eqn{x} is strictly better than \eqn{y} in at least one
 component. Note that this definition focuses on minimization of all
-objectives. This is no restriction, since the maximization of some function
-is equivalent to the minimization of its negative.
+objectives. This is no restriction since the maximization of some function
+is equivalent to the minimization of its negative counterpart.
 }
 \examples{
 dominates(c(2, 3), c(4, 5))

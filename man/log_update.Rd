@@ -18,8 +18,8 @@ will be stored.}
 \item{...}{[any]\cr
 Variable argument list as another possibility to pass objects.
 These arguments are merged with \code{log.stuff}. Note that the dot-args
-have precdence, i.e., objects in \code{log.stuff} are owerwritten by objects
-named equally in the dot-args list.}
+have precedence, i.e., objects in \code{log.stuff} are owerwritten by objects
+named equally in the dot-args list (\code{...}).}
 }
 \value{
 Nothing. The function modifies \code{log} in-place.

@@ -13,10 +13,10 @@
 #' each of the form \eqn{u : R^m \to R} which maps each point in the objective
 #' space into a so-called measure of utility. Let \eqn{p} be a probability
 #' distribution over \eqn{U}. We denote by \eqn{u^{*}(A) = \max_{x \in A} u(x)}
-#' the maximum value reached by some utility function \eqn{u} on a set \eqn{A}.
+#' the maximal value reached by some utility function \eqn{u} on a set \eqn{A}.
 #'
 #' The R1-indicator measures the probability that approximation set \eqn{X} is
-#' better than approximation set \eqn{Y} by integrating over the all utility
+#' better than approximation set \eqn{Y} by integrating over the utility
 #' function \eqn{u \in U}. More precisely, it is defined as
 #' \deqn{
 #'   R1(X, Y, U, p) = \int_{u \in U} C(X, Y, u)p(x)du
@@ -38,11 +38,11 @@
 #' \deqn{
 #'   R1(X, Y) = \frac{1}{|U|}\sum_{u \in U} C(X, Y, u).
 #' }
-#' The same approach is done for \eqn{R2} and \eqn{R3} which will be discussed in the
+#' The same approach is used for \eqn{R2} and \eqn{R3} which will be discussed in the
 #' following.
 #'
 #' Classical utility functions involve \emph{weighted sum}, \emph{Tschebycheff} and \emph{augmented
-#' Tschbycheff} all of which are availabe via the argument \code{utility} in the
+#' Tschbycheff}. All three are availabe via the argument \code{utility} in the
 #' implementation. As an example, the set of (weighted) Tschebycheff utility
 #' functions is \eqn{U_{\infty} = (u_{\lambda})} where
 #' \deqn{
@@ -58,7 +58,7 @@
 #'   R2(X, Y, U, p) = E(u^{*}(X)) - E(u^{*}(Y)) = \int_{u \in U} (u^{*}(A) - u^{*}(B))p(u)du.
 #' }
 #' Interpretation: here, since the measure is defined as the difference of
-#' expectations, approximation set \eqn{X} is considered better than set \eqn{Y}
+#' expectations approximation set \eqn{X} is considered better than set \eqn{Y}
 #' if \eqn{R(X, Y) > 0}.
 #'
 #' Eventually, indicator R3 considers the ratios of best utility function values:
@@ -76,23 +76,23 @@
 #' @template family_multi_objective_performance_indicators
 #'
 #' @param x [\code{matrix}]\cr
-#'   First point set in column major format.
+#'   First numeric matrix of points (each colum contains one point).
 #' @param y [\code{matrix}]\cr
-#'   Second point set in column major format.
+#'   Second numeric matrix of points (each colum contains one point).
 #' @param ip [\code{numeric}]\cr
 #'   The utopia point of the true Pareto-front, i.e., each component of the point
 #'   contains the best value if the other objectives are neglected.
-#'   If \code{NULL} (default) the ideal point of the union of \code{x} and
+#'   If \code{NULL} (default), the ideal point of the union of \code{x} and
 #'   \code{y} is used.
 #' @param np [\code{numeric}]\cr
 #'   Nadir point of the true Pareto front or an approximation.
-#'   If \code{NULL} (default) the nadir point of the union of \code{x} and
+#'   If \code{NULL} (default), the nadir point of the union of \code{x} and
 #'   \code{y} is used.
 #' @param lambda [\code{integer(1)}]\cr
-#'   Number of weight vectors to use in estimating the utility function.
+#'   Number of weight vectors to use for estimating the utility function.
 #' @param utility [\code{character(1)}]\cr
 #'   Name of the utility function to use. Must be one of \dQuote{weighted-sum},
-#'   \dQuote{tschebycheff} or \dQuote{augmented-tschbycheff}.
+#'   \dQuote{tschebycheff} or \dQuote{augmented-tschebycheff}.
 #'   Default is \dQuote{tschebycheff}.
 #' @return Single numeric indicator value.
 #' @template arg_dots_not_used
@@ -151,7 +151,7 @@ r = function(
     lambda = get_lambda(o)
   checkmate::assert_numeric(ip, any.missing = FALSE, all.missing = FALSE)
   checkmate::assert_numeric(np, any.missing = FALSE, all.missing = FALSE)
-  utilities = c("weighted-sum", "tschebycheff", "augmented-tschbycheff")
+  utilities = c("weighted-sum", "tschebycheff", "augmented-tschebycheff")
   checkmate::assert_choice(utility, utilities)
   checkmate::assert_function(aggregator)
 

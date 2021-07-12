@@ -14,7 +14,8 @@ plot_scatter3d(
 }
 \arguments{
 \item{df}{[\code{data.frame}]\cr
-Data.frame with columns at least \code{obj.cols}, \dQuote{problem} and \dQuote{algorithm}.}
+Data frame with columns at least those given via parameter \code{obj.cols},
+\dQuote{problem} and \dQuote{algorithm}.}
 
 \item{obj.cols}{[\code{character(>= 3)}]\cr
 Column names of the objective functions.
@@ -31,7 +32,7 @@ Possible choices are \dQuote{scatterplot3d} (\pkg{scatterplot3d}), \dQuote{plot3
 Default is \dQuote{scatterplot3d}.}
 
 \item{...}{[any]\cr
-Further arguments passed down to scatterplot function.}
+Further arguments passed down to the scatterplot function.}
 }
 \value{
 Nothing (function has side-effects by calling the respective drawing routines).
@@ -45,7 +46,7 @@ the function generates 3D scatterplots of the obtained Pareto-front approximatio
 [1] T. Tušar and B. Filipič, "Visualization of Pareto Front Approximations in
 Evolutionary Multiobjective Optimization: A Critical Review and the Prosection
 Method," in IEEE Transactions on Evolutionary Computation, vol. 19, no. 2,
-pp. 225-245, April 2015, doi: 10.1109/TEVC.2014.2313407
+pp. 225-245, April 2015, doi: 10.1109/TEVC.2014.2313407.
 }
 \seealso{
 Other multi-objective visualizations: 

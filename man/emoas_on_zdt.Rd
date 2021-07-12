@@ -14,8 +14,9 @@ emoas_on_zdt
 }
 \description{
 A dataset containing Pareto-front approximation sets for the continuous
-bi-objective (i.e., \eqn{m=2}) problems ZDT1 and ZDT3 (see [3]) calculated by
-the Evolutionary Multi-Objective Algorithms (EMOAS) NSGA-II [1] and SMS-EMOA [2].
+bi-objective (i.e., \eqn{m=2}) problems ZDT1 and ZDT3 (see [3]). The data
+was calculated by the Evolutionary Multi-Objective Algorithms (EMOAS)
+NSGA-II [1] and SMS-EMOA [2].
 }
 \references{
 [1] Deb, K., Pratap, A., and Agarwal, S. A Fast and Elitist Multiobjective Genetic

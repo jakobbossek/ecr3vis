@@ -3,10 +3,10 @@
 #'
 #' @description
 #' Visualize a Pareto-front approximation set by means of a heatmap.
-#' Here, on the \eqn{x}-axis the objectives are given in the order provided by
+#' Here, on the \eqn{x}-axis, the objectives are given in the order provided by
 #' \code{obj.cols}. The \eqn{y}-axis shows the different solutions. The color of the
 #' cells indicates the objective value of the respective (objective, solution)-pair.
-#' Works with any kind of objectives.
+#' It works with any kind of objectives.
 #'
 #' @references
 #' [1] T. Tušar and B. Filipič, Visualization of Pareto Front Approximations in

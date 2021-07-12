@@ -8,11 +8,11 @@ log_init(what, init.size, at = NULL, to = NULL)
 }
 \arguments{
 \item{what}{[\code{named(character)}]\cr
-Named character vector. The names (i.e. \code{names(what)}) describe which
+Named character vector. The names (i.e., \code{names(what)}) describe which
 elements we want to log and the actual values represent the types/modes these
 values are stored as. Possible values are \dQuote{integer}, \dQuote{numeric},
 \dQuote{character}, \dQuote{logical} for the respective \strong{scalar}
-atomic values or \dQuote{list} for any other complex R objects, e.g., matrices,
+atomic values, or \dQuote{list} for any other complex R objects, e.g., matrices,
 lists etc.
 Note that internally \code{c("iter" = "numeric")} is attached automatically
 and \code{iter} must be passed to \code{\link{log_update}} in subsequent
@@ -41,7 +41,7 @@ Generates a fairly flexible container to log stuff.
 log = log_init(c("P" = "list", "f" = "list", "C" = "character"),
   init.size = 5L, at = c(1, 3))
 
-# note that div is not subject to logging since it was not specified in log_init
+# Note that div is not subject to logging since it was not specified in log_init
 log_update(log, P = matrix(runif(10), ncol = 2L), C = "a",
   f = runif(10), iter = 1, div = letters[1:3])
 log_update(log, P = matrix(runif(10), ncol = 2L), C = "b",

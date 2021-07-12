@@ -19,8 +19,8 @@
 #' Informally, \eqn{x} dominates \eqn{y} if \eqn{x} is no worse than \eqn{y} in
 #' all components and \eqn{x} is strictly better than \eqn{y} in at least one
 #' component. Note that this definition focuses on minimization of all
-#' objectives. This is no restriction, since the maximization of some function
-#' is equivalent to the minimization of its negative.
+#' objectives. This is no restriction since the maximization of some function
+#' is equivalent to the minimization of its negative counterpart.
 #'
 #' @keywords optimize
 #' @template family_pareto_dominance_checks
@@ -76,7 +76,8 @@ is_dominated = function(x, y) {
 #' These functions take a numeric matrix as input where each column corresponds to
 #' a point and return a logical vector. The \eqn{i}th position of the latter is
 #' \code{TRUE} if the \eqn{i}th point is dominated by at least one other point for
-#' \code{dominated} and \code{FALSE} for \code{nondominated}.
+#' \code{dominated}. Likewise, the \eqn{i}th entry of \code{nondominated} is \code{TRUE}
+#' if it is not dominated by any other point.
 #'
 #' @keywords optimize
 #' @template family_pareto_dominance_checks
@@ -86,7 +87,8 @@ is_dominated = function(x, y) {
 #'   Numeric \eqn{(m \times n)} matrix where \eqn{m} is the number of objectives
 #'   and \eqn{n} is the number of points.
 #' @return Logical vector where the \eqn{i}th component is \code{TRUE} if
-#'   the point is dominated or nondominated respectively.
+#'   \code{x[i]} is dominated or nondominated respectively and \code{FALSE}
+#'   otherwise.
 #' @export
 #' @rdname dominated
 #' @examples
@@ -104,13 +106,13 @@ nondominated = function(x) {
   return(!dominated(x))
 }
 
-#' @title D
-#' etermine which points of a set are (non)dominated
+#' @title
+#' Determine which points of a set are (non)dominated
 #'
 #' @description
-#' Given a matrix with one point per column \code{which_dominated} returns the
+#' Given a matrix with one point per column, \code{which_dominated} returns the
 #' column numbers of the dominated points and \code{which_nondominated} the column
-#' numbers of the nondominated points. Function \code{is_maximally_dominated} returns
+#' numbers of the non-dominated points. Function \code{is_maximally_dominated} returns
 #' a logical vector with \code{TRUE} for each point which is located on the last
 #' non-domination level.
 #'
@@ -121,7 +123,7 @@ nondominated = function(x) {
 #' @param x [\code{matrix}]\cr
 #'   Numeric \eqn{(m \times n)} matrix where \eqn{n} is the number of points and \eqn{m}
 #'   is the number of objectives.
-#' @return Integer vector of positions of (non)dominated points.
+#' @return Integer vector of positions of (non-)dominated points.
 #' @rdname which_dominated
 #' @export
 #' @examples
@@ -157,7 +159,7 @@ is_maximally_dominated = function(x) {
 #' Check if one set Pareto-dominates another
 #'
 #' @description
-#' The function checks, whether every point from the second set of points
+#' The function checks whether every point from the second set of points
 #' is dominated by at least one point from the first set.
 #'
 #' @template family_pareto_dominance_checks

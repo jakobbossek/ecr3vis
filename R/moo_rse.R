@@ -40,7 +40,7 @@
 #' @template family_multi_objective_performance_indicators
 #'
 #' @param x [\code{matrix}]\cr
-#'   Point set in column major format.
+#'   Numeric matrix of points (each colum contains one point).
 #' @param s [\code{numeric}]\cr
 #'   Degree of uniformity \eqn{s \geq 0} (see description).
 #' @template arg_dots_not_used

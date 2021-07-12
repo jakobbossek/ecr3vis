@@ -8,7 +8,8 @@ plot_pcp(df, obj.cols = c("y1", "y2"))
 }
 \arguments{
 \item{df}{[\code{data.frame}]\cr
-Data.frame with columns at least \code{obj.cols}, \dQuote{problem} and \dQuote{algorithm}.}
+Data frame with columns at least those given via parameter \code{obj.cols},
+\dQuote{problem} and \dQuote{algorithm}.}
 
 \item{obj.cols}{[\code{character(>= 2)}]\cr
 Column names of the objective function values.

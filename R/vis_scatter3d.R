@@ -10,7 +10,7 @@
 #' [1] T. Tušar and B. Filipič, "Visualization of Pareto Front Approximations in
 #' Evolutionary Multiobjective Optimization: A Critical Review and the Prosection
 #' Method," in IEEE Transactions on Evolutionary Computation, vol. 19, no. 2,
-#' pp. 225-245, April 2015, doi: 10.1109/TEVC.2014.2313407
+#' pp. 225-245, April 2015, doi: 10.1109/TEVC.2014.2313407.
 #'
 #' @template family_multi_objective_visualizations
 #'
@@ -27,7 +27,7 @@
 #'   (\pkg{plot3D}), \dQuote{plot3Drgl} (\pkg{plot3Drgl}) or \dQuote{plotly} (\pkg{plotly}).
 #'   Default is \dQuote{scatterplot3d}.
 #' @param ... [any]\cr
-#'   Further arguments passed down to scatterplot function.
+#'   Further arguments passed down to the scatterplot function.
 #' @return Nothing (function has side-effects by calling the respective drawing routines).
 #' @export
 plot_scatter3d = function(

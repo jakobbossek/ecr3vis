@@ -25,8 +25,4 @@ Helper functions to compute nadir or ideal point from multiple sets of
 points, e.g., multiple approximation sets produced by some multi-objective
 evolutionary algorithm.
 }
-\seealso{
-Other mootools: 
-\code{\link{nds}()}
-}
 \concept{mootools}

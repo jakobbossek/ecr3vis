@@ -16,13 +16,15 @@ and \eqn{n} is the number of points.}
 }
 \value{
 Logical vector where the \eqn{i}th component is \code{TRUE} if
-  the point is dominated or nondominated respectively.
+  \code{x[i]} is dominated or nondominated respectively and \code{FALSE}
+  otherwise.
 }
 \description{
 These functions take a numeric matrix as input where each column corresponds to
 a point and return a logical vector. The \eqn{i}th position of the latter is
 \code{TRUE} if the \eqn{i}th point is dominated by at least one other point for
-\code{dominated} and \code{FALSE} for \code{nondominated}.
+\code{dominated}. Likewise, the \eqn{i}th entry of \code{nondominated} is \code{TRUE}
+if it is not dominated by any other point.
 }
 \examples{
 x = matrix(c(1, 1, 2, 2, 1, 3), byrow = FALSE, ncol = 3L)

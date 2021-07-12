@@ -2,17 +2,17 @@
 #' Radar/spider plot
 #'
 #' @description
-#' A radar plot or spider plot is an elegant method to visualize
-#' solution quality of solutions with more than two objectives. Essentially it
+#' A \emph{radar plot} or \emph{spider plot} is an elegant method to visualize
+#' the quality of solutions with more than two objectives. Essentially it
 #' shows multiple numeric values starting from the same origin in a circular
-#' two-dimensional representation
+#' two-dimensional representation.
 #'
 #' Users who are into gaming might know the kind of visualization from games like
 #' Pro Evolution Soccer, NHL or most likely any kind of sport games. Here, the
 #' individual strength and weaknesses of players (speed, tequniqual skills,
 #' fitness etc.) are often visualized by means of radar plots.
 #'
-#' The drawback of this method that it is difficult to compare many solutions
+#' The drawback of this method is that it is difficult to compare many solutions
 #' or - even worse - many solutions from different algorithms to get the big picture.
 #'
 #' @references

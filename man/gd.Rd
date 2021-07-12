@@ -6,7 +6,7 @@
 \alias{gdp}
 \alias{igdp}
 \alias{ahd}
-\title{(Inverted) Generational distance and Average Hausdorff Distance}
+\title{(Inverted) Generational Distance and Average Hausdorff Distance}
 \usage{
 gd(x, y, p = 2, modified = TRUE, ...)
 
@@ -20,10 +20,10 @@ ahd(x, y, p = 2, modified = TRUE, ...)
 }
 \arguments{
 \item{x}{[\code{matrix}]\cr
-Point set in column major format.}
+Numeric matrix of points (each colum contains one point).}
 
 \item{y}{[\code{matrix}]\cr
-Reference point set in column major format.}
+The reference set as a numeric matrix of points (each colum contains one point).}
 
 \item{p}{[\code{numeric(1)}]\cr
 Parameter \eqn{p} (see description).}
@@ -39,25 +39,26 @@ Not used.}
 Single numeric indicator value.
 }
 \description{
-These functions expect as mandatory arguments a point set \code{x} and
-a set of reference points \code{y}. For details on the optional arguments
-\code{p} and \code{modified} see the section on details.
+These functions expect as mandatory arguments a point set \eqn{X = \{x_1, \ldots, x_{|X|}\}}
+(parameter \code{x}) and  and a set of reference points
+\eqn{Y = \{y_1, \ldots, y_{|Y|}\}} (parameter \code{y}). For details on the
+optional argument \code{p} and \code{modified} see the section on details.
 \itemize{
   \item \code{gd} calculates the Generational Distance (GD).
   \item \code{igd} calculates the Inverse Generational Distance (IGD).
   \item \code{gdp/igdp} compute the (I)GD+ indicator [3].
-  \item \code{ahd} calculates the Average Hausdorff distance.
+  \item \code{ahd} calculates the Average Hausdorff Distance.
 }
 }
 \details{
-The generational distance (GD) measures the distance of a point set
+The Generational Distance (GD) measures the distance of a point set
 \eqn{X = \{r_1, \ldots, r_{|X|}\}}, e.g., a Pareto-front approximation, to
 a reference set \eqn{R = \{r_1, \ldots, r_{|R|}\}}. Then GD is defined as
 \deqn{
  GD_p(A, R) = \frac{1}{|X|} \left(\sum_{i=1}^{|X|} d_i^p\right)^{1/p}
 }
 where \eqn{d_i} is the Euclidean distance of point \eqn{x_i \in X} to
-its nearest neigbor point in \eqn{R}. The inverted generational distance works
+its nearest neigbor point in \eqn{R}. The Inverted Generational Distance works
 the other way around, i.e.,
 \deqn{
  IGD_p(A, R) = \frac{1}{|R|} \left(\sum_{i=1}^{|R|} \hat{d}_i^p\right)^{1/p}
@@ -71,8 +72,8 @@ Schütze et al. [2] proposed a slight modification:
  GD_p(A, R) = \left(\frac{1}{|X|} \sum_{i=1}^{|X|} d_i^p\right)^{1/p}
 }
 where the average is taken before the power operation. \eqn{IGD_p} is apdated
-analogeously. This versions are calclated by \code{gd} and \code{igd} if argument
-\code{modified} is set \code{TRUE}.
+analogeously. This versions are calclated by \code{gd} and \code{igd} if the argument
+\code{modified} is set to \code{TRUE}.
 
 Ishibushi et al. [3] proposed another modification which works on the
 formulation by Schütze et al. (see above). They modified the distance
@@ -81,9 +82,9 @@ calculation:
  GD_p^{+}(A, R) = \left(\frac{1}{|X|} \sum_{i=1}^{|X|} d^{+^p}_i\right)^{1/p}
 }
 where \eqn{d_i^{+} = \max\{x_i, z_i\}}. This version can be calculated
-with function \code{gdp} (the trailing p stands for \dQuote{plus}).
+with the function \code{gdp} (the trailing \emph{p} stands for \dQuote{plus}).
 
-Eventuelly, function \code{ahd} calculates the Average Hausdorff distance [2]
+Eventuelly, the function \code{ahd} calculates the Average Hausdorff Distance [2]
 which combines GD and IGD and is defined as
 \deqn{
  \Delta_p(A, R) = \max\{GD_p(A, R), IGD_p(A, R)\}.
@@ -91,8 +92,8 @@ which combines GD and IGD and is defined as
 By default, \code{ahd} uses the modified versions of \eqn{GD} and \eqn{IGD}
 respectively (see argument \code{modified}).
 
-IGDX [4] is a meaasure for decision space diversity.vThis is simply IGD;
-however, the input consistsvof the non-dominated solutions in decision space
+IGDX [4] is a meaasure for decision space diversity. This is simply IGD;
+however, the input consists of the non-dominated solutions in decision space
 rather in objective space. Naturally, all implemented functions can be used as
 an \dQuote{*X} version.
 }

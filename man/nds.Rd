@@ -21,20 +21,20 @@ List with the following components
   }
 }
 \description{
-Fast non-dominated sorting algorithm proposed by Deb et al. [1].
+The \emph{fast non-dominated sorting algorithm} was proposed by Deb et al. [1].
 Non-dominated sorting expects a set of points and returns a
-set of non-dominated fronts. In short words this is done as follows: the
+set of non-dominated fronts. In short words, this is done as follows: the
 non-dominated points of the entire set are determined and assigned rank 1.
 Afterwards all points with the current rank are removed, the rank is increased
 by one and the procedure starts again. This is done until the set is empty, i.e.,
-each point is assigned a rank.
+each point is assigned to a rank/level.
 }
 \note{
 This procedure is the key survival selection of the famous NSGA-II multi-objective
 evolutionary algorithm [1].
 
 Keep in mind that this function assumes all objectives to be minimized.
-In case at least one objective is to be maximized the data needs
+In case at least one objective is to be maximized, the data needs
 to be transformed accordingly in advance.
 }
 \references{
@@ -42,9 +42,4 @@ to be transformed accordingly in advance.
 Algorithm: NSGA-II. IEEE Transactions on Evolutionary Computation, 6 (8) (2002),
 182-197.
 }
-\seealso{
-Other mootools: 
-\code{\link{get_nadir}()}
-}
-\concept{mootools}
 \keyword{optimize}

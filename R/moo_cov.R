@@ -9,9 +9,9 @@
 #' Given two (approximation) sets \eqn{X = \{x_1, \ldots, x_{|X|}\}}
 #' and \eqn{Y = \{y_1, \ldots, y_{|Y|}\}} this indidcator calculates the fraction
 #' of points from \eqn{Y} which are dominated by at least one point \eqn{x \in X}.
-#' Formally it is defined as:
+#' Formally, it is defined as:
 #' \deqn{
-#'   C(X, Y) = \frac{|\{y \in Y \mid \exists x \in X \, with \, x \preceq y\}|}{|Y|}.
+#'   C(X, Y) = \frac{|\{y \in Y \mid \exists x \in X,\, x \preceq y\}|}{|Y|}.
 #' }
 #' It holds that \eqn{C(X, Y) \in [0,1]}. Note that in general \eqn{C(X, Y) \neq 1 - C(Y, X)}.
 #'
@@ -26,9 +26,9 @@
 #' @template family_multi_objective_performance_indicators
 #'
 #' @param x [\code{matrix}]\cr
-#'   First point set in column major format.
+#'   First numeric matrix of points (each colum contains one point).
 #' @param y [\code{matrix}]\cr
-#'   Second point set in column major format.
+#'   Second numeric matrix of points (each colum contains one point).
 #' @template arg_dots_not_used
 #' @return Coverage value.
 #' @export
